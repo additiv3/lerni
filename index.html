@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- LERNI – gebaut 29.09.2026, 22:08. Nicht direkt öffnen: py tools/build.py setzt CSS, Code und Inhalte ein und schreibt dist/index.html -->
+<!-- LERNI – gebaut 29.09.2026, 22:11. Nicht direkt öffnen: py tools/build.py setzt CSS, Code und Inhalte ein und schreibt dist/index.html -->
 <html lang="de">
 <head>
   <meta charset="utf-8">
@@ -414,7 +414,7 @@ details.card[open] summary { margin-bottom: 10px; }
 </head>
 <body>
   <noscript>Lerni braucht JavaScript.</noscript>
-<script>const LERNI_BUILD = {"id": "3d3d22d-20260929220804", "stamp": "29.09.2026, 22:08", "commit": "3d3d22d"};</script>
+<script>const LERNI_BUILD = {"id": "7da2b8a-20260929221155", "stamp": "29.09.2026, 22:11", "commit": "7da2b8a"};</script>
 <script>
 /* LERNI – Hilfsfunktionen: DOM, Datum, Text, Zufall.
    Läuft auch in Node (tools/check.js): beim Laden nichts am DOM anfassen. */
@@ -3396,6 +3396,206 @@ Die WiGeo fragt nach den **räumlichen Voraussetzungen und Konsequenzen anderer 
 //# sourceURL=content/wirtschaftsgeographie/e11.js
 </script>
 <script>
+/* e15 Zusatz: Themen der Musterklausur WS 2023/24, die in den Folien SoSe 2026 fehlen oder nur angerissen werden.
+   Ausnahme von der Regel „nur Folieninhalt“ (01-Entscheidungen.md, Abschnitt A): allgemein gesichertes Fachwissen, deutlich gekennzeichnet.
+   Jede erklaerung beginnt mit dem Hinweis. Die Einheit lässt sich in der App wie jede andere abwählen (Klausur-Simulation: Einheiten). */
+const E15 = 'Hinweis: nicht in den Folien SoSe 2026 – allgemein gesichertes Fachwissen als Ergänzung zur Musterklausur WS 2023/24';
+Lerni.einheit('wirtschaftsgeographie', {
+  id: 'e15',
+  titel: 'Zusatz: Themen der Musterklausur (nicht in den Folien 2026)',
+  quelle: 'Musterklausur WS 2023/24 (Hardaker) – Ergänzung mit allgemein gesichertem Fachwissen, nicht in den Folien SoSe 2026',
+  skript: [
+    {
+      thema: 'Standortrelevanz', titel: 'Standortrelevanz (Musterklausur 1.6)',
+      text: `*Nicht in den Folien 2026 – Ergänzung zur Musterklausur, Aufgabe 1.6.*
+
+**Standortrelevanz** (sinngemäß): das Ausmaß, in dem die Wahl des Standorts – bzw. die Standortbedingungen dort – über Kosten und Erfolg eines Betriebs oder einer Branche entscheidet.
+- **Hohe Standortrelevanz:** Die Tätigkeit ist an bestimmte Orte gebunden oder hängt stark von örtlichen Bedingungen ab. Beispiele: **Rohstoffabbau** (nur am Fundort möglich), transportkostenintensive **Schwerindustrie**, **Einzelhandel und Gastronomie** (Laufkundschaft, Erreichbarkeit).
+- **Niedrige Standortrelevanz:** Die Tätigkeit kann nahezu überall ausgeübt werden („footloose“). Beispiele: **Softwareentwicklung**, digitale Dienstleistungen, Beratung per Internet.
+
+Anschluss an die Folien: Transportkosten spielen heute in den meisten Branchen nur eine geringe Rolle (VL05-06, S. 61); harte und weiche Standortfaktoren (S. 64); Webers lokalisierte vs. ubiquitäre Materialien (S. 58).
+
+==Standortrelevanz: Wie stark hängt der Erfolg vom Ort ab? Bergbau hoch, Software niedrig.==`,
+    },
+    {
+      thema: 'Terms of Trade', titel: 'Terms of Trade (Musterklausur 1.7)',
+      text: `*Nicht in den Folien 2026 – Ergänzung zur Musterklausur, Aufgabe 1.7. Die Folien nennen nur „ungleiche Terms of Trade“ als Erklärung der Dependenztheorie (VL02, S. 49).*
+
+**Terms of Trade (ToT)** = Austauschverhältnis im Außenhandel: **Index der Exportpreise ÷ Index der Importpreise** (× 100; Basisjahr = 100).
+- **ToT unter 100 (bzw. unter 1):** Die Exportpreise sind im Verhältnis zu den Importpreisen gesunken. Das Land muss **mehr exportieren, um dieselbe Menge zu importieren** – seine Tauschposition hat sich **verschlechtert**.
+- **ToT über 100:** Für dieselbe Exportmenge bekommt das Land mehr Importe – Verbesserung.
+
+Bezug zur Dependenztheorie: Rohstoffexportierende Länder des Südens verlieren gegenüber Industriegüterexporteuren des Nordens, weil ihre Exportpreise relativ fallen (Prebisch-Singer-These) – daraus folgte die Forderung nach Importsubstituierender Industrialisierung.
+
+==ToT < 100: Für die gleichen Importe muss mehr exportiert werden – Verschlechterung.==`,
+    },
+    {
+      thema: 'Lieferkettengesetz', titel: 'Lieferkettengesetz und race to the bottom (Musterklausur 1.4)',
+      text: `*Nicht in den Folien 2026 – Ergänzung zur Musterklausur, Aufgabe 1.4 (zweiter Teil). Das „race to the bottom“ selbst steht in VL04-05, S. 19.*
+
+Das deutsche **Lieferkettensorgfaltspflichtengesetz** (kurz Lieferkettengesetz, in Kraft seit **2023**) verpflichtet **große Unternehmen**, in ihren Lieferketten **Menschenrechts- und bestimmte Umweltrisiken** zu ermitteln, ihnen vorzubeugen und Verstöße abzustellen.
+
+Zusammenhang mit dem **race to the bottom:** Im Standortwettbewerb senken Länder soziale und ökologische Standards, und Unternehmen nutzen diese Unterschiede in globalen Produktionsnetzen aus. Das Lieferkettengesetz setzt **verbindliche Mindeststandards bei den Auftraggebern** – niedrige Standards bei Zulieferern sind dann kein reiner Kostenvorteil mehr. Es soll dem Unterbietungswettlauf also **entgegenwirken**. (Details wie Schwellenwerte und aktuelle Änderungen sind hier nicht Lernstoff.)
+
+==Lieferkettengesetz = Gegenmittel zum race to the bottom: Verantwortung für Standards in der ganzen Kette.==`,
+    },
+    {
+      thema: 'Lange Wellen', titel: 'Kritik an den langen Wellen (Musterklausur 1.3)',
+      text: `*Nicht in den Folien 2026 – Ergänzung zur Musterklausur, Aufgabe 1.3. Die Folien zeigen die Kondratieff-Wellen nur als Grafik (VL03, S. 8); die Kritik am Produktlebenszyklus steht in VL05-06, S. 72.*
+
+Die **Theorie der langen Wellen** (Kondratieff; Basisinnovationen tragen je einen rund 50-jährigen Aufschwung) wird kritisiert:
+- **empirisch schwer nachweisbar:** nur wenige Zyklen, unregelmäßige Länge, Datierung der Wendepunkte umstritten
+- **monokausal/technikdeterministisch:** Basisinnovationen allein erklären den Konjunkturverlauf; soziale, politische und institutionelle Faktoren fehlen
+- **deterministisch:** Die Abfolge wirkt zwangsläufig, kaum Prognosekraft
+- **Fokus auf Industrieländer** (Europa, Nordamerika)
+
+Zusammen mit dem Produktlebenszyklus (starrer Produktbegriff, sehr linear, ohne sozialen und regulatorischen Kontext) teilen beide Ansätze die Schwäche, **Entwicklung als lineare, quasi-naturgesetzliche Abfolge** darzustellen.
+
+==Lange Wellen: wenige, unregelmäßige Zyklen, monokausal über Technik, deterministisch.==`,
+    },
+    {
+      thema: 'Raumbegriff', titel: 'Raumbegriffe (Musterklausur 1.2 und 2.1)', bild: 'raumkonzepte',
+      text: `*Ergänzung zur Musterklausur, Aufgaben 1.2 und 2.1. In den Folien: Raumkonzepte der Denkstile (VL03, S. 26) und Formen von Nähe (VL05-06, S. 36).*
+
+Warum gibt es keine allgemeingültige Definition von „Raum“? Weil **Raum je nach Denkstil und Erkenntnisinteresse unterschiedlich konzipiert** wird. Verbreitet ist die Unterscheidung (Wardenga):
+- **Container-Raum:** Raum als „Behälter“ natürlicher und menschlicher Faktoren (absolutes Raumverständnis; Länderkunde)
+- **Raum als System von Lagebeziehungen:** Standorte, Distanzen, Ströme (Raumwirtschaftslehre)
+- **Raum als Kategorie der Wahrnehmung:** wie Menschen Räume subjektiv wahrnehmen und bewerten
+- **Raum als Konstrukt:** durch Handeln und Kommunikation sozial hergestellt (relationale WiGeo)
+
+**Relationales Verständnis von Nähe und Distanz:** Nähe ist nicht nur geographisch-metrisch, sondern auch sozial, organisatorisch, kognitiv oder institutionell (Boschma, siehe Einheit Institutionen und Cluster).
+
+==Keine Raumdefinition für alle: Container, Lagebeziehungen, Wahrnehmung oder Konstrukt – je nach Frage.==`,
+    },
+    {
+      thema: 'Polarization Reversal', titel: 'Polarization Reversal (Musterklausur 2.3)', bild: 'reversal',
+      text: `*Nicht in den Folien 2026 – Ergänzung zur Musterklausur, Aufgabe 2.3. Anschluss an die Polarisationstheorien (VL05-06, S. 13–14).*
+
+Die **Polarization-Reversal-Hypothese** (Harry W. Richardson, 1980) beschreibt die räumliche Entwicklung in Ländern auf dem Weg der Industrialisierung:
+1. **Polarisierung:** Zunächst konzentrieren sich Bevölkerung und Wirtschaft immer stärker im Zentrum (meist der Hauptstadtregion); die regionalen Unterschiede wachsen.
+2. **Wendepunkt und Umkehr:** Ab einem bestimmten Entwicklungsstand kehrt sich der Trend um. **Agglomerationsnachteile** im Zentrum (hohe Kosten, Überlastung) und **Ausbreitungseffekte** führen zu **Dezentralisierung**: Es wachsen **Subzentren** und später auch periphere Regionen; die Disparitäten nehmen ab.
+
+Damit steht die Hypothese näher an **Hirschman** (Sickereffekte setzen sich durch) als an **Myrdal** (Entzugseffekte bleiben stärker).
+
+==Polarization Reversal: erst Konzentration, dann Umkehr durch Agglomerationsnachteile – Subzentren wachsen.==`,
+    },
+  ],
+  fragen: [
+    /* ---------- Standortrelevanz ---------- */
+    { id: 'e15-01', typ: 'karte', thema: 'Standortrelevanz', wichtig: 3, quelle: 'Musterklausur WS23/24, 1.6',
+      vorne: 'Standortrelevanz',
+      hinten: `(Sinngemäß) Das Ausmaß, in dem die Wahl des Standorts bzw. die Standortbedingungen über Kosten und Erfolg eines Betriebs oder einer Branche entscheiden. **Hoch:** z. B. Bergbau (an Fundorte gebunden). **Niedrig:** z. B. Softwareentwicklung (ortsunabhängig, „footloose“).`,
+      erklaerung: E15 + ', Aufgabe 1.6.' },
+    { id: 'e15-02', typ: 'offen', thema: 'Standortrelevanz', wichtig: 3, punkte: 3, quelle: 'Musterklausur WS23/24, 1.6',
+      frage: 'Definieren Sie den Begriff Standortrelevanz (1 P.) und erläutern Sie je ein Beispiel für eine hohe bzw. eine niedrige Standortrelevanz (2 P.).',
+      antwort: `Standortrelevanz bezeichnet, wie stark die Wahl des Standorts bzw. die Bedingungen am Standort über Kosten und Erfolg eines Betriebs oder einer Branche entscheiden. Hoch ist sie etwa im Bergbau: Rohstoffe lassen sich nur an ihren Fundorten abbauen, der Standort ist praktisch vorgegeben. Niedrig ist sie etwa bei der Softwareentwicklung: Die Arbeit ist digital und kann nahezu überall erledigt werden, Transportkosten spielen kaum eine Rolle („footloose“).`,
+      kernpunkte: ['(a) Ausmaß, in dem Standort/Standortbedingungen über Kosten und Erfolg eines Betriebs entscheiden (sinngemäß)', '(b) Hohe Standortrelevanz mit Begründung, z. B. Bergbau an Fundorte gebunden (oder Einzelhandel: Laufkundschaft)', '(b) Niedrige Standortrelevanz mit Begründung, z. B. Software/digitale Dienstleistung ortsunabhängig'],
+      erklaerung: E15 + ', Aufgabe 1.6. Nah an den Folien: harte/weiche Standortfaktoren (VL05-06, S. 64), geringe Rolle der Transportkosten (S. 61).' },
+    { id: 'e15-03', typ: 'mc', thema: 'Standortrelevanz', wichtig: 2, quelle: 'Musterklausur WS23/24, 1.6',
+      frage: 'Bei welcher Tätigkeit ist die Standortrelevanz typischerweise am **niedrigsten**?',
+      optionen: [
+        { t: 'Entwicklung einer Smartphone-App', r: true, warum: 'Digitale Arbeit ist nahezu ortsunabhängig („footloose“).' },
+        { t: 'Kiesabbau', warum: 'Rohstoffabbau ist an die Lagerstätte gebunden – sehr hohe Standortrelevanz.' },
+        { t: 'Ein Stahlwerk, das schwere Erze verarbeitet', warum: 'Transportkostenintensiv, Nähe zu Rohstoffen oder Verkehrswegen wichtig.' },
+        { t: 'Eine Bäckerei mit Laufkundschaft', warum: 'Erfolg hängt stark von der Lage (Passantenfrequenz) ab.' },
+      ],
+      erklaerung: E15 + ', Aufgabe 1.6.' },
+
+    /* ---------- Terms of Trade ---------- */
+    { id: 'e15-04', typ: 'karte', thema: 'Terms of Trade', wichtig: 3, quelle: 'Musterklausur WS23/24, 1.7; VL02, S. 49',
+      vorne: 'Terms of Trade – Definition',
+      hinten: `Austauschverhältnis im Außenhandel: **Exportpreisindex ÷ Importpreisindex** (× 100, Basisjahr = 100). Sie zeigen, wie viele Importe ein Land für eine Einheit seiner Exporte erhält.`,
+      erklaerung: E15 + ', Aufgabe 1.7. Die Folien nennen „ungleiche Terms of Trade“ nur als Erklärung der Dependenztheorie.' },
+    { id: 'e15-05', typ: 'offen', thema: 'Terms of Trade', wichtig: 3, punkte: 1, quelle: 'Musterklausur WS23/24, 1.7',
+      frage: 'Was bedeutet es, wenn der Wert der Terms of Trade eines Landes unter 100 (bzw. 1) liegt?',
+      antwort: `Die Exportpreise des Landes sind im Verhältnis zu seinen Importpreisen (gegenüber dem Basisjahr) gesunken. Das Land muss also mehr exportieren, um dieselbe Menge an Gütern importieren zu können – seine Tauschposition im Außenhandel hat sich verschlechtert.`,
+      kernpunkte: ['Exportpreise relativ zu Importpreisen gesunken → für dieselben Importe muss mehr exportiert werden (Verschlechterung; sinngemäß genügt)'],
+      erklaerung: E15 + ', Aufgabe 1.7.' },
+    { id: 'e15-06', typ: 'wf', thema: 'Terms of Trade', wichtig: 2, quelle: 'Musterklausur WS23/24, 1.7',
+      aussage: 'Liegen die Terms of Trade eines Landes über 100, erhält es für dieselbe Exportmenge mehr Importe als im Basisjahr.',
+      wahr: true, warum: 'Die Exportpreise sind dann relativ zu den Importpreisen gestiegen – Verbesserung der Tauschposition.',
+      erklaerung: E15 + ', Aufgabe 1.7.' },
+    { id: 'e15-07', typ: 'mc', thema: 'Terms of Trade', wichtig: 2, quelle: 'VL02, S. 49; Musterklausur WS23/24, 1.7',
+      frage: 'Welche Theorie erklärt Unterentwicklung unter anderem mit ungleichen Terms of Trade?',
+      optionen: [
+        { t: 'Dependenztheorie', r: true, warum: 'Erklärung laut Folie: Kolonialismus und ungleiche Terms of Trade (exogen).' },
+        { t: 'Modernisierungstheorie', warum: 'Sie erklärt endogen: Verhaftung in Traditionen.' },
+        { t: 'Neoklassische Regionalentwicklungstheorie', warum: 'Sie erwartet Ausgleich durch Handel und Faktorwanderung.' },
+        { t: 'Exportbasistheorie', warum: 'Sie sieht Exporte als Wachstumsmotor, nicht als Ursache von Unterentwicklung.' },
+      ],
+      erklaerung: 'Die Frage selbst stützt sich auf die Folie VL02, S. 49. ' + E15 + ' (Definition der Terms of Trade).' },
+
+    /* ---------- Lieferkettengesetz ---------- */
+    { id: 'e15-08', typ: 'offen', thema: 'Lieferkettengesetz', wichtig: 3, punkte: 1, quelle: 'Musterklausur WS23/24, 1.4',
+      frage: 'In welchem Zusammenhang steht das „race to the bottom“ mit dem Lieferkettengesetz?',
+      antwort: `Das Lieferkettengesetz verpflichtet große Unternehmen, Menschenrechts- und Umweltrisiken in ihren Lieferketten zu ermitteln, ihnen vorzubeugen und Verstöße abzustellen. Damit setzt es verbindliche Mindeststandards bei den Auftraggebern und soll dem Unterbietungswettlauf bei Sozial- und Umweltstandards entgegenwirken, weil niedrige Standards bei Zulieferern kein reiner Kostenvorteil mehr sind.`,
+      kernpunkte: ['Lieferkettengesetz verpflichtet Unternehmen zu Sorgfalt für Menschenrechte/Umwelt in der Lieferkette → wirkt dem race to the bottom entgegen (sinngemäß genügt)'],
+      erklaerung: E15 + ', Aufgabe 1.4. Den ersten Teil der Aufgabe (Was beschreibt der Ausdruck, Kontext; 2 P.) findest du in der Einheit Globalisierung I.' },
+    { id: 'e15-09', typ: 'wf', thema: 'Lieferkettengesetz', wichtig: 2, quelle: 'Musterklausur WS23/24, 1.4',
+      aussage: 'Das deutsche Lieferkettengesetz verpflichtet große Unternehmen, auf Menschenrechte und bestimmte Umweltstandards auch bei ihren Zulieferern zu achten.',
+      wahr: true, warum: 'Sorgfaltspflichten entlang der Lieferkette (in Kraft seit 2023).',
+      erklaerung: E15 + ', Aufgabe 1.4.' },
+
+    /* ---------- Lange Wellen ---------- */
+    { id: 'e15-10', typ: 'offen', thema: 'Lange Wellen', wichtig: 3, punkte: 3, quelle: 'Musterklausur WS23/24, 1.3; VL05-06, S. 72',
+      frage: 'Nennen Sie 3 Kritikpunkte an den Ansätzen der Produktlebenszyklustheorie und der Theorie der langen Wellen.',
+      antwort: `Der Produktlebenszyklus arbeitet mit einem starren Produktbegriff und vernachlässigt Anpassungsfähigkeit und ständige Verbesserungsinnovationen. Beide Ansätze sind sehr linear bzw. deterministisch und blenden den sozialen, politischen und regulatorischen Kontext aus. Die Theorie der langen Wellen ist zudem empirisch schwer nachweisbar (wenige, unregelmäßige Zyklen, umstrittene Datierung) und erklärt Konjunktur monokausal über Basisinnovationen.`,
+      kernpunkte: ['Produktlebenszyklus: starrer Produktbegriff, Verbesserungsinnovationen/Anpassung vernachlässigt', 'Beide: sehr linear/deterministisch, ohne sozialen und regulatorischen Kontext', 'Lange Wellen: empirisch schwer nachweisbar, monokausal über Basisinnovationen'],
+      erklaerung: E15 + ', Aufgabe 1.3 (Kritik an den langen Wellen). Die Kritik am Produktlebenszyklus steht in VL05-06, S. 72.' },
+    { id: 'e15-11', typ: 'mc', thema: 'Lange Wellen', wichtig: 3, quelle: 'Musterklausur WS23/24, 1.3',
+      frage: 'Welche Kritik wird typischerweise an der Theorie der langen Wellen (Kondratieff) geübt? (mehrere möglich)',
+      optionen: [
+        { t: 'Sie ist empirisch schwer nachweisbar: wenige, unregelmäßige Zyklen.', r: true, warum: 'Auch die Datierung der Wendepunkte ist umstritten.' },
+        { t: 'Sie erklärt Konjunktur monokausal über Basisinnovationen.', r: true, warum: 'Soziale und institutionelle Faktoren fehlen.' },
+        { t: 'Sie betrachtet nur die Nachfrageseite einer Region.', warum: 'Das ist Kritik an der Exportbasistheorie.' },
+        { t: 'Sie arbeitet mit einem starren Produktbegriff.', warum: 'Das ist Kritik am Produktlebenszyklus.' },
+      ],
+      erklaerung: E15 + ', Aufgabe 1.3.' },
+
+    /* ---------- Raumbegriff ---------- */
+    { id: 'e15-12', typ: 'karte', thema: 'Raumbegriff', wichtig: 2, quelle: 'Musterklausur WS23/24, 1.2; VL03, S. 26', bildLoesung: 'raumkonzepte',
+      vorne: 'Vier Raumkonzepte der Geographie',
+      hinten: `**Container-Raum** (Behälter natürlicher und menschlicher Faktoren) · **System von Lagebeziehungen** (Standorte, Distanzen, Ströme) · **Kategorie der Wahrnehmung** (subjektiv wahrgenommener Raum) · **soziales Konstrukt** (durch Handeln und Kommunikation hergestellt).`,
+      erklaerung: E15 + ', Aufgabe 1.2 (Systematik nach Wardenga).' },
+    { id: 'e15-13', typ: 'offen', thema: 'Raumbegriff', wichtig: 3, punkte: 2, quelle: 'Musterklausur WS23/24, 1.2 und 2.1; VL03, S. 26 und 32',
+      frage: 'Unterscheiden Sie ein absolutes (Container-)Raumverständnis von einem relationalen Raumverständnis.',
+      antwort: `Im absoluten Verständnis ist Raum ein Container: ein Behälter mit festen Grenzen, in dem Dinge liegen und in dem Distanzen metrisch gemessen werden – typisch für Länderkunde und klassische Standortlehre. Im relationalen Verständnis entsteht Raum erst aus den Beziehungen zwischen Akteuren und Orten; Nähe und Distanz sind nicht nur metrisch, sondern auch sozial, organisatorisch oder kognitiv, und Raum wird durch Handeln mit hergestellt.`,
+      kernpunkte: ['Absolut/Container: Raum als Behälter mit festen Grenzen, metrische Distanzen (Länderkunde, klassische Standortlehre)', 'Relational: Raum entsteht aus Beziehungen; Nähe/Distanz auch sozial, organisatorisch, kognitiv; Raum wird hergestellt'],
+      erklaerung: E15 + ', Aufgaben 1.2 und 2.1. In den Folien: „containerhaftes Raumverständnis“ der Standortlehre (VL03, S. 32) und Raum als soziales Konstrukt (S. 26).' },
+    { id: 'e15-14', typ: 'mc', thema: 'Raumbegriff', wichtig: 2, quelle: 'Musterklausur WS23/24, 1.2; VL05-06, S. 36',
+      frage: 'Welche Aussage entspricht einem **relationalen** Raumverständnis?',
+      optionen: [
+        { t: 'Nähe entsteht auch durch Vertrauen, gemeinsame Organisation oder ähnliches Wissen.', r: true, warum: 'Formen von Nähe nach Boschma: sozial, organisatorisch, kognitiv, institutionell.' },
+        { t: 'Raum ist ein Behälter mit festen Grenzen, in dem Dinge liegen.', warum: 'Das ist das Container-Verständnis.' },
+        { t: 'Nähe lässt sich allein in Kilometern messen.', warum: 'Das ist ein rein metrisches Verständnis.' },
+        { t: 'Regionen sind abstrakte, dimensionslose Punkte.', warum: 'So behandelt die Neoklassik Regionen – kritisiert als fehlender Raumbezug.' },
+      ],
+      erklaerung: E15 + ', Aufgabe 1.2.' },
+
+    /* ---------- Polarization Reversal ---------- */
+    { id: 'e15-15', typ: 'offen', thema: 'Polarization Reversal', wichtig: 3, punkte: 2, quelle: 'Musterklausur WS23/24, 2.3', bildLoesung: 'reversal',
+      frage: 'Erläutern Sie die Polarization-Reversal-Hypothese.',
+      antwort: `Nach Richardson (1980) konzentrieren sich Bevölkerung und Wirtschaft in einem Land zunächst immer stärker im Zentrum, meist in der Hauptstadtregion; die regionalen Disparitäten nehmen zu. Ab einem bestimmten Entwicklungsstand kehrt sich dieser Trend um: Agglomerationsnachteile im Zentrum wie hohe Kosten und Überlastung sowie Ausbreitungseffekte führen zu Dezentralisierung, Subzentren und später periphere Regionen wachsen, und die Disparitäten nehmen ab.`,
+      kernpunkte: ['Erst Polarisierung: zunehmende Konzentration im Zentrum, Disparitäten wachsen', 'Ab einem Wendepunkt Umkehr: Agglomerationsnachteile/Ausbreitung → Dezentralisierung, Subzentren wachsen'],
+      erklaerung: E15 + ', Aufgabe 2.3.' },
+    { id: 'e15-16', typ: 'mc', thema: 'Polarization Reversal', wichtig: 3, quelle: 'Musterklausur WS23/24, 2.3',
+      frage: 'Was trifft auf die Polarization-Reversal-Hypothese zu? (mehrere möglich)',
+      optionen: [
+        { t: 'Nach einer Phase zunehmender Konzentration kehrt sich der Trend um.', r: true, warum: 'Der namengebende Wendepunkt („reversal“).' },
+        { t: 'Agglomerationsnachteile im Zentrum fördern die Dezentralisierung.', r: true, warum: 'Hohe Kosten und Überlastung im Zentrum.' },
+        { t: 'Die Konzentration im Zentrum nimmt dauerhaft weiter zu.', warum: 'Das widerspricht gerade der Umkehr; eher Myrdals Sicht.' },
+        { t: 'Sie beschreibt den Übergang vom Fordismus zum Post-Fordismus.', warum: 'Das ist Thema der Regulationstheorie, nicht der Polarisationstheorien.' },
+      ],
+      erklaerung: E15 + ', Aufgabe 2.3. Die Optionen der Musterklausur selbst sind nicht übernommen, weil ihre Lösung nicht eindeutig ableitbar ist.' },
+    { id: 'e15-17', typ: 'wf', thema: 'Polarization Reversal', wichtig: 2, quelle: 'Musterklausur WS23/24, 2.3; VL05-06, S. 14',
+      aussage: 'Die Polarization-Reversal-Hypothese steht Hirschmans Erwartung näher als der von Myrdal.',
+      wahr: true, warum: 'Hirschman: Sickereffekte setzen sich auf Dauer durch. Myrdal: Entzugseffekte bleiben stärker.',
+      erklaerung: E15 + ', Aufgabe 2.3.' },
+  ],
+});
+//# sourceURL=content/wirtschaftsgeographie/e15.js
+</script>
+<script>
 /* Eigene Skizzen zum Kurs Wirtschaftsgeographie (nachgezeichnet und vereinfacht, keine Abbildungen aus den Folien).
    Format und Farbklassen: docs/INHALTE.md, Abschnitt 5. Eingebunden über bild / bildLoesung in Skript und Fragen. */
 
@@ -3909,6 +4109,44 @@ Lerni.grafik('wirtschaftsgeographie', 'exportbasis', {
     <rect class="f2" x="200" y="90" width="100" height="56" rx="8"/><text class="b" x="250" y="112" text-anchor="middle">20 Std.</text><text class="k" x="250" y="126" text-anchor="middle">entkommerzialisiert:</text><text class="k" x="250" y="139" text-anchor="middle">Suffizienz, Subsistenz</text>
     <line class="s1 w" x1="128" y1="86" x2="186" y2="86"/><polygon class="pfp" points="194,86 184,80 184,92"/>
     <text class="k m" x="170" y="168" text-anchor="middle">Wochenarbeitszeit; die freie Hälfte dient der Eigenarbeit</text>
+  </svg>`,
+  });
+})();
+
+/* ---------- e15 Zusatz Musterklausur (nicht in den Folien 2026) ---------- */
+(() => {
+  const K = 'wirtschaftsgeographie';
+  Lerni.grafik(K, 'reversal', {
+    titel: 'Polarization Reversal (Richardson 1980)',
+    text: 'Ergänzung (nicht in den Folien 2026): Erst nehmen die regionalen Unterschiede zu, ab einem Wendepunkt kehrt sich der Trend um – Dezentralisierung zu Subzentren.',
+    svg: `<svg viewBox="0 0 340 222" role="img" aria-label="Umgekehrte U-Kurve der regionalen Disparitäten">
+    <line x1="30" y1="12" x2="30" y2="130"/><line x1="30" y1="130" x2="334" y2="130"/>
+    <text class="k m" transform="translate(20 128) rotate(-90)">Disparitäten</text>
+    <text class="k m" x="332" y="146" text-anchor="end">Entwicklungsstand / Zeit →</text>
+    <path class="s1 w" d="M36 120 C90 112 130 36 180 34 C230 32 270 100 326 112"/>
+    <line class="d sm" x1="180" y1="34" x2="180" y2="130"/>
+    <text class="k b" x="180" y="24" text-anchor="middle">Wendepunkt</text>
+    <g class="k">
+      <text class="b tb" x="6" y="170">1 Polarisierung</text><text x="6" y="184">Konzentration im Zentrum,</text><text x="6" y="197">Disparitäten wachsen</text>
+      <text class="b to" x="176" y="170">2 Umkehr</text><text x="176" y="184">Agglomerationsnachteile,</text><text x="176" y="197">Ausbreitung → Subzentren</text>
+    </g>
+    <g class="b" text-anchor="middle"><text x="96" y="104">1</text><text x="262" y="92">2</text></g>
+    <text class="k m" x="170" y="218" text-anchor="middle">Nicht in den Folien 2026 – Ergänzung zur Musterklausur 2.3</text>
+  </svg>`,
+  });
+
+  Lerni.grafik(K, 'raumkonzepte', {
+    titel: 'Vier Raumkonzepte',
+    text: 'Ergänzung (nicht in den Folien 2026), verbreitete Systematik der Geographie (Wardenga): Je nach Fragestellung wird „Raum“ anders gedacht – deshalb gibt es keine allgemeingültige Definition.',
+    svg: `<svg viewBox="0 0 340 196" role="img" aria-label="Vier Felder: Container, Lagebeziehungen, Wahrnehmung, Konstrukt">
+    <rect class="f2" x="4" y="4" width="164" height="90" rx="10"/><rect class="f1" x="172" y="4" width="164" height="90" rx="10"/>
+    <rect class="f3" x="4" y="100" width="164" height="90" rx="10"/><rect class="f4" x="172" y="100" width="164" height="90" rx="10"/>
+    <g class="k">
+      <text class="b" x="14" y="24">Container-Raum</text><text x="14" y="42">Raum als „Behälter“ mit</text><text x="14" y="56">Wirkungsgefüge natürlicher</text><text x="14" y="70">und menschlicher Faktoren</text><text class="m" x="14" y="86">z. B. Länderkunde</text>
+      <text class="b" x="182" y="24">Lagebeziehungen</text><text x="182" y="42">Standorte, Distanzen,</text><text x="182" y="56">Ströme zwischen Orten</text><text x="182" y="70">(Distanz ist messbar)</text><text class="m" x="182" y="86">z. B. Raumwirtschaftslehre</text>
+      <text class="b" x="14" y="120">Wahrnehmung</text><text x="14" y="138">Raum, wie Menschen ihn</text><text x="14" y="152">subjektiv wahrnehmen</text><text x="14" y="166">und bewerten</text><text class="m" x="14" y="182">z. B. Image eines Ortes</text>
+      <text class="b" x="182" y="120">Konstrukt</text><text x="182" y="138">Raum wird durch Handeln</text><text x="182" y="152">und Kommunikation</text><text x="182" y="166">sozial hergestellt</text><text class="m" x="182" y="182">z. B. relationale WiGeo</text>
+    </g>
   </svg>`,
   });
 })();
