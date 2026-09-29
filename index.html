@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- LERNI – gebaut 29.09.2026, 21:34. Nicht direkt öffnen: py tools/build.py setzt CSS, Code und Inhalte ein und schreibt dist/index.html -->
+<!-- LERNI – gebaut 29.09.2026, 21:39. Nicht direkt öffnen: py tools/build.py setzt CSS, Code und Inhalte ein und schreibt dist/index.html -->
 <html lang="de">
 <head>
   <meta charset="utf-8">
@@ -413,7 +413,7 @@ details.card[open] summary { margin-bottom: 10px; }
 </head>
 <body>
   <noscript>Lerni braucht JavaScript.</noscript>
-<script>const LERNI_BUILD = {"id": "7f2616c-20260929213421", "stamp": "29.09.2026, 21:34", "commit": "7f2616c"};</script>
+<script>const LERNI_BUILD = {"id": "056bcf7-20260929213934", "stamp": "29.09.2026, 21:39", "commit": "056bcf7"};</script>
 <script>
 /* LERNI – Hilfsfunktionen: DOM, Datum, Text, Zufall.
    Läuft auch in Node (tools/check.js): beim Laden nichts am DOM anfassen. */
@@ -1782,6 +1782,301 @@ Feministische WiGeo: Sorgearbeit (reproduktive Arbeit) steht nie außerhalb der 
 //# sourceURL=content/wirtschaftsgeographie/e02.js
 </script>
 <script>
+/* e06 Regionalentwicklung: raumwirtschaftliche Modelle – VL05-06 Teil 3.1, Abschnitte 1–2 (Rosol, 21.05.2026).
+   Analyse: quellen/wirtschaftsgeographie/analyse/VL05-06-Regionale-Entwicklung-und-Standort.md (PDF-Seiten 2–18) */
+Lerni.einheit('wirtschaftsgeographie', {
+  id: 'e06',
+  titel: 'Regionalentwicklung: raumwirtschaftliche Modelle',
+  quelle: 'VL05-06 Regionale Entwicklung und Standort (Rosol), PDF-Seiten 2–18',
+  skript: [
+    {
+      thema: 'Grundlagen', titel: 'Region und Regionalentwicklung',
+      text: `**Region** (Braun/Schulz): Ausschnitt der Erdoberfläche, der über gemeinsame oder verbindende Merkmale definiert und abgegrenzt werden kann. Maßstabsunabhängig (Rhein-Main-Gebiet, Südasien), in der WiGeo meist **subnational**. Statistik zwingt oft zu administrativen Einheiten; besser ist eine **Regionalisierung** passend zur Fragestellung:
+- **Homogenitätskriterium:** Raumeinheiten mit **ähnlichen Strukturen** zusammenfassen (bezüglich eines oder mehrerer Indikatoren weitgehend einheitlich).
+- **Funktionalitätskriterium:** Raumeinheiten zusammenfassen, die durch **Verflechtungen** verbunden sind (z. B. Pendlerbeziehungen).
+
+**Entwicklung** ist normativ aufgeladen: zielgerichtete Verbesserung der materiellen Lebenssituation bzw. der Leistungsfähigkeit der Akteure einer Region.
+
+Zwei Sichtweisen: **normativ** – Was sollte getan werden, damit sich eine Region „besser“ entwickelt? (politische Frage; „besser“ ist umstritten) · **analytisch** – Warum entwickeln sich Regionen so, wie sie es tun? (theoriegeleitete Erklärung).
+
+Raumwirtschaftliche Theorien liefern **selektive, teils konkurrierende Partialerklärungen**: Manche sagen einen Abbau, andere eine Zunahme von Disparitäten voraus.
+
+==Homogen = ähnliche Strukturen, funktional = Verflechtungen.==`,
+    },
+    {
+      thema: 'IW-Studie', titel: 'Beispiel: IW-Studie 2026',
+      text: `Die IW-Studie „Zwischen Krisen und Chancen“ (Mai 2026) bewertet 400 Kreise und Städte mit **14 Indikatoren** (Wirtschaftsstruktur, Arbeitsmarkt, Lebensqualität). Regionaler Erfolg erklärt sich zu **49 % durch Lebensqualität**, zu **35 % durch Wirtschaftsstruktur** und zu **16 % durch den Arbeitsmarkt**: Wirtschaftsstruktur und Wohn- und Lebensqualität wirken zusammen.
+
+Im Dynamikranking liegt **Cottbus** vorn (Strukturwandel-Initiativen, wissensintensive Dienstleistungen, F&E); **Würzburg** gehört zu den großen Gewinnern: Wandel von der Verwaltungs- und Universitätsstadt zum Hub für Technologie, Start-ups und attraktives Wohnen (Hubland, KI-Zentrum CAIDAS, Gründerzentren, Medizin).
+
+**Schlussfolgerungen:**
+1. Erfolgreiche Regionen folgen **klaren Logiken** (Würzburg: Wissenschaft + Gründungsdynamik + Stadtentwicklung).
+2. Sie **aktivieren und entwickeln bestehende Stärken** weiter.
+3. Entscheidend ist das **Zusammenspiel der Maßnahmen in einem funktionierenden Ökosystem** – weder große Förderprogramme noch Lagevorteile oder industrielle Tradition allein garantieren Erfolg.
+
+==Diese Themen tauchen in den Theorien wieder auf: endogene Potenziale, Cluster, weiche Standortfaktoren.==`,
+    },
+    {
+      thema: 'Neoklassik', titel: 'Neoklassische Theorie der Regionalentwicklung', bild: 'konvergenz',
+      text: `Zwei große Gruppen: **Modernisierungstheorien** sehen Entwicklung als **Aufholprozess** – höher entwickelte Regionen geben den Pfad vor, die anderen folgen verzögert (Rostow, Neoklassik, Exportbasis, endogene Regionalentwicklung). **Polarisationstheorien** betonen **kumulative Selbstverstärkung** und eine Zunahme der Gegensätze.
+
+**Neoklassik, Modell mit einer Region:** Wachstum durch **Akkumulation von Sachkapital** (Sparen, Investieren); technischer Fortschritt ist **nicht Teil des Modells**. Wegen **abnehmender Grenzerträge** des Kapitals gleichen sich die Einkommen der Regionen an.
+
+**Mehrregionenmodelle:** Unterschiede werden bei funktionierenden Märkten durch **Wanderung mobiler Produktionsfaktoren** oder durch **Warenhandel** ausgeglichen. Annahmen: homo oeconomicus, vollständige Konkurrenz, keine Transport- und Mobilitätskosten, konstante Skalenerträge. Beispiel: Arbeitskräfte wandern von der Niedriglohn- in die Hochlohnregion, Kapital in die Region mit vielen Arbeitskräften und höherer Verzinsung – bis Löhne und Grenzproduktivität gleich sind. Ungleichgewichte gelten nur als **temporäre Marktstörungen**.
+
+**Kritik:** sehr abstrakt, restriktive Annahmen; **kein echter Raumbezug** (Regionen als dimensionslose Punkte); technischer Fortschritt nur extern; **Institutionen als „Störgrößen“**; Empirie zeigt eher dauerhafte Disparitäten. Stärke: klares, mathematisierbares Gedankengebäude.
+
+==Neoklassik: Faktorwanderung und Handel führen zum Ausgleich – Ungleichheit ist vorübergehend.==`,
+    },
+    {
+      thema: 'Exportbasis', titel: 'Exportbasistheorie', bild: 'exportbasis',
+      text: `Wachstum kommt hier **von außen** (exogene Wachstumsdeterminanten):
+- Die **wirtschaftliche Basis** einer Region bilden Unternehmen, die in andere Regionen **exportieren** (**basic sector**).
+- Der **non-basic sector** deckt die innerregionale Nachfrage.
+- Die in der Region erzeugten Einkommen sind deutlich höher als der Einkommenszufluss durch Exporte: **Multiplikatoreffekt**. Er ist umso größer, je höher die **Konsumquote** und je niedriger die **Importquote**.
+
+Politik: Lange hatte die Förderung exportorientierter Unternehmen Vorrang (Ansiedlungspolitik, Infrastruktur). **Ab den 1970ern Skepsis:** weniger ansiedlungswillige Großunternehmen; Ansiedlungen waren oft „**verlängerte Werkbänke**“ mit gering qualifizierten, konjunkturanfälligen Jobs; bescheidene Multiplikatoren.
+
+Würdigung: + plausible Darstellung regionaler Einkommenseffekte, Bedeutung überregionaler Nachfrage. − nur **Nachfrageseite**, **statisch** (kein Strukturwandel), Trennung basic/non-basic schwierig. Konsequenz: Hinwendung zur **endogenen** Regionalentwicklung.
+
+==Exporte bringen Geld in die Region – der Multiplikator vervielfacht es.==`,
+    },
+    {
+      thema: 'Endogene Entwicklung', titel: 'Endogene Regionalentwicklung',
+      text: `Endogene Ansätze betonen die **internen Wachstumspotenziale** einer Region – vor allem in ländlichen Räumen und als Erneuerungsstrategie für Altindustrieregionen.
+
+Zentrale Elemente:
+- **qualitative** Verbesserung von Wirtschaftsstruktur und Lebensbedingungen statt einseitiger Wachstumsorientierung
+- Konzentration auf **kleine und mittlere Unternehmen (KMU)**
+- Förderung von **Lernprozessen** und Innovationsfähigkeit bestehender Unternehmen
+- Stärkung **intraregionaler Wirtschafts- und Stoffkreisläufe**
+- Einbindung **regionaler Akteure** aus verschiedenen Lebensbereichen
+- ökonomische und ökologische **Nachhaltigkeit**
+
+Würdigung: + Erfolge in Industrie- wie Entwicklungsländern. − **keine konsistente Theorie**, eher eine Sammlung regionalpolitischer Prinzipien; die endogenen Potenziale peripherer Regionen sind oft zu gering; extern kontrollierte Großunternehmen in Altindustrieregionen lassen sich damit schlecht fassen.
+
+==Endogen: auf eigene Stärken setzen – KMU, Lernen, regionale Kreisläufe, Beteiligung.==`,
+    },
+    {
+      thema: 'Polarisation', titel: 'Polarisationstheorien', bild: 'myrdal',
+      text: `Seit den **1950ern** als Kritik an der Gleichgewichtsvorstellung: Entwicklung führt nicht zum Ausgleich, sondern kann Unterschiede durch **kumulative Selbstverstärkung** vertiefen. Annahmen: Produktionsfaktoren sind **ungleich verteilt und teils immobil**; Wissen und technischer Fortschritt verbreiten sich per **Diffusion mit Verzögerung**; **keine vollständige Konkurrenz** (Monopole, Oligopole, externe Effekte); **Staat und Gesellschaft** werden einbezogen.
+
+**Wachstumspole (François Perroux, 1955):** Dynamik geht von **motorischen Einheiten** aus – großen, schnell wachsenden, stark verflochtenen Branchen (z. B. Automobil-, Halbleiterindustrie, Petrochemie). Über Vorleistungen und nachgelagerte Leistungen (**forward and backward linkages**) wirken sie positiv, können aber auch Arbeitskräfte entziehen. Übertragen auf den Raum: **regionale Wachstumspole** mit Ausstrahlung ins Hinterland; seit den 1960ern Regionalpolitik (gezielte Großansiedlungen in der Peripherie). Misslungene Projekte ohne Ausstrahlung: „**Kathedralen in der Wüste**“.
+
+**Zirkulär-kumulative Verursachung (Gunnar Myrdal, 1957):** Einmal entstandene Unterschiede verstärken sich durch positive Rückkopplung – **zentripetale Entzugseffekte (backwash effects)**. Gegenläufig wirken **zentrifugale Ausbreitungseffekte (spread effects)**. Nach Myrdal sind die **Entzugseffekte in der Regel stärker**, umso mehr, je größer die Ausgangsunterschiede.
+
+**Albert O. Hirschman (1958):** ähnlich, aber auf Dauer setzen sich die **Sickereffekte** durch – die Entwicklungslücke schließt sich wieder.
+
+==Myrdal: backwash > spread. Hirschman: am Ende sickert es durch.==`,
+    },
+    {
+      thema: 'Verbindende Ansätze', titel: 'Verbindende Ansätze: endogenes Wachstum und Krugman',
+      text: `Seit Ende der 1980er versuchen formale Modelle, die Kluft zwischen Neoklassik, Polarisationstheorien und Empirie zu schließen: Sie berücksichtigen Selbstverstärkung, **Transportkosten, Skaleneffekte** und die Entstehung technischen Fortschritts.
+
+**Neue/endogene Wachstumstheorie (Romer 1990, Lucas):** Technischer Fortschritt wird **modellendogen** erklärt; Innovationen sind Motoren; Wachstum ist proportional zum **Humankapital**. Räumliche Ungleichgewichte werden eher **verstärkt**.
+
+**Geographical Economics / „New Economic Geography“ (Paul Krugman):** Warum ballen sich Industrien? Ballung ist besonders ausgeprägt,
+1. je **größer die Skaleneffekte** einer Branche,
+2. wenn **Transportkosten niedrig, aber größer als null** sind (im Verhältnis zu den Skaleneffekten),
+3. wenn die Industrie **nicht an Rohstofffundorte gebunden** ist.
+
+Warum spezialisieren sich Standorte? **Arbeitsmarkt-Pooling · spezialisierte Zulieferer · technologische Spillover** (Wissensaustausch durch persönliche Kontakte).
+
+Würdigung: + Raum zurück in die Wirtschaftswissenschaften; formalisiert Marshall (Agglomeration), Thünen (Transportkosten), Myrdal (Polarisation); Entwicklung als pfadabhängig. − Spillover und Lernprozesse, soziale und kulturelle Einbettung zu schwach; unklar, **wo genau** Ballung entsteht; Geschichte bleibt modellexogen („history matters“).
+
+==Krugman: Skaleneffekte hoch, Transportkosten niedrig (> 0), nicht rohstoffgebunden → Ballung.==`,
+    },
+    {
+      thema: 'Abhängigkeitsansätze', titel: 'Abhängigkeitsansätze der Politischen Ökonomie',
+      text: `Ähnlich den Polarisationsansätzen, aber mit eigener Basis: Unterentwicklung entsteht aus **Machtungleichgewichten** und **historisch gewachsenen strukturellen Abhängigkeiten**. Zentrum und Peripherie sind hier **abstrakte politisch-soziale Kategorien**, nicht konkrete Räume.
+- **Neoimperialismustheorie:** Wohlstandsunterschiede gehen auf imperialistische Ausbeutungsstrukturen zurück, die **nach der formellen Unabhängigkeit** der Kolonien fortbestehen; untersucht Machtentfaltung und -sicherung im Globalen Norden.
+- **Dependenztheorie:** Die kapitalistischen Länder des Nordens sind für die Unterentwicklung im Süden verantwortlich; **Entwicklung und Unterentwicklung sind interdependente Prozesse**; untersucht die Wirkungen der Ausbeutung im Süden (oft Lateinamerika); These des strukturellen Imperialismus.
+- **Weltsystemtheorie (Immanuel Wallerstein):** verbindet beide; die Weltwirtschaft besteht aus drei hierarchisch verbundenen Einheiten: **Zentrum, Semiperipherie, Peripherie**.
+
+Hintergrund ist die **Neue Internationale Arbeitsteilung**: keine „3. Welt“, sondern **eine** Weltwirtschaft bzw. ein Weltsystem.
+
+==Neoimperialismus: Blick auf den Norden · Dependenz: Blick auf den Süden · Weltsystem: das Ganze.==`,
+    },
+  ],
+  fragen: [
+    /* ---------- Grundlagen ---------- */
+    { id: 'e06-01', typ: 'offen', thema: 'Grundlagen', wichtig: 2, punkte: 3, quelle: 'VL05-06, S. 3',
+      frage: 'Definieren Sie „Region“ (1 P.) und unterscheiden Sie Homogenitäts- und Funktionalitätskriterium der Regionalisierung (2 P.).',
+      antwort: `Eine Region ist ein Ausschnitt der Erdoberfläche, der über bestimmte gemeinsame oder verbindende Merkmale definiert und abgegrenzt werden kann; in der Wirtschaftsgeographie meist auf mittlerem, subnationalem Maßstab. Nach dem Homogenitätskriterium fasst man kleinere Raumeinheiten mit ähnlichen Strukturen zusammen, die bezüglich eines oder mehrerer Indikatoren weitgehend einheitlich sind. Nach dem Funktionalitätskriterium fasst man Raumeinheiten zusammen, die durch Verflechtungen verbunden sind, etwa durch Pendlerbeziehungen.`,
+      kernpunkte: ['(a) Region: über gemeinsame/verbindende Merkmale abgegrenzter Ausschnitt der Erdoberfläche (meist subnational)', '(b) Homogenität: Raumeinheiten mit ähnlichen Strukturen (Indikatoren) zusammenfassen', '(b) Funktionalität: durch Verflechtungen (z. B. Pendler) verbundene Raumeinheiten zusammenfassen'] },
+    { id: 'e06-02', typ: 'mc', thema: 'Grundlagen', quelle: 'VL05-06, S. 3',
+      frage: 'Eine Planungsregion wird aus allen Gemeinden gebildet, aus denen viele Menschen in dieselbe Großstadt pendeln. Nach welchem Kriterium wurde regionalisiert?',
+      optionen: [
+        { t: 'Funktionalitätskriterium', r: true, warum: 'Pendlerbeziehungen sind Verflechtungsmerkmale.' },
+        { t: 'Homogenitätskriterium', warum: 'Das fasst Einheiten mit ähnlichen Strukturen zusammen, nicht verflochtene.' },
+        { t: 'Administrative Abgrenzung', warum: 'Verwaltungsgrenzen richten sich nicht nach Pendlerströmen.' },
+        { t: 'Normative Regionalentwicklung', warum: 'Das ist eine Sichtweise auf Entwicklung, kein Abgrenzungskriterium.' },
+      ] },
+    { id: 'e06-03', typ: 'wf', thema: 'Grundlagen', quelle: 'VL05-06, S. 4',
+      aussage: 'Die analytische Sicht auf Regionalentwicklung fragt, was getan werden sollte, damit sich eine Region „besser“ entwickelt.',
+      wahr: false, warum: 'Das ist die **normative** Sicht. Die **analytische** fragt, **warum** sich Regionen in welcher Weise entwickeln.' },
+    { id: 'e06-04', typ: 'karte', thema: 'Grundlagen', quelle: 'VL05-06, S. 2',
+      vorne: 'Was leisten raumwirtschaftliche Theorien der Regionalentwicklung – und wo liegt ihre Grenze?',
+      hinten: `Modelltheoretische Ansätze, die regionale Entwicklungen und Unterschiede erklären. Sie liefern aber nur **selektive, zum Teil konkurrierende Partialerklärungen** (die einen erwarten Abbau, die anderen Zunahme von Disparitäten), gelten auf unterschiedlichen Maßstabsebenen und sprechen verschiedene Politikfelder an.` },
+
+    /* ---------- IW-Studie ---------- */
+    { id: 'e06-05', typ: 'offen', thema: 'IW-Studie', punkte: 3, quelle: 'VL05-06, S. 5–7',
+      frage: 'Nennen Sie drei Schlussfolgerungen der IW-Studie (2026) für die Regionalentwicklung.',
+      antwort: `Erstens folgen erfolgreiche Regionen klaren Logiken, in Würzburg etwa der Verknüpfung von Wissenschaft, Gründungsdynamik und Stadtentwicklung. Zweitens aktivieren sie bestehende Stärken und entwickeln sie weiter. Drittens entscheidet das Zusammenspiel einzelner Maßnahmen in einem funktionierenden Ökosystem – weder große Förderprogramme noch urbane Lagevorteile oder industrielle Traditionen allein garantieren eine positive Entwicklung.`,
+      kernpunkte: ['Erfolgreiche Regionen folgen klaren Logiken (Würzburg: Wissenschaft, Gründungen, Stadtentwicklung)', 'Bestehende Stärken aktivieren und weiterentwickeln', 'Zusammenspiel der Maßnahmen in einem funktionierenden Ökosystem entscheidet (Einzelmaßnahmen/Förderprogramme allein reichen nicht)'] },
+    { id: 'e06-06', typ: 'luecke', thema: 'IW-Studie', quelle: 'VL05-06, S. 7',
+      frage: 'IW-Studie 2026: Wodurch erklärt sich regionaler Erfolg?',
+      text: 'Regionaler Erfolg erklärt sich zu [[49]] % durch Lebensqualität, zu [[35]] % durch die Wirtschaftsstruktur und zu [[16]] % durch den Arbeitsmarkt.',
+      erklaerung: 'Die Folie zu Standortfaktoren (S. 64) greift das wieder auf: Belege für die Bedeutung **weicher** Standortfaktoren.' },
+    { id: 'e06-07', typ: 'offen', thema: 'IW-Studie', punkte: 2, quelle: 'VL05-06, S. 5–7',
+      frage: 'Welche Gründe erklären laut Vorlesungsbeispiel den Aufstieg Würzburgs im Regionalranking?',
+      antwort: `Würzburg wandelte sich von einer Verwaltungs- und Universitätsstadt zu einem Hub für Technologie, Start-ups und attraktives Wohnen. Die Studie nennt die Verknüpfung von Wissenschaft (Universität, KI-Zentrum CAIDAS), Gründungsdynamik (Gründer- und Innovationszentren, Medizin) und Stadtentwicklung (z. B. der neue Stadtteil Hubland).`,
+      kernpunkte: ['Wissenschaft und Gründungsdynamik (Universität, KI-/Innovations-/Gründerzentren, Medizin)', 'Stadtentwicklung und Lebensqualität (Hubland, attraktives Wohnen)'],
+      erklaerung: 'Hergeleitet aus VL05-06, S. 6 (Aufgabenfolie „Was könnten Gründe für Würzburgs Aufstieg sein?“) und den Ergebnissen der IW-Studie auf S. 5–7.' },
+
+    /* ---------- Neoklassik ---------- */
+    { id: 'e06-08', typ: 'offen', thema: 'Neoklassik', wichtig: 3, punkte: 2, quelle: 'VL05-06, S. 8 und 13', bildLoesung: 'konvergenz',
+      frage: 'Unterscheiden Sie Modernisierungs- und Polarisationstheorien der Regionalentwicklung.',
+      antwort: `Modernisierungstheorien verstehen Entwicklung als Aufhol- und Modernisierungsprozess: Höher entwickelte Regionen geben den Pfad vor, dem die anderen mit Verzögerung folgen, sodass sich Unterschiede tendenziell angleichen (z. B. Neoklassik, Exportbasistheorie). Polarisationstheorien betonen dagegen kumulative Selbstverstärkungsprozesse, die die wirtschaftlichen und sozialen Gegensätze im Zeitverlauf tendenziell vergrößern (z. B. Wachstumspole, Myrdal).`,
+      kernpunkte: ['Modernisierung: Aufholprozess, Nachzügler folgen dem Pfad der entwickelten Regionen → Angleichung', 'Polarisation: kumulative Selbstverstärkung → Gegensätze nehmen zu'] },
+    { id: 'e06-09', typ: 'mc', thema: 'Neoklassik', wichtig: 2, quelle: 'VL05-06, S. 8 und 13',
+      frage: 'Welche Ansätze gehören zu den **Polarisationstheorien**? (mehrere möglich)',
+      optionen: [
+        { t: 'Sektorale und regionale Wachstumspole (Perroux)', r: true, warum: 'Motorische Einheiten, Ausbreitungs- und Entzugseffekte.' },
+        { t: 'Zirkulär-kumulative Selbstverstärkung (Myrdal)', r: true, warum: 'Einmal entstandene Unterschiede verstärken sich.' },
+        { t: 'Exportbasistheorie', warum: 'Gehört zu den Modernisierungs-/Gleichgewichtstheorien.' },
+        { t: 'Endogene Regionalentwicklung', warum: 'Gehört ebenfalls zu den Modernisierungstheorien.' },
+      ] },
+    { id: 'e06-10', typ: 'paare', thema: 'Neoklassik', wichtig: 2, quelle: 'VL05-06, S. 8–17',
+      frage: 'Ordne jedem Ansatz seine Kernaussage zu.',
+      paare: [
+        ['Neoklassische Theorie', 'Ausgleich durch Faktorwanderung und Handel'],
+        ['Exportbasistheorie', 'Exporte als Basis, Multiplikatoreffekt'],
+        ['Endogene Regionalentwicklung', 'Interne Potenziale, KMU, regionale Kreisläufe'],
+        ['Wachstumspole (Perroux)', 'Motorische Einheiten treiben die Dynamik'],
+        ['Zirkulär-kumulative Verursachung (Myrdal)', 'Entzugseffekte meist stärker als Ausbreitungseffekte'],
+        ['Endogene Wachstumstheorie (Romer)', 'Technischer Fortschritt modellendogen, Humankapital'],
+      ] },
+    { id: 'e06-11', typ: 'offen', thema: 'Neoklassik', wichtig: 2, punkte: 3, quelle: 'VL05-06, S. 9–10',
+      frage: 'Erläutern Sie die neoklassische Erklärung regionaler Entwicklungsunterschiede (Annahmen und Ausgleichsmechanismus).',
+      antwort: `Die Neoklassik nimmt den homo oeconomicus, vollständige Konkurrenz, fehlende Transport- und Mobilitätskosten sowie konstante Skalenerträge an. Unterschiede zwischen Regionen werden bei funktionierenden Märkten durch die Wanderung mobiler Produktionsfaktoren ausgeglichen – Arbeit wandert zu höheren Löhnen, Kapital zu höherer Verzinsung – oder durch Warenhandel. Weil der Grenzertrag des Kapitals abnimmt, gleichen sich die Einkommen an; Ungleichgewichte sind nur temporäre Marktstörungen.`,
+      kernpunkte: ['Annahmen: homo oeconomicus, vollständige Konkurrenz, keine Transport-/Mobilitätskosten, konstante Skalenerträge', 'Ausgleich durch Faktorwanderung (Arbeit → hohe Löhne, Kapital → hohe Verzinsung) oder Warenhandel', 'Abnehmender Grenzertrag → Angleichung; Ungleichgewichte nur temporär'] },
+    { id: 'e06-12', typ: 'offen', thema: 'Neoklassik', wichtig: 2, punkte: 3, quelle: 'VL05-06, S. 10',
+      frage: 'Nennen Sie drei Kritikpunkte an der neoklassischen Theorie der Regionalentwicklung.',
+      antwort: `Die Theorie ist sehr abstrakt und beruht auf äußerst restriktiven Annahmen. Sie hat keinen wirklichen Raumbezug, weil Regionen als dimensionslose Punkte behandelt werden. Technischer Fortschritt ist nur eine externe Größe, Institutionen gelten als Störgrößen. Und das vorhergesagte Gleichgewicht deckt sich kaum mit der Empirie, in der erhebliche Disparitäten die Regel sind.`,
+      kernpunkte: ['Hohe Abstraktion, sehr restriktive Annahmen', 'Kein echter Raumbezug (Regionen als dimensionslose Punkte)', 'Technischer Fortschritt extern, Institutionen als Störgrößen; Empirie widerspricht dem Gleichgewicht'],
+      erklaerung: 'Vier Kritikpunkte stehen auf der Folie; drei genügen.' },
+    { id: 'e06-13', typ: 'mc', thema: 'Neoklassik', wichtig: 2, quelle: 'VL05-06, S. 9',
+      frage: 'Zwei-Regionen-Modell: Region 1 hat Arbeitskräftemangel und hohe Löhne, Region 2 einen Arbeitskräfteüberhang und niedrige Löhne. Es gibt keinen Warenaustausch, die Produktionsfaktoren sind mobil. Was passiert nach der Neoklassik?',
+      optionen: [
+        { t: 'Arbeitskräfte wandern nach Region 1, Kapital wandert nach Region 2.', r: true, warum: 'Bis Löhne und Grenzproduktivität gleich sind; Kapital sucht die höhere Verzinsung in Region 2.' },
+        { t: 'Arbeitskräfte und Kapital wandern beide nach Region 1.', warum: 'Kapital wandert dorthin, wo es genügend Arbeitskräfte und höhere Verzinsung gibt – nach Region 2.' },
+        { t: 'Arbeitskräfte wandern nach Region 2, Kapital nach Region 1.', warum: 'Genau umgekehrt: Arbeit folgt den hohen Löhnen.' },
+        { t: 'Die Unterschiede verstärken sich durch Entzugseffekte.', warum: 'Das wäre die Sicht der Polarisationstheorien (Myrdal), nicht der Neoklassik.' },
+      ] },
+    { id: 'e06-14', typ: 'wf', thema: 'Neoklassik', wichtig: 2, quelle: 'VL05-06, S. 9–10 und 15',
+      aussage: 'In der neoklassischen Theorie der Regionalentwicklung wird technischer Fortschritt im Modell selbst erklärt.',
+      wahr: false, warum: 'Technischer Fortschritt ist dort **nicht Teil des Modells** (externe Größe). Modellendogen erklärt ihn erst die neue/endogene Wachstumstheorie (Romer, Lucas).' },
+
+    /* ---------- Exportbasis ---------- */
+    { id: 'e06-15', typ: 'offen', thema: 'Exportbasis', wichtig: 2, punkte: 3, quelle: 'VL05-06, S. 11', bildLoesung: 'exportbasis',
+      frage: 'Erläutern Sie die Exportbasistheorie.',
+      antwort: `Die wirtschaftliche Basis einer Region bilden Unternehmen, die ihre Produkte in andere Regionen exportieren (basic sector); der non-basic sector befriedigt die innerregionale Nachfrage. Die Exporterlöse lösen in der Region Einkommen aus, die deutlich höher sind als der ursprüngliche Zufluss: Das ist der Multiplikatoreffekt. Er ist umso größer, je höher die Konsumquote und je niedriger die Importquote ist.`,
+      kernpunkte: ['Basic sector: exportiert in andere Regionen = wirtschaftliche Basis (exogene Wachstumsdeterminante)', 'Non-basic sector: deckt die innerregionale Nachfrage', 'Multiplikator: regionales Einkommen > Exportzufluss; größer bei hoher Konsum- und niedriger Importquote'] },
+    { id: 'e06-16', typ: 'offen', thema: 'Exportbasis', punkte: 2, quelle: 'VL05-06, S. 11',
+      frage: 'Nennen Sie zwei Kritikpunkte an der Exportbasistheorie bzw. an der darauf gestützten Ansiedlungspolitik.',
+      antwort: `Theoretisch betrachtet sie nur die Nachfrageseite, ist statisch (kein Strukturwandel) und basic und non-basic lassen sich kaum eindeutig trennen. Praktisch waren viele Ansiedlungen nur „verlängerte Werkbänke“ mit gering qualifizierten, konjunkturanfälligen Jobs, und die Multiplikatoreffekte blieben bescheiden.`,
+      kernpunkte: ['Theorie: nur Nachfrageseite, statisch (kein Strukturwandel), Trennung basic/non-basic schwierig', 'Praxis: „verlängerte Werkbänke“ (gering qualifiziert, konjunkturanfällig), bescheidene Multiplikatoren'] },
+    { id: 'e06-17', typ: 'mc', thema: 'Exportbasis', wichtig: 2, quelle: 'VL05-06, S. 11',
+      frage: 'Wann ist der regionale Multiplikatoreffekt nach der Exportbasistheorie am größten?',
+      optionen: [
+        { t: 'Hohe Konsumquote, niedrige Importquote', r: true, warum: 'Viel Einkommen wird in der Region ausgegeben und bleibt dort.' },
+        { t: 'Niedrige Konsumquote, hohe Importquote', warum: 'Dann fließt das meiste Einkommen ab oder wird nicht ausgegeben.' },
+        { t: 'Hohe Konsumquote, hohe Importquote', warum: 'Der Konsum fließt dann in Importe – der Effekt verpufft außerhalb der Region.' },
+        { t: 'Niedrige Konsumquote, niedrige Importquote', warum: 'Wenig Konsum heißt wenig Anstoß für den non-basic sector.' },
+      ] },
+    { id: 'e06-18', typ: 'karte', thema: 'Exportbasis', quelle: 'VL05-06, S. 11',
+      vorne: '„Verlängerte Werkbänke“',
+      hinten: `Kritik an der exportorientierten Ansiedlungspolitik ab den 1970ern: Angesiedelte Zweigwerke boten nur **gering qualifizierte, konjunkturanfällige** Arbeitsplätze und hatten daher **geringe Regionalentwicklungseffekte**.` },
+
+    /* ---------- Endogene Entwicklung ---------- */
+    { id: 'e06-19', typ: 'offen', thema: 'Endogene Entwicklung', wichtig: 2, punkte: 3, quelle: 'VL05-06, S. 12',
+      frage: 'Erläutern Sie drei zentrale Elemente endogener Regionalentwicklung.',
+      antwort: `Endogene Regionalentwicklung setzt auf die internen Potenziale einer Region. Statt einseitig auf Wachstum zielt sie auf eine qualitative Verbesserung von Wirtschaftsstruktur und Lebensbedingungen. Sie konzentriert sich auf kleine und mittlere Unternehmen und fördert deren Lern- und Innovationsfähigkeit. Außerdem stärkt sie intraregionale Wirtschafts- und Stoffkreisläufe und bindet regionale Akteure aus verschiedenen Lebensbereichen ein, mit Blick auf ökonomische und ökologische Nachhaltigkeit.`,
+      kernpunkte: ['Qualitative Verbesserung von Wirtschaftsstruktur und Lebensbedingungen statt einseitiger Wachstumsorientierung', 'Fokus auf KMU und deren Lern-/Innovationsfähigkeit', 'Intraregionale Kreisläufe stärken, regionale Akteure einbinden, Nachhaltigkeit'] },
+    { id: 'e06-20', typ: 'wf', thema: 'Endogene Entwicklung', quelle: 'VL05-06, S. 12',
+      aussage: 'Die endogene Regionalentwicklung ist eine konsistente, geschlossene Theorie.',
+      wahr: false, warum: 'Kritik laut Folie: **keine konsistente Theorie**, eher eine Sammlung von Prinzipien der Regionalpolitik; außerdem sind endogene Potenziale peripherer Regionen oft zu gering.' },
+
+    /* ---------- Polarisation ---------- */
+    { id: 'e06-21', typ: 'offen', thema: 'Polarisation', wichtig: 3, punkte: 3, quelle: 'VL05-06, S. 13–14', bildLoesung: 'myrdal',
+      frage: 'Erläutern Sie die Grundidee der Polarisationstheorien und den Unterschied zwischen backwash und spread effects nach Myrdal.',
+      antwort: `Polarisationstheorien entstanden seit den 1950ern als Kritik am Gleichgewichtsdenken der Neoklassik: Entwicklung kann Unterschiede durch kumulative Selbstverstärkung vertiefen, weil Faktoren ungleich verteilt und teils immobil sind, sich Wissen nur verzögert ausbreitet und keine vollständige Konkurrenz herrscht. Nach Myrdal verstärken zentripetale Entzugseffekte (backwash) einmal entstandene Unterschiede, während zentrifugale Ausbreitungseffekte (spread) sie abbauen. Die Entzugseffekte sind nach Myrdal in der Regel stärker, und zwar umso mehr, je größer die Ausgangsunterschiede sind.`,
+      kernpunkte: ['Grundidee: Kritik am Gleichgewicht – kumulative Selbstverstärkung vertieft Unterschiede (Faktoren ungleich/immobil, Diffusion verzögert, keine vollständige Konkurrenz)', 'Backwash = zentripetale Entzugseffekte (verstärken Unterschiede); spread = zentrifugale Ausbreitungseffekte (bauen ab)', 'Myrdal: Entzugseffekte meist stärker, umso mehr bei großen Ausgangsunterschieden'] },
+    { id: 'e06-22', typ: 'offen', thema: 'Polarisation', wichtig: 2, punkte: 1, quelle: 'VL05-06, S. 14',
+      frage: 'Wie unterscheidet sich Hirschman in seiner Erwartung von Myrdal?',
+      antwort: `Hirschman argumentiert ähnlich wie Myrdal, erwartet aber, dass sich auf Dauer die Sickereffekte gegenüber den Polarisierungseffekten durchsetzen – die Entwicklungslücke schließt sich also wieder.`,
+      kernpunkte: ['Auf Dauer setzen sich die Sickereffekte durch, die Entwicklungslücke schließt sich wieder (sinngemäß genügt)'],
+      erklaerung: 'Die Folie schreibt „Alfred Otto Hirschmann“; gemeint ist Albert O. Hirschman (1958).' },
+    { id: 'e06-23', typ: 'wf', thema: 'Polarisation', wichtig: 3, quelle: 'VL05-06, S. 14',
+      aussage: 'Nach Myrdal überwiegen langfristig die Ausbreitungseffekte (spread effects).',
+      wahr: false, warum: 'Nach Myrdal sind die **Entzugseffekte (backwash)** in der Regel stärker. Dass sich auf Dauer die Sickereffekte durchsetzen, erwartet **Hirschman**.' },
+    { id: 'e06-24', typ: 'offen', thema: 'Polarisation', wichtig: 2, punkte: 2, quelle: 'VL05-06, S. 14',
+      frage: 'Was sind sektorale und regionale Wachstumspole nach Perroux?',
+      antwort: `Sektorale Wachstumspole sind motorische Einheiten: große, dominante, schnell wachsende und stark verflochtene Branchen wie Automobil- oder Halbleiterindustrie, die über forward and backward linkages positive Ausbreitungseffekte auf die übrige Wirtschaft haben (aber auch Arbeitskräfte entziehen können). Regionale Wachstumspole sind räumlich abgrenzbare Orte hoher Dynamik, von denen positive Wirkungen auf ihr Hinterland ausgehen; die Regionalpolitik siedelte deshalb seit den 1960ern gezielt Großanlagen in peripheren Regionen an.`,
+      kernpunkte: ['Sektoral: motorische Einheiten (groß, dominant, wachsend, verflochten) wirken über forward/backward linkages', 'Regional: Orte hoher Dynamik mit Ausstrahlung ins Hinterland → Ansiedlungspolitik in der Peripherie'] },
+    { id: 'e06-25', typ: 'karte', thema: 'Polarisation', quelle: 'VL05-06, S. 14',
+      vorne: '„Kathedralen in der Wüste“',
+      hinten: `Misslungene Ansiedlungsprojekte der Wachstumspol-Politik: Großanlagen in peripheren Regionen, von denen **keine oder nur geringe regionale Ausstrahlungseffekte** ausgehen.` },
+    { id: 'e06-26', typ: 'mc', thema: 'Polarisation', wichtig: 2, quelle: 'VL05-06, S. 13',
+      frage: 'Welche Annahme gehört **nicht** zu den Polarisationstheorien?',
+      optionen: [
+        { t: 'Auf allen Märkten herrscht vollständige Konkurrenz.', r: true, warum: 'Das ist eine neoklassische Annahme; Polarisationstheorien gehen von Monopolen, Oligopolen und externen Effekten aus.' },
+        { t: 'Produktionsfaktoren sind ungleich verteilt und teilweise immobil.', warum: 'Gehört dazu.' },
+        { t: 'Technischer Fortschritt breitet sich mit zeitlicher Verzögerung aus.', warum: 'Gehört dazu (Diffusion).' },
+        { t: 'Staat und Gesellschaft sind wichtige Determinanten der Entwicklung.', warum: 'Gehört dazu.' },
+      ] },
+
+    /* ---------- Verbindende Ansätze ---------- */
+    { id: 'e06-27', typ: 'offen', thema: 'Verbindende Ansätze', wichtig: 2, punkte: 3, quelle: 'VL05-06, S. 15',
+      frage: 'Nennen Sie die drei Bedingungen, unter denen Ballungsprozesse nach Krugman besonders ausgeprägt sind.',
+      antwort: `Ballungsprozesse sind besonders ausgeprägt, je größer die Bedeutung von Skaleneffekten in einem Wirtschaftszweig ist, wenn die Transportkosten im Verhältnis zu den Skaleneffekten niedrig, aber größer als null sind, und wo eine Industrie nicht an bestimmte Rohstofffundorte gebunden ist.`,
+      kernpunkte: ['Große Bedeutung von Skaleneffekten', 'Transportkosten niedrig (im Verhältnis zu Skaleneffekten), aber größer als null', 'Industrie nicht an Rohstofffundorte gebunden'] },
+    { id: 'e06-28', typ: 'offen', thema: 'Verbindende Ansätze', wichtig: 2, punkte: 3, quelle: 'VL05-06, S. 16',
+      frage: 'Nennen Sie drei Gründe, warum sich Standorte spezialisieren und Standortgemeinschaften bilden (Geographical Economics).',
+      antwort: `Erstens Arbeitsmarkt-Pooling: Viele Betriebe einer Branche an einem Ort schaffen einen Pool spezialisierter Arbeitskräfte. Zweitens spezialisierte Zulieferer, die sich dort ansiedeln. Drittens technologische Spillover-Effekte durch Informationsaustausch in persönlichen Kontakten.`,
+      kernpunkte: ['Arbeitsmarkt-Pooling', 'Spezialisierte Zulieferer', 'Technologische Spillover (Wissensaustausch durch persönliche Kontakte)'],
+      erklaerung: 'Nicht verwechseln mit Marshalls **vier** Gründen für Industrial Districts (Zuliefererverflechtungen, Arbeitsmarktpool, gemeinsame Infrastruktur, Face-to-face-Kontakte) – siehe Einheit Institutionen und Cluster.' },
+    { id: 'e06-29', typ: 'mc', thema: 'Verbindende Ansätze', quelle: 'VL05-06, S. 15',
+      frage: 'Was trifft auf die neue bzw. endogene Wachstumstheorie (Romer, Lucas) zu? (mehrere möglich)',
+      optionen: [
+        { t: 'Technischer Fortschritt wird im Modell selbst erklärt.', r: true, warum: 'Modellendogen; Innovationen als zentrale Motoren.' },
+        { t: 'Räumliche Ungleichgewichte werden tendenziell verstärkt.', r: true, warum: 'Wachstum ist proportional zum vorhandenen Humankapital.' },
+        { t: 'Regionen gleichen sich automatisch durch abnehmende Grenzerträge an.', warum: 'Das ist die neoklassische Erwartung.' },
+        { t: 'Entwicklung hängt vor allem von Exporten in andere Regionen ab.', warum: 'Das ist die Exportbasistheorie.' },
+      ] },
+    { id: 'e06-30', typ: 'mc', thema: 'Verbindende Ansätze', quelle: 'VL05-06, S. 17',
+      frage: 'Welche Aussage ist **kein** Kritikpunkt an Krugmans Geographical Economics?',
+      optionen: [
+        { t: 'Sie bringt räumliche Zusammenhänge zurück in die Wirtschaftswissenschaften.', r: true, warum: 'Das ist eine Stärke.' },
+        { t: 'Soziale und kulturelle Einbettung werden ungenügend berücksichtigt.', warum: 'Ist ein Kritikpunkt.' },
+        { t: 'Es bleibt unklar, wo genau räumliche Konzentration entsteht.', warum: 'Ist ein Kritikpunkt.' },
+        { t: 'Historische Ausgangsbedingungen bleiben modellexogen.', warum: 'Ist ein Kritikpunkt („history matters“ – aber wie, bleibt offen).' },
+      ] },
+
+    /* ---------- Abhängigkeitsansätze ---------- */
+    { id: 'e06-31', typ: 'offen', thema: 'Abhängigkeitsansätze', wichtig: 2, punkte: 3, quelle: 'VL05-06, S. 17',
+      frage: 'Vergleichen Sie Neoimperialismus-, Dependenz- und Weltsystemtheorie.',
+      antwort: `Alle drei erklären Unterentwicklung aus Machtungleichgewichten und historisch gewachsenen Abhängigkeiten. Die Neoimperialismustheorie führt Wohlstandsunterschiede auf imperialistische Ausbeutungsstrukturen zurück, die nach der formellen Unabhängigkeit der Kolonien fortbestehen, und untersucht die Machtsicherung im Norden. Die Dependenztheorie macht die kapitalistischen Länder des Nordens für die Unterentwicklung im Süden verantwortlich und sieht Entwicklung und Unterentwicklung als interdependente Prozesse; sie analysiert die Ausbeutung im Süden. Die Weltsystemtheorie (Wallerstein) verbindet beide Perspektiven zu einer Weltwirtschaft aus Zentrum, Semiperipherie und Peripherie.`,
+      kernpunkte: ['Neoimperialismus: Ausbeutungsstrukturen bestehen nach formeller Unabhängigkeit fort; Blick auf Machtsicherung im Norden', 'Dependenz: Norden verantwortlich, Entwicklung und Unterentwicklung interdependent; Blick auf Ausbeutung im Süden', 'Weltsystem (Wallerstein): verbindet beide; Zentrum, Semiperipherie, Peripherie'] },
+    { id: 'e06-32', typ: 'wf', thema: 'Abhängigkeitsansätze', quelle: 'VL05-06, S. 17',
+      aussage: 'In den Abhängigkeitsansätzen sind Zentrum und Peripherie vor allem konkrete, räumlich abgegrenzte Gebiete.',
+      wahr: false, warum: 'Sie sind **abstrakte politisch-soziale Kategorien**, nicht in einem konkreten räumlichen Sinn gemeint.' },
+  ],
+});
+//# sourceURL=content/wirtschaftsgeographie/e06.js
+</script>
+<script>
 /* Eigene Skizzen zum Kurs Wirtschaftsgeographie (nachgezeichnet und vereinfacht, keine Abbildungen aus den Folien).
    Format und Farbklassen: docs/INHALTE.md, Abschnitt 5. Eingebunden über bild / bildLoesung in Skript und Fragen. */
 
@@ -1914,6 +2209,64 @@ Lerni.grafik('wirtschaftsgeographie', 'weltsystem', {
     <text x="196" y="130"><tspan class="b tb">← Profite</tspan></text>
     <text x="196" y="144">fließen zurück ins</text><text x="196" y="158">Zentrum; Peripherie</text><text x="196" y="172">wird abhängig</text>
   </g>
+</svg>`,
+});
+
+/* ---------- e06 Regionalentwicklung ---------- */
+Lerni.grafik('wirtschaftsgeographie', 'konvergenz', {
+  titel: 'Angleichung oder Polarisierung?',
+  text: 'Schematisch: Einkommen einer Zentrums- und einer Peripherieregion im Zeitverlauf nach Neoklassik, Myrdal und Hirschman (VL05-06, S. 8–14).',
+  svg: `<svg viewBox="0 0 340 176" role="img" aria-label="Drei Diagramme: Angleichung, Verstärkung, erst Verstärkung dann Angleichung">
+  <g class="k b" text-anchor="middle"><text x="58" y="14">Neoklassik</text><text x="170" y="14">Myrdal</text><text x="282" y="14">Hirschman</text></g>
+  <g class="n sm">
+    <line x1="10" y1="24" x2="10" y2="112"/><line x1="10" y1="112" x2="106" y2="112"/>
+    <line x1="122" y1="24" x2="122" y2="112"/><line x1="122" y1="112" x2="218" y2="112"/>
+    <line x1="234" y1="24" x2="234" y2="112"/><line x1="234" y1="112" x2="330" y2="112"/>
+  </g>
+  <g class="s1 w"><path d="M14 36 C50 44 70 62 104 66"/><path d="M126 52 C160 46 185 34 216 26"/><path d="M238 54 C262 40 280 36 294 42 S318 60 328 62"/></g>
+  <g class="s3 w"><path d="M14 98 C50 90 70 74 104 70"/><path d="M126 70 C160 76 185 92 216 104"/><path d="M238 70 C262 84 280 94 294 88 S318 72 328 68"/></g>
+  <g class="k m"><text x="104" y="124" text-anchor="end">Zeit</text><text x="216" y="124" text-anchor="end">Zeit</text><text x="328" y="124" text-anchor="end">Zeit</text></g>
+  <g class="k" text-anchor="middle">
+    <text x="56" y="140">Angleichung durch</text><text x="56" y="153">Wanderung, Handel</text>
+    <text x="170" y="140">Backwash stärker:</text><text x="170" y="153">Unterschiede wachsen</text>
+    <text x="284" y="140">Sickereffekte</text><text x="284" y="153">setzen sich durch</text>
+  </g>
+  <g class="k"><line class="s1 w" x1="60" y1="168" x2="76" y2="168"/><text x="80" y="172">Zentrum</text><line class="s3 w" x1="170" y1="168" x2="186" y2="168"/><text x="190" y="172">Peripherie (Einkommen)</text></g>
+</svg>`,
+});
+
+Lerni.grafik('wirtschaftsgeographie', 'myrdal', {
+  titel: 'Zirkulär-kumulative Verursachung (Myrdal 1957)',
+  text: 'Entzugseffekte (backwash, zentripetal) verstärken Unterschiede, Ausbreitungseffekte (spread, zentrifugal) bauen sie ab. Nach Myrdal sind die Entzugseffekte meist stärker (VL05-06, S. 14).',
+  svg: `<svg viewBox="0 0 340 178" role="img" aria-label="Zentrum und Peripherie mit starkem Entzugseffekt und schwachem Ausbreitungseffekt">
+  <circle class="f2" cx="78" cy="92" r="52"/><text class="b" x="78" y="90" text-anchor="middle">Zentrum</text><text class="k" x="78" y="105" text-anchor="middle">wächst weiter</text>
+  <circle class="f3" cx="272" cy="92" r="52"/><text class="b" x="272" y="90" text-anchor="middle">Peripherie</text><text class="k" x="272" y="105" text-anchor="middle">fällt zurück</text>
+  <line class="s4" style="stroke-width:7" x1="220" y1="70" x2="142" y2="70"/><polygon class="tb s0" points="130,70 146,60 146,80"/>
+  <text class="k b tb" x="175" y="52" text-anchor="middle">Entzugseffekte</text><text class="k" x="175" y="40" text-anchor="middle">backwash, zentripetal</text>
+  <line class="s2" style="stroke-width:2" x1="132" y1="118" x2="212" y2="118"/><polygon class="to s0" points="220,118 210,112 210,124"/>
+  <text class="k b to" x="175" y="136" text-anchor="middle">Ausbreitungseffekte</text><text class="k" x="175" y="149" text-anchor="middle">spread, zentrifugal</text>
+  <path class="n" d="M44 44 A52 52 0 0 1 112 44"/><polygon class="pf" points="116,48 106,46 112,38"/>
+  <text class="k m" x="78" y="30" text-anchor="middle">Rückkopplung</text>
+  <text class="k" x="170" y="172" text-anchor="middle">Hirschman: auf Dauer setzen sich die Sickereffekte durch.</text>
+</svg>`,
+});
+
+Lerni.grafik('wirtschaftsgeographie', 'exportbasis', {
+  titel: 'Exportbasistheorie: Multiplikatoreffekt',
+  text: 'Exporterlöse des basic sector erzeugen in der Region Einkommen; über den Konsum im non-basic sector entsteht ein Vielfaches davon. Importe fließen ab (VL05-06, S. 11).',
+  svg: `<svg viewBox="0 0 340 208" role="img" aria-label="Kreislauf aus Exporterlösen, Löhnen und Konsum in einer Region">
+  <rect class="f0" x="70" y="8" width="264" height="176" rx="12"/><text class="k m" x="326" y="178" text-anchor="end">Region</text>
+  <text class="k b" x="4" y="104">Andere</text><text class="k b" x="4" y="117">Regionen</text>
+  <rect class="f1" x="84" y="28" width="112" height="42" rx="6"/><text class="k b" x="140" y="46" text-anchor="middle">Basic sector</text><text class="k" x="140" y="60" text-anchor="middle">exportiert Güter</text>
+  <line x1="84" y1="38" x2="46" y2="38"/><polygon class="pf" points="40,38 48,34 48,42"/><text class="k" x="8" y="34">Güter</text>
+  <line x1="40" y1="60" x2="78" y2="60"/><polygon class="pf" points="84,60 76,56 76,64"/><text class="k" x="8" y="74">Erlöse</text>
+  <rect class="f3" x="80" y="112" width="96" height="48" rx="6"/><text class="k b" x="128" y="130" text-anchor="middle">Haushalte</text><text class="k" x="128" y="144" text-anchor="middle">Einkommen</text><text class="k" x="128" y="156" text-anchor="middle">und Konsum</text>
+  <rect class="f2" x="214" y="112" width="112" height="48" rx="6"/><text class="k b" x="270" y="130" text-anchor="middle">Non-basic sector</text><text class="k" x="270" y="144" text-anchor="middle">deckt regionale</text><text class="k" x="270" y="156" text-anchor="middle">Nachfrage</text>
+  <line x1="140" y1="70" x2="140" y2="104"/><polygon class="pf" points="140,110 136,102 144,102"/><text class="k" x="146" y="94">Löhne</text>
+  <line x1="178" y1="124" x2="206" y2="124"/><polygon class="pf" points="212,124 204,120 204,128"/><text class="k" x="195" y="117" text-anchor="middle">Konsum</text>
+  <line x1="212" y1="150" x2="184" y2="150"/><polygon class="pf" points="178,150 186,146 186,154"/><text class="k" x="195" y="170" text-anchor="middle">Löhne</text>
+  <line class="s4" x1="118" y1="160" x2="118" y2="194"/><polygon class="tb s0" points="118,200 114,192 122,192"/><text class="k tb" x="126" y="200">Importe fließen ab</text>
+  <text class="k b tp" x="212" y="32">Multiplikator</text><text class="k" x="212" y="48">größer bei hoher</text><text class="k" x="212" y="61">Konsumquote und</text><text class="k" x="212" y="74">niedriger Importquote</text>
 </svg>`,
 });
 //# sourceURL=content/wirtschaftsgeographie/grafiken.js
