@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- LERNI – gebaut 29.09.2026, 22:11. Nicht direkt öffnen: py tools/build.py setzt CSS, Code und Inhalte ein und schreibt dist/index.html -->
+<!-- LERNI – gebaut 29.09.2026, 22:16. Nicht direkt öffnen: py tools/build.py setzt CSS, Code und Inhalte ein und schreibt dist/index.html -->
 <html lang="de">
 <head>
   <meta charset="utf-8">
@@ -414,7 +414,7 @@ details.card[open] summary { margin-bottom: 10px; }
 </head>
 <body>
   <noscript>Lerni braucht JavaScript.</noscript>
-<script>const LERNI_BUILD = {"id": "7da2b8a-20260929221155", "stamp": "29.09.2026, 22:11", "commit": "7da2b8a"};</script>
+<script>const LERNI_BUILD = {"id": "6f4c7ad-20260929221638", "stamp": "29.09.2026, 22:16", "commit": "6f4c7ad"};</script>
 <script>
 /* LERNI – Hilfsfunktionen: DOM, Datum, Text, Zufall.
    Läuft auch in Node (tools/check.js): beim Laden nichts am DOM anfassen. */
@@ -2813,6 +2813,303 @@ Hintergrund ist die **Neue Internationale Arbeitsteilung**: keine „3. Welt“,
 //# sourceURL=content/wirtschaftsgeographie/e06.js
 </script>
 <script>
+/* e07 Regionalentwicklung: Institutionen, Cluster, Embeddedness – VL05-06 Teil 3.1, Abschnitt 3 (Rosol, 21./28.05.2026).
+   Analyse: quellen/wirtschaftsgeographie/analyse/VL05-06-….md (PDF-Seiten 19–46; Agglomeration auch S. 59–60) */
+Lerni.einheit('wirtschaftsgeographie', {
+  id: 'e07',
+  titel: 'Regionalentwicklung: Institutionen, Cluster, Embeddedness',
+  quelle: 'VL05-06 Regionale Entwicklung und Standort (Rosol), PDF-Seiten 19–46 und 59–60',
+  skript: [
+    {
+      thema: 'Institutionen', titel: 'Institutioneller und sozialer Kontext',
+      text: `Seit den späten **1980ern** ist die WiGeo stärker sozialwissenschaftlich geprägt: Unternehmen handeln in einem gesellschaftlichen Kontext, den man mit dem Begriff **Institution** fasst. Wirtschaftliches Handeln ist Teil sozialen Handelns.
+
+**Institutionen** = Normen und (Spiel-)Regeln der Gesellschaft – alle Formen von Normen, Regeln, Konventionen und Routinen, die wirtschaftliches Handeln beeinflussen; unterschiedlich stark formalisiert, kontextabhängig, räumlich und zeitlich variabel.
+- **Formelle Institutionen (rules):** rechtlich, explizit – z. B. Gesetze, Verordnungen
+- **Informelle Institutionen (constraints):** implizite Konventionen – z. B. Gepflogenheiten einer Branche
+- Achtung: Institutionen sind **nicht** Organisationen wie WTO oder EU.
+
+**Stakeholder** = gesellschaftliche Anspruchsgruppen, die Unternehmensentscheidungen beeinflussen wollen oder von ihnen betroffen sind; das institutionelle Umfeld als „Kranz von Stakeholdern“.
+
+Leitfragen: Wie beeinflussen räumliche und relationale **Nähe** Lern- und Innovationsprozesse? Welche Rolle spielt überregionaler Austausch?
+
+==Institutionen = Spielregeln (formell: Gesetze; informell: Gepflogenheiten) – nicht Organisationen.==`,
+    },
+    {
+      thema: 'Agglomeration', titel: 'Netzwerkansätze und Agglomerationsvorteile', bild: 'agglovorteile',
+      text: `Zentrale Frage: **Warum konzentrieren sich viele ökonomische Tätigkeiten trotz sinkender Transport- und Kommunikationskosten räumlich?** Netzwerkansätze antworten: Räumliche Nähe bringt nicht nur klassische Agglomerationsvorteile, sondern auch **immaterielle Austauschbeziehungen** (Informationen, Erfahrungen), die Innovation und Wettbewerbsfähigkeit steigern (Cluster, Milieu, regionales Innovationssystem).
+
+**Agglomerationsvorteile** erklären die Ballung von Wirtschaftszweigen:
+- **intern:** economies of scale – sinkende Stückkosten, wenn ein Betrieb wächst
+- **extern – Lokalisierungsvorteile (localization economies):** viele Betriebe **derselben Branche** an einem Ort – spezialisierte Fachkräfte, viele Zulieferer
+- **extern – Urbanisierungsvorteile (urbanization economies):** Betriebe **verschiedener Branchen** – große Absatz- und Arbeitsmärkte, unternehmensnahe Dienstleister (Banken, Beratungen), hochwertige Verkehrsinfrastruktur, Hochschulen und Forschung, Kulturangebote
+
+„Lokalisierungsvorteile ergeben sich eher durch **Spezialisierung**, Urbanisierungsvorteile eher durch **Vielfalt**.“
+
+**Agglomerationsnachteile:** intern Größennachteile; extern **hohe Grundstückskosten, hohes Lohnniveau, Übernutzung der Infrastruktur** (z. B. Silicon Valley).
+
+==Lokalisierung = gleiche Branche (Spezialisierung). Urbanisierung = verschiedene Branchen (Vielfalt).==`,
+    },
+    {
+      thema: 'Industriedistrikte', titel: 'Industriedistrikte und das Dritte Italien',
+      text: `**Alfred Marshall** („Principles of Economics“, 1890) beschrieb räumliche Branchenkonzentrationen als **Industrial Districts**: Kleine, flexible Unternehmen an einem Standort sind erfolgreich und innovativ wegen
+1. **Zuliefererverflechtungen**
+2. eines gemeinsamen **Arbeitsmarktpools**
+3. gemeinsam genutzter **Infrastruktur**
+4. **Face-to-face-Kontakten**, die Wissensaustausch und Kooperation erleichtern
+
+**Neue Industriedistrikte – das „Dritte Italien“** (seit den 1970ern): Wachstum kleiner und mittlerer Unternehmen in über 60 Distrikten im Norden und in der Mitte Italiens (Textil, Schuhe, Möbel, Maschinenbau, Keramik …) – abgegrenzt vom früh industrialisierten Nordwesten und vom wenig industrialisierten Süden. Neuer Industriedistrikt = **Produktionsnetz hoch spezialisierter KMU** mit engen, vor allem vertikalen Verflechtungen.
+
+**Erfolgsfaktoren:** flexible Spezialisierung · Kooperation · räumliche Nähe · **Vertrauen** · Einbettung in ein sozio-kulturelles Umfeld (**Embeddedness**) · hohe Dichte unterstützender Institutionen (**Institutional Thickness**).
+
+==Marshall: Zulieferer, Arbeitsmarkt, Infrastruktur, face-to-face. Drittes Italien: KMU-Netze mit Vertrauen und institutioneller Dichte.==`,
+    },
+    {
+      thema: 'Cluster', titel: 'Cluster: Begriff, Politik, Kritik',
+      text: `**Michael Porter:** „Paradoxically, the enduring competitive advantages in a global economy lie increasingly in local things.“ **Definition (Porter 2000):** „A cluster is a **geographically proximate group of interconnected companies and associated institutions** in a particular field, linked by **commonalities and complementarities**.“ Die Reichweite kann von einer Stadt bis zu mehreren Nachbarländern gehen.
+
+**Achtung, zwei Clusterbegriffe:** In Politik und Wirtschaftsförderung wird „Cluster“ oft **planerisch-normativ** verwendet (Förderung bestimmter Branchen, Standortprofil) – ein inflationär genutzter **Modebegriff**. Der **wissenschaftlich-analytische** Begriff meint dagegen tatsächlich verflochtene Unternehmen und Institutionen. **Grundannahme:** räumliche Nähe fördert Kooperation und Wissenstransfer und damit Innovation und Wettbewerbsfähigkeit.
+
+**Porter zur Regionalpolitik:** statt „Open for Business“, „Big Game Hunting“ (Großansiedlungen), „Build it and they will come“ (Infrastruktur) → **Wettbewerbsfähigkeit statt Jobs per se**, auf bestehenden Stärken aufbauen, clusterbasiert, Gesamtstrategie. Clusterpolitik: Cluster Mapping, Netzwerkbildung, Gründungen, clusterspezifische Infrastruktur, Standortmarketing.
+
+**Silicon Valley vs. Route 128 (Saxenian):** dezentrales, kooperatives Industriesystem vs. autarke Großkonzerne – Route 128 fiel zurück.
+
+**Bewertung:** + räumliches Umfeld wichtig für Wettbewerbsfähigkeit, flexibel, populär. − unscharf, keine einheitliche Theorie, vermischt Maßstabsebenen, vernachlässigt Institutionen und soziale Prozesse, **positive Effekte nicht allgemein nachweisbar**.
+
+==Porter-Cluster: räumlich nahe, verflochtene Firmen und Institutionen eines Feldes.==`,
+    },
+    {
+      thema: 'Nähe und Wissen', titel: 'Nähe, Wissen, Interdependenzen', bild: 'buzz',
+      text: `**Formen von Nähe (Boschma):** **geographisch** (physische Distanz) · **sozial** (Bekanntschaft, Freundschaft, Vertrauen) · **organisatorisch** (institutionalisierte Beziehungen zwischen Organisationen) · **kognitiv** (ähnliche Wissensbestände) · **kulturell/institutionell** (gemeinsame Regeln, Gewohnheiten, Werte).
+
+**Local buzz und global pipelines (Bathelt/Malmberg/Maskell):** Geographische Nähe begünstigt dichte Kontakte im Cluster („local buzz“); zugleich braucht es **überregionale Verbindungen** („global pipelines“), sonst droht Abschottung.
+
+**Wissen** ist zentrale Erklärungsvariable regionaler Innovation:
+- **Codified knowledge (explizit):** in Sprache/Zeichen kodierbar, Weitergabe ohne persönlichen Kontakt
+- **Tacit knowledge (implizit, „stilles Wissen“):** nicht kodierbar, an Personen gebunden, meist nur **im persönlichen Kontakt** weiterzugeben – daher **Vertrauen und räumliche Nähe** wichtig
+
+**Was hält Cluster zusammen? (Storper):**
+- **Traded interdependencies:** über Verträge und Markt geregelte Beziehungen (Zulieferer, Kunden) – Nähe senkt **Transaktionskosten**
+- **Untraded interdependencies:** ortsspezifische Konventionen, Routinen, Normen, **Vertrauen**, informelle Beziehungen, lokaler Arbeitsmarkt – Nähe fördert **Flexibilität, Lernen, Innovation** (Grundlage des „New Regionalism“)
+
+==Tacit knowledge braucht persönliche Nähe; untraded interdependencies sind der „Kitt“ des Clusters.==`,
+    },
+    {
+      thema: 'Embeddedness', titel: 'Embeddedness',
+      text: `**Embeddedness (Granovetter 1985):** Ökonomisches Handeln ist nie isoliert, sondern **in soziale Kontexte eingebettet** – „economic action … is socially situated … embedded in ongoing networks of personal relations“. Wie stark Unternehmen eingebettet sind, bestimmt ihren Erfolg mit.
+
+Formen:
+- **relationale Embeddedness:** Qualität der Beziehung zwischen **zwei** Akteuren → Vertrauen
+- **strukturelle Embeddedness:** Qualität der Struktur von Beziehungen in einem **Netzwerk** vieler Akteure → Reputation
+- **lokale Embeddedness:** geographische Nähe fördert Kooperation, Vertrauen, gemeinsame Normen
+
+**Over-embeddedness:** zu starke lokale Einbettung – überörtliche Beziehungen werden vernachlässigt, die Innovationsfähigkeit geht verloren → **negativer Lock-in**. **Uzzi** („paradox of embeddedness“): Unter- und übereingebettete Netzwerke sind ungünstig; am besten ist eine Mischung aus engen und losen Beziehungen (integrated network).
+
+==Embeddedness: Wirtschaft ist sozial eingebettet – zu wenig schadet, zu viel auch (Over-embeddedness).==`,
+    },
+    {
+      thema: 'Pfadabhängigkeit', titel: 'Pfadabhängigkeit und Lock-in', bild: 'pfad',
+      text: `**Definition:** „Pfadabhängigkeit beschreibt Entwicklungen **kumulativer Verursachung**, in denen die Abfolge vergangener Ereignisse das Eintreten bestimmter zukünftiger Alternativen wahrscheinlicher oder unwahrscheinlicher werden lässt (**sich selbst verstärkender Prozess**). Entwicklungspfade wirken nicht determinierend, es herrscht stets ein gewisses Maß an **Kontingenz**.“
+
+Phasen: **Pfadentstehung I** (Impulse, große Variationsbreite) → *kritischer Übergang* → **Pfadentstehung II** (Formung des Pfades) → *Lock-in* → **Pfadabhängigkeit** → *Un-locking* → **Pfadauflösung**. **Small events** (zufällige Entdeckungen, unbeabsichtigte Entwicklungen) können sich langfristig durchsetzen; **Pfadkontingenz**: Pfade hätten auch anders verlaufen können.
+
+Pfadabhängigkeit kann zum Problem werden: **Lock-in** behindert Anpassung und neue Branchen. **Drei Lock-ins (Grabher 1993, Ruhrgebiet):**
+- **funktional:** starre, hierarchische Beziehungen zwischen Großunternehmen und Zulieferern, Konzentration auf eine oder wenige Branchen
+- **kognitiv:** eine für allgemeingültig gehaltene Weltsicht; die Region bezieht sich nur auf eigene Stärken und greift Neuerungen von außen nicht oder zu spät auf
+- **politisch:** Institutionen sind darauf fixiert, alte Strukturen zu erhalten, z. B. durch Subventionen für frühere Schlüsselindustrien
+
+==Pfadabhängig heißt nicht vorherbestimmt – aber Lock-ins (funktional, kognitiv, politisch) können Regionen festhalten.==`,
+    },
+  ],
+  fragen: [
+    /* ---------- Institutionen ---------- */
+    { id: 'e07-01', typ: 'offen', thema: 'Institutionen', wichtig: 2, punkte: 2, quelle: 'VL05-06, S. 20–21',
+      frage: 'Definieren Sie Institutionen im sozialwissenschaftlichen Sinn (1 P.) und nennen Sie je ein Beispiel für eine formelle und eine informelle Institution (1 P.).',
+      antwort: `Institutionen sind die Normen und (Spiel-)Regeln einer Gesellschaft – alle Formen von Normen, Regeln, Konventionen und Routinen, die wirtschaftliches Handeln beeinflussen; sie sind unterschiedlich stark formalisiert und räumlich wie zeitlich variabel, aber keine Organisationen. Formelle Institutionen sind rechtlich und explizit, z. B. Gesetze oder Verordnungen; informelle Institutionen sind implizite Konventionen, z. B. die Gepflogenheiten einer Branche.`,
+      kernpunkte: ['(a) Normen, Spielregeln, Konventionen, Routinen, die wirtschaftliches Handeln beeinflussen (≠ Organisationen)', '(b) Formell: z. B. Gesetz/Verordnung; informell: z. B. Gepflogenheiten einer Branche'] },
+    { id: 'e07-02', typ: 'mc', thema: 'Institutionen', wichtig: 2, quelle: 'VL05-06, S. 21; VL03, S. 30',
+      frage: 'Welches Beispiel ist eine **informelle** Institution?',
+      optionen: [
+        { t: 'Die ungeschriebenen Gepflogenheiten einer Branche', r: true, warum: 'Informelle Institution = implizite Konvention (constraint).' },
+        { t: 'Ein Gesetz zur Arbeitszeit', warum: 'Das ist eine formelle Institution (rule).' },
+        { t: 'Die Welthandelsorganisation (WTO)', warum: 'Eine Organisation ist keine Institution im sozialwissenschaftlichen Sinn.' },
+        { t: 'Eine Verordnung zu Emissionsgrenzwerten', warum: 'Formell, weil rechtlich und explizit.' },
+      ] },
+    { id: 'e07-03', typ: 'karte', thema: 'Institutionen', quelle: 'VL05-06, S. 21',
+      vorne: 'Stakeholder',
+      hinten: `Gesellschaftliche **Anspruchsgruppen**, die ein Interesse („stake“) haben, Unternehmensentscheidungen zu beeinflussen, oder von ihnen betroffen sind. Das institutionelle Umfeld eines Unternehmens als „Kranz von Stakeholdern“.` },
+
+    /* ---------- Agglomeration ---------- */
+    { id: 'e07-04', typ: 'offen', thema: 'Agglomeration', wichtig: 3, punkte: 3, quelle: 'VL05-06, S. 24 und 59–60', bildLoesung: 'agglovorteile',
+      frage: 'Unterscheiden Sie Lokalisierungs- und Urbanisierungsvorteile und nennen Sie je ein Beispiel.',
+      antwort: `Beides sind externe Agglomerationsvorteile. Lokalisierungsvorteile entstehen, wenn viele Betriebe derselben Branche an einem Ort konzentriert sind – etwa durch einen Arbeitsmarkt mit spezifischen Qualifikationen oder viele spezialisierte Zulieferer; sie ergeben sich eher durch Spezialisierung. Urbanisierungsvorteile entstehen zwischen Betrieben verschiedener Branchen, etwa durch große Absatz- und Arbeitsmärkte, unternehmensnahe Dienstleister, Flughäfen oder Hochschulen; sie ergeben sich eher durch Vielfalt.`,
+      kernpunkte: ['Lokalisierungsvorteile: viele Betriebe derselben Branche (Spezialisierung)', 'Urbanisierungsvorteile: Betriebe verschiedener Branchen (Vielfalt)', 'Je ein passendes Beispiel (z. B. Fachkräfte/Zulieferer vs. Flughafen, Banken, Hochschulen)'] },
+    { id: 'e07-05', typ: 'mc', thema: 'Agglomeration', wichtig: 3, quelle: 'VL05-06, S. 59',
+      frage: 'Ein Softwareunternehmen profitiert in einer Großstadt von Flughafen, Banken, Unternehmensberatungen und Hochschulen verschiedener Fachrichtungen. Welche Vorteile sind das?',
+      optionen: [
+        { t: 'Urbanisierungsvorteile', r: true, warum: 'Vorteile aus der Vielfalt verschiedener Branchen und Einrichtungen.' },
+        { t: 'Lokalisierungsvorteile', warum: 'Die entstünden durch viele Betriebe derselben Branche (z. B. andere Softwarefirmen).' },
+        { t: 'Interne Ersparnisse (economies of scale)', warum: 'Die entstehen im Betrieb selbst, wenn er wächst.' },
+        { t: 'Agglomerationsnachteile', warum: 'Nachteile wären hohe Mieten, Löhne oder Staus.' },
+      ] },
+    { id: 'e07-06', typ: 'luecke', thema: 'Agglomeration', wichtig: 3, quelle: 'VL05-06, S. 59',
+      text: 'Generell ergeben sich Lokalisierungsvorteile eher durch [[Spezialisierung]], Urbanisierungsvorteile eher durch [[Vielfalt|Diversität]].' },
+    { id: 'e07-07', typ: 'offen', thema: 'Agglomeration', wichtig: 2, punkte: 3, quelle: 'VL05-06, S. 35 und 60',
+      frage: 'Nennen Sie drei Agglomerationsnachteile, wie sie etwa im Silicon Valley auftreten.',
+      antwort: `Externe Agglomerationsnachteile sind hohe Grundstücks- und Immobilienkosten, ein hohes Lohnniveau und die Übernutzung der Infrastruktur, etwa überlastete Verkehrswege. Hinzu kommen interne Größennachteile großer Betriebe.`,
+      kernpunkte: ['Hohe Grundstückskosten', 'Hohes Lohnniveau', 'Übernutzung der Infrastruktur (oder interne Größennachteile)'],
+      erklaerung: 'Hergeleitet aus VL05-06, S. 35 (Aufgabe: Agglomerationsnachteile und Schattenseiten des Silicon Valley) und der Systematik auf S. 60.' },
+    { id: 'e07-08', typ: 'paare', thema: 'Agglomeration', wichtig: 2, quelle: 'VL05-06, S. 60', bildLoesung: 'agglovorteile',
+      frage: 'Ordne zu: Welche Kategorie passt zu welchem Beispiel?',
+      paare: [
+        ['Interne Ersparnisse', 'Sinkende Stückkosten, wenn ein Betrieb wächst'],
+        ['Lokalisierungsvorteile', 'Fachkräftepool und Zulieferer derselben Branche'],
+        ['Urbanisierungsvorteile', 'Großer Arbeitsmarkt, Verkehrsknoten, Kulturangebot'],
+        ['Externe Agglomerationsnachteile', 'Hohe Grundstückskosten und Löhne'],
+      ] },
+    { id: 'e07-09', typ: 'offen', thema: 'Agglomeration', wichtig: 2, punkte: 2, quelle: 'VL05-06, S. 22',
+      frage: 'Warum konzentrieren sich viele ökonomische Tätigkeiten auch in Zeiten sinkender Transport- und Kommunikationskosten räumlich? Antworten Sie aus Sicht der Netzwerkansätze.',
+      antwort: `Räumliche Nähe von Betrieben eines Produktionsbereichs und ergänzender Einrichtungen bringt nicht nur klassische Agglomerationsvorteile. Sie eröffnet auch immaterielle Austauschbeziehungen – Informationen, Erfahrungen, Vertrauen –, die Innovationen und Best-Practice-Lösungen fördern und so die Wettbewerbsfähigkeit steigern.`,
+      kernpunkte: ['Nähe bringt klassische Agglomerationsvorteile', 'Zusätzlich immaterieller Austausch (Information, Erfahrung, Vertrauen) → Innovation und Wettbewerbsfähigkeit'] },
+
+    /* ---------- Industriedistrikte ---------- */
+    { id: 'e07-10', typ: 'offen', thema: 'Industriedistrikte', wichtig: 2, punkte: 4, quelle: 'VL05-06, S. 23–25',
+      frage: 'Nennen Sie die vier Gründe, warum Industrial Districts nach Alfred Marshall erfolgreich und innovativ sind.',
+      antwort: `Marshall nennt erstens die Zuliefererverflechtungen zwischen den Betrieben, zweitens einen gemeinsamen Arbeitsmarktpool, drittens eine gemeinsam genutzte Infrastruktur und viertens Face-to-face-Kontakte, die Wissensaustausch und Kooperation erleichtern.`,
+      kernpunkte: ['Zuliefererverflechtungen', 'Arbeitsmarktpool', 'Gemeinsame Infrastruktur', 'Face-to-face-Kontakte (Wissensaustausch, Kooperation)'],
+      erklaerung: 'Marshalls Hauptwerk „Principles of Economics“ erschien 1890 (eine Folie nennt 1920). Nicht verwechseln mit Krugmans drei Gründen (Arbeitsmarkt-Pooling, spezialisierte Zulieferer, Spillover).' },
+    { id: 'e07-11', typ: 'offen', thema: 'Industriedistrikte', wichtig: 2, punkte: 3, quelle: 'VL05-06, S. 25–27',
+      frage: 'Nennen Sie drei Erfolgsfaktoren der neuen Industriedistrikte im „Dritten Italien“.',
+      antwort: `Zu den Erfolgsfaktoren gehören die flexible Spezialisierung hoch spezialisierter kleiner und mittlerer Unternehmen, ihre Kooperation bei räumlicher Nähe und das Vertrauen der Akteure untereinander. Hinzu kommen die Einbettung in ein sozio-kulturelles Umfeld (Embeddedness) und eine hohe Dichte unterstützender Institutionen (Institutional Thickness).`,
+      kernpunkte: ['Flexible Spezialisierung / Kooperation der Unternehmen', 'Räumliche Nähe und Vertrauen', 'Embeddedness und Institutional Thickness'] },
+    { id: 'e07-12', typ: 'mc', thema: 'Industriedistrikte', wichtig: 2, quelle: 'VL05-06, S. 25–27',
+      frage: 'Was kennzeichnet die neuen Industriedistrikte des „Dritten Italien“? (mehrere möglich)',
+      optionen: [
+        { t: 'Ein Produktionsnetz hoch spezialisierter kleiner und mittlerer Unternehmen', r: true, warum: 'Mit engen, vorwiegend vertikalen Verflechtungen.' },
+        { t: 'Vertrauen und eine hohe Dichte unterstützender Institutionen', r: true, warum: 'Institutional Thickness und Embeddedness.' },
+        { t: 'Vertikal integrierte Großkonzerne mit Massenproduktion', warum: 'Das beschreibt eher den fordistischen Nordwesten.' },
+        { t: 'Staatliche Großansiedlungen in peripheren Regionen', warum: 'Das ist Wachstumspol-Politik („Kathedralen in der Wüste“).' },
+      ] },
+    { id: 'e07-13', typ: 'wf', thema: 'Industriedistrikte', quelle: 'VL05-06, S. 26',
+      aussage: 'Der Begriff „Drittes Italien“ bezeichnet den wenig industrialisierten Süden Italiens.',
+      wahr: false, warum: 'Er grenzt den Norden und die Mitte Italiens (Industriedistrikte) sowohl vom früh industrialisierten Nordwesten als auch vom wenig industrialisierten Süden ab.' },
+
+    /* ---------- Cluster ---------- */
+    { id: 'e07-14', typ: 'offen', thema: 'Cluster', wichtig: 3, punkte: 3, quelle: 'VL05-06, S. 29–34',
+      frage: 'Definieren Sie „Cluster“ nach Porter (1 P.) und grenzen Sie den wissenschaftlichen vom politischen Clusterbegriff ab (2 P.).',
+      antwort: `Nach Porter ist ein Cluster eine geographisch nahe Gruppe miteinander verbundener Unternehmen und zugehöriger Institutionen in einem bestimmten Feld, verknüpft durch Gemeinsamkeiten und Komplementaritäten. Wissenschaftlich-analytisch bezeichnet der Begriff tatsächlich vorhandene, verflochtene Unternehmen und Institutionen mit der Grundannahme, dass Nähe Kooperation und Wissenstransfer fördert. In Politik und Wirtschaftsförderung wird er dagegen oft planerisch-normativ für die gezielte Förderung bestimmter Branchen zur Standortprofilierung genutzt – als Modebegriff, auch wo die Wirtschaftsstruktur die Kriterien nicht erfüllt.`,
+      kernpunkte: ['(a) Porter: geographisch nahe Gruppe verbundener Unternehmen und Institutionen eines Feldes, verknüpft durch Gemeinsamkeiten/Komplementaritäten', '(b) Wissenschaftlich-analytisch: tatsächliche Verflechtung; Nähe fördert Kooperation und Wissenstransfer', '(b) Politisch-normativ: Förderung von Branchen, Standortprofil; inflationärer Modebegriff'] },
+    { id: 'e07-15', typ: 'luecke', thema: 'Cluster', wichtig: 3, quelle: 'VL05-06, S. 30',
+      frage: 'Clusterdefinition nach Porter (2000). Fülle die Lücken.',
+      text: 'A cluster is a geographically [[proximate]] group of [[interconnected]] companies and associated [[institutions]] in a particular field, linked by commonalities and complementarities.' },
+    { id: 'e07-16', typ: 'mc', thema: 'Cluster', wichtig: 2, quelle: 'VL05-06, S. 34 und 38',
+      frage: 'Welche Aussage zum Clusterkonzept trifft **nicht** zu?',
+      optionen: [
+        { t: 'Positive Clustereffekte sind allgemeingültig nachgewiesen.', r: true, warum: 'Schwäche laut Folie: positive Effekte sind **nicht** allgemeingültig nachweisbar.' },
+        { t: 'Es ist ein unscharfes Konzept ohne einheitliche Theorie.', warum: 'Trifft zu (Schwäche).' },
+        { t: 'In der Politik wird „Cluster“ oft inflationär als Modebegriff genutzt.', warum: 'Trifft zu.' },
+        { t: 'Grundannahme: Räumliche Nähe fördert Kooperation und Wissenstransfer.', warum: 'Trifft zu.' },
+      ] },
+    { id: 'e07-17', typ: 'offen', thema: 'Cluster', punkte: 3, quelle: 'VL05-06, S. 31',
+      frage: 'Welche Regionalentwicklungstheorien liegen den „prevailing approaches“ der Regionalpolitik und Porters „new direction“ zugrunde?',
+      antwort: `Die vorherrschenden Ansätze – Großansiedlungen anwerben („Big Game Hunting“), sich billig für Investoren öffnen („Open for Business“), Infrastruktur bauen („Build it and they will come“) – entsprechen der Exportbasistheorie mit ihrer Ansiedlungspolitik und dem Wachstumspol-Denken, teils auch neoklassischem Kostenwettbewerb. Porters „new direction“ setzt dagegen auf Wettbewerbsfähigkeit, bestehende Stärken und Cluster; dahinter stehen die endogene Regionalentwicklung sowie Industriedistrikt-, Cluster- und Netzwerkansätze.`,
+      kernpunkte: ['Prevailing approaches ≈ Exportbasistheorie/Ansiedlungspolitik, Wachstumspole (teils neoklassischer Kostenwettbewerb)', 'New direction ≈ endogene Regionalentwicklung (bestehende Stärken)', 'New direction ≈ Industriedistrikte/Cluster/Netzwerkansätze'],
+      erklaerung: 'Hergeleitet aus VL05-06, S. 31 (Aufgabe ohne Lösung auf der Folie) und den Theorien auf S. 11–14 und 22–38.' },
+    { id: 'e07-18', typ: 'offen', thema: 'Cluster', punkte: 2, quelle: 'VL05-06, S. 35',
+      frage: 'Vergleichen Sie Silicon Valley und Route 128 nach Saxenian.',
+      antwort: `Silicon Valley entwickelte ein dezentrales, kooperatives Industriesystem mit vielen vernetzten Firmen und offenem Austausch. Route 128 in Massachusetts wurde dagegen von unabhängigen, autarken Großkonzernen dominiert und fiel in den 1990ern zurück – ein Beleg für die Bedeutung lokaler Quellen von Wettbewerbsvorteilen.`,
+      kernpunkte: ['Silicon Valley: dezentral, kooperativ, vernetzt', 'Route 128: autarke Konzerne, fiel zurück → lokale Quellen von Wettbewerbsvorteilen zählen'] },
+    { id: 'e07-19', typ: 'karte', thema: 'Cluster', quelle: 'VL05-06, S. 32',
+      vorne: 'Wettbewerbsfähigkeit (competitiveness) nach Porter',
+      hinten: `Die **langfristige Produktivität und Effizienz** eines Standorts – **nicht** niedrige Löhne, eine schwache Währung oder Arbeitsplätze an sich.` },
+
+    /* ---------- Nähe und Wissen ---------- */
+    { id: 'e07-20', typ: 'offen', thema: 'Nähe und Wissen', wichtig: 2, punkte: 3, quelle: 'VL05-06, S. 36; Musterklausur WS23/24, 2.1',
+      frage: 'Nennen und erläutern Sie drei Formen von Nähe nach Boschma.',
+      antwort: `Geographische Nähe meint die räumliche, physische Distanz. Soziale Nähe entsteht durch gesellschaftliche Einbettung, Bekanntschaften, Freundschaften und Vertrauen. Organisatorische Nähe beruht auf institutionalisierten Beziehungen zwischen Organisationen; daneben gibt es kognitive Nähe (ähnliche Wissensbestände) und kulturell-institutionelle Nähe (gemeinsame Regeln und Werte).`,
+      kernpunkte: ['Geographisch: physische Distanz', 'Sozial: Bekanntschaft, Vertrauen', 'Organisatorisch oder kognitiv oder kulturell/institutionell (mit Erläuterung)'] },
+    { id: 'e07-21', typ: 'paare', thema: 'Nähe und Wissen', wichtig: 2, quelle: 'VL05-06, S. 36',
+      frage: 'Ordne jeder Form von Nähe (Boschma) ihre Beschreibung zu.',
+      paare: [
+        ['Geographische Nähe', 'Räumliche, physische Distanz'],
+        ['Soziale Nähe', 'Bekanntschaften, Freundschaften, Vertrauen'],
+        ['Organisatorische Nähe', 'Institutionalisierte Beziehungen zwischen Organisationen'],
+        ['Kognitive Nähe', 'Ähnliche Wissensbestände'],
+        ['Kulturelle/institutionelle Nähe', 'Gemeinsame Regeln, Gewohnheiten, Werte'],
+      ] },
+    { id: 'e07-22', typ: 'offen', thema: 'Nähe und Wissen', wichtig: 2, punkte: 2, quelle: 'VL05-06, S. 37', bildLoesung: 'buzz',
+      frage: 'Erläutern Sie „local buzz“ und „global pipelines“.',
+      antwort: `Local buzz bezeichnet die dichten, oft informellen Kontakte und den ständigen Informationsfluss, den geographische Nähe in einem Cluster begünstigt. Global pipelines sind die gezielt aufgebauten überregionalen Beziehungen zu Akteuren außerhalb der Region; sie bringen neues Wissen ins Cluster und dürfen neben dem lokalen Austausch nicht übersehen werden.`,
+      kernpunkte: ['Local buzz: dichte lokale Kontakte/Informationsfluss durch geographische Nähe im Cluster', 'Global pipelines: überregionale Verbindungen zu externen Akteuren, bringen neues Wissen'] },
+    { id: 'e07-23', typ: 'offen', thema: 'Nähe und Wissen', wichtig: 2, punkte: 2, quelle: 'VL05-06, S. 39–40 und 68',
+      frage: 'Unterscheiden Sie codified und tacit knowledge.',
+      antwort: `Codified (explizites) Wissen lässt sich in Sprache oder Zeichen fassen und ohne persönlichen Kontakt weitergeben, etwa in Handbüchern. Tacit (implizites, „stilles“) Wissen ist nicht kodifizierbar, an Personen gebunden und in der Regel nur im persönlichen Kontakt übertragbar; dafür sind Vertrauen und räumliche Nähe wichtig.`,
+      kernpunkte: ['Codified: kodifizierbar, Weitergabe ohne persönlichen Kontakt', 'Tacit: an Personen gebunden, nur im persönlichen Kontakt – Vertrauen und räumliche Nähe wichtig'] },
+    { id: 'e07-24', typ: 'offen', thema: 'Nähe und Wissen', wichtig: 2, punkte: 2, quelle: 'VL05-06, S. 40',
+      frage: 'Unterscheiden Sie traded und untraded interdependencies (Storper).',
+      antwort: `Traded interdependencies sind über Verträge und den Markt formal geregelte Austauschbeziehungen, etwa mit Zulieferern und Kunden; räumliche Nähe senkt hier die Transaktionskosten. Untraded interdependencies sind ortsspezifische, nicht handelbare Beziehungen wie Konventionen, Routinen, Normen, Vertrauen und informelle Kontakte; sie fördern Flexibilität, Lernprozesse und Innovationen und gelten als Grundlage clusterorientierter Regionalentwicklung.`,
+      kernpunkte: ['Traded: vertraglich/marktlich geregelte Beziehungen – Nähe senkt Transaktionskosten', 'Untraded: Konventionen, Normen, Vertrauen, informelle Kontakte – fördern Lernen und Innovation'] },
+    { id: 'e07-25', typ: 'mc', thema: 'Nähe und Wissen', wichtig: 2, quelle: 'VL05-06, S. 39',
+      frage: 'Welche Wissensform ist an Personen gebunden und meist nur im persönlichen Kontakt weiterzugeben?',
+      optionen: [
+        { t: 'Tacit knowledge', r: true, warum: 'Implizites, „stilles“ Wissen – daher Bedeutung räumlicher Nähe.' },
+        { t: 'Codified knowledge', warum: 'Explizites Wissen lässt sich ohne persönlichen Kontakt weitergeben.' },
+        { t: 'Traded interdependency', warum: 'Das ist eine marktliche Austauschbeziehung, keine Wissensform.' },
+        { t: 'Global pipeline', warum: 'Das ist ein überregionaler Kanal, keine Wissensform.' },
+      ] },
+
+    /* ---------- Embeddedness ---------- */
+    { id: 'e07-26', typ: 'offen', thema: 'Embeddedness', wichtig: 2, punkte: 3, quelle: 'VL05-06, S. 41–42',
+      frage: 'Was versteht Granovetter unter Embeddedness? Nennen Sie zwei Formen.',
+      antwort: `Nach Granovetter ist ökonomisches Handeln nie isoliert und nicht allein aus individuellen Motiven erklärbar, sondern in fortlaufende Netzwerke persönlicher Beziehungen eingebettet; wie stark ein Unternehmen eingebettet ist, beeinflusst seinen Erfolg. Relationale Embeddedness meint die Qualität der Beziehung zwischen zwei Akteuren und fördert Vertrauen. Strukturelle Embeddedness meint die Qualität der Beziehungsstruktur in einem Netzwerk vieler Akteure und fördert Reputation; lokale Embeddedness beschreibt, wie geographische Nähe Kooperation und gemeinsame Normen fördert.`,
+      kernpunkte: ['Ökonomisches Handeln ist in soziale Beziehungen/Netzwerke eingebettet', 'Relationale Embeddedness: Beziehung zweier Akteure → Vertrauen', 'Strukturelle (Netzwerk → Reputation) oder lokale Embeddedness (Nähe → Kooperation)'] },
+    { id: 'e07-27', typ: 'karte', thema: 'Embeddedness', wichtig: 2, quelle: 'VL05-06, S. 42',
+      vorne: 'Over-embeddedness',
+      hinten: `**Zu starke lokale Einbettung:** Überörtliche Beziehungen werden vernachlässigt, die Innovationsfähigkeit geht verloren – es droht ein **negativer Lock-in** (Beispiel Ruhrgebiet, Grabher: „The weakness of strong ties“).` },
+    { id: 'e07-28', typ: 'mc', thema: 'Embeddedness', quelle: 'VL05-06, S. 41',
+      frage: 'Die Qualität der Beziehung zwischen **zwei** Akteuren, die Vertrauen entstehen lässt, nennt man …',
+      optionen: [
+        { t: 'relationale Embeddedness', r: true, warum: 'Beziehung zwischen zwei Akteuren → Vertrauensbildung.' },
+        { t: 'strukturelle Embeddedness', warum: 'Die betrifft die Struktur eines Netzwerks vieler Akteure → Reputation.' },
+        { t: 'lokale Embeddedness', warum: 'Die betont die geographische Nähe.' },
+        { t: 'Over-embeddedness', warum: 'Das ist eine zu starke (lokale) Einbettung.' },
+      ] },
+
+    /* ---------- Pfadabhängigkeit ---------- */
+    { id: 'e07-29', typ: 'offen', thema: 'Pfadabhängigkeit', wichtig: 3, punkte: 2, quelle: 'VL05-06, S. 43–44',
+      frage: 'Definieren Sie Pfadabhängigkeit.',
+      antwort: `Pfadabhängigkeit beschreibt Entwicklungen kumulativer Verursachung, in denen die Abfolge vergangener Ereignisse das Eintreten bestimmter zukünftiger Alternativen wahrscheinlicher oder unwahrscheinlicher macht – ein sich selbst verstärkender Prozess. Entwicklungspfade wirken dabei nicht determinierend; es herrscht stets ein gewisses Maß an Kontingenz.`,
+      kernpunkte: ['Kumulative Verursachung: vergangene Ereignisse machen bestimmte künftige Alternativen (un)wahrscheinlicher, selbstverstärkend', 'Nicht determinierend – Kontingenz bleibt'] },
+    { id: 'e07-30', typ: 'luecke', thema: 'Pfadabhängigkeit', wichtig: 3, quelle: 'VL05-06, S. 43',
+      frage: 'Definition Pfadabhängigkeit. Fülle die Lücken.',
+      text: 'Pfadabhängigkeit beschreibt Entwicklungen [[kumulativer]] Verursachung, in denen die Abfolge vergangener Ereignisse das Eintreten bestimmter zukünftiger Alternativen wahrscheinlicher oder unwahrscheinlicher werden lässt (sich selbst verstärkender Prozess). Entwicklungspfade wirken nicht [[determinierend]], es herrscht stets ein gewisses Maß an [[Kontingenz]].' },
+    { id: 'e07-31', typ: 'offen', thema: 'Pfadabhängigkeit', wichtig: 2, punkte: 3, quelle: 'VL05-06, S. 42–43',
+      frage: 'Nennen und erläutern Sie die drei Arten von Lock-ins nach Grabher.',
+      antwort: `Ein funktionaler Lock-in entsteht durch hierarchische Beziehungen zwischen Großunternehmen und Zulieferern mit zu rigiden Vorgaben und die Konzentration auf eine oder wenige Branchen. Ein kognitiver Lock-in ist eine für allgemeingültig gehaltene Weltsicht: Die Region bezieht sich nur auf die eigenen Stärken und greift Neuerungen von außen nicht oder zu spät auf. Ein politischer Lock-in liegt vor, wenn Institutionen darauf fixiert sind, traditionelle Strukturen zu erhalten, etwa durch Subventionen früherer Schlüsselindustrien.`,
+      kernpunkte: ['Funktional: starre Beziehungen Großunternehmen–Zulieferer, Konzentration auf wenige Branchen', 'Kognitiv: festgefahrene Weltsicht, Neuerungen von außen werden nicht/zu spät aufgegriffen', 'Politisch: Institutionen erhalten alte Strukturen (Subventionen)'] },
+    { id: 'e07-32', typ: 'paare', thema: 'Pfadabhängigkeit', wichtig: 2, quelle: 'VL05-06, S. 42–43',
+      frage: 'Lock-ins nach Grabher (1993, Beispiel Ruhrgebiet): Ordne jeder Art die Beschreibung zu.',
+      paare: [
+        ['Funktionaler Lock-in', 'Starre Beziehungen zwischen Großunternehmen und Zulieferern'],
+        ['Kognitiver Lock-in', 'Eigene Sicht gilt als allgemeingültig, Neues wird übersehen'],
+        ['Politischer Lock-in', 'Institutionen erhalten alte Strukturen, z. B. per Subvention'],
+      ] },
+    { id: 'e07-33', typ: 'reihe', thema: 'Pfadabhängigkeit', wichtig: 2, quelle: 'VL05-06, S. 43', bildLoesung: 'pfad',
+      frage: 'Bring die Phasen und Übergänge des Pfadmodells in die richtige Reihenfolge.',
+      schritte: ['Pfadentstehung I: Generierung von Impulsen', 'Kritischer Übergang', 'Pfadentstehung II: Formung des Pfades', 'Lock-in und Pfadabhängigkeit', 'Un-locking und Pfadauflösung'] },
+    { id: 'e07-34', typ: 'mc', thema: 'Pfadabhängigkeit', wichtig: 3, quelle: 'VL05-06, S. 43–44',
+      frage: 'Was trifft auf Pfadabhängigkeit zu? (mehrere möglich)',
+      optionen: [
+        { t: 'Sie beruht auf kumulativer, sich selbst verstärkender Verursachung.', r: true, warum: 'Teil der Definition.' },
+        { t: 'Kleine, zufällige Ereignisse (small events) können sich langfristig durchsetzen.', r: true, warum: 'Pfade hätten auch anders verlaufen können (Pfadkontingenz).' },
+        { t: 'Die Zukunft einer Region ist durch ihre Geschichte vollständig festgelegt.', warum: 'Pfade wirken **nicht** determinierend; es bleibt Kontingenz.' },
+        { t: 'Lock-ins erleichtern die Anpassung an neue Entwicklungen.', warum: 'Im Gegenteil: Sie behindern Anpassung und neue Branchen.' },
+      ] },
+  ],
+});
+//# sourceURL=content/wirtschaftsgeographie/e07.js
+</script>
+<script>
 /* e08 Standorttheorien – VL05-06 Teil 3.2 (Rosol, 28.05.2026). Analyse: quellen/wirtschaftsgeographie/analyse/VL05-06-….md (PDF-Seiten 47–72) */
 Lerni.einheit('wirtschaftsgeographie', {
   id: 'e08',
@@ -4147,6 +4444,60 @@ Lerni.grafik('wirtschaftsgeographie', 'exportbasis', {
       <text class="b" x="14" y="120">Wahrnehmung</text><text x="14" y="138">Raum, wie Menschen ihn</text><text x="14" y="152">subjektiv wahrnehmen</text><text x="14" y="166">und bewerten</text><text class="m" x="14" y="182">z. B. Image eines Ortes</text>
       <text class="b" x="182" y="120">Konstrukt</text><text x="182" y="138">Raum wird durch Handeln</text><text x="182" y="152">und Kommunikation</text><text x="182" y="166">sozial hergestellt</text><text class="m" x="182" y="182">z. B. relationale WiGeo</text>
     </g>
+  </svg>`,
+  });
+})();
+
+/* ---------- e07 Institutionen, Cluster, Embeddedness ---------- */
+(() => {
+  const K = 'wirtschaftsgeographie';
+  Lerni.grafik(K, 'agglovorteile', {
+    titel: 'Agglomerationsvorteile und -nachteile',
+    text: 'Nach VL05-06, S. 24 und 59–60 (Braun/Schulz): interne und externe Ersparnisse; Lokalisierungsvorteile eher durch Spezialisierung, Urbanisierungsvorteile eher durch Vielfalt.',
+    svg: `<svg viewBox="0 0 340 232" role="img" aria-label="Schema der Agglomerationsvorteile und -nachteile">
+    <rect class="f2" x="4" y="4" width="216" height="26" rx="6"/><text class="k b" x="112" y="21" text-anchor="middle">Agglomerationsvorteile</text>
+    <rect class="f4" x="228" y="4" width="108" height="26" rx="6"/><text class="k b" x="282" y="21" text-anchor="middle">Nachteile</text>
+    <rect class="f0" x="4" y="38" width="104" height="80" rx="6"/><text class="k b" x="10" y="54">intern</text><text class="k" x="10" y="68">economies of scale:</text><text class="k" x="10" y="81">sinkende Stück-</text><text class="k" x="10" y="94">kosten im Betrieb</text>
+    <rect class="f0" x="116" y="38" width="104" height="80" rx="6"/><text class="k b" x="122" y="54">extern</text><text class="k" x="122" y="68">Ersparnisse durch</text><text class="k" x="122" y="81">andere Betriebe</text><text class="k" x="122" y="94">am Ort</text>
+    <rect class="f0" x="228" y="38" width="108" height="80" rx="6"/><text class="k b" x="234" y="54">intern</text><text class="k" x="234" y="67">Größennachteile</text><text class="k b" x="234" y="85">extern</text><text class="k" x="234" y="98">Grundstückskosten,</text><text class="k" x="234" y="111">Löhne, Überlastung</text>
+    <line x1="140" y1="118" x2="80" y2="132"/><line x1="196" y1="118" x2="250" y2="132"/>
+    <rect class="f2" x="4" y="132" width="160" height="72" rx="6"/><text class="k b" x="10" y="148">Lokalisierungsvorteile</text><text class="k" x="10" y="163">viele Betriebe derselben</text><text class="k" x="10" y="176">Branche: Fachkräfte,</text><text class="k" x="10" y="189">spezialisierte Zulieferer</text>
+    <rect class="f1" x="172" y="132" width="164" height="72" rx="6"/><text class="k b" x="178" y="148">Urbanisierungsvorteile</text><text class="k" x="178" y="163">verschiedene Branchen:</text><text class="k" x="178" y="176">große Märkte, Dienstleister,</text><text class="k" x="178" y="189">Verkehr, Hochschulen, Kultur</text>
+    <text class="k b to" x="84" y="222" text-anchor="middle">→ Spezialisierung</text><text class="k b tp" x="254" y="222" text-anchor="middle">→ Vielfalt</text>
+  </svg>`,
+  });
+
+  Lerni.grafik(K, 'buzz', {
+    titel: 'Local buzz und global pipelines',
+    text: 'VL05-06, S. 37 (Bathelt/Malmberg/Maskell 2004): Im Cluster zirkuliert Wissen über dichte lokale Kontakte („buzz“); neues Wissen kommt über gezielte überregionale Verbindungen („pipelines“).',
+    svg: `<svg viewBox="0 0 340 170" role="img" aria-label="Zwei Cluster mit dichten lokalen Kontakten und einer Verbindung dazwischen">
+    <ellipse class="f2" cx="80" cy="84" rx="70" ry="60"/><ellipse class="f1" cx="262" cy="84" rx="70" ry="60"/>
+    <g class="n sm">
+      <line x1="50" y1="60" x2="80" y2="50"/><line x1="80" y1="50" x2="110" y2="72"/><line x1="50" y1="60" x2="62" y2="100"/><line x1="62" y1="100" x2="98" y2="110"/><line x1="98" y1="110" x2="110" y2="72"/><line x1="50" y1="60" x2="110" y2="72"/><line x1="80" y1="50" x2="62" y2="100"/><line x1="80" y1="50" x2="98" y2="110"/><line x1="62" y1="100" x2="110" y2="72"/>
+      <line x1="232" y1="60" x2="262" y2="50"/><line x1="262" y1="50" x2="292" y2="72"/><line x1="232" y1="60" x2="244" y2="100"/><line x1="244" y1="100" x2="280" y2="110"/><line x1="280" y1="110" x2="292" y2="72"/><line x1="232" y1="60" x2="292" y2="72"/><line x1="262" y1="50" x2="244" y2="100"/><line x1="262" y1="50" x2="280" y2="110"/>
+    </g>
+    <g class="pf"><circle cx="50" cy="60" r="5"/><circle cx="80" cy="50" r="5"/><circle cx="110" cy="72" r="5"/><circle cx="62" cy="100" r="5"/><circle cx="98" cy="110" r="5"/>
+      <circle cx="232" cy="60" r="5"/><circle cx="262" cy="50" r="5"/><circle cx="292" cy="72" r="5"/><circle cx="244" cy="100" r="5"/><circle cx="280" cy="110" r="5"/></g>
+    <path class="s1 w" d="M110 72 C160 40 190 40 232 60"/>
+    <text class="k b tp" x="171" y="36" text-anchor="middle">global pipeline</text>
+    <text class="k b" x="80" y="160" text-anchor="middle">local buzz (Cluster A)</text><text class="k b" x="262" y="160" text-anchor="middle">local buzz (Cluster B)</text>
+  </svg>`,
+  });
+
+  Lerni.grafik(K, 'pfad', {
+    titel: 'Pfadentstehung, Pfadabhängigkeit, Lock-in',
+    text: 'Nach VL05-06, S. 43 (Braun/Schulz 2012: 152): Die Variationsbreite der Möglichkeiten verengt sich bis zum Lock-in und öffnet sich erst mit dem Un-locking wieder.',
+    svg: `<svg viewBox="0 0 340 196" role="img" aria-label="Trichter von großer Variationsbreite zu einem Pfad und wieder zu neuer Vielfalt">
+    <g class="k b" text-anchor="middle"><text x="42" y="14">Pfadent-</text><text x="42" y="27">stehung I</text><text x="126" y="14">Pfadent-</text><text x="126" y="27">stehung II</text><text x="214" y="14">Pfadab-</text><text x="214" y="27">hängigkeit</text><text x="298" y="14">Pfad-</text><text x="298" y="27">auflösung</text></g>
+    <g class="k m" text-anchor="middle"><text x="42" y="40">Impulse</text><text x="126" y="40">Formung</text></g>
+    <polygon class="f1 s0" points="6,50 80,64 170,94 256,94 330,50 330,140 256,98 170,98 80,126 6,140"/>
+    <line class="s1 w" x1="80" y1="96" x2="256" y2="96"/>
+    <g class="pf"><circle cx="20" cy="66" r="3"/><circle cx="36" cy="120" r="3"/><circle cx="54" cy="80" r="3"/><circle cx="24" cy="100" r="3"/><circle cx="62" cy="110" r="3"/><circle cx="44" cy="96" r="3"/>
+      <circle cx="100" cy="80" r="3"/><circle cx="118" cy="108" r="3"/><circle cx="140" cy="90" r="3"/>
+      <circle cx="300" cy="66" r="3"/><circle cx="316" cy="118" r="3"/><circle cx="286" cy="84" r="3"/><circle cx="306" cy="100" r="3"/></g>
+    <g class="n d sm"><line x1="80" y1="46" x2="80" y2="150"/><line x1="170" y1="46" x2="170" y2="150"/><line x1="256" y1="46" x2="256" y2="150"/></g>
+    <g class="k" text-anchor="middle"><text x="80" y="166">kritischer</text><text x="80" y="178">Übergang</text><text class="b tb" x="170" y="166">Lock-in</text><text x="256" y="166">Un-locking</text></g>
+    <text class="k m" x="4" y="194">Variationsbreite der Entwicklungsmöglichkeiten; Zeit →</text>
   </svg>`,
   });
 })();
