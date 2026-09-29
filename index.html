@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- LERNI – gebaut 29.09.2026, 22:16. Nicht direkt öffnen: py tools/build.py setzt CSS, Code und Inhalte ein und schreibt dist/index.html -->
+<!-- LERNI – gebaut 29.09.2026, 22:19. Nicht direkt öffnen: py tools/build.py setzt CSS, Code und Inhalte ein und schreibt dist/index.html -->
 <html lang="de">
 <head>
   <meta charset="utf-8">
@@ -414,7 +414,7 @@ details.card[open] summary { margin-bottom: 10px; }
 </head>
 <body>
   <noscript>Lerni braucht JavaScript.</noscript>
-<script>const LERNI_BUILD = {"id": "6f4c7ad-20260929221638", "stamp": "29.09.2026, 22:16", "commit": "6f4c7ad"};</script>
+<script>const LERNI_BUILD = {"id": "c7d6af5-20260929221952", "stamp": "29.09.2026, 22:19", "commit": "c7d6af5"};</script>
 <script>
 /* LERNI – Hilfsfunktionen: DOM, Datum, Text, Zufall.
    Läuft auch in Node (tools/check.js): beim Laden nichts am DOM anfassen. */
@@ -3481,6 +3481,222 @@ Dabei wandelt sich die Produktion von humankapital- zu sach- bzw. arbeitsintensi
 //# sourceURL=content/wirtschaftsgeographie/e08.js
 </script>
 <script>
+/* e10 Nachhaltigkeit I: Environmental Economic Geography – VL08 Teil 1 (Rosol, 18.06.2026).
+   Analyse: quellen/wirtschaftsgeographie/analyse/VL08-Nachhaltigkeit.md (PDF-Seiten 2–26)
+   „EEG“ wird immer ausgeschrieben: hier Environmental Economic Geography, in VL03 Evolutionary Economic Geography. */
+Lerni.einheit('wirtschaftsgeographie', {
+  id: 'e10',
+  titel: 'Nachhaltigkeit I: Environmental Economic Geography',
+  quelle: 'VL08 Wirtschaftsgeographien der Nachhaltigkeit (Rosol), PDF-Seiten 2–26',
+  skript: [
+    {
+      thema: 'Anthropozän', titel: 'Anthropozän und Klimakrise',
+      text: `**Anthropozän:** vorgeschlagene geologische Epoche, in der **menschliche Aktivitäten die Hauptursache dauerhafter planetarer Veränderungen** sind – **noch nicht formal anerkannt**, mehrere Startdaten sind im Gespräch. Seit etwa **1950** steigen sozioökonomische und Erdsystem-Trends steil an („**Great Acceleration**“).
+
+**Global Carbon Budget:** Die fossilen CO₂-Emissionen steigen weiter (2024 fast 70 % über 1990); die **CO₂-Konzentration steigt jedes Jahr**, auch 2020 trotz Emissionsrückgang. Das verbleibende Budget für **1,5 °C** reicht ab 2026 nur noch **etwa 4 Jahre** (für 2 °C etwa 25). Globale Emissionen müssen auf null – je später, desto wärmer.
+
+Der Klimawandel trifft alle Regionen, aber **nicht in gleicher Weise**: Er ist eine **zusätzliche Dimension von Ungleichheit**, daher die Forderung nach **Klimagerechtigkeit (Climate Justice)**. Er ist eng mit der Art des Wirtschaftens verbunden.
+
+Bridge fordert eine WiGeo, die zeigt, wie „ökonomische“ Prozesse **ökologisch konstituiert** sind.
+
+==Anthropozän: Der Mensch ist Hauptursache planetarer Veränderung – und die Folgen sind ungleich verteilt.==`,
+    },
+    {
+      thema: 'Environmental Economic Geography', titel: 'Environmental Economic Geography: Definition und Aufgaben', bild: 'umweltfunktionen',
+      text: `Die **Environmental Economic Geography** (Umweltorientierte WiGeo) untersucht die **Verknüpfung von physischen Umweltprozessen und wirtschaftlichen Prozessen** in ihrer räumlichen und zeitlichen Variation. Ausgangspunkt: Produktion ist nicht nur Wertschöpfung, sondern vor allem **materielle Transformation von Energie und Materie**.
+
+**Drei Funktionen der Umwelt für die Wirtschaft:** **Ressource** (Input) · **Senke** (sink) für Output wie Müll, Abfall, Verschmutzung · **Standort** für wirtschaftliche Aktivitäten. Wirtschaft belastet die Umwelt durch Übernutzung von Ressourcen, Überbeanspruchung der Senken und Zerstörung von Ökosystemen.
+
+**Aufgaben:** Verknüpfungen von Ökonomie und Umwelt analysieren; **normatives Ziel**: Ressourcenverbrauch und Senkenbelastung verringern, mit Blick auf Raum und Maßstab. Zwei Richtungen: **Analyse von Stoffströmen** und **Analyse der Umweltgovernance** (Regulation, Machtverhältnisse) – als **Mehrebenenanalyse** vom Unternehmen bis zur Weltwirtschaft.
+
+**Forschungsfragen nach Bridge:**
+1. Wie strukturieren oder stören **Umweltprozesse wirtschaftliche Entscheidungen**?
+2. Wie verändern **wirtschaftliche Aktivitäten die Umwelt** und damit Lebensgrundlagen (**Environmental Justice**)?
+3. Wie strukturiert **Environmental Governance** wirtschaftliche Beziehungen und privilegiert bestimmte Interessen?
+
+==Umwelt = Ressource, Senke, Standort. Environmental Economic Geography verknüpft Umwelt- und Wirtschaftsprozesse.==`,
+    },
+    {
+      thema: 'Umweltökonomik', titel: 'Ressourcengeographie und neoklassische Umweltökonomik',
+      text: `Die Environmental Economic Geography hat **fünf theoretisch-disziplinäre Bezüge**: Ressourcengeographie · neoklassische Umweltökonomik · ökologische Modernisierung · ökologische Ökonomik · politische Ökologie.
+
+**1. Ressourcengeographie:** klassischer geographischer Ansatz (vgl. von Thünen): **physische und ökonomische Verfügbarkeit** von Rohstoffen und ihre Bedeutung für die regionale Entwicklung (z. B. Gefahr zu starker Abhängigkeit).
+
+**2. Neoklassische Umweltökonomik (Umweltmanagement):** Umweltprobleme sind **Effizienz- und Allokationsprobleme** – **Marktversagen**. Die Umwelt ist ein **öffentliches Gut**: Niemand kann von ihrer Nutzung ausgeschlossen werden, daher gibt es keine Marktpreise. Natur gilt als passiv, sie soll „besser gemanagt“ werden. Ziel: Umweltverbrauch **bepreisen** und so **externe Kosten internalisieren**. Instrumente: Steuerung über **Preise** (Umweltabgaben), über **Mengen** (Emissionszertifikate) oder **Ordnungspolitik** (Grenzwerte, Auflagen).
+
+==Neoklassische Umweltökonomik: Marktversagen beheben, indem externe Kosten einen Preis bekommen.==`,
+    },
+    {
+      thema: 'Ökologische Modernisierung', titel: 'Ökologische Modernisierung und Rebound', bild: 'rebound',
+      text: `**3. Ökologische Modernisierung (des Kapitalismus):** Ökologische Probleme gelten als **technische und Management-Probleme**. Annahme: Wirtschaftswachstum lässt sich vom Ressourcenverbrauch **entkoppeln** – Wachstum und Umweltschutz gleichzeitig, **ohne strukturelle Veränderung** des Wirtschaftssystems. Derzeit der **politisch dominante Ansatz**.
+
+**Kritik:**
+- **Technikgläubigkeit** („techno-fix“, technological solutionism)
+- weder theoretisch noch empirisch fundiert
+- vernachlässigt den **Rebound-Effekt**: **Effizienzsteigerungen werden durch erhöhten Konsum aufgehoben**
+- ohne geographische Perspektive
+- verhindert die nötige strukturelle Transformation – eine Strategie, „das Unnachhaltige zu erhalten“
+
+**Rebound-Beispiele:** Autos verbrauchen je Fahrzeug weniger Kraftstoff, aber es gibt mehr Fahrzeuge und mehr gefahrene Kilometer – der Gesamtverbrauch steigt. Kurzlebige Produkte, **geplante Obsoleszenz**, Konsum als Statussymbol. Auswege: **Right to Repair**, **Suffizienz** als Wohlstandsmodell.
+
+==Ökologische Modernisierung: grünes Wachstum durch Technik – scheitert am Rebound.==`,
+    },
+    {
+      thema: 'Ökologische Ökonomik', titel: 'Ökologische Ökonomik und politische Ökologie',
+      text: `**4. Ökologische Ökonomik (Ecological Economics):** betont die **Endlichkeit** der Naturressourcen; Ziel ist eine **steady-state economy** (Energie- und Materialverbrauch im Gleichgewicht mit Recycling und Rückgewinnung). Konzepte: **ökologischer Fußabdruck** (Ressourcenverbrauch in **Flächen**einheiten) und **ökologischer Rucksack** (mit einem Gut verbundener Materialaufwand als **Masse**). Vertreter: **Herman Daly, Robert Costanza**.
+
+**5. Politische Ökologie:** Umweltprobleme sind **politische und ökonomische Probleme** – nicht ohne Machtverhältnisse, Wirtschaftsweise und internationale Beziehungen zu verstehen. Sie fragt, wie die **kapitalistische Wirtschaftsweise ungleiche räumliche Effekte** produziert, und problematisiert Zugang zu und Kontrolle über Ressourcen. Ursprung in Forschung im Globalen Süden (**Michael Watts**, „Silent Violence“); weitere: Neil Smith, Paul Robbins, Erik Swyngedouw.
+
+**Vergleich:** *Environmental management* sieht Natur als passive Ressource, die besser zu managen ist (Kartierung von Umweltzerstörung, Lage von Ressourcen). *Political economy/ecology* untersucht die Übernutzung der Natur für die Kapitalakkumulation, die Folgen ungleicher Entwicklung für Mensch und Umwelt und tritt für eine alternative Umwelt- und Wirtschaftspolitik ein.
+
+==Ökologische Ökonomik: Grenzen, steady state. Politische Ökologie: Umwelt ist eine Macht- und Verteilungsfrage.==`,
+    },
+    {
+      thema: 'Transition', titel: 'Transition Studies: Multi-Level-Perspective', bild: 'mlp',
+      text: `**Sustainability Transitions – Multi-Level-Perspective (MLP) nach Geels (2002):** „technology, of itself, has no power, does nothing“ – Technik wirkt nur im Zusammenspiel mit Akteuren, sozialen Strukturen und Organisationen. Die MLP beschreibt die **Koevolution von sozialem und technologischem Wandel** auf drei Ebenen:
+- **Landschaft (landscape):** übergeordnete Kontextentwicklungen – vorherrschende Normen, Wertvorstellungen, politische Traditionen, Produktions- und Konsummuster
+- **Sozio-technische Regime:** bestimmen die Arbeits- und Organisationsformen einer Branche oder Produktgruppe
+- **Nischen:** Orte grundlegender Innovationen, die erfolgreich sein oder scheitern können – z. B. **Photovoltaik, grüner Wasserstoff**
+
+**Zusammenfassung der Environmental Economic Geography:** Sie erkennt die **gegenseitige Bedingtheit von Natur und Ökonomie** an, gewinnt wegen sichtbarer Umweltzerstörung an Bedeutung und ist theoretisch-politisch **plural** – von Managementzugängen über die Modernisierung des Kapitalismus bis zur **Systemtransformation**.
+
+Achtung Abkürzung: „EEG“ heißt in VL 8 **Environmental** Economic Geography, in VL 3 **Evolutionary** Economic Geography (Pfadabhängigkeit, Routinen).
+
+==MLP: Nischen erneuern, Regime stabilisieren, Landschaft setzt den Rahmen.==`,
+    },
+  ],
+  fragen: [
+    /* ---------- Anthropozän ---------- */
+    { id: 'e10-01', typ: 'karte', thema: 'Anthropozän', quelle: 'VL08, S. 3–4',
+      vorne: 'Anthropozän',
+      hinten: `Vorgeschlagene (noch **nicht formal anerkannte**) geologische Epoche, in der **menschliche Aktivitäten die Hauptursache dauerhafter planetarer Veränderungen** sind. Seit etwa 1950 „Great Acceleration“.` },
+    { id: 'e10-02', typ: 'luecke', thema: 'Anthropozän', quelle: 'VL08, S. 8–11',
+      frage: 'Merkzahl Global Carbon Budget.',
+      text: 'Beim heutigen Ausstoß reicht das verbleibende CO₂-Budget für 1,5 °C ab 2026 nur noch etwa [[4]] Jahre.' },
+    { id: 'e10-03', typ: 'offen', thema: 'Anthropozän', wichtig: 2, punkte: 2, quelle: 'VL08, S. 13 und 32–35',
+      frage: 'Warum ist der Klimawandel laut Vorlesung eine zusätzliche Dimension von Ungleichheit, und was fordert der Begriff Klimagerechtigkeit?',
+      antwort: `Der Klimawandel trifft zwar alle Regionen, aber nicht in gleicher Weise: Gerade die am stärksten gefährdeten Länder und Menschen haben am wenigsten zu den Emissionen beigetragen, während Reiche und der Globale Norden den Großteil verursacht haben. Klimagerechtigkeit fordert deshalb, Verantwortung und Lasten der Klimakrise gerecht zu verteilen – also dass die Hauptverursacher stärker für Klimaschutz und Anpassung aufkommen.`,
+      kernpunkte: ['Klimawandel trifft Regionen ungleich; Betroffenheit und Verursachung fallen auseinander', 'Klimagerechtigkeit: Lasten und Verantwortung gerecht verteilen, Hauptverursacher stärker in die Pflicht nehmen'] },
+    { id: 'e10-04', typ: 'wf', thema: 'Anthropozän', quelle: 'VL08, S. 10',
+      aussage: 'Im Jahr 2020 sank die CO₂-Konzentration in der Atmosphäre, weil die Emissionen zurückgingen.',
+      wahr: false, warum: 'Die CO₂-**Konzentration** steigt jedes Jahr – auch 2020 trotz Emissionsrückgang. Erst wenn die Emissionen auf null sinken, stoppt der Anstieg.' },
+
+    /* ---------- Environmental Economic Geography ---------- */
+    { id: 'e10-05', typ: 'offen', thema: 'Environmental Economic Geography', wichtig: 3, punkte: 4, quelle: 'VL08, S. 15', bildLoesung: 'umweltfunktionen',
+      frage: 'Was ist Environmental Economic Geography (1 P.)? Nennen Sie die drei Funktionen der natürlichen Umwelt für wirtschaftliche Aktivitäten (3 P.).',
+      antwort: `Die Environmental Economic Geography untersucht die Verknüpfung von physischen Umweltprozessen und wirtschaftlichen Prozessen in ihrer räumlichen und zeitlichen Variation; Produktion wird als materielle Transformation von Energie und Materie verstanden. Die Umwelt dient der Wirtschaft erstens als Ressource (Input), zweitens als Senke, die Output wie Müll, Abfall und Verschmutzung aufnimmt, und drittens als Standort für wirtschaftliche Aktivitäten.`,
+      kernpunkte: ['(a) Verknüpfung physischer Umweltprozesse und wirtschaftlicher Prozesse (Produktion als materielle Transformation)', '(b) Ressource (Input)', '(b) Senke (sink) für Müll, Abfall, Verschmutzung', '(b) Standort für wirtschaftliche Aktivitäten'] },
+    { id: 'e10-06', typ: 'mc', thema: 'Environmental Economic Geography', wichtig: 2, quelle: 'VL08, S. 15',
+      frage: 'Die Atmosphäre nimmt CO₂ aus Kraftwerken auf. Welche Funktion der Umwelt ist das?',
+      optionen: [
+        { t: 'Senke (sink)', r: true, warum: 'Aufnahme des Outputs: Müll, Abfall, Verschmutzung, Emissionen.' },
+        { t: 'Ressource (Input)', warum: 'Das wäre die Lieferung von Energie und Rohstoffen.' },
+        { t: 'Standort', warum: 'Das wäre die Fläche für wirtschaftliche Aktivitäten.' },
+        { t: 'Nische', warum: 'Nischen sind in der Multi-Level-Perspective Orte von Innovationen.' },
+      ] },
+    { id: 'e10-07', typ: 'offen', thema: 'Environmental Economic Geography', wichtig: 2, punkte: 3, quelle: 'VL08, S. 26',
+      frage: 'Nennen Sie die drei zentralen Forschungsfragen der Environmental Economic Geography nach Bridge.',
+      antwort: `Erstens: Wie strukturieren, beeinflussen oder stören Umweltprozesse wirtschaftliche Entscheidungsprozesse? Zweitens: Wie verändern wirtschaftliche Aktivitäten die Umwelt und damit die Lebensverhältnisse und Existenzgrundlagen von Menschen (Environmental Justice)? Drittens: Wie strukturiert Environmental Governance wirtschaftliche Beziehungen und schafft Bedingungen, die bestimmte Interessen privilegieren?`,
+      kernpunkte: ['Wie beeinflussen/stören Umweltprozesse wirtschaftliche Entscheidungen?', 'Wie verändern wirtschaftliche Aktivitäten die Umwelt und Lebensgrundlagen (Environmental Justice)?', 'Wie strukturiert Environmental Governance wirtschaftliche Beziehungen und privilegiert Interessen?'] },
+    { id: 'e10-08', typ: 'offen', thema: 'Environmental Economic Geography', punkte: 2, quelle: 'VL08, S. 16',
+      frage: 'Nennen Sie die zwei derzeitigen Richtungen der Environmental Economic Geography und ihr normatives Ziel.',
+      antwort: `Die eine Richtung analysiert Stoffströme – ihre räumlichen Muster, Verflechtungen, Abhängigkeiten und Problemlagen –, die andere die Umweltgovernance, also politische Regulation und ökonomische wie politische Machtverhältnisse, jeweils als Mehrebenenanalyse vom Unternehmen bis zur Weltwirtschaft. Normatives Ziel ist es, Wege zu finden, den Ressourcenverbrauch und die Überbeanspruchung der Umwelt als Senke zu verringern.`,
+      kernpunkte: ['Analyse von Stoffströmen und Analyse der Umweltgovernance (Mehrebenenanalyse)', 'Normatives Ziel: Ressourcenverbrauch und Senkenbelastung verringern'] },
+
+    /* ---------- Umweltökonomik ---------- */
+    { id: 'e10-09', typ: 'offen', thema: 'Umweltökonomik', wichtig: 2, punkte: 4, quelle: 'VL08, S. 17–23',
+      frage: 'Nennen Sie vier der fünf theoretisch-disziplinären Bezüge der Environmental Economic Geography.',
+      antwort: `Die Environmental Economic Geography bezieht sich auf die Ressourcengeographie, die neoklassische Umweltökonomik bzw. das Umweltmanagement, die ökologische Modernisierung, die ökologische Ökonomik und die politische Ökologie.`,
+      kernpunkte: ['Ressourcengeographie', 'Neoklassische Umweltökonomik (Umweltmanagement)', 'Ökologische Modernisierung', 'Ökologische Ökonomik oder politische Ökologie'] },
+    { id: 'e10-10', typ: 'offen', thema: 'Umweltökonomik', wichtig: 2, punkte: 3, quelle: 'VL08, S. 18',
+      frage: 'Erläutern Sie die Sicht der neoklassischen Umweltökonomik auf Umweltprobleme und ihre Instrumente.',
+      antwort: `Die neoklassische Umweltökonomik sieht Umweltprobleme als Effizienz- und Allokationsprobleme, also als Marktversagen: Die Umwelt ist ein öffentliches Gut, von dessen Nutzung niemand ausgeschlossen werden kann, deshalb hat sie keinen Marktpreis. Ziel ist, Umweltverbrauch zu bepreisen und externe Kosten zu internalisieren. Instrumente sind Preise (Umweltabgaben), Mengen (Emissionszertifikate) und Ordnungspolitik (Grenzwerte, Auflagen).`,
+      kernpunkte: ['Umweltprobleme = Marktversagen/Fehlallokation; Umwelt als öffentliches Gut ohne Preis', 'Ziel: Umweltverbrauch bepreisen, externe Kosten internalisieren', 'Instrumente: Abgaben (Preis), Zertifikate (Menge), Grenzwerte/Auflagen (Ordnungspolitik)'] },
+    { id: 'e10-11', typ: 'mc', thema: 'Umweltökonomik', quelle: 'VL08, S. 18',
+      frage: 'Welche Instrumente nutzt die neoklassische Umweltökonomik? (mehrere möglich)',
+      optionen: [
+        { t: 'Umweltabgaben (Steuerung über Preise)', r: true, warum: 'Internalisierung externer Kosten.' },
+        { t: 'Emissionszertifikate (Steuerung über Mengen)', r: true, warum: 'Z. B. Emissionshandel.' },
+        { t: 'Suffizienz als Wohlstandsmodell', warum: 'Suffizienz kommt aus der Wachstumskritik, nicht aus der Neoklassik.' },
+        { t: 'Arbeitszeitverkürzung zugunsten von Eigenarbeit', warum: 'Das ist Paechs Postwachstumsökonomie.' },
+      ] },
+
+    /* ---------- Ökologische Modernisierung ---------- */
+    { id: 'e10-12', typ: 'offen', thema: 'Ökologische Modernisierung', wichtig: 3, punkte: 3, quelle: 'VL08, S. 18–19',
+      frage: 'Erläutern Sie das Konzept der ökologischen Modernisierung (1 P.) und nennen Sie zwei Kritikpunkte (2 P.).',
+      antwort: `Die ökologische Modernisierung sieht Umweltprobleme als technische und Management-Probleme und nimmt an, dass sich Wirtschaftswachstum durch technische Innovationen vom Ressourcenverbrauch entkoppeln lässt; Wachstum und Umweltschutz wären dann ohne strukturelle Veränderung des Wirtschaftssystems gleichzeitig möglich. Kritisiert wird die Technikgläubigkeit („techno-fix“) ohne theoretische und empirische Fundierung. Außerdem vernachlässigt sie den Rebound-Effekt, bei dem Effizienzgewinne durch mehr Konsum aufgehoben werden, und verhindert die nötige strukturelle Transformation.`,
+      kernpunkte: ['(a) Entkopplung von Wachstum und Umweltverbrauch durch Technik und Management, ohne Strukturwandel', '(b) Technikgläubigkeit, empirisch/theoretisch nicht fundiert', '(b) Rebound-Effekt vernachlässigt / verhindert strukturelle Transformation'] },
+    { id: 'e10-13', typ: 'offen', thema: 'Ökologische Modernisierung', wichtig: 2, punkte: 2, quelle: 'VL08, S. 19–20', bildLoesung: 'rebound',
+      frage: 'Was ist der Rebound-Effekt? Nennen Sie ein Beispiel aus der Vorlesung.',
+      antwort: `Beim Rebound-Effekt werden Effizienzsteigerungen durch erhöhten Konsum wieder aufgehoben. Beispiel: Autos verbrauchen je Fahrzeug weniger Kraftstoff, aber es gibt mehr Fahrzeuge und es werden mehr Kilometer gefahren, sodass der Gesamtverbrauch trotzdem steigt.`,
+      kernpunkte: ['Effizienzgewinne werden durch mehr Konsum/Nutzung aufgehoben', 'Beispiel: sparsamere Autos, aber mehr Fahrzeuge und Kilometer → Gesamtverbrauch steigt'] },
+    { id: 'e10-14', typ: 'wf', thema: 'Ökologische Modernisierung', wichtig: 2, quelle: 'VL08, S. 18',
+      aussage: 'Die ökologische Modernisierung hält eine strukturelle Veränderung des Wirtschaftssystems für notwendig.',
+      wahr: false, warum: 'Sie geht gerade davon aus, dass Wachstum und Umweltschutz **ohne** strukturelle Veränderung durch Technik vereinbar sind. Das ist ein zentraler Kritikpunkt.' },
+
+    /* ---------- Ökologische Ökonomik / Politische Ökologie ---------- */
+    { id: 'e10-15', typ: 'mc', thema: 'Ökologische Ökonomik', quelle: 'VL08, S. 20',
+      frage: 'Wie heißt der mit einem Gut verbundene Materialaufwand, gemessen als **Masse**?',
+      optionen: [
+        { t: 'Ökologischer Rucksack', r: true, warum: 'Materialaufwand als Masse.' },
+        { t: 'Ökologischer Fußabdruck', warum: 'Der misst den Ressourcenverbrauch in Flächeneinheiten.' },
+        { t: 'CO₂-Äquivalent', warum: 'Das rechnet verschiedene Treibhausgase auf CO₂ um.' },
+        { t: 'Earth Overshoot Day', warum: 'Das ist der Tag, ab dem die Jahresbiokapazität verbraucht ist.' },
+      ] },
+    { id: 'e10-16', typ: 'paare', thema: 'Ökologische Ökonomik', wichtig: 2, quelle: 'VL08, S. 17–21',
+      frage: 'Ordne jedem Bezug der Environmental Economic Geography seine Kernidee zu.',
+      paare: [
+        ['Ressourcengeographie', 'Physische und ökonomische Verfügbarkeit von Rohstoffen'],
+        ['Neoklassische Umweltökonomik', 'Marktversagen beheben, externe Kosten internalisieren'],
+        ['Ökologische Modernisierung', 'Entkopplung durch Technik, ohne Strukturwandel'],
+        ['Ökologische Ökonomik', 'Endlichkeit der Natur, steady-state economy'],
+        ['Politische Ökologie', 'Umweltprobleme als Macht- und Verteilungsfragen'],
+      ] },
+    { id: 'e10-17', typ: 'paare', thema: 'Ökologische Ökonomik', quelle: 'VL08, S. 20–24',
+      frage: 'Ordne jeder Person den passenden Ansatz zu.',
+      paare: [
+        ['Herman Daly', 'Ökologische Ökonomik'],
+        ['Michael Watts', 'Politische Ökologie („Silent Violence“)'],
+        ['Frank Geels', 'Multi-Level-Perspective'],
+        ['Gavin Bridge', 'Forschungsfragen der Environmental Economic Geography'],
+      ] },
+    { id: 'e10-18', typ: 'offen', thema: 'Ökologische Ökonomik', punkte: 2, quelle: 'VL08, S. 21–22',
+      frage: 'Vergleichen Sie die Sicht von „environmental management“ und „political economy/ecology“ auf Natur und Umweltprobleme.',
+      antwort: `Environmental management sieht Natur und Ressourcen als passive Größen, die besser zu managen, zu schützen und zu nutzen sind; räumlich kartiert es Umweltzerstörung und die Lage von Ressourcen. Political economy/ecology versteht Umweltprobleme als politische und ökonomische Probleme: Sie untersucht, wie die Natur für die Kapitalakkumulation übernutzt wird, welche Folgen ungleiche Entwicklung für Mensch und Umwelt hat, und tritt für eine alternative Umwelt- und Wirtschaftspolitik ein.`,
+      kernpunkte: ['Environmental management: Natur als passive Ressource, besseres Management, Kartierung', 'Political ecology: Übernutzung für Kapitalakkumulation, ungleiche Folgen, Machtverhältnisse, alternative Politik'] },
+
+    /* ---------- Transition ---------- */
+    { id: 'e10-19', typ: 'offen', thema: 'Transition', wichtig: 2, punkte: 3, quelle: 'VL08, S. 24', bildLoesung: 'mlp',
+      frage: 'Erläutern Sie die drei Ebenen der Multi-Level-Perspective nach Geels.',
+      antwort: `Die Landschaft umfasst übergeordnete Kontextentwicklungen wie vorherrschende Normen, Wertvorstellungen, politische Traditionen sowie Produktions- und Konsummuster. Sozio-technische Regime bestimmen die Arbeits- und Organisationsformen einer bestimmten Branche oder Produktgruppe. Nischen sind Orte grundlegender Innovationen, die erfolgreich sein oder scheitern können, etwa Photovoltaik oder grüner Wasserstoff; nachhaltiger Wandel entsteht aus der Koevolution von sozialem und technologischem Wandel auf diesen Ebenen.`,
+      kernpunkte: ['Landschaft: übergeordneter Kontext (Normen, Werte, politische Traditionen, Produktions- und Konsummuster)', 'Regime: bestimmen Arbeits- und Organisationsformen einer Branche/Produktgruppe', 'Nischen: Orte grundlegender Innovationen (z. B. Photovoltaik, grüner Wasserstoff)'] },
+    { id: 'e10-20', typ: 'mc', thema: 'Transition', wichtig: 2, quelle: 'VL08, S. 24',
+      frage: 'Photovoltaik und grüner Wasserstoff sind in der Multi-Level-Perspective Beispiele für …',
+      optionen: [
+        { t: 'Nischen', r: true, warum: 'Orte grundlegender Innovationen.' },
+        { t: 'Sozio-technische Regime', warum: 'Regime sind die etablierten Arbeits- und Organisationsformen einer Branche.' },
+        { t: 'Landschaft', warum: 'Die Landschaft ist der übergeordnete Kontext (Normen, Werte, Traditionen).' },
+        { t: 'Senken', warum: 'Senken sind eine Funktion der Umwelt (Aufnahme von Output).' },
+      ] },
+    { id: 'e10-21', typ: 'wf', thema: 'Transition', wichtig: 2, quelle: 'VL03, S. 28–29; VL08, S. 14–15',
+      aussage: 'Die Abkürzung „EEG“ steht in VL 3 für Evolutionary Economic Geography und in VL 8 für Environmental Economic Geography.',
+      wahr: true, warum: 'Zwei verschiedene Ansätze mit derselben Abkürzung: evolutionär (Routinen, Pfadabhängigkeit, Lock-in) vs. umweltorientiert (Umwelt als Ressource, Senke, Standort).' },
+    { id: 'e10-22', typ: 'mc', thema: 'Transition', wichtig: 2, quelle: 'VL03, S. 28–29; VL08, S. 15',
+      frage: 'Welcher Ansatz untersucht die Verknüpfung von physischen Umweltprozessen und wirtschaftlichen Prozessen?',
+      optionen: [
+        { t: 'Environmental Economic Geography', r: true, warum: 'Umwelt als Ressource, Senke und Standort.' },
+        { t: 'Evolutionary Economic Geography', warum: 'Sie untersucht Routinen, Pfadabhängigkeit und Lock-ins – nicht die Umwelt.' },
+        { t: 'Geographical Economics (Krugman)', warum: 'Sie modelliert Agglomeration über Skaleneffekte und Transportkosten.' },
+        { t: 'Global Production Networks', warum: 'Sie analysieren Macht, Wert und Einbettung in Produktionsnetzen.' },
+      ] },
+    { id: 'e10-23', typ: 'karte', thema: 'Transition', quelle: 'VL08, S. 25',
+      vorne: 'Zusammenfassung: Wofür steht die Environmental Economic Geography theoretisch-politisch?',
+      hinten: `Sie erkennt die **gegenseitige Bedingtheit von Natur und Ökonomie** an und ist **plural**: von Managementzugängen über die Modernisierung des Kapitalismus bis zur **Systemtransformation**.` },
+  ],
+});
+//# sourceURL=content/wirtschaftsgeographie/e10.js
+</script>
+<script>
 /* e11 Nachhaltigkeit II: Wachstumskritik und Postwachstum – VL08 Teil 2 (Rosol, 18.06.2026).
    Analyse: quellen/wirtschaftsgeographie/analyse/VL08-Nachhaltigkeit.md (PDF-Seiten 27–47) */
 Lerni.einheit('wirtschaftsgeographie', {
@@ -4498,6 +4714,56 @@ Lerni.grafik('wirtschaftsgeographie', 'exportbasis', {
     <g class="n d sm"><line x1="80" y1="46" x2="80" y2="150"/><line x1="170" y1="46" x2="170" y2="150"/><line x1="256" y1="46" x2="256" y2="150"/></g>
     <g class="k" text-anchor="middle"><text x="80" y="166">kritischer</text><text x="80" y="178">Übergang</text><text class="b tb" x="170" y="166">Lock-in</text><text x="256" y="166">Un-locking</text></g>
     <text class="k m" x="4" y="194">Variationsbreite der Entwicklungsmöglichkeiten; Zeit →</text>
+  </svg>`,
+  });
+})();
+
+/* ---------- e10 Environmental Economic Geography ---------- */
+(() => {
+  const K = 'wirtschaftsgeographie';
+  Lerni.grafik(K, 'umweltfunktionen', {
+    titel: 'Drei Funktionen der Umwelt für die Wirtschaft',
+    text: 'VL08, S. 15 (Bridge; Braun/Schulz): Produktion ist materielle Transformation von Energie und Materie – die Umwelt liefert Input, nimmt Output auf und bietet Standorte.',
+    svg: `<svg viewBox="0 0 340 186" role="img" aria-label="Wirtschaft zwischen Ressource, Senke und Standort">
+    <rect class="f0" x="110" y="44" width="120" height="62" rx="10"/><text class="b" x="170" y="72" text-anchor="middle">Wirtschaft</text><text class="k" x="170" y="89" text-anchor="middle">Produktion, Konsum</text>
+    <rect class="f2" x="4" y="44" width="84" height="62" rx="10"/><text class="k b" x="46" y="68" text-anchor="middle">Ressource</text><text class="k" x="46" y="83" text-anchor="middle">Input: Energie,</text><text class="k" x="46" y="96" text-anchor="middle">Rohstoffe</text>
+    <rect class="f4" x="252" y="44" width="84" height="62" rx="10"/><text class="k b" x="294" y="68" text-anchor="middle">Senke (sink)</text><text class="k" x="294" y="83" text-anchor="middle">Output: Müll,</text><text class="k" x="294" y="96" text-anchor="middle">Abgase, CO₂</text>
+    <rect class="f3" x="60" y="130" width="220" height="40" rx="10"/><text class="k b" x="170" y="147" text-anchor="middle">Standort</text><text class="k" x="170" y="162" text-anchor="middle">Fläche und Ort für wirtschaftliche Aktivität</text>
+    <line x1="88" y1="75" x2="102" y2="75"/><polygon class="pf" points="108,75 100,71 100,79"/>
+    <line x1="230" y1="75" x2="244" y2="75"/><polygon class="pf" points="250,75 242,71 242,79"/>
+    <line x1="170" y1="106" x2="170" y2="126"/>
+    <text class="k m" x="170" y="20" text-anchor="middle">Belastung: Übernutzung von Ressourcen,</text><text class="k m" x="170" y="33" text-anchor="middle">Überbeanspruchung der Senken, zerstörte Ökosysteme</text>
+  </svg>`,
+  });
+
+  Lerni.grafik(K, 'rebound', {
+    titel: 'Rebound-Effekt',
+    text: 'VL08, S. 19–20 (Beispiel Kraftstoff): Der Verbrauch je Fahrzeug sinkt, aber es gibt mehr Fahrzeuge und mehr gefahrene Kilometer – der Gesamtverbrauch steigt. Schematisch, keine Messwerte.',
+    svg: `<svg viewBox="0 0 340 176" role="img" aria-label="Säulen: Verbrauch je Fahrzeug sinkt, Fahrzeuge und Kilometer steigen, Gesamtverbrauch steigt">
+    <line x1="10" y1="140" x2="334" y2="140"/>
+    <text class="k m" x="10" y="14">je Paar: links vorher, rechts nachher</text>
+    <rect class="f1" x="30" y="60" width="36" height="80"/><rect class="f2" x="80" y="92" width="36" height="48"/>
+    <rect class="f1" x="150" y="100" width="36" height="40"/><rect class="f3" x="200" y="56" width="36" height="84"/>
+    <rect class="f1" x="264" y="84" width="30" height="56"/><rect class="f4" x="298" y="30" width="30" height="110"/>
+    <g class="k" text-anchor="middle">
+      <text x="73" y="156">Verbrauch je</text><text x="73" y="168">Fahrzeug ↓</text>
+      <text x="193" y="156">Fahrzeuge und</text><text x="193" y="168">Kilometer ↑</text>
+      <text x="296" y="156">Gesamt-</text><text x="296" y="168">verbrauch ↑</text>
+    </g>
+    <text class="k m" x="170" y="34" text-anchor="middle">Effizienzgewinn</text><text class="k m" x="170" y="46" text-anchor="middle">wird aufgezehrt</text>
+  </svg>`,
+  });
+
+  Lerni.grafik(K, 'mlp', {
+    titel: 'Multi-Level-Perspective (Geels)',
+    text: 'VL08, S. 24: Koevolution von sozialem und technologischem Wandel auf drei Ebenen. Nischeninnovationen können Regime destabilisieren; die Landschaft übt Druck von oben aus.',
+    svg: `<svg viewBox="0 0 340 214" role="img" aria-label="Drei Ebenen Landschaft, Regime, Nischen">
+    <rect class="f3" x="4" y="4" width="332" height="50" rx="10"/><text class="k b" x="14" y="22">Landschaft (landscape)</text><text class="k" x="14" y="37">übergeordneter Kontext: Normen, Werte, politische</text><text class="k" x="14" y="49">Traditionen, Produktions- und Konsummuster</text>
+    <rect class="f1" x="4" y="72" width="332" height="50" rx="10"/><text class="k b" x="14" y="90">Sozio-technische Regime</text><text class="k" x="14" y="105">bestimmen Arbeits- und Organisationsformen</text><text class="k" x="14" y="117">einer Branche oder Produktgruppe</text>
+    <rect class="f2" x="4" y="140" width="332" height="50" rx="10"/><text class="k b" x="14" y="158">Nischen</text><text class="k" x="14" y="173">Orte grundlegender Innovationen, erfolgreich oder</text><text class="k" x="14" y="185">scheiternd – z. B. Photovoltaik, grüner Wasserstoff</text>
+    <line class="s4 w" x1="300" y1="56" x2="300" y2="68"/><polygon class="tb s0" points="300,72 295,64 305,64"/><text class="k tb" x="294" y="66" text-anchor="end">Druck</text>
+    <line class="s2 w" x1="270" y1="138" x2="270" y2="126"/><polygon class="to s0" points="270,122 265,130 275,130"/><text class="k to" x="264" y="134" text-anchor="end">Durchbruch?</text>
+    <text class="k m" x="170" y="208" text-anchor="middle">Technik wirkt nur im Zusammenspiel mit Akteuren, Strukturen, Organisationen</text>
   </svg>`,
   });
 })();
