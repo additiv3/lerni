@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- LERNI – gebaut 29.09.2026, 22:24. Nicht direkt öffnen: py tools/build.py setzt CSS, Code und Inhalte ein und schreibt dist/index.html -->
+<!-- LERNI – gebaut 29.09.2026, 22:27. Nicht direkt öffnen: py tools/build.py setzt CSS, Code und Inhalte ein und schreibt dist/index.html -->
 <html lang="de">
 <head>
   <meta charset="utf-8">
@@ -414,7 +414,7 @@ details.card[open] summary { margin-bottom: 10px; }
 </head>
 <body>
   <noscript>Lerni braucht JavaScript.</noscript>
-<script>const LERNI_BUILD = {"id": "94c2dd3-20260929222434", "stamp": "29.09.2026, 22:24", "commit": "94c2dd3"};</script>
+<script>const LERNI_BUILD = {"id": "f1673a4-20260929222744", "stamp": "29.09.2026, 22:27", "commit": "f1673a4"};</script>
 <script>
 /* LERNI – Hilfsfunktionen: DOM, Datum, Text, Zufall.
    Läuft auch in Node (tools/check.js): beim Laden nichts am DOM anfassen. */
@@ -3481,6 +3481,222 @@ Dabei wandelt sich die Produktion von humankapital- zu sach- bzw. arbeitsintensi
 //# sourceURL=content/wirtschaftsgeographie/e08.js
 </script>
 <script>
+/* e09 Finanzialisierung – VL07 (Schumacher, 11.06.2026). Analyse: quellen/wirtschaftsgeographie/analyse/VL07-Finanzialisierung.md
+   Die Folien sind stichwortartig: nur Folieninhalt; nur genannte Begriffe (Assetisierung, Repos …) höchstens mit gekennzeichnetem Hinweis (01-Entscheidungen.md, D). */
+Lerni.einheit('wirtschaftsgeographie', {
+  id: 'e09',
+  titel: 'Finanzialisierung',
+  quelle: 'VL07 Finanzialisierung (Schumacher), PDF-Seiten 3–65 (1 Seite = 1 Folie)',
+  skript: [
+    {
+      thema: 'Definitionen', titel: 'Geld, Finanz, Finanzialisierung',
+      text: `- **Geld** (Wójcik): alles, was zugleich **Tauschmittel, Recheneinheit und Wertaufbewahrungsmittel** ist. „Geld gab es immer, aber die Rolle, die es spielt, hat sich verändert – und damit das Verhältnis zwischen Menschen und zu ihrer Umwelt.“
+- **Finanz** (Wójcik): ein System von Mensch-Umwelt-Beziehungen, in dem Menschen einander und ihrer Umwelt **über das Medium Geld** begegnen.
+- **Finanzialisierung nach Epstein:** „the increasing role of **financial motives, financial markets, financial actors and financial institutions** in the operation of the domestic and international economies“.
+- **Finanzialisierung nach Aalbers (2019):** „the increasing **dominance of financial actors, markets, practices, measurements and narratives**, at various scales, resulting in a **structural transformation** of economies, firms (including financial institutions), states and households“.
+
+Wie der **Elefant** im Gleichnis der Blinden hat Finanzialisierung viele Seiten: Je nach Fokus stehen **Staat, Unternehmen, Individuen, Räume oder Natur** im Vordergrund. Aalbers unterscheidet drei Konzeptualisierungen: Finanzialisierung als **Akkumulationsregime** (Staat, Wirtschaft), als **Aufstieg des Shareholder-Value-Prinzips** (Unternehmen) und als **Finanzialisierung des Alltags** (Haushalte, Individuen).
+
+==Finanzialisierung = wachsende Rolle finanzieller Motive, Märkte, Akteure und Institutionen (Epstein).==`,
+    },
+    {
+      thema: 'Was nimmt zu', titel: 'Was nimmt mit der Finanzialisierung zu?', bild: 'finanzvermoegen',
+      text: `1. Der **Finanzsektor** gegenüber dem BIP und anderen Sektoren: Die globalen Finanzvermögen stiegen von **120 % des Welt-BIP (1980)** auf **316 % (2010)**.
+2. Die **Geschwindigkeit** finanzieller Transaktionen.
+3. Die Zahl **finanzieller Akteure und Produkte**: Schattenbanken, Investmentbanken, Hedgefonds, Private-Equity-Fonds, Derivate, Pensions- und Staatsfonds.
+4. Die Ausrichtung der Unternehmenspolitik an den Finanzmärkten (**Shareholder-Value-Orientierung**) – „Apple is a hedge fund that makes phones“.
+5. Die **Einbeziehung von Individuen und Haushalten** in die Finanzmärkte – als Anleger:innen und Schuldner:innen, bewusst oder unbewusst (Kreditkarte, Rentensysteme).
+
+Die Debatte nahm **nach der Finanzkrise 2007/08** stark zu (Ökonomie, Soziologie, Politikwissenschaft, Geographie …); die meisten Beiträge stützen sich auf keynesianische, marxistische oder heterodoxe Ansätze. Weitgehend einig ist man sich: **Die Finanzialisierung begann in den 1970er/1980er Jahren.**
+
+==Mehr Finanzsektor, mehr Tempo, mehr Akteure, Shareholder Value, Haushalte am Finanzmarkt – seit den 1970/80ern.==`,
+    },
+    {
+      thema: 'Hintergründe', titel: 'Geschichte und Hintergründe',
+      text: `Spekulation ist alt (Tulpenmanie, Weltwirtschaftskrise 1929). Die heutige Finanzialisierung hat mehrere Hintergründe:
+- **Ende des Bretton-Woods-Systems:** Das System von 1944 (Reaktion u. a. auf die Spekulationsblase 1926–29, die Krise 1929, Faschismus und Krieg) sah den US-Dollar als (teils goldgedeckte) Leitwährung, feste Wechselkurse zum Dollar sowie IWF und Weltbank vor. **1971 beendete Nixon das System** → Wechselkursschwankungen → mehr **Spekulation** → starke Erhöhung der **Liquidität** (Banken können leichter leihen und verleihen).
+- **Auflösung des Trennbankensystems** (Glass-Steagall Act) und **Liberalisierung des Bankenwesens**
+- Übergang zum **Neoliberalismus**
+- **Steigende Ungleichheit** → mehr Anlagebedarf bei den Reichen, mehr Prekarität bei den anderen
+- Steueränderungen (Kapitalertragssteuer), **Globalisierung**
+- **Überakkumulationskrise** (vgl. Harveys spatial fix: Finanzialisierung als Absorption überschüssigen Kapitals)
+
+Die Finanzialisierung weitet sich weiter aus durch **wachsende Ungleichheit** und den **Abbau der Sozialsysteme** („Entsicherung“) – beides verstärkt die **Suche nach Anlagemöglichkeiten**.
+
+==Nixon 1971, Deregulierung, Neoliberalismus, Ungleichheit, Überakkumulation.==`,
+    },
+    {
+      thema: 'Finanzsystem', titel: 'Wie funktioniert das Finanzsystem?', bild: 'geldschoepfung',
+      text: `**Idealmodell:** Sparer:innen suchen eine profitable Anlage, Unternehmen brauchen Kapital für Investitionen; Anbieter (vor allem private Haushalte) und Nachfrager von Kapital (Unternehmen, Staat) treffen sich über Banken, Fonds und Versicherungen, eingebettet in Infrastruktur und Finanzaufsicht.
+
+**Tatsächlich …**
+- entsteht **Geld aus Schulden**: **Banken schaffen Geld, indem sie Kredite vergeben**. Sparen treibt die Kreditvergabe nicht an; Sparen und Kredit sind nicht korreliert.
+- verläuft der meiste Handel und die meiste Kreditvergabe **zwischen Finanzinstitutionen selbst** (z. B. Repos).
+- dominieren **institutionelle Investoren** (Investmentbanken, Hedgefonds, Vermögensverwalter, Pensionsfonds) mit **über 70 %** des Anlagevolumens.
+- steigt mit dem Finanzvolumen auch die **Verschuldung**.
+- werden die Finanzmärkte von der **Suche nach Anlagemöglichkeiten** getrieben – bis hinein in Immobilien, Natur, Staaten, Start-ups und Individuen.
+
+**„Geld arbeitet nicht“:** Das Finanzsystem **verteilt Wert um** (Erträge, Dividenden, Zinsen, Gebühren an Investment- und Bankmanager:innen) und **produziert soziale und ökologische Kosten** – beides wird oft unsichtbar gemacht.
+
+==Banken schaffen Geld durch Kredit; institutionelle Investoren (> 70 %) suchen ständig neue Anlagen.==`,
+    },
+    {
+      thema: 'Beispiele', titel: 'Beispiele: Wohnen und Natur',
+      text: `**Wohnen** (eines der am besten erforschten Felder): In Deutschland wurde **1990 die Wohnungsgemeinnützigkeit aufgehoben**, Mietpreisbindungen fielen weg, **Sozialwohnungen wurden verkauft** (laut Folie 1999–2011 rund 40 % an ausländische Investoren). **Folgen (Heeg):** starke **Mietsteigerungen**, **geringe Instandhaltung**, ein großer Teil der Einnahmen fließt an **Aktionäre und Investor:innen**, **Wohnungsmangel trotz steigender Wohnfläche**.
+
+**Natur/Ökosysteme:** Klimapolitik seit **UNFCCC 1992**, **Kyoto-Protokoll 1997**, **Pariser Abkommen 2015**. Sie setzt stark auf **marktbasierte Instrumente**: **Europäischer Emissionshandel (EU-ETS)**; im Kyoto-Protokoll **Clean Development Mechanism (CDM)** und Joint Implementation; im Pariser Abkommen handelbare Minderungsergebnisse (ITMO). Argumente: effizient, kostengünstig, Preise sollen die Klimawirkung spiegeln. Kompensationsprojekte sollen **permanent, zusätzlich, messbar** sein und **Leakage vermeiden**. Kritische Frage: **„carbon colonialism“?**
+
+Weitere Felder: Kommunen, Fußball, Pflege, Bildung, Gesundheit, Land („farming as financial asset“).
+
+==Wohnen: Privatisierung → Mieten steigen, Instandhaltung sinkt, Rendite fließt an Investoren.==`,
+    },
+    {
+      thema: 'Folgen', titel: 'Folgen und Finanzkrise 2007/08',
+      text: `**Steigende Ungleichheit:** zwischen vermögenden und weniger vermögenden Haushalten, innerhalb und zwischen Staaten, zwischen den **Geschlechtern** (Care-Arbeit, Pay Gap), beim Zugang zum Finanzsystem und zu Wissen, zwischen Sektoren und Regionen; Umverteilung von Reichtum ins Private und von Risiken ins Öffentliche; ungleiche Folgen (Mieten, Gesundheit, Bildung, Krisen).
+
+**Wirtschaftliche Folgen:** Investitionen fließen vor allem in Finanzprodukte statt in die Realwirtschaft → **sinkende Produktivität**, Jobverluste, starke **Preis- und Währungsschwankungen**.
+
+**Umweltfolgen:** Die Renditeorientierung erschwert umweltfreundliches Wirtschaften; wird die Natur selbst zur Finanzanlage, hängt ihr Erhalt von der Rendite ab; Unsicherheit erschwert Anpassung; weniger Geld für Schutzmaßnahmen.
+
+**Finanzkrise 2007/08 – Folgen:** Kosten der Bankenrettung in Deutschland rund **58–68 Mrd. €** → Sparmaßnahmen; **Eurokrise** und Auseinanderentwicklung in Europa; **„quantitative easing“** und extreme Niedrigzinsen → Inflation, **aufgeblähte Immobilienpreise**; mehr Ungleichheit. **Trotzdem ist die Finanzialisierung heute noch tiefgreifender als zuvor.** Ausblick: von der Finanzialisierung zur **Assetisierung**?
+
+==Finanzialisierung vertieft Ungleichheit – und hat die Krise 2008 überlebt, ja sich vertieft.==`,
+    },
+  ],
+  fragen: [
+    /* ---------- Definitionen ---------- */
+    { id: 'e09-01', typ: 'offen', thema: 'Definitionen', wichtig: 3, punkte: 2, quelle: 'VL07, S. 6, 10 und 15',
+      frage: 'Definieren Sie Finanzialisierung (nach Epstein oder Aalbers).',
+      antwort: `Nach Epstein bezeichnet Finanzialisierung die zunehmende Rolle finanzieller Motive, Finanzmärkte, Finanzakteure und Finanzinstitutionen in der nationalen und internationalen Wirtschaft. Aalbers betont die wachsende Dominanz finanzieller Akteure, Märkte, Praktiken, Messgrößen und Narrative auf verschiedenen Maßstabsebenen, die zu einer strukturellen Transformation von Volkswirtschaften, Unternehmen, Staaten und Haushalten führt.`,
+      kernpunkte: ['Zunehmende Rolle/Dominanz finanzieller Motive, Märkte, Akteure, Institutionen (Praktiken, Narrative)', 'In nationaler und internationaler Wirtschaft bzw. strukturelle Transformation von Wirtschaft, Unternehmen, Staaten, Haushalten'] },
+    { id: 'e09-02', typ: 'luecke', thema: 'Definitionen', wichtig: 3, quelle: 'VL07, S. 6 und 10',
+      frage: 'Definition nach Epstein (2015). Fülle die Lücken.',
+      text: 'Financialization means the increasing role of financial [[motives]], financial [[markets]], financial actors and financial [[institutions]] in the operation of the domestic and international economies.' },
+    { id: 'e09-03', typ: 'luecke', thema: 'Definitionen', wichtig: 2, quelle: 'VL07, S. 15',
+      frage: 'Definition nach Aalbers (2019). Fülle die Lücken.',
+      text: 'Financialization is the increasing [[dominance]] of financial actors, markets, practices, measurements and narratives, at various scales, resulting in a [[structural]] transformation of economies, firms, states and [[households]].' },
+    { id: 'e09-04', typ: 'mc', thema: 'Definitionen', quelle: 'VL07, S. 8',
+      frage: 'Was sind die drei Funktionen von Geld nach Wójcik? (mehrere möglich)',
+      optionen: [
+        { t: 'Tauschmittel (medium of exchange)', r: true, warum: 'Teil der Definition.' },
+        { t: 'Recheneinheit (unit of account)', r: true, warum: 'Teil der Definition.' },
+        { t: 'Wertaufbewahrungsmittel (store of value)', r: true, warum: 'Teil der Definition.' },
+        { t: 'Garantie gegen Inflation', warum: 'Keine der drei Funktionen – Geld kann durch Inflation an Wert verlieren.' },
+      ] },
+    { id: 'e09-05', typ: 'paare', thema: 'Definitionen', wichtig: 2, quelle: 'VL07, S. 13',
+      frage: 'Ordne die drei Konzeptualisierungen der Finanzialisierung nach Aalbers ihrer Ebene zu.',
+      paare: [
+        ['Finanzialisierung als Akkumulationsregime', 'Staat und Wirtschaft'],
+        ['Aufstieg des Shareholder-Value-Prinzips', 'Unternehmen'],
+        ['Finanzialisierung des Alltags', 'Haushalte und Individuen'],
+      ] },
+    { id: 'e09-06', typ: 'karte', thema: 'Definitionen', quelle: 'VL07, S. 11–12',
+      vorne: 'Was soll das Gleichnis vom Elefanten über Finanzialisierung zeigen?',
+      hinten: `Finanzialisierung hat **viele Ebenen** (Staat, Unternehmen, Individuen, Räume, Natur). Je nach Untersuchungsfokus stehen andere Prozesse im Vordergrund – wie bei den Blinden, die jeweils nur einen Teil des Elefanten ertasten.` },
+
+    /* ---------- Was nimmt zu ---------- */
+    { id: 'e09-07', typ: 'offen', thema: 'Was nimmt zu', wichtig: 2, punkte: 4, quelle: 'VL07, S. 16–20',
+      frage: 'Nennen Sie vier Entwicklungen, die mit der Finanzialisierung zunehmen.',
+      antwort: `Es wächst erstens der Finanzsektor gegenüber dem BIP und anderen Sektoren und zweitens die Geschwindigkeit finanzieller Transaktionen. Drittens nehmen finanzielle Akteure und Produkte zu, etwa Hedgefonds, Private-Equity-Fonds und Derivate. Viertens richten Unternehmen ihre Politik stärker am Shareholder Value aus, und fünftens werden Individuen und Haushalte als Anleger:innen und Schuldner:innen in die Finanzmärkte einbezogen.`,
+      kernpunkte: ['Finanzsektor gegenüber BIP und anderen Sektoren', 'Geschwindigkeit finanzieller Transaktionen', 'Finanzielle Akteure und Produkte (Hedgefonds, Derivate …)', 'Shareholder-Value-Orientierung oder Einbeziehung von Haushalten in Finanzmärkte'] },
+    { id: 'e09-08', typ: 'luecke', thema: 'Was nimmt zu', quelle: 'VL07, S. 16', bildLoesung: 'finanzvermoegen',
+      frage: 'Merkzahl zum Wachstum der Finanzvermögen (Dutta 2018).',
+      text: 'Die globalen Finanzvermögen stiegen von [[120]] % des Welt-BIP im Jahr 1980 auf [[316]] % im Jahr 2010.' },
+    { id: 'e09-09', typ: 'wf', thema: 'Was nimmt zu', wichtig: 2, quelle: 'VL07, S. 22',
+      aussage: 'Die Finanzialisierung hat nach weitgehender Einigkeit der Forschung ihren Ursprung in den 1950er Jahren.',
+      wahr: false, warum: 'Weitgehend einig ist man sich über einen Ursprung in den **1970er/1980er Jahren** (Ende von Bretton Woods, Deregulierung, Neoliberalismus).' },
+
+    /* ---------- Hintergründe ---------- */
+    { id: 'e09-10', typ: 'offen', thema: 'Hintergründe', wichtig: 2, punkte: 3, quelle: 'VL07, S. 25 und 30–31',
+      frage: 'Nennen Sie drei Hintergründe bzw. Ursachen der Finanzialisierung.',
+      antwort: `Eine Ursache ist das Ende des Bretton-Woods-Systems 1971, das zu Wechselkursschwankungen, mehr Spekulation und mehr Liquidität führte. Hinzu kamen die Auflösung des Trennbankensystems und die Liberalisierung des Bankenwesens im Zuge des Neoliberalismus. Weitere Gründe sind die steigende Ungleichheit, die den Anlagebedarf der Vermögenden erhöht, sowie die Überakkumulationskrise, in der überschüssiges Kapital Anlage sucht.`,
+      kernpunkte: ['Ende von Bretton Woods 1971 (Wechselkursschwankungen, Spekulation, Liquidität)', 'Auflösung des Trennbankensystems/Liberalisierung, Neoliberalismus', 'Steigende Ungleichheit (Anlagebedarf) oder Überakkumulationskrise'] },
+    { id: 'e09-11', typ: 'mc', thema: 'Hintergründe', wichtig: 2, quelle: 'VL07, S. 28–30',
+      frage: 'Welche Aussage zum Bretton-Woods-System trifft laut Vorlesung zu?',
+      optionen: [
+        { t: 'Nach seinem Ende 1971 nahmen Wechselkursschwankungen, Spekulation und Liquidität zu.', r: true, warum: 'Nixon beendete das System; Banken konnten leichter leihen und verleihen.' },
+        { t: 'Es sah frei schwankende Wechselkurse vor.', warum: 'Im Gegenteil: feste Wechselkurse zum US-Dollar.' },
+        { t: 'Es endete mit der Finanzkrise 2007/08.', warum: 'Es endete 1971.' },
+        { t: 'Es gründete die Welthandelsorganisation WTO.', warum: 'Gegründet wurden IWF und Weltbank; die WTO entstand erst 1995.' },
+      ] },
+    { id: 'e09-12', typ: 'offen', thema: 'Hintergründe', punkte: 2, quelle: 'VL07, S. 43–44',
+      frage: 'Warum weitet sich die Finanzialisierung laut Vorlesung weiter aus?',
+      antwort: `Zum einen wächst die Ungleichheit: Vermögende haben immer mehr Kapital, das Anlagemöglichkeiten sucht. Zum anderen werden Sozialsysteme abgebaut („Entsicherung“), sodass Menschen privat vorsorgen müssen, etwa über kapitalgedeckte Renten. Beides verstärkt die Suche nach Anlagemöglichkeiten.`,
+      kernpunkte: ['Wachsende Ungleichheit → mehr anlagesuchendes Kapital', 'Abbau von Sozialsystemen („Entsicherung“) → private, finanzmarktbasierte Vorsorge'] },
+
+    /* ---------- Finanzsystem ---------- */
+    { id: 'e09-13', typ: 'offen', thema: 'Finanzsystem', wichtig: 2, punkte: 2, quelle: 'VL07, S. 35–36', bildLoesung: 'geldschoepfung',
+      frage: 'Wie entsteht Geld nach der Darstellung der Vorlesung („Myth vs. Reality“)?',
+      antwort: `Nach dem Mythos sammeln Banken die Ersparnisse der Sparer:innen und verleihen sie weiter. Tatsächlich entsteht Geld aus Schulden: Banken schaffen neues Geld, indem sie Kredite vergeben; Haushalte und Unternehmen nutzen es für Konsum und Investitionen, und was übrig bleibt, wird gespart. Sparen treibt die Kreditvergabe also nicht an – beide sind nicht korreliert.`,
+      kernpunkte: ['Banken schaffen Geld durch Kreditvergabe (Geld entsteht aus Schulden)', 'Nicht Ersparnisse ermöglichen Kredite – Sparen und Kredit sind nicht korreliert'] },
+    { id: 'e09-14', typ: 'mc', thema: 'Finanzsystem', wichtig: 2, quelle: 'VL07, S. 35–37',
+      frage: 'Was trifft laut Vorlesung „tatsächlich“ auf das Finanzsystem zu? (mehrere möglich)',
+      optionen: [
+        { t: 'Institutionelle Investoren halten über 70 % des Anlagevolumens.', r: true, warum: 'Investmentbanken, Hedgefonds, Vermögensverwalter, Pensionsfonds (Dutta 2018).' },
+        { t: 'Der meiste Handel und die meisten Kredite laufen zwischen Finanzinstitutionen selbst.', r: true, warum: 'Z. B. über Repos.' },
+        { t: 'Die Kreditvergabe wird vor allem durch die Ersparnisse der Haushalte angetrieben.', warum: 'Das ist der „Mythos“; tatsächlich schaffen Banken Geld durch Kredit.' },
+        { t: 'Mit wachsendem Finanzvolumen sinkt die Verschuldung.', warum: 'Mit dem Finanzvolumen steigt die Verschuldung.' },
+      ] },
+    { id: 'e09-15', typ: 'karte', thema: 'Finanzsystem', quelle: 'VL07, S. 39–40',
+      vorne: '„Geld arbeitet nicht“ – was ist gemeint?',
+      hinten: `Erträge entstehen nicht von selbst: Das Finanzsystem **verteilt Wert um** (Erträge, Dividenden, Zinsen, Gebühren an Investment- und Bankmanager:innen) und **produziert soziale und ökologische Kosten** – beides wird in vielen Darstellungen unsichtbar gemacht.` },
+    { id: 'e09-16', typ: 'karte', thema: 'Finanzsystem', quelle: 'VL07, S. 14, 36 und 65',
+      vorne: 'Repos und Assetisierung – wie kommen sie in der Vorlesung vor?',
+      hinten: `**Repos** stehen als Beispiel dafür, dass der meiste Handel und die meiste Kreditvergabe **zwischen Finanzinstitutionen selbst** verlaufen. **Assetisierung** nennt Aalbers als einen Zugang zur Finanzialisierung; im Ausblick fragt die Vorlesung: „Von der Finanzialisierung zur Assetisierung?“`,
+      erklaerung: 'Hinweis (nicht auf der Folie, allgemeines Fachwissen): Ein Repo ist ein kurzfristiges Wertpapierpensionsgeschäft – Geld gegen Wertpapiere mit vereinbartem Rückkauf, v. a. zur Refinanzierung von Banken. Assetisierung meint, Dinge (z. B. Wohnungen, Land, Natur) in Vermögenswerte zu verwandeln, die laufende Erträge abwerfen sollen.' },
+
+    /* ---------- Beispiele ---------- */
+    { id: 'e09-17', typ: 'offen', thema: 'Beispiele', wichtig: 2, punkte: 3, quelle: 'VL07, S. 45–49',
+      frage: 'Nennen Sie drei Folgen der Finanzialisierung des Wohnens in Deutschland.',
+      antwort: `Nach der Aufhebung der Wohnungsgemeinnützigkeit 1990, dem Wegfall von Mietpreisbindungen und dem Verkauf von Sozialwohnungen an Investoren stiegen die Mieten stark. Die Instandhaltung wurde vernachlässigt, und ein großer Teil der Mieteinnahmen fließt an Aktionäre und Investor:innen. Außerdem herrscht Wohnungsmangel, obwohl die Wohnfläche steigt.`,
+      kernpunkte: ['Starke Mietsteigerungen', 'Geringe Instandhaltung', 'Einnahmen fließen an Aktionäre/Investoren oder Wohnungsmangel trotz steigender Wohnfläche'] },
+    { id: 'e09-18', typ: 'mc', thema: 'Beispiele', quelle: 'VL07, S. 47',
+      frage: 'Welche Entwicklung gehört laut Vorlesung zur Finanzialisierung des Wohnens in Deutschland?',
+      optionen: [
+        { t: 'Die Aufhebung der Wohnungsgemeinnützigkeit 1990', r: true, warum: 'Dazu der Wegfall von Mietpreisbindungen und der Verkauf von Sozialwohnungen.' },
+        { t: 'Die Einführung neuer Mietpreisbindungen', warum: 'Mietpreisbindungen wurden gerade aufgehoben.' },
+        { t: 'Der Rückkauf privatisierter Wohnungen durch Kommunen', warum: 'Genannt wird der Verkauf von Sozialwohnungen an Investoren.' },
+        { t: 'Ein Bauprogramm für gemeinnützige Wohnungen', warum: 'Die Gemeinnützigkeit wurde aufgehoben, nicht ausgebaut.' },
+      ] },
+    { id: 'e09-19', typ: 'offen', thema: 'Beispiele', punkte: 2, quelle: 'VL07, S. 50–53',
+      frage: 'Erläutern Sie marktbasierte Klimapolitik am Beispiel von EU-ETS oder CDM (1 P.) und nennen Sie einen Kritikpunkt (1 P.).',
+      antwort: `Marktbasierte Klimapolitik macht Emissionen handelbar: Im Europäischen Emissionshandel (EU-ETS) werden Emissionsrechte gehandelt, beim Clean Development Mechanism des Kyoto-Protokolls können Emissionsminderungen durch Projekte in anderen Ländern angerechnet werden; das soll effizient und kostengünstig sein. Kritisch ist, dass Natur so zur Finanzanlage wird und ihr Schutz von Renditen abhängt; bei Kompensationen stellt sich zudem die Frage nach „carbon colonialism“ und danach, ob Projekte wirklich permanent, zusätzlich und messbar sind.`,
+      kernpunkte: ['Emissionen werden handelbar (EU-ETS: Zertifikatehandel; CDM: Anrechnung von Projekten im Ausland) – Ziel Effizienz, niedrige Kosten', 'Kritik: Natur als Finanzanlage/Rendite-Abhängigkeit, „carbon colonialism“ oder zweifelhafte Zusätzlichkeit/Permanenz'] },
+    { id: 'e09-20', typ: 'mc', thema: 'Beispiele', quelle: 'VL07, S. 53',
+      frage: 'Welche Kriterien sollen Kompensationsprojekte laut Vorlesung erfüllen? (mehrere möglich)',
+      optionen: [
+        { t: 'Permanent', r: true, warum: 'Die Minderung muss dauerhaft sein.' },
+        { t: 'Zusätzlich', r: true, warum: 'Die Minderung wäre ohne das Projekt nicht passiert.' },
+        { t: 'Messbar', r: true, warum: 'Die Minderung muss nachweisbar sein.' },
+        { t: 'Möglichst renditestark', warum: 'Rendite ist kein Qualitätskriterium – eher Teil der Kritik.' },
+      ],
+      erklaerung: 'Viertes Kriterium auf der Folie: **Leakage vermeiden** (Emissionen dürfen nicht nur verlagert werden).' },
+
+    /* ---------- Folgen ---------- */
+    { id: 'e09-21', typ: 'offen', thema: 'Folgen', wichtig: 2, punkte: 3, quelle: 'VL07, S. 56',
+      frage: 'Nennen Sie drei Formen von Ungleichheit, die durch Finanzialisierung zunehmen.',
+      antwort: `Die Ungleichheit zwischen vermögenden und weniger vermögenden Haushalten wächst, ebenso innerhalb von und zwischen Staaten. Auch die Ungleichheit zwischen den Geschlechtern nimmt zu, etwa über Care-Arbeit und den Pay Gap. Außerdem entstehen Ungleichheiten beim Zugang zum Finanzsystem und zu Wissen sowie regionale Ungleichheiten, weil Investitionen ungleich fließen; Reichtum wird privatisiert, Risiken werden vergesellschaftet.`,
+      kernpunkte: ['Zwischen vermögenden und weniger vermögenden Haushalten (innerhalb/zwischen Staaten)', 'Zwischen den Geschlechtern (Care, Pay Gap)', 'Zugang/Wissen, Sektoren, Regionen oder Umverteilung öffentlich–privat'] },
+    { id: 'e09-22', typ: 'mc', thema: 'Folgen', quelle: 'VL07, S. 57–58',
+      frage: 'Welche wirtschaftlichen oder ökologischen Folgen der Finanzialisierung nennt die Vorlesung? (mehrere möglich)',
+      optionen: [
+        { t: 'Investitionen in Finanzprodukte statt Realwirtschaft – sinkende Produktivität', r: true, warum: 'Lapavitsas/Powell 2013.' },
+        { t: 'Der Erhalt der Natur hängt zunehmend von ihrer Rendite ab.', r: true, warum: 'Umwelt wird selbst zur Finanzanlage.' },
+        { t: 'Stabilere Preise und Wechselkurse', warum: 'Im Gegenteil: starke Preis- und Währungsschwankungen.' },
+        { t: 'Mehr Geld für Umweltschutzmaßnahmen', warum: 'Mehr Geld in Finanzmärkten heißt laut Folie weniger für Schutzmaßnahmen.' },
+      ] },
+    { id: 'e09-23', typ: 'offen', thema: 'Folgen', wichtig: 2, punkte: 3, quelle: 'VL07, S. 64',
+      frage: 'Nennen Sie drei Folgen der Finanzkrise 2007/08.',
+      antwort: `Die Bankenrettung kostete Deutschland rund 58–68 Milliarden Euro und führte zu Sparmaßnahmen in den öffentlichen Haushalten. Es folgte die Eurokrise mit einer drastischen Auseinanderentwicklung in Europa. Die Zentralbanken reagierten mit „quantitative easing“ und extremen Niedrigzinsen, was die Immobilienpreise massiv aufblähte; zudem nahm die Ungleichheit stark zu.`,
+      kernpunkte: ['Teure Bankenrettung (D: 58–68 Mrd. €) → Sparmaßnahmen', 'Eurokrise, Auseinanderentwicklung in Europa', 'Quantitative easing/Niedrigzinsen → Immobilienpreise, Inflation; oder mehr Ungleichheit'] },
+    { id: 'e09-24', typ: 'wf', thema: 'Folgen', wichtig: 2, quelle: 'VL07, S. 64',
+      aussage: 'Nach der Finanzkrise 2007/08 ist die Finanzialisierung deutlich zurückgegangen.',
+      wahr: false, warum: 'Laut Folie ist die Finanzialisierung **heute noch tiefgreifender als zuvor**.' },
+  ],
+});
+//# sourceURL=content/wirtschaftsgeographie/e09.js
+</script>
+<script>
 /* e10 Nachhaltigkeit I: Environmental Economic Geography – VL08 Teil 1 (Rosol, 18.06.2026).
    Analyse: quellen/wirtschaftsgeographie/analyse/VL08-Nachhaltigkeit.md (PDF-Seiten 2–26)
    „EEG“ wird immer ausgeschrieben: hier Environmental Economic Geography, in VL03 Evolutionary Economic Geography. */
@@ -5145,6 +5361,47 @@ Lerni.grafik('wirtschaftsgeographie', 'exportbasis', {
       <line class="n" x1="184" y1="80" x2="214" y2="60"/><text x="218" y="58"><tspan class="b">ökologische Decke</tspan></text><text x="218" y="71">planetare Grenzen</text>
       <line class="n" x1="190" y1="160" x2="214" y2="170"/><text x="218" y="168"><tspan class="b">Ziel</tspan>: Bedürfnisse</text><text x="218" y="181">decken, ohne Grenzen</text><text x="218" y="194">zu überschreiten</text>
     </g>
+  </svg>`,
+  });
+})();
+
+/* ---------- e09 Finanzialisierung ---------- */
+(() => {
+  const K = 'wirtschaftsgeographie';
+  const daten = [['1980', 120], ['1990', 263], ['2000', 310], ['2010', 316]];
+  Lerni.grafik(K, 'finanzvermoegen', {
+    titel: 'Globale Finanzvermögen im Verhältnis zum Welt-BIP',
+    text: 'VL07, S. 16 (Dutta 2018): Das Finanzvermögen wuchs von 120 % (1980) auf 316 % (2010) des globalen BIP.',
+    svg: `<svg viewBox="0 0 340 196" role="img" aria-label="Säulen: 1980 120 Prozent, 1990 263, 2000 310, 2010 316 Prozent des BIP">
+    <line x1="20" y1="160" x2="330" y2="160"/>
+    <line class="d sm n" x1="20" y1="${160 - 100 * 0.42}" x2="330" y2="${160 - 100 * 0.42}"/><line class="d sm n" x1="20" y1="10" x2="40" y2="10"/><text class="k m" x="44" y="14">100 % = Welt-BIP</text>
+    ${daten.map(([j, w], i) => {
+      const x = 40 + i * 74, h = w * 0.42;
+      return `<rect class="f1 s1" x="${x}" y="${160 - h}" width="48" height="${h}" rx="3"/><text class="k b" x="${x + 24}" y="${152 - h}" text-anchor="middle">${w} %</text><text class="k" x="${x + 24}" y="176" text-anchor="middle">${j}</text>`;
+    }).join('')}
+    <text class="k m" x="175" y="192" text-anchor="middle">Finanzvermögen in % des globalen BIP</text>
+  </svg>`,
+  });
+
+  Lerni.grafik(K, 'geldschoepfung', {
+    titel: 'Wie entsteht Geld? Mythos und Realität',
+    text: 'VL07, S. 35–36 (Wójcik et al. 2024): Nicht Ersparnisse ermöglichen Kredite – Banken schaffen mit jedem Kredit neues Geld. Sparen und Kredit sind nicht korreliert.',
+    svg: `<svg viewBox="0 0 340 196" role="img" aria-label="Zwei Abläufe: Mythos Sparen zu Kredit, Realität Kredit schafft Geld">
+    <text class="k b tm" x="4" y="16">Mythos</text>
+    <g class="k" text-anchor="middle">
+      <rect class="f0" x="4" y="24" width="90" height="40" rx="8"/><text x="49" y="42">Sparer:innen</text><text x="49" y="55">zahlen ein</text>
+      <rect class="f0" x="124" y="24" width="90" height="40" rx="8"/><text x="169" y="42">Bank sammelt</text><text x="169" y="55">Einlagen</text>
+      <rect class="f0" x="244" y="24" width="92" height="40" rx="8"/><text x="290" y="42">verleiht sie</text><text x="290" y="55">als Kredit</text>
+    </g>
+    <line x1="94" y1="44" x2="116" y2="44"/><polygon class="pf" points="122,44 114,40 114,48"/><line x1="214" y1="44" x2="236" y2="44"/><polygon class="pf" points="242,44 234,40 234,48"/>
+    <text class="k b to" x="4" y="98">Realität</text>
+    <g class="k" text-anchor="middle">
+      <rect class="f2" x="4" y="106" width="90" height="52" rx="8"/><text x="49" y="124">Bank vergibt</text><text x="49" y="137">Kredit = schafft</text><text x="49" y="150">neues Geld</text>
+      <rect class="f2" x="124" y="106" width="90" height="52" rx="8"/><text x="169" y="124">Haushalte und</text><text x="169" y="137">Firmen konsu-</text><text x="169" y="150">mieren, investieren</text>
+      <rect class="f2" x="244" y="106" width="92" height="52" rx="8"/><text x="290" y="130">Rest wird</text><text x="290" y="143">gespart</text>
+    </g>
+    <line x1="94" y1="132" x2="116" y2="132"/><polygon class="pf" points="122,132 114,128 114,136"/><line x1="214" y1="132" x2="236" y2="132"/><polygon class="pf" points="242,132 234,128 234,136"/>
+    <text class="k" x="170" y="182" text-anchor="middle">Geld entsteht aus Schulden – Sparen treibt nicht die Kreditvergabe.</text>
   </svg>`,
   });
 })();
