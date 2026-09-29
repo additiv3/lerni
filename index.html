@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- LERNI – gebaut 29.09.2026, 21:27. Nicht direkt öffnen: py tools/build.py setzt CSS, Code und Inhalte ein und schreibt dist/index.html -->
+<!-- LERNI – gebaut 29.09.2026, 21:34. Nicht direkt öffnen: py tools/build.py setzt CSS, Code und Inhalte ein und schreibt dist/index.html -->
 <html lang="de">
 <head>
   <meta charset="utf-8">
@@ -413,7 +413,7 @@ details.card[open] summary { margin-bottom: 10px; }
 </head>
 <body>
   <noscript>Lerni braucht JavaScript.</noscript>
-<script>const LERNI_BUILD = {"id": "5548a36-20260929212801", "stamp": "29.09.2026, 21:27", "commit": "5548a36"};</script>
+<script>const LERNI_BUILD = {"id": "7f2616c-20260929213421", "stamp": "29.09.2026, 21:34", "commit": "7f2616c"};</script>
 <script>
 /* LERNI – Hilfsfunktionen: DOM, Datum, Text, Zufall.
    Läuft auch in Node (tools/check.js): beim Laden nichts am DOM anfassen. */
@@ -1391,6 +1391,397 @@ Warum wandeln sich Denkstile (Paradigma nach **Thomas Kuhn**)? (1) **Empirische 
 //# sourceURL=content/wirtschaftsgeographie/e01.js
 </script>
 <script>
+/* e02 Globale Geographien ungleicher Entwicklung – VL02 (Kanesu, 23.04.2026). Analyse: quellen/wirtschaftsgeographie/analyse/VL02-….md
+   Seitenangaben = PDF-Seiten (die gedruckte Foliennummer weicht ab). */
+Lerni.einheit('wirtschaftsgeographie', {
+  id: 'e02',
+  titel: 'Globale Geographien ungleicher Entwicklung',
+  quelle: 'VL02 Globale Geographien ungleicher Entwicklung (Kanesu), PDF-Seiten 12–93',
+  skript: [
+    {
+      thema: 'Entwicklung', titel: 'Entwicklung – eine Fortschrittserzählung',
+      text: `„Entwicklung“ ist kein neutraler Begriff, sondern eine **Fortschrittserzählung**, die sich historisch gewandelt hat (Potter et al.):
+- Ursprung in der **Aufklärung** (Glaube an Wissenschaft, Vernunft, Humanismus)
+- **1940/50er:** Modernisierung und wirtschaftliches Wachstum
+- **1970/80er:** Öko-Entwicklung (Vorläufer der „nachhaltigen Entwicklung“), soziale Indikatoren wie Gesundheit, Bildung, Lebensstandard
+- **1990er:** Umweltqualität, Menschenrechte, Geschlechtergerechtigkeit, Freiheit (z. B. Sen)
+
+Die geographische Entwicklungsforschung fragt: Wie lässt sich Entwicklung **messen**? Wie lassen sich Unterschiede („Unterentwicklung“) **erklären**? Welche Ziele verfolgt **wer** zu welchem Zweck? Welche Rolle spielen **räumliche Beziehungen** und Maßstabsebenen? Welche **neuen Ungleichheiten** entstehen durch Entwicklung selbst?
+
+==Entwicklung ist ein umstrittenes, historisch gewandeltes Konzept – eng verknüpft mit kolonialer Aneignung.==`,
+    },
+    {
+      thema: 'Disparitäten', titel: 'Räumliche Disparitäten',
+      text: `**Räumliche Disparitäten** = ungleiche Verteilung von und ungleicher Zugang zu Ressourcen, Dienstleistungen, Bildung, Gesundheit, Energie, Infrastruktur, Arbeit und Wohlstand – auf **unterschiedlichen Maßstabsebenen** (lokal, regional, national, global). Man betrachtet sie im Kontext des **globalen Kapitalismus** und der **kolonialen Aneignung** von Ressourcen, Land und Menschen.
+
+Definition nach Kulke: „Räumliche Disparitäten zeigen die Gleichheit bzw. Ungleichheit der Ausprägung von **Indikatoren** in definierten räumlichen Einheiten.“
+- Indikatoren: **ökonomisch**, **gesellschaftlich/sozial**, **umweltökonomisch**
+- Raumeinheiten oft **Verwaltungseinheiten** (Staat, Bundesland, Kreis). Nachteil: Sie können **zusammenhängende Wirtschaftsräume trennen**.
+
+Beispiele: Mietpreise in München (lokal), BIP der US-Metropolregionen (regional), HDI-Weltkarte (global).
+
+==Disparitäten = Ungleichheit von Indikatoren in Raumeinheiten – auf allen Maßstabsebenen.==`,
+    },
+    {
+      thema: 'Indikatoren', titel: 'Entwicklung messen: Indikatoren',
+      text: `- **BNE** (Bruttonationaleinkommen, früher Bruttosozialprodukt): Gesamteinkommen aller Inländer; seit 1992 offizieller Indikator der Weltbank.
+- **BIP pro Kopf:** Wert aller Waren und Dienstleistungen, die **in einem Land in einem Jahr** produziert werden, geteilt durch die Einwohnerzahl – also ein **Durchschnitt**. Nicht erfasst werden **Subsistenzwirtschaft**, **informelle Arbeit**, **unbezahlte Sorgearbeit**; wohlstandsmindernde Aktivitäten (z. B. **Regenwald-Rodung**) werden mitgezählt; **nicht einkommensbasierter Besitz** (Aktien, Immobilien) fehlt.
+- **Gini-Koeffizient:** Ungleichverteilung von Einkommen/Vermögen; **0 = alle haben gleich viel, 1 = eine Person besitzt alles**.
+- **Palma-Ratio:** Einkommen der reichsten 10 % ÷ Einkommen der ärmsten 40 % (vor Steuern); je höher, desto ungleicher.
+- **Big-Mac-Index:** 1986 von **The Economist** erfunden; vergleicht auf Basis von **Kaufkraftparitäten** und zeigt **Über- und Unterbewertung von Währungen**. (Andere Lesart auf der Folie: Wie lange muss man für einen Big Mac arbeiten?)
+- **HDI:** seit **1990** vom **UNDP**; Kaufkraft, Bildung, Gesundheit; Wert 0 bis 1. **GII:** geschlechterbezogene Disparitäten.
+- **World Happiness Report:** Lebenszufriedenheit auf einer Leiter von 0 bis 10.
+- **SDGs:** 17 Ziele der UN (2015), Nachfolger der 8 MDGs (2000).
+
+==„Not who you are, but where you are“ (Roser): Lebensbedingungen hängen stark vom Ort ab.==`,
+    },
+    {
+      thema: 'Geschichte', titel: 'Kolonialismus und die „Erfindung der Entwicklung“',
+      text: `- **Kolonialismus ab dem 15. Jh.**, Frühkapitalismus Ende des 16. Jh., transatlantischer Dreieckshandel ab dem 16. Jh.; eurozentrisches Überlegenheitsdenken (auch Missionierung).
+- **Dekolonisierung:** USA 1776, Haiti 1804, Lateinamerika 1809–1825, Liberia 1847; moderne Dekolonisation ab 1945 (Indonesien 1945, Indien 1947), afrikanische Staaten ab 1960, Palau 1994 als letzter Staat. Heute gibt es noch **17 nicht-selbstverwaltete Gebiete**.
+- **„Erfindung der Entwicklung“ (1940/50er):** Nach 1945 und zu Beginn des **Kalten Kriegs** wird Entwicklungshilfe Mittel der **Einflussnahme und Machtausübung**. Die Welt wird eingeteilt in **1. Welt** (Westen), **2. Welt** (Sowjet-Staaten) und **3. Welt** (blockfreie Staaten). Es entsteht eine „Entwicklungsindustrie“.
+- **Harry S. Truman (1949):** „bold new program“ für „underdeveloped areas“ – „Greater production is the key to prosperity and peace“.
+
+==Entwicklungspolitik entstand im Kalten Krieg – als Instrument von Einfluss und Macht.==`,
+    },
+    {
+      thema: 'Modernisierung', titel: 'Modernisierungstheorie', bild: 'rostow',
+      text: `- **Ursprung:** USA als westliche Hegemonialmacht, 1950er/60er.
+- **Vertreter:** Walt W. Rostow, Daniel Lerner.
+- **Erklärung von „Unterentwicklung“:** Verhaftung in **Traditionen** – also **endogen** (die Ursache liegt im Land selbst).
+- **Lösung:** Assistenz durch den kapitalistischen Norden. **Top-down**-Modernisierung nach westlichem Vorbild über **Freihandel, Investitionen, Wissenstransfer, Export**.
+- **Funktion:** „Bollwerk gegen den Kommunismus“.
+- **Kritik:** paternalistisch; Vorwurf des „Whitewashing from Violence“, Legitimierung der US-Intervention in Vietnam (Selwyn).
+
+**Rostows fünf Stadien:** Traditional society → Preconditions for take-off → Take-off → Drive to maturity → Age of high mass consumption.
+
+==Modernisierungstheorie: Ursache endogen (Tradition), Lösung Nachahmung des Westens.==`,
+    },
+    {
+      thema: 'Dependenz', titel: 'Dependenz- und Weltsystemtheorie', bild: ['dependenz', 'weltsystem'],
+      text: `**Dependenztheorie** – die Antwort aus Lateinamerika (1960/70er, „Insider-Perspektive“: Erklärung der „Entwicklung von Unterentwicklung“):
+- Ansatz: marxistisch, südamerikanischer Strukturalismus. Vertreter: **André Gunder Frank, Raúl Prebisch, Paul Singer, Celso Furtado**.
+- Erklärung: **Kolonialismus** und **ungleiche Terms of Trade** – also **exogen**. Die kapitalistischen Länder des Nordens sind für die Unterentwicklung im Süden verantwortlich; **Entwicklung und Unterentwicklung sind interdependente Prozesse**.
+- Bild: Über eine Kette von Satelliten fließt der **Überschuss (Surplus)** von der Peripherie in die **Metropole**.
+- Lösung: **Importsubstituierende Industrialisierung (ISI)** bzw. komplette Abkopplung vom Weltmarkt.
+- Kritik: neue Abhängigkeiten (z. B. von Rohstoffen), hohe Staatsverschuldung, Umsetzung vor allem in autoritären Regimen.
+
+**Weltsystemtheorie** (Weiterentwicklung, 1970/80er; **Immanuel Wallerstein**, A. G. Frank, Samir Amin): Seit dem 16. Jh. besteht ein **kapitalistisches Weltsystem** aus **Zentrum, Semiperipherie und Peripherie**. Überakkumuliertes Kapital der Zentren wird in den Peripherien investiert, die dadurch abhängig werden; die Profite fließen zurück ins Zentrum. Kritik: ökonomischer Determinismus; die Annahme einer einzigen Weltgesellschaft übergeht Unterschiede zwischen Gesellschaften.
+
+==Dependenz: Ursache exogen (Kolonialismus, Terms of Trade), Lösung Abkopplung/ISI.==`,
+    },
+    {
+      thema: 'Weitere Theorien', titel: 'Grundbedürfnis- und feministische Ansätze',
+      text: `**Grundbedürfnistheorien** (Grassroots-/Livelihood-Ansätze): „Hilfe zur Selbsthilfe“ auf lokaler Ebene, vor allem durch **NGOs** (starke Zunahme ab den 1980ern: „NGOisierung“). Kritik: räumlich ungleich verteilt, abhängig von Spenden, ergänzt den neoliberalen Modus, **ändert keine strukturellen Ursachen**.
+
+**Feministische Theorien** (2. Welle der Frauenbewegung, 1970er; **Ester Boserup, Caroline Moser**):
+- Frauen* werden im Entwicklungsdiskurs marginalisiert und profitieren nicht; ökonomische Perspektiven übersehen Themen wie reproduktive Gerechtigkeit und **Care-Arbeit**.
+- Weg von **Women in Development (WID)** hin zu **Gender and Development (GAD)**; Maßnahmen: Empowerment, Bildung, Mikrokredite.
+- Selbstkritik (Black Feminism): Es braucht **intersektionale** Kriterien (Alter, Ethnizität, Klasse, Sexualität …); Frauen werden sonst homogenisiert oder nur als produktive Arbeitskräfte im neoliberalen System gesehen.
+
+==Feministisch: von WID zu GAD – und intersektional denken.==`,
+    },
+    {
+      thema: 'Neoliberalismus', titel: 'Neoliberalismus und Strukturanpassung',
+      text: `**Neoliberale Theorie** (1980/90er; **Milton Friedman, Friedrich Hayek**, Chicago School; politisch **Reagan, Thatcher**): Staatliches Eingreifen führe zu Ineffizienz; der **Markt** soll als „neutrale Kraft“ über Löhne, Preise und Produktionsorte entscheiden. Harvey: Deregulierung, Privatisierung, Rückzug des Staates.
+
+Hintergrund: Keynesianismus der Nachkriegszeit → Nixon beendet **1971** das Bretton-Woods-Abkommen → **Ölkrisen** 1974/75 und 1978/79 → **Wirtschaftskrise 1979–83** → Neoliberalismus löst den Keynesianismus ab.
+
+**Merkmale neoliberaler Politik:** Abbau von Handelsbarrieren · Exportförderung · Abwertung der Währung · Finanzliberalisierung · Abschaffung von Subventionen · Gebühren und **Rückbau öffentlicher Dienstleistungen** · Bürokratieabbau · Privatisierung.
+
+**Globaler Süden:** Schuldenkrise → Abhängigkeit von Krediten von **Weltbank und IWF**, die an Bedingungen geknüpft sind: **Strukturanpassungsprogramme (SAPs)**. Ziel: Stabilisierung, Integration in den Weltmarkt, Schuldenabbau. Maßnahmen: Rückzug des Staates, Ende der ISI, Öffnung für Investitionen. Folge: **Zunahme von Ungleichheit**. Ab den 1990ern Poverty Reduction Strategy Papers. Viele Länder sind bis heute kritisch verschuldet.
+
+==SAPs: Kredite gegen Marktöffnung und Rückzug des Staates – Folge: mehr Ungleichheit.==`,
+    },
+    {
+      thema: 'Post-Development', titel: 'Globaler Süden, Post-Development, Kolonialität',
+      text: `**„Globaler Süden“ – drei Bedeutungen:**
+1. **Geographisch/geopolitisch (Dados/Connell):** Regionen Lateinamerikas, Asiens, Afrikas, Ozeaniens; meist einkommensschwach, politisch und kulturell marginalisiert; Fokus auf **geopolitische Machtverhältnisse** statt „Entwicklung“.
+2. **Post-national (Mahler):** Räume und Menschen, die von der kapitalistischen Globalisierung **negativ betroffen** sind – deterritorialisiert: Es gibt den Süden im Norden (Wohnungslose in Berlin) und den Norden im Süden (reiche Viertel in Südafrika).
+3. **Politisch (Mahler):** widerständige Vorstellung eines transnationalen politischen Subjekts aus geteilter Erfahrung von Unterdrückung; laterale Solidarität.
+
+**Post-Development** (1990er; Escobar, de Sousa Santos, Quijano, Mignolo, Acosta): Entwicklungsnarrative sind **paternalistisch, eurozentrisch, entpolitisierend, autoritär** und legitimieren **westliche Hegemonie**. Die Entwicklungsideologie selbst wird infrage gestellt; Alternativen: **Buen Vivir, Sumak Kawsay, Ubuntu**. Kritik: Romantisierung alternativer Lebensweisen.
+
+**Nachhaltigkeitstheorien:** Auch die SDGs folgen einer linearen, positivistischen Logik, die koloniale Muster reproduziert (Ziai).
+
+**Kolonialität:** Koloniale Verhältnisse dauern bis heute an – hierarchische räumliche und soziale Ordnungen, Rassismus, eurozentrische Rechts- und Handelssysteme.
+
+==Post-Development: nicht „bessere Entwicklung“, sondern Alternativen zur Entwicklung.==`,
+    },
+    {
+      thema: 'Akteure', titel: 'Akteure: Wer macht wo Entwicklung?',
+      text: `- **Weltbank** (Sitz Washington DC, 189 Mitglieder): Kredite und Programme in über 100 Ländern. Kritik: „fast policy“, umstrittene Politik, verursacht Ungleichheit und neue Probleme.
+- **Multilaterale Entwicklungsbanken** (z. B. Asian Infrastructure Investment Bank, Asian Development Bank): zunehmend Fokus auf **private Investitionen** – eher Finanzvermittler als Geldgeber.
+- **Staatliche Akteure:** OECD-Staaten sagten in den 1970ern **0,7 % des BNE** für Entwicklungszusammenarbeit zu (USAID, GIZ, JICA …); verfolgen auch **außenpolitische Interessen**.
+- **BRICS(+):** 2009 als Reaktion auf die Finanzkrise gegründet (Brasilien, Russland, Indien, China, Südafrika; seither erweitert); informelle Vereinigung gegen westliche Dominanz im Finanzwesen, **Süd-Süd-Kooperation**, aber **keine gemeinsame Ideologie**.
+- **China – Belt and Road Initiative** (2013): Infrastruktur über Land und Meer, staatliche Kredite. Kritik: Abhängigkeit, Intransparenz, **Neokolonialismus**.
+- **NGOs:** übernehmen Versorgungsaufgaben. Kritik: abhängig von Geldgebern, **nicht demokratisch legitimiert**, **Projektlogik** statt Strukturveränderung.
+- **Firmen (CSR):** Entwicklung als Marketing. Kritik: intransparent, **Greenwashing**, freiwillig.
+- **Philanthrop:innen** (z. B. Gates Foundation): Einzelne entscheiden mit viel Macht.
+- **Diaspora Finance:** **Rücküberweisungen (Remittances)** von Migrant:innen sind in vielen Niedriglohnländern **höher als Entwicklungshilfe und Direktinvestitionen**.
+
+==Ziele „guter“ Entwicklung hängen von den Interessen der Akteure ab.==`,
+    },
+    {
+      thema: 'Global Care Chains', titel: 'Global Care Chains: Sorgearbeit in Hongkong',
+      text: `Hongkong ist eine der reichsten Städte der Welt – und extrem ungleich. Rund **30 % der Haushalte** beschäftigen **domestic helpers** (ca. 350.000), meist aus den **Philippinen oder Indonesien**, zu sehr geringen Löhnen und ohne eigene Wohnung. Sie sind das **Rückgrat der Hongkonger Mittelschicht**: Ohne ihre Sorgearbeit würde die Wirtschaft nicht funktionieren.
+
+- Ihre **Remittances** unterstützen Familien und die Wirtschaft in den Herkunftsländern („Entwicklung“ vor Ort).
+- In den Herkunftsorten fehlt dafür Sorgearbeit; sie wird weiterverlagert, z. B. an Großeltern: **Care Drain**.
+- **Global Care Chains** (Hochschild, Yeates) sind eine Analyseperspektive für globale Ungleichheit.
+
+Feministische WiGeo: Sorgearbeit (reproduktive Arbeit) steht nie außerhalb der globalen kapitalistischen Wirtschaft, sondern ist **essenzieller Teil ihres Funktionierens** und prägt die Geographien der Ungleichheit.
+
+==Care-Arbeit wird entlang globaler Ungleichheiten verschoben – vom reichen Haushalt bis zu den Großeltern im Herkunftsland.==`,
+    },
+    {
+      thema: 'Fazit', titel: 'Fazit: Take Home Messages',
+      text: `1. Ungleiche Entwicklung zeigt sich auf **unterschiedlichen Maßstabsebenen**, u. a. als **räumliche Disparitäten**.
+2. Entwicklungstheorien stammen aus Globalem Norden und Süden, von Wissenschaft **und** sozialen Bewegungen.
+3. Entwicklung ist ein **umstrittenes Konzept**, eng verknüpft mit **kolonialer Aneignung** und bis heute andauernder **Kolonialität**.
+4. Was „gute“ Entwicklung ist, hängt von den **Interessen der Akteure** ab; diese sind vielfältig und wandeln sich mit der Geopolitik.
+5. **Neoklassik:** ungleiche Entwicklung ist ein **temporärer, überwindbarer** Zustand. **Geographische Politische Ökonomie:** ungleiche Entwicklung ist ein **zentrales Wesensmerkmal** des globalisierten Kapitalismus.
+6. „Globalisierung produziert und nutzt Ungleichheit – nicht zufällig, sondern strategisch.“ – „**Globalization is uneven geographical development.**“
+
+==Neoklassik: Ungleichheit vorübergehend. GPE: Ungleichheit ist Wesensmerkmal des Kapitalismus.==`,
+    },
+  ],
+  fragen: [
+    /* ---------- Entwicklung ---------- */
+    { id: 'e02-01', typ: 'reihe', thema: 'Entwicklung', quelle: 'VL02, S. 14',
+      frage: 'Bring die Schwerpunkte des Entwicklungsverständnisses in die zeitliche Reihenfolge.',
+      schritte: ['Aufklärung: Glaube an Wissenschaft, Vernunft, Humanismus', 'Modernisierung und wirtschaftliches Wachstum', 'Öko-Entwicklung, soziale Indikatoren (Gesundheit, Bildung)', 'Umweltqualität, Menschenrechte, Geschlechtergerechtigkeit, Freiheit'] },
+
+    /* ---------- Disparitäten ---------- */
+    { id: 'e02-02', typ: 'luecke', thema: 'Disparitäten', wichtig: 2, quelle: 'VL02, S. 19',
+      frage: 'Definition nach Kulke. Fülle die Lücken.',
+      text: 'Räumliche Disparitäten zeigen die [[Gleichheit]] bzw. Ungleichheit der Ausprägung von [[Indikatoren|Indikator]] in definierten räumlichen [[Einheiten|Einheit]].' },
+    { id: 'e02-03', typ: 'offen', thema: 'Disparitäten', wichtig: 2, punkte: 3, quelle: 'VL02, S. 18–19',
+      frage: 'Definieren Sie „räumliche Disparitäten“ (1 P.). Nennen Sie die drei Arten von Indikatoren, mit denen man sie misst (1 P.), und einen Nachteil, wenn man Raumeinheiten nach Verwaltungsgrenzen bildet (1 P.).',
+      antwort: `Räumliche Disparitäten zeigen die Gleichheit bzw. Ungleichheit der Ausprägung von Indikatoren in definierten räumlichen Einheiten – also ungleiche Verteilung von und ungleichen Zugang zu Ressourcen, Infrastruktur, Arbeit oder Wohlstand auf verschiedenen Maßstabsebenen. Gemessen werden sie mit ökonomischen, gesellschaftlich-sozialen und umweltökonomischen Indikatoren. Werden die Raumeinheiten nach Verwaltungsgrenzen gebildet (Staat, Bundesland, Kreis), können zusammenhängende Wirtschaftsräume getrennt werden.`,
+      kernpunkte: ['(a) Ungleichheit der Ausprägung von Indikatoren in definierten Raumeinheiten (auf verschiedenen Maßstabsebenen)', '(b) Indikatoren: ökonomisch, gesellschaftlich/sozial, umweltökonomisch', '(c) Verwaltungseinheiten können zusammenhängende Wirtschaftsräume trennen'] },
+
+    /* ---------- Indikatoren ---------- */
+    { id: 'e02-04', typ: 'offen', thema: 'Indikatoren', wichtig: 3, punkte: 3, quelle: 'VL02, S. 26; Musterklausur WS23/24, 1.5',
+      frage: 'Wieso ist die Aussagekraft des BIP pro Kopf als Indikator für die wirtschaftliche Leistung von Raumeinheiten eingeschränkt? (1 P.) Nennen Sie vier Beispiele. (2 P.)',
+      antwort: `Das BIP pro Kopf ist nur ein Durchschnittswert: der Wert aller in einem Land in einem Jahr produzierten Waren und Dienstleistungen, geteilt durch die Einwohnerzahl. Es sagt nichts über die Verteilung aus und erfasst nur, was über Märkte erfasst wird. Nicht berücksichtigt werden etwa Subsistenzwirtschaft, informelle Arbeit und unbezahlte Sorgearbeit; nicht einkommensbasierter Besitz wie Aktien oder Immobilien fehlt. Umgekehrt werden wohlstandsmindernde Aktivitäten wie die Rodung von Regenwald als Leistung mitgezählt.`,
+      kernpunkte: ['(a) Nur ein Durchschnittswert (Gesamtwert Waren/DL eines Jahres ÷ Einwohner) – sagt nichts über Verteilung und Nicht-Markt-Tätigkeiten', '(b) Zwei Beispiele, z. B. Subsistenzwirtschaft, informelle Arbeit nicht erfasst', '(b) Zwei weitere, z. B. unbezahlte Sorgearbeit fehlt, Regenwald-Rodung zählt mit, Besitz (Aktien, Immobilien) fehlt'],
+      erklaerung: 'Musterklausur 1.5 (3 P.). Pro Beispiel gibt es dort vermutlich 0,5 P. – deshalb zählen hier je zwei Beispiele als ein Kernpunkt.' },
+    { id: 'e02-05', typ: 'mc', thema: 'Indikatoren', wichtig: 3, quelle: 'VL02, S. 26',
+      frage: 'Welche Aussagen zum BIP pro Kopf treffen zu? (mehrere möglich)',
+      optionen: [
+        { t: 'Unbezahlte Sorgearbeit wird nicht erfasst.', r: true, warum: 'Ebenso wenig Subsistenzwirtschaft und informelle Arbeit.' },
+        { t: 'Wohlstandsmindernde Aktivitäten wie Regenwald-Rodung erhöhen es.', r: true, warum: 'Sie gehen als Produktion in die Rechnung ein.' },
+        { t: 'Es zeigt, wie das Einkommen innerhalb eines Landes verteilt ist.', warum: 'Es ist ein Durchschnitt; die Verteilung misst z. B. der Gini-Koeffizient.' },
+        { t: 'Aktien- und Immobilienbesitz fließen als Vermögen mit ein.', warum: 'Nicht einkommensbasierter Besitz fehlt gerade.' },
+      ] },
+    { id: 'e02-06', typ: 'mc', thema: 'Indikatoren', wichtig: 2, quelle: 'VL02, S. 28–29',
+      frage: 'Ein Land hat einen Gini-Koeffizienten von 0. Was bedeutet das?',
+      optionen: [
+        { t: 'Alle haben gleich viel Einkommen bzw. Vermögen.', r: true, warum: '0 = vollkommene Gleichverteilung.' },
+        { t: 'Eine Person besitzt alles.', warum: 'Das wäre ein Gini-Koeffizient von 1.' },
+        { t: 'Die reichsten 10 % verdienen so viel wie die ärmsten 40 %.', warum: 'Das beschreibt eine Palma-Ratio von 1.' },
+        { t: 'Das Land erwirtschaftet kein Bruttoinlandsprodukt.', warum: 'Der Gini misst Verteilung, nicht die Höhe der Wirtschaftsleistung.' },
+      ] },
+    { id: 'e02-07', typ: 'karte', thema: 'Indikatoren', quelle: 'VL02, S. 29',
+      vorne: 'Palma-Ratio',
+      hinten: `Einkommen der **reichsten 10 %** geteilt durch das Einkommen der **ärmsten 40 %** (vor Steuern). Je höher der Wert, desto größer die Ungleichheit.` },
+    { id: 'e02-08', typ: 'karte', thema: 'Indikatoren', quelle: 'VL02, S. 30–31',
+      vorne: 'Big-Mac-Index',
+      hinten: `1986 von **The Economist** erfunden. Vergleicht Big-Mac-Preise (in US-Dollar umgerechnet) auf Basis von **Kaufkraftparitäten** und zeigt so die **Über- oder Unterbewertung von Währungen**.`,
+      erklaerung: 'Eine zweite Folie nutzt ihn anders: als Maß dafür, wie lange man für einen Big Mac **arbeiten** muss (Kaufkraft-Disparitäten).' },
+    { id: 'e02-09', typ: 'paare', thema: 'Indikatoren', wichtig: 2, quelle: 'VL02, S. 26–36',
+      frage: 'Ordne jedem Indikator zu, was er misst.',
+      paare: [
+        ['HDI (UNDP, 1990)', 'Kaufkraft, Bildung und Gesundheit'],
+        ['Gender Inequality Index', 'Geschlechterbezogene Disparitäten'],
+        ['Gini-Koeffizient', 'Ungleichverteilung von Einkommen oder Vermögen'],
+        ['Palma-Ratio', 'Reichste 10 % im Verhältnis zu den ärmsten 40 %'],
+        ['World Happiness Report', 'Lebenszufriedenheit auf einer Leiter von 0 bis 10'],
+        ['BNE', 'Gesamteinkommen aller Inländer'],
+      ] },
+    { id: 'e02-10', typ: 'wf', thema: 'Indikatoren', wichtig: 2, quelle: 'VL02, S. 32',
+      aussage: 'Der Human Development Index (HDI) wurde 1990 von der Weltbank eingeführt.',
+      wahr: false, warum: 'Der HDI ist ein Index des **UNDP** (United Nations Development Programme), seit 1990.' },
+    { id: 'e02-11', typ: 'offen', thema: 'Indikatoren', wichtig: 2, punkte: 3, quelle: 'VL02, S. 25–37',
+      frage: 'Nennen Sie je einen ökonomischen, einen sozialen und einen ökologisch orientierten Indikator zur Messung von Entwicklung.',
+      antwort: `Ökonomisch: z. B. BIP bzw. BNE pro Kopf (auch Gini-Koeffizient, Palma-Ratio oder Big-Mac-Index für Verteilung und Kaufkraft). Sozial: z. B. der Human Development Index (Kaufkraft, Bildung, Gesundheit), der Gender Inequality Index oder der World Happiness Report. Ökologisch orientiert: z. B. die Sustainable Development Goals (SDGs) der UN.`,
+      kernpunkte: ['Ökonomisch: BIP/BNE pro Kopf (oder Gini, Palma, Big-Mac-Index)', 'Sozial: HDI, GII oder World Happiness Report', 'Ökologisch: SDGs'],
+      erklaerung: 'Hergeleitet aus VL02, S. 25 (Aufgabenfolie „Anhand welcher Indikatoren lässt sich Entwicklung messen?“) und S. 26–37. Die Folie ordnet die SDGs unter „ökologische Indikatoren“ ein.' },
+    { id: 'e02-12', typ: 'luecke', thema: 'Indikatoren', quelle: 'VL02, S. 37',
+      text: 'Die UN verabschiedete [[2015]] die [[17]] Sustainable Development Goals (SDGs). Ihre Vorgänger waren die 8 Millennium Development Goals aus dem Jahr [[2000]].' },
+
+    /* ---------- Geschichte ---------- */
+    { id: 'e02-13', typ: 'mc', thema: 'Geschichte', wichtig: 2, quelle: 'VL02, S. 43–44',
+      frage: 'Was trifft auf die „Erfindung der Entwicklung“ nach 1945 zu? (mehrere möglich)',
+      optionen: [
+        { t: 'Entwicklungshilfe diente im Kalten Krieg auch der Einflussnahme und Machtausübung.', r: true, warum: 'So auf der Folie: Ziel waren Einfluss und Macht über „Entwicklungshilfe“.' },
+        { t: 'US-Präsident Truman kündigte 1949 ein Programm für „underdeveloped areas“ an.', r: true, warum: 'Antrittsrede 1949: „Greater production is the key to prosperity and peace“.' },
+        { t: 'Die blockfreien Staaten wurden der „2. Welt“ zugeordnet.', warum: 'Blockfreie Staaten = 3. Welt; die 2. Welt waren die Sowjet-Staaten.' },
+        { t: 'Die Dekolonisierung Afrikas war zu diesem Zeitpunkt abgeschlossen.', warum: 'Die afrikanischen Staaten wurden überwiegend erst ab 1960 unabhängig.' },
+      ] },
+    { id: 'e02-14', typ: 'reihe', thema: 'Geschichte', quelle: 'VL02, S. 42',
+      frage: 'Bring die Stationen der Dekolonisierung in die zeitliche Reihenfolge.',
+      schritte: ['USA werden von Großbritannien unabhängig', 'Haiti wird von Frankreich unabhängig', 'Großteil Lateinamerikas wird von Spanien/Portugal unabhängig', 'Indien wird von Großbritannien unabhängig', 'Viele afrikanische Staaten werden unabhängig', 'Palau wird als letzter Staat unabhängig'],
+      erklaerung: '1776 · 1804 · 1809–1825 · 1947 · ab 1960 · 1994. Heute gibt es noch **17 nicht-selbstverwaltete Gebiete** (Inseln in Pazifik, Karibik, Atlantik und die Westsahara).' },
+
+    /* ---------- Modernisierung ---------- */
+    { id: 'e02-15', typ: 'reihe', thema: 'Modernisierung', wichtig: 2, quelle: 'VL02, S. 47', bildLoesung: 'rostow',
+      frage: 'Bring Rostows fünf Stadien wirtschaftlicher Entwicklung in die richtige Reihenfolge.',
+      schritte: ['Traditional society', 'Preconditions for take-off', 'Take-off', 'Drive to maturity', 'Age of high mass consumption'] },
+    { id: 'e02-16', typ: 'mc', thema: 'Modernisierung', wichtig: 2, quelle: 'VL02, S. 46–49',
+      frage: 'Welche Theorie erklärt „Unterentwicklung“ endogen – durch die Verhaftung in Traditionen?',
+      optionen: [
+        { t: 'Modernisierungstheorie', r: true, warum: 'Rostow, Lerner: Ursache im Land selbst; Lösung Modernisierung nach westlichem Vorbild.' },
+        { t: 'Dependenztheorie', warum: 'Sie erklärt exogen: Kolonialismus und ungleiche Terms of Trade.' },
+        { t: 'Weltsystemtheorie', warum: 'Sie erklärt über die Stellung im kapitalistischen Weltsystem (Zentrum–Peripherie).' },
+        { t: 'Post-Development', warum: 'Sie kritisiert die Entwicklungsidee selbst, statt Unterentwicklung zu erklären.' },
+      ] },
+    { id: 'e02-17', typ: 'wf', thema: 'Modernisierung', quelle: 'VL02, S. 47',
+      aussage: 'Die Modernisierungstheorie hatte laut Vorlesung auch die Funktion eines „Bollwerks gegen den Kommunismus“.',
+      wahr: true, warum: 'Sie entstand in den USA der 1950er/60er, im Kalten Krieg. Kritik: paternalistisch, Legitimierung der US-Intervention in Vietnam.' },
+
+    /* ---------- Dependenz / Weltsystem ---------- */
+    { id: 'e02-18', typ: 'offen', thema: 'Dependenz', wichtig: 3, punkte: 2, quelle: 'VL02, S. 48–49; VL05-06, S. 17; Musterklausur WS23/24, 1.8', bildLoesung: 'dependenz',
+      frage: 'Erläutern Sie die Grundannahmen der Dependenztheorien.',
+      antwort: `Die Dependenztheorien (Lateinamerika, 1960/70er; Frank, Prebisch) erklären Unterentwicklung exogen: durch Kolonialismus und ungleiche Terms of Trade. Die kapitalistischen Länder des Nordens sind für die Unterentwicklung im Süden verantwortlich; Entwicklung und Unterentwicklung sind interdependente Prozesse. Grundlage ist ein Zentrum-Peripherie-Modell: Über strukturelle, historisch entstandene Abhängigkeiten fließt der Überschuss aus der Peripherie in die Metropolen. Als Lösung gelten Importsubstituierende Industrialisierung oder die Abkopplung vom Weltmarkt.`,
+      kernpunkte: ['Ursache exogen: Kolonialismus, ungleiche Terms of Trade; der kapitalistische Norden ist verantwortlich, Entwicklung und Unterentwicklung sind interdependent', 'Zentrum–Peripherie: strukturelle Abhängigkeit, Überschuss fließt aus der Peripherie in die Metropolen (Lösung: ISI/Abkopplung)'] },
+    { id: 'e02-19', typ: 'offen', thema: 'Dependenz', wichtig: 2, punkte: 3, quelle: 'VL02, S. 46–49',
+      frage: 'Vergleichen Sie Modernisierungs- und Dependenztheorie hinsichtlich Ursprung, Erklärung von „Unterentwicklung“ und Lösungsvorschlag.',
+      antwort: `Die Modernisierungstheorie entstand in den 1950er/60ern in den USA als westlicher Hegemonialmacht, die Dependenztheorie in den 1960/70ern in Lateinamerika als „Insider-Perspektive“. Die Modernisierungstheorie erklärt Unterentwicklung endogen durch die Verhaftung in Traditionen, die Dependenztheorie exogen durch Kolonialismus und ungleiche Terms of Trade. Die Modernisierungstheorie setzt auf Modernisierung nach westlichem Vorbild durch Freihandel, Investitionen und Wissenstransfer; die Dependenztheorie auf Importsubstituierende Industrialisierung bzw. Abkopplung vom Weltmarkt.`,
+      kernpunkte: ['Ursprung: USA 1950/60er (westliche Hegemonialmacht) ↔ Lateinamerika 1960/70er (Insider-Perspektive)', 'Erklärung: endogen, Verhaftung in Traditionen ↔ exogen, Kolonialismus und ungleiche Terms of Trade', 'Lösung: Modernisierung nach westlichem Vorbild (Freihandel, Investitionen, Export) ↔ ISI bzw. Abkopplung vom Weltmarkt'] },
+    { id: 'e02-20', typ: 'mc', thema: 'Dependenz', wichtig: 2, quelle: 'VL02, S. 49',
+      frage: 'Welche Lösung schlugen die Dependenztheoretiker vor?',
+      optionen: [
+        { t: 'Importsubstituierende Industrialisierung bzw. Abkopplung vom Weltmarkt', r: true, warum: 'Kritik daran: neue Abhängigkeiten, hohe Staatsverschuldung, Umsetzung v. a. in autoritären Regimen.' },
+        { t: 'Freihandel, Investitionen und Wissenstransfer aus dem Norden', warum: 'Das ist die Lösung der Modernisierungstheorie.' },
+        { t: 'Strukturanpassungsprogramme von Weltbank und IWF', warum: 'Das ist neoliberale Politik der 1980/90er – sie beendete gerade die ISI.' },
+        { t: 'Buen Vivir statt Entwicklung', warum: 'Das ist eine Alternative aus dem Post-Development.' },
+      ] },
+    { id: 'e02-21', typ: 'offen', thema: 'Dependenz', wichtig: 2, punkte: 3, quelle: 'VL02, S. 50–51; VL05-06, S. 17', bildLoesung: 'weltsystem',
+      frage: 'Erläutern Sie die Weltsystemtheorie nach Wallerstein und nennen Sie einen Kritikpunkt.',
+      antwort: `Die Weltsystemtheorie (1970/80er) entwickelt die Dependenztheorie weiter. Seit dem 16. Jahrhundert gibt es ein kapitalistisches Weltsystem aus drei hierarchisch verbundenen Einheiten: Zentrum, Semiperipherie und Peripherie. Überakkumuliertes Kapital der Zentren wird in den Peripherien investiert; diese werden wirtschaftlich abhängig, und die Profite fließen ins Zentrum zurück. Kritisiert wird ein ökonomischer Determinismus und dass die Annahme einer einzigen Weltgesellschaft Unterschiede zwischen Gesellschaften vernachlässigt.`,
+      kernpunkte: ['Kapitalistisches Weltsystem (seit 16. Jh.) aus Zentrum, Semiperipherie, Peripherie', 'Überakkumulation im Zentrum → Investition in der Peripherie, Abhängigkeit, Profite fließen zurück ins Zentrum', 'Kritik: ökonomischer Determinismus / eine Weltgesellschaft vernachlässigt Unterschiede'] },
+    { id: 'e02-22', typ: 'paare', thema: 'Dependenz', wichtig: 2, quelle: 'VL02, S. 46–66',
+      frage: 'Ordne jeder Entwicklungstheorie typische Vertreter:innen zu.',
+      paare: [
+        ['Modernisierungstheorie', 'Walt W. Rostow, Daniel Lerner'],
+        ['Dependenztheorie', 'A. G. Frank, Raúl Prebisch, Celso Furtado'],
+        ['Weltsystemtheorie', 'Immanuel Wallerstein, Samir Amin'],
+        ['Feministische Theorien', 'Ester Boserup, Caroline Moser'],
+        ['Neoliberale Theorie', 'Milton Friedman, Friedrich Hayek'],
+        ['Post-Development', 'Arturo Escobar, Aníbal Quijano'],
+      ] },
+
+    /* ---------- Weitere Theorien ---------- */
+    { id: 'e02-23', typ: 'mc', thema: 'Weitere Theorien', quelle: 'VL02, S. 53',
+      frage: 'Was trifft auf feministische Entwicklungstheorien zu? (mehrere möglich)',
+      optionen: [
+        { t: 'Sie führten von „Women in Development“ zu „Gender and Development“.', r: true, warum: 'Von WID zu GAD; Maßnahmen: Empowerment, Bildung, Mikrokredite.' },
+        { t: 'Black Feminism forderte intersektionale Kriterien wie Alter, Ethnizität, Klasse.', r: true, warum: 'Selbstkritik: Frauen dürfen nicht homogenisiert werden.' },
+        { t: 'Sie gehen davon aus, dass Frauen automatisch von Wirtschaftswachstum profitieren.', warum: 'Im Gegenteil: Frauen* werden im Entwicklungsdiskurs marginalisiert und profitieren nicht.' },
+        { t: 'Sie entstanden in der Chicago School der 1980er.', warum: 'Sie entstanden in der 2. Welle der Frauenbewegung (1970er); Chicago School = Neoliberalismus.' },
+      ] },
+    { id: 'e02-24', typ: 'wf', thema: 'Weitere Theorien', quelle: 'VL02, S. 52',
+      aussage: 'Grundbedürfnisansätze („Hilfe zur Selbsthilfe“ durch NGOs) beseitigen laut Kritik die strukturellen Ursachen von Armut.',
+      wahr: false, warum: 'Kritik: Sie ändern **keine strukturellen Ursachen**, sind abhängig von Spenden, räumlich ungleich verteilt und ergänzen den neoliberalen Modus.' },
+
+    /* ---------- Neoliberalismus ---------- */
+    { id: 'e02-25', typ: 'offen', thema: 'Neoliberalismus', wichtig: 2, punkte: 3, quelle: 'VL02, S. 57–58',
+      frage: 'Erläutern Sie das Konzept der Strukturanpassungsprogramme (SAPs) und ihre Folgen.',
+      antwort: `In der Schuldenkrise wurden viele Länder des Globalen Südens von Krediten der Weltbank und des IWF abhängig; Voraussetzung für die Kredite war die Annahme von Bedingungen, den Strukturanpassungsprogrammen. Ziel war ökonomische Stabilisierung für künftiges Wachstum, Integration in den Weltmarkt und Abbau der Verschuldung. Die Maßnahmen umfassten den Rückzug des Staates, das Ende der Importsubstituierenden Industrialisierung und die Öffnung für Investitionen (Privatisierung, Liberalisierung). Folge war vor allem eine Zunahme von Ungleichheit.`,
+      kernpunkte: ['Kontext: Schuldenkrise → Kredite von Weltbank/IWF nur gegen Bedingungen (SAPs)', 'Ziel und Maßnahmen: Stabilisierung, Weltmarktintegration, Schuldenabbau; Rückzug des Staates, Ende der ISI, Öffnung für Investitionen', 'Folge: Zunahme von Ungleichheit (anhaltende Verschuldung)'] },
+    { id: 'e02-26', typ: 'mc', thema: 'Neoliberalismus', wichtig: 2, quelle: 'VL02, S. 56',
+      frage: 'Welche Maßnahme gehört **nicht** zu den Merkmalen neoliberaler Politik?',
+      optionen: [
+        { t: 'Ausbau öffentlicher Dienstleistungen', r: true, warum: 'Neoliberale Politik führt Gebühren ein und baut öffentliche Dienstleistungen zurück.' },
+        { t: 'Privatisierung', warum: 'Gehört dazu.' },
+        { t: 'Abbau von Handelsbarrieren', warum: 'Gehört dazu.' },
+        { t: 'Abschaffung von Subventionen', warum: 'Gehört dazu.' },
+      ] },
+    { id: 'e02-27', typ: 'reihe', thema: 'Neoliberalismus', quelle: 'VL02, S. 55',
+      frage: 'Wie kam es zum Neoliberalismus? Bring die Stationen in die zeitliche Reihenfolge.',
+      schritte: ['Keynesianismus: Staat sichert Daseinsvorsorge, Nachkriegswachstum', 'Nixon beendet das Bretton-Woods-Abkommen', 'Ölkrisen mit sinkendem Wachstum', 'Wirtschaftskrise mit Rezession und Arbeitslosigkeit', 'Neoliberalismus löst den Keynesianismus ab'],
+      erklaerung: 'Keynesianismus · 1971 · 1974/75 und 1978/79 · 1979–83 · Neoliberalismus. Die Folie zeigt die Ölkrisen vor Bretton Woods; zeitlich kam 1971 zuerst.' },
+
+    /* ---------- Post-Development / Globaler Süden ---------- */
+    { id: 'e02-28', typ: 'offen', thema: 'Post-Development', wichtig: 2, punkte: 2, quelle: 'VL02, S. 65–68',
+      frage: 'Erläutern Sie die Grundkritik der Post-Development-Ansätze.',
+      antwort: `Post-Development (1990er, u. a. Escobar, Quijano, Acosta) kritisiert Entwicklungsnarrative als paternalistisch, eurozentrisch, entpolitisierend und autoritär. Sie würden instrumentalisiert, um westliche Hegemonie zu legitimieren. Deshalb stellt Post-Development die Entwicklungsideologie und ihre Kriterien selbst in Frage und setzt auf Alternativen zur Entwicklung wie Buen Vivir, Sumak Kawsay oder Ubuntu.`,
+      kernpunkte: ['Entwicklungsnarrative sind paternalistisch, eurozentrisch, entpolitisierend, autoritär und legitimieren westliche Hegemonie', 'Entwicklungsideologie wird grundsätzlich infrage gestellt → Alternativen zur Entwicklung (Buen Vivir, Sumak Kawsay, Ubuntu)'],
+      erklaerung: 'Gegenkritik laut Folie: Romantisierung alternativer Lebensweisen und selbst Paternalismus.' },
+    { id: 'e02-29', typ: 'offen', thema: 'Post-Development', wichtig: 2, punkte: 3, quelle: 'VL02, S. 62–64',
+      frage: 'Nennen Sie drei Bedeutungen des Begriffs „Globaler Süden“.',
+      antwort: `Erstens eine geographisch-geopolitische Bedeutung: Regionen Lateinamerikas, Asiens, Afrikas und Ozeaniens, meist einkommensschwach und marginalisiert; der Begriff lenkt den Blick auf geopolitische Machtverhältnisse. Zweitens eine post-nationale Bedeutung: Räume und Menschen, die von der kapitalistischen Globalisierung negativ betroffen sind – auch im geographischen Norden. Drittens eine politische Bedeutung: die widerständige Vorstellung eines transnationalen politischen Subjekts, das die Erfahrung von Unterdrückung teilt.`,
+      kernpunkte: ['Geographisch/geopolitisch: Lateinamerika, Asien, Afrika, Ozeanien; Fokus auf Machtverhältnisse (Dados/Connell)', 'Post-national: von kapitalistischer Globalisierung negativ Betroffene, deterritorialisiert (Süden im Norden)', 'Politisch: widerständiges transnationales Subjekt, geteilte Unterdrückungserfahrung, Solidarität'] },
+    { id: 'e02-30', typ: 'mc', thema: 'Post-Development', quelle: 'VL02, S. 63',
+      frage: 'Wohnungslose an der Spree in Berlin werden zum „Globalen Süden“ gezählt. Welches Verständnis des Begriffs liegt dem zugrunde?',
+      optionen: [
+        { t: 'Das post-nationale Verständnis (Mahler)', r: true, warum: 'Globaler Süden als deterritorialisierte Geographie der Externalitäten des Kapitalismus.' },
+        { t: 'Das geographische Verständnis (Dados/Connell)', warum: 'Das meint Weltregionen außerhalb Europas und Nordamerikas.' },
+        { t: 'Die Einteilung in 1., 2. und 3. Welt', warum: 'Diese Einteilung stammt aus dem Kalten Krieg und ist geopolitisch-territorial.' },
+        { t: 'Das Zentrum-Peripherie-Modell der Modernisierungstheorie', warum: 'Zentrum–Peripherie stammt aus Dependenz- bzw. Weltsystemtheorie, nicht aus der Modernisierungstheorie.' },
+      ] },
+    { id: 'e02-31', typ: 'karte', thema: 'Post-Development', wichtig: 2, quelle: 'VL02, S. 69 und 92',
+      vorne: 'Kolonialität',
+      hinten: `Die **bis heute andauernde** Wirkung kolonialer Verhältnisse – im Globalen Süden und Norden: hierarchische räumliche und soziale Ordnungen, Rassismus, Anspruch einer kleinen Minderheit auf Land und Natur, eurozentrische Rechts- und Handelssysteme. Rassismus und Kolonialismus sind untrennbar verbunden.` },
+    { id: 'e02-32', typ: 'wf', thema: 'Post-Development', quelle: 'VL02, S. 70',
+      aussage: 'Laut Ziai folgen auch die SDGs einer linearen, positivistischen Entwicklungslogik, die koloniale Muster reproduziert.',
+      wahr: true, warum: 'Das ist die Kritik an den Nachhaltigkeitstheorien in der Vorlesung.' },
+
+    /* ---------- Akteure ---------- */
+    { id: 'e02-33', typ: 'offen', thema: 'Akteure', wichtig: 2, punkte: 4, quelle: 'VL02, S. 75–85',
+      frage: 'Nennen Sie vier Akteursgruppen der Entwicklung mit je einem Kritikpunkt.',
+      antwort: `Weltbank und multilaterale Entwicklungsbanken: Kritik an „fast policy“ und daran, dass sie Ungleichheit und neue Probleme verursachen; zunehmend vermitteln sie nur private Investitionen. Staatliche Akteure wie GIZ oder USAID (Zusage: 0,7 % des BNE): Sie verfolgen auch außenpolitische Interessen des Geberlandes. NGOs: nicht demokratisch legitimiert, abhängig von Geldgebern, Projektlogik statt Strukturveränderung. Firmen mit CSR-Projekten: intransparent, freiwillig, Greenwashing-Vorwurf.`,
+      kernpunkte: ['Weltbank/Entwicklungsbanken – „fast policy“, verursachen Ungleichheit; zunehmend Vermittler privater Investitionen', 'Staatliche Akteure (0,7 % des BNE) – außenpolitische Interessen des Geberlandes', 'NGOs – nicht demokratisch legitimiert, abhängig von Geldgebern, Projektlogik', 'Firmen (CSR) oder Philanthrop:innen – Greenwashing, Freiwilligkeit bzw. Macht Einzelner'],
+      erklaerung: 'Ebenfalls möglich: BRICS (keine gemeinsame Ideologie), China/Belt and Road Initiative (Abhängigkeit, Intransparenz, Neokolonialismus), Diaspora (kaum Daten zu Entwicklungseffekten).' },
+    { id: 'e02-34', typ: 'mc', thema: 'Akteure', quelle: 'VL02, S. 79',
+      frage: 'Welche Aussage über BRICS trifft **nicht** zu?',
+      optionen: [
+        { t: 'Die Mitglieder verfolgen eine gemeinsame Entwicklungsideologie.', r: true, warum: 'Die Folie betont: keine gemeinsame (Entwicklungs-)Ideologie oder Ziele.' },
+        { t: 'BRICS wurde 2009 als Reaktion auf die internationale Finanzkrise gegründet.', warum: 'Trifft zu.' },
+        { t: 'BRICS steht für wirtschaftliche Süd-Süd-Kooperation.', warum: 'Trifft zu.' },
+        { t: 'BRICS ist eine informelle Vereinigung gegen westliche Dominanz im Finanzwesen.', warum: 'Trifft zu.' },
+      ] },
+    { id: 'e02-35', typ: 'wf', thema: 'Akteure', quelle: 'VL02, S. 76',
+      aussage: 'Die Weltbank hat ihren Sitz in Genf.',
+      wahr: false, warum: 'Sitz ist **Washington DC** (189 Mitglieder).' },
+    { id: 'e02-36', typ: 'luecke', thema: 'Akteure', quelle: 'VL02, S. 78',
+      text: 'Die „entwickelten“ UN-Mitgliedstaaten (OECD) verpflichteten sich schon in den 1970ern, [[0,7]] % ihres [[BNE|Bruttonationaleinkommens|Bruttonationaleinkommen]] für Entwicklungszusammenarbeit auszugeben.' },
+    { id: 'e02-37', typ: 'karte', thema: 'Akteure', quelle: 'VL02, S. 84–85',
+      vorne: 'Diaspora Finance – was gehört dazu, und warum ist sie wichtig?',
+      hinten: `**Rücküberweisungen (Remittances)** von Migrant:innen in ihre Herkunftsländer und **Diaspora-Investitionen** in Projekte dort. In vielen Niedriglohnländern sind Remittances **höher als offizielle Entwicklungshilfe und Direktinvestitionen**; zu ihren Entwicklungseffekten gibt es aber kaum belastbare Daten.` },
+    { id: 'e02-38', typ: 'wf', thema: 'Akteure', quelle: 'VL02, S. 80',
+      aussage: 'Die Belt and Road Initiative wurde 2013 von China verkündet; westliche Kritik wirft ihr u. a. Intransparenz und Neokolonialismus vor.',
+      wahr: true, warum: 'Weitere Kritik: Abhängigkeit von China, wachsender Einfluss, keine Kontrolle von Standards.' },
+
+    /* ---------- Global Care Chains ---------- */
+    { id: 'e02-39', typ: 'offen', thema: 'Global Care Chains', wichtig: 2, punkte: 3, quelle: 'VL02, S. 87–90',
+      frage: 'Was versteht man unter „Global Care Chains“ und „Care Drain“? Erläutern Sie am Beispiel Hongkong.',
+      antwort: `In Hongkong beschäftigen rund 30 % der Haushalte domestic helpers, meist Migrantinnen aus den Philippinen oder Indonesien, zu sehr geringen Löhnen; sie sind das Rückgrat der Mittelschicht. Sorgearbeit wird so entlang globaler Ungleichheiten verschoben – das sind Global Care Chains. In den Herkunftsorten fehlt diese Sorgearbeit und wird weiterverlagert, etwa an Großeltern: Care Drain. Die Remittances fördern zwar „Entwicklung“ vor Ort, zugleich zeigt das Beispiel, dass Sorgearbeit essenzieller Teil der globalen kapitalistischen Wirtschaft ist und Ungleichheit prägt.`,
+      kernpunkte: ['Global Care Chains: Migrant:innen übernehmen bezahlte, oft prekäre Sorgearbeit in reichen Haushalten (Hongkong: ~30 % der Haushalte, v. a. aus Philippinen/Indonesien)', 'Care Drain: In den Herkunftsorten fehlt Sorgearbeit, sie wird weiterverlagert (z. B. an Großeltern)', 'Remittances fördern Entwicklung vor Ort; Sorgearbeit ist essenzieller Teil der globalen kapitalistischen Wirtschaft'] },
+    { id: 'e02-40', typ: 'wf', thema: 'Global Care Chains', quelle: 'VL02, S. 87–90',
+      aussage: 'Laut Vorlesung ist die Sorgearbeit der migrantischen domestic helpers in Hongkong ein Randphänomen außerhalb der eigentlichen Wirtschaft.',
+      wahr: false, warum: 'Sie sind das **Rückgrat der Hongkonger Mittelschicht**; aus feministischer Sicht ist Sorgearbeit ein **essenzieller Teil** des Funktionierens der kapitalistischen Wirtschaft.' },
+
+    /* ---------- Fazit ---------- */
+    { id: 'e02-41', typ: 'offen', thema: 'Fazit', wichtig: 3, punkte: 2, quelle: 'VL02, S. 92–93',
+      frage: 'Wie erklären die neoklassische Wirtschaftsgeographie und die Geographische Politische Ökonomie ungleiche Entwicklung?',
+      antwort: `Für die neoklassische Sicht ist ungleiche Entwicklung ein temporärer, überwindbarer Zustand, den Marktkräfte ausgleichen. Für die Geographische Politische Ökonomie ist ungleiche Entwicklung dagegen ein zentrales Wesensmerkmal des globalisierten Kapitalismus: Globalisierung produziert und nutzt Ungleichheit strategisch – „Globalization is uneven geographical development“.`,
+      kernpunkte: ['Neoklassik: ungleiche Entwicklung ist temporär und überwindbar (Ausgleich durch Marktkräfte)', 'GPE: ungleiche Entwicklung ist Wesensmerkmal des (globalisierten) Kapitalismus; Globalisierung nutzt Ungleichheit strategisch'] },
+    { id: 'e02-42', typ: 'mc', thema: 'Fazit', wichtig: 2, quelle: 'VL02, S. 92–93',
+      frage: 'Welche Aussagen gehören zu den Take-Home-Messages der Vorlesung? (mehrere möglich)',
+      optionen: [
+        { t: 'Was „gute“ Entwicklung ist, hängt von den Interessen der Entwicklungsakteure ab.', r: true, warum: 'So im Fazit.' },
+        { t: 'Entwicklung ist eng mit kolonialer Aneignung und fortdauernder Kolonialität verknüpft.', r: true, warum: 'So im Fazit.' },
+        { t: 'Entwicklungstheorien stammen ausschließlich aus der Wissenschaft des Globalen Nordens.', warum: 'Sie wurden im Norden und Süden geprägt – auch von sozialen Bewegungen.' },
+        { t: 'Ungleiche Entwicklung zeigt sich nur auf der globalen Maßstabsebene.', warum: 'Sie zeigt sich auf unterschiedlichen Maßstabsebenen (lokal bis global).' },
+      ] },
+  ],
+});
+//# sourceURL=content/wirtschaftsgeographie/e02.js
+</script>
+<script>
 /* Eigene Skizzen zum Kurs Wirtschaftsgeographie (nachgezeichnet und vereinfacht, keine Abbildungen aus den Folien).
    Format und Farbklassen: docs/INHALTE.md, Abschnitt 5. Eingebunden über bild / bildLoesung in Skript und Fragen. */
 
@@ -1445,6 +1836,84 @@ Lerni.grafik('wirtschaftsgeographie', 'raumsystem', {
     <circle class="f0" cx="170" cy="72" r="9"/><text x="170" y="76" text-anchor="middle">3</text>
   </g>
   <text class="k m" x="170" y="186" text-anchor="middle">● Standorte (Betriebe)   ⇄ Ströme zwischen den Regionen</text>
+</svg>`,
+});
+
+/* ---------- e02 Ungleiche Entwicklung ---------- */
+Lerni.grafik('wirtschaftsgeographie', 'rostow', {
+  titel: 'Rostows fünf Stadien wirtschaftlicher Entwicklung',
+  text: 'Modernisierungstheorie (nachgezeichnet nach VL02, S. 47): Entwicklung als lineare Abfolge nach westlichem Vorbild.',
+  svg: `<svg viewBox="0 0 340 212" role="img" aria-label="S-Kurve mit fünf Stadien nach Rostow">
+  <line x1="30" y1="14" x2="30" y2="192"/><line x1="30" y1="192" x2="332" y2="192"/>
+  <polygon class="pf" points="30,8 26,16 34,16"/><polygon class="pf" points="338,192 330,188 330,196"/>
+  <text class="k m" transform="translate(20 186) rotate(-90)">Investitionen in Industrie</text>
+  <text class="k m" x="330" y="207" text-anchor="end">Zeit</text>
+  <path class="s1 w" d="M40 168 C120 168 150 140 175 110 C200 80 220 50 270 44 L326 40"/>
+  <g class="k b" text-anchor="middle">
+    <circle class="f1 s1" cx="50" cy="168" r="8"/><text x="50" y="172">1</text>
+    <circle class="f1 s1" cx="128" cy="150" r="8"/><text x="128" y="154">2</text>
+    <circle class="f1 s1" cx="175" cy="110" r="8"/><text x="175" y="114">3</text>
+    <circle class="f1 s1" cx="213" cy="68" r="8"/><text x="213" y="72">4</text>
+    <circle class="f1 s1" cx="270" cy="44" r="8"/><text x="270" y="48">5</text>
+  </g>
+  <g class="k">
+    <text x="40" y="186">Traditional society</text>
+    <text x="138" y="170">Preconditions for take-off</text>
+    <text x="186" y="114">Take-off</text>
+    <text x="224" y="72">Drive to maturity</text>
+    <text x="260" y="30" text-anchor="end">Age of high mass consumption</text>
+  </g>
+</svg>`,
+});
+
+Lerni.grafik('wirtschaftsgeographie', 'dependenz', {
+  titel: 'Dependenztheorie: Abfluss des Überschusses (Surplus)',
+  text: 'Nachgezeichnet nach VL02, S. 49 (MacKinnon/Cumbers): Über eine Kette von Satelliten fließt der Überschuss aus der Peripherie in die Metropole.',
+  svg: `<svg viewBox="0 0 340 232" role="img" aria-label="Kette von lokalen und regionalen Satelliten über die Hauptstadt zur Metropole">
+  <rect class="f2" x="214" y="10" width="118" height="42" rx="8"/><text class="b" x="273" y="30" text-anchor="middle">Metropole</text><text class="k" x="273" y="44" text-anchor="middle">(Zentrum, Globaler Norden)</text>
+  <rect class="f3" x="30" y="72" width="128" height="34" rx="8"/><text class="k b" x="94" y="86" text-anchor="middle">Nationale Hauptstadt</text><text class="k" x="94" y="99" text-anchor="middle">(Satellit)</text>
+  <path class="s1 w" d="M160 80 C185 70 195 55 208 42"/><polygon class="pfp" points="214,34 202,40 211,48"/>
+  <text class="k b tp" x="190" y="82">Surplus</text>
+  <g class="f3"><circle cx="48" cy="140" r="11"/><circle cx="140" cy="140" r="11"/></g>
+  <g class="k b" text-anchor="middle"><text x="48" y="144">R</text><text x="140" y="144">R</text></g>
+  <g class="f0"><circle cx="22" cy="184" r="8"/><circle cx="72" cy="184" r="8"/><circle cx="116" cy="184" r="8"/><circle cx="164" cy="184" r="8"/></g>
+  <g class="k" text-anchor="middle"><text x="22" y="188">L</text><text x="72" y="188">L</text><text x="116" y="188">L</text><text x="164" y="188">L</text></g>
+  <g class="n">
+    <line x1="52" y1="128" x2="70" y2="108"/><line x1="136" y1="128" x2="118" y2="108"/>
+    <line x1="26" y1="176" x2="42" y2="150"/><line x1="68" y1="176" x2="54" y2="150"/><line x1="120" y1="176" x2="134" y2="150"/><line x1="160" y1="176" x2="146" y2="150"/>
+    <line x1="12" y1="214" x2="20" y2="192"/><line x1="24" y1="214" x2="22" y2="192"/><line x1="34" y1="214" x2="25" y2="192"/>
+    <line x1="62" y1="214" x2="70" y2="192"/><line x1="74" y1="214" x2="72" y2="192"/><line x1="86" y1="214" x2="75" y2="192"/>
+    <line x1="106" y1="214" x2="114" y2="192"/><line x1="118" y1="214" x2="116" y2="192"/><line x1="130" y1="214" x2="119" y2="192"/>
+    <line x1="154" y1="214" x2="162" y2="192"/><line x1="166" y1="214" x2="164" y2="192"/><line x1="178" y1="214" x2="167" y2="192"/>
+  </g>
+  <text class="k m" x="95" y="228" text-anchor="middle">Händler, Bauern, Kleinbauern</text>
+  <g class="k">
+    <text x="200" y="120"><tspan class="b">R</tspan> regionaler Satellit</text>
+    <text x="200" y="140"><tspan class="b">L</tspan> lokaler Satellit</text>
+    <text x="200" y="164">Linien: Überschuss fließt</text>
+    <text x="200" y="178">von unten nach oben –</text>
+    <text x="200" y="192">von der Peripherie</text>
+    <text x="200" y="206">in die Metropole</text>
+  </g>
+</svg>`,
+});
+
+Lerni.grafik('wirtschaftsgeographie', 'weltsystem', {
+  titel: 'Weltsystemtheorie (Wallerstein)',
+  text: 'Seit dem 16. Jh. ein kapitalistisches Weltsystem aus Zentrum, Semiperipherie und Peripherie (VL02, S. 50–51).',
+  svg: `<svg viewBox="0 0 340 196" role="img" aria-label="Zentrum, Semiperipherie und Peripherie als Ringe mit Kapital- und Profitströmen">
+  <circle class="f3" cx="96" cy="98" r="88"/><circle class="f1" cx="96" cy="98" r="58"/><circle class="f2" cx="96" cy="98" r="28"/>
+  <text class="k b" x="96" y="102" text-anchor="middle">Zentrum</text>
+  <text class="k" x="96" y="58" text-anchor="middle">Semiperipherie</text>
+  <text class="k" x="96" y="24" text-anchor="middle">Peripherie</text>
+  <line class="s1 w" x1="120" y1="116" x2="164" y2="150"/><polygon class="pfp" points="171,156 159,153 166,143"/>
+  <line class="s4 w" x1="150" y1="166" x2="108" y2="130"/><polygon class="tb s0" points="102,124 113,127 106,137"/>
+  <g class="k">
+    <text x="196" y="60"><tspan class="b tp">→ Kapital</tspan></text>
+    <text x="196" y="74">Überakkumulation im</text><text x="196" y="88">Zentrum wird in der</text><text x="196" y="102">Peripherie investiert</text>
+    <text x="196" y="130"><tspan class="b tb">← Profite</tspan></text>
+    <text x="196" y="144">fließen zurück ins</text><text x="196" y="158">Zentrum; Peripherie</text><text x="196" y="172">wird abhängig</text>
+  </g>
 </svg>`,
 });
 //# sourceURL=content/wirtschaftsgeographie/grafiken.js
