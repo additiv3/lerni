@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- LERNI – gebaut 29.09.2026, 21:39. Nicht direkt öffnen: py tools/build.py setzt CSS, Code und Inhalte ein und schreibt dist/index.html -->
+<!-- LERNI – gebaut 29.09.2026, 21:47. Nicht direkt öffnen: py tools/build.py setzt CSS, Code und Inhalte ein und schreibt dist/index.html -->
 <html lang="de">
 <head>
   <meta charset="utf-8">
@@ -413,7 +413,7 @@ details.card[open] summary { margin-bottom: 10px; }
 </head>
 <body>
   <noscript>Lerni braucht JavaScript.</noscript>
-<script>const LERNI_BUILD = {"id": "056bcf7-20260929213934", "stamp": "29.09.2026, 21:39", "commit": "056bcf7"};</script>
+<script>const LERNI_BUILD = {"id": "fdc679d-20260929214758", "stamp": "29.09.2026, 21:47", "commit": "fdc679d"};</script>
 <script>
 /* LERNI – Hilfsfunktionen: DOM, Datum, Text, Zufall.
    Läuft auch in Node (tools/check.js): beim Laden nichts am DOM anfassen. */
@@ -2077,6 +2077,377 @@ Hintergrund ist die **Neue Internationale Arbeitsteilung**: keine „3. Welt“,
 //# sourceURL=content/wirtschaftsgeographie/e06.js
 </script>
 <script>
+/* e08 Standorttheorien – VL05-06 Teil 3.2 (Rosol, 28.05.2026). Analyse: quellen/wirtschaftsgeographie/analyse/VL05-06-….md (PDF-Seiten 47–72) */
+Lerni.einheit('wirtschaftsgeographie', {
+  id: 'e08',
+  titel: 'Standorttheorien',
+  quelle: 'VL05-06 Regionale Entwicklung und Standort (Rosol), PDF-Seiten 47–72',
+  skript: [
+    {
+      thema: 'Neoklassische Modelle', titel: 'Neoklassische Standortmodelle: Grundannahmen',
+      text: `Die Standorttheorie reicht ins **18. Jh.** zurück (vor allem deutsche Wissenschaftler), ist **kein genuin wirtschaftsgeographischer Ansatz**, prägt aber bis heute die Raumwirtschaftslehre. Übernommene Annahmen: **methodologischer Individualismus, vollkommene Märkte, ökonomische Rationalität**. Probleme werden durch **isolierende Abstraktion** in Modelle übersetzt, um **deduktiv** allgemeine Mechanismen zu finden. Raum = zweidimensionaler **euklidischer Raum**, Entfernungen werden in **Transportkosten** übersetzt; Naturraumunterschiede gelten als „Störgrößen“. Ergebnis: nur **Partialerklärungen**.
+
+**Homo oeconomicus (optimizer)** – vier Verhaltensannahmen:
+1. **Gewinnmaximierung**
+2. **vollständige Information**
+3. **vollständige Rationalität**
+4. **vollständiger Wettbewerb** (niemand beeinflusst allein den Preis)
+
+Zwei Fragestellungen: **Was ist der optimale Standort für einen Betrieb?** (von Thünen 1826, Weber 1909) · **Wie lässt sich die Verteilung wirtschaftlicher Zentren erklären?** (Christaller 1933).
+
+==Neoklassische Standortmodelle: homo oeconomicus + Transportkosten + isolierende Abstraktion.==`,
+    },
+    {
+      thema: 'Thünen', titel: 'Von Thünen: Lagerente und Landnutzungsringe', bild: ['lagerente', 'thuenen'],
+      text: `**Johann Heinrich von Thünen**, „Der isolierte Staat“ (**1826**): erster modelltheoretischer Ansatz zur **optimalen landwirtschaftlichen Landnutzung**.
+
+Annahmen: isolierter Modellstaat ohne Außenhandel; überall gleiche Natur, Bewirtschaftung und Transportbedingungen; **ein einziger Marktort (Stadt) im Zentrum**; homo oeconomicus. Schlüsselgröße ist die **Entfernung zum Markt**: Transportkosten steigen gleichmäßig mit der Entfernung und hängen von Gewicht und Verderblichkeit ab.
+
+**Lagerente = Erlös – Produktionskosten – Transportkosten** (pro Flächeneinheit). Mit zunehmender Entfernung zehren die Transportkosten den Reinerlös auf, bis die Lagerente null ist (Grenzanbieter).
+
+**Mehrere Güter:** Die Lagerentenkurven verlaufen je nach Preis, Anbaukosten und Verderblichkeit/Sperrigkeit unterschiedlich steil. Gewählt wird jeweils das Produkt mit der **höchsten Lagerente**; die Lotrechten der Schnittpunkte ergeben die **Thünenschen Ringe** (Differentialprinzip):
+- **Gemüse, Milch:** hoher Preis, leicht verderblich → nah am Markt
+- **Bau- und Feuerholz:** schwer und sperrig → mittlere Entfernung
+- **Getreide:** niedriger Preis, gut lager- und transportierbar → weiter entfernt
+
+Die **Intensität** der Nutzung nimmt mit der Entfernung ab. Heute eingeschränkt durch sinkende Transportkosten, **Kühlketten**, neue Konsummuster, Agrarpolitik, Globalisierung; das Modell erklärt keine Veränderungen. Bedeutung: erste geschlossene wirtschaftsräumliche Theorie, Grundlage für Christaller und Lösch, erklärt historische Landnutzungsmuster.
+
+==Lagerente = Erlös – Produktionskosten – Transportkosten. Höchste Lagerente gewinnt den Ring.==`,
+    },
+    {
+      thema: 'Christaller', titel: 'Christaller: Zentrale Orte', bild: 'christaller',
+      text: `**Walter Christaller**, „Die zentralen Orte in Süddeutschland“ (Dissertation **1933**): Die optimale Verteilung von Versorgungseinrichtungen ergibt sich aus einer **Hierarchie zentraler Orte**. Bis heute Grundlage der **Raumordnung**.
+
+- **Zentrale Orte** = Orte mit **Bedeutungsüberschuss**: Sie versorgen mehr als die eigene Bevölkerung.
+- **Innere (untere) Reichweite** = Mindestumsatz bzw. Mindesteinzugsgebiet für einen rentablen Betrieb.
+- **Äußere (obere) Reichweite** = maximale Entfernung, die Kund:innen in Kauf nehmen; darüber übersteigen die Wegekosten den Nutzen.
+- **Sechsecke:** Kreisförmige Marktgebiete ließen **Versorgungslücken** oder **zu große Überlappungen** (innere Reichweite unterschritten). Die **Wabenstruktur** deckt den Raum lückenlos ab.
+
+**Hierarchie:** Die innere Reichweite hängt von der **Nachfragefrequenz** ab (täglicher vs. periodischer/episodischer Bedarf). Der **Rang** eines Zentrums ergibt sich aus dem **höchstrangigen** dort angebotenen Gut; höherrangige Zentren bieten **alle niederrangigen Güter** mit an; Zentren gleicher Stufe haben ein **identisches Angebot**. So überlagern sich Waben verschiedener Größe.
+
+**Heute:** Zentrale-Orte-Prinzip der Raumordnung mit **Ober-, Mittel- und Grundzentren** als normatives Leitbild (ausgewogene Raumstruktur, Versorgung in der Fläche). In der Praxis sind einzelne Ober- und Mittelzentren gefährdet. Beispiel: **Würzburg ist laut Landesentwicklungsprogramm Bayern ein Regionalzentrum** (Kategorien: Mittelzentren, Oberzentren, Regionalzentren, Metropolen).
+
+==Christaller: Bedeutungsüberschuss, innere/äußere Reichweite, Sechsecke, Hierarchie.==`,
+    },
+    {
+      thema: 'Weber', titel: 'Weber: Industriestandort', bild: ['weber', 'isodapane'],
+      text: `**Alfred Weber**, „Reine Theorie des Standorts“ (**1909**), Begründer der industriellen Standortlehre. Annahme: Der Gewinn hängt nur von **standortabhängigen Kosten** ab und wird durch **Transportkostenersparnis** maximiert. Gegeben sind die Fundorte der Materialien und ein Absatzmarkt; Frachtraten, Preise und Produktionskosten sind konstant.
+
+**Optimaler Standort = tonnenkilometrischer Minimalpunkt** (P): der Punkt mit den wenigsten Tonnenkilometern (Entfernung × Gewicht) zwischen Materialfundorten (M1, M2) und Konsumort (K).
+- **Lokalisierte Materialien** sind an Abbauorte gebunden: **Reingewichtsmaterialien** (gehen ganz ins Produkt ein, z. B. Edelmetalle) und **Gewichtsverlustmaterialien** (z. B. Steinkohle, viele Erze).
+- **Ubiquitäre Materialien** sind überall frei verfügbar (Luft, Sauerstoff, Wasser).
+- Nur Ubiquitäten oder Reingewichtsmaterialien → **P = K**. Normalfall: P liegt **im Dreieck**; je mehr Gewichtsverlustmaterial, desto näher rückt P an die Fundorte.
+
+**Erweiterungen:**
+1. **Arbeitskosten:** Ein Standort abseits von P lohnt, wenn die Lohnersparnis die zusätzlichen Transportkosten übersteigt. **Isotimen** = Linien gleicher Transportkosten; **Isodapanen** = Linien gleicher Zusatzkosten gegenüber P; **kritische Isodapane** = Linie, auf der Mehrtransportkosten und Arbeitskostenersparnis sich ausgleichen.
+2. **Agglomeration:** „Ein Agglomerationsfaktor ist ein Vorteil, also eine Verbilligung der Produktion oder des Absatzes“, die aus der Ballung an einem Platz entsteht (z. B. gemeinsame Infrastruktur). **Überlappen die kritischen Isodapanen mehrerer Betriebe**, ist der Umzug in den gemeinsamen Agglomerationsraum rational.
+
+==Weber: Minimalpunkt der Tonnenkilometer – verschoben durch billige Arbeit und Agglomeration.==`,
+    },
+    {
+      thema: 'Würdigung', titel: 'Würdigung der neoklassischen Modelle',
+      text: `Was die drei Modelle leisten:
+- **Thünen** → optimale **agrarische Landnutzung**
+- **Christaller** → optimale **Versorgung** mit Dienstleistungen und öffentlichen Einrichtungen
+- **Weber** → optimaler Standort für **Industriebetriebe**
+
+Gemeinsam: Sie reduzieren Standortfaktoren weitgehend auf **Transportkosten** (Weber auch Arbeitskosten und Agglomeration). Ihre **Stärke liegt in der Abstraktion**: Sie machen sichtbar, wie Entfernung wirkt.
+
+**Kritik:**
+- Sinkende Transportkosten, neue Technologien und Strukturwandel haben die Raummuster teilweise **aufgelöst** – heute spielen Transportkosten in den meisten Branchen **nur eine geringe Rolle**.
+- Die starren Annahmen des **homo oeconomicus** bilden menschliches Verhalten unzureichend ab.
+- Die Modelle sind **statisch** und erklären Wandel nicht.
+
+Deshalb wandte sich die WiGeo **prozess- und innovationsbezogenen Ansätzen** zu.
+
+==Stark in der Abstraktion, schwach bei Wandel und realem Verhalten.==`,
+    },
+    {
+      thema: 'Verhalten und Standortfaktoren', titel: 'Behavioristische Ansätze und Standortfaktoren', bild: 'standortfaktoren',
+      text: `Kritik am Optimierungsdenken: Optimierung ist oft nicht das (einzige) Ziel; nicht-ökonomische Gründe zählen (Wohnort der Gründerin, Familie); **Information kostet Geld** (Transaktionskosten); Innovationen und Zeit fehlen.
+
+**Behavioristische Ansätze** (behavioral geography): differenziertes Bild des Verhaltens mit Motiven, Zwängen, **Informationsdefiziten**. Unternehmen sind **Satisficer statt Optimizer**: Sie suchen in einem **mehrstufigen Suchprozess** eine zufriedenstellende, nicht die optimale Lösung. **Verhaltensmatrix (Allan Pred):** Standortentscheidungen hängen vom **Informationsstand** und von der **Fähigkeit** ab, die Informationen zu nutzen.
+
+**Standortfaktoren** = Vorteile für eine wirtschaftliche Aktivität, die an bestimmte Orte gebunden sind. **Harte Faktoren** (gut messbar, direkt relevant, prägend für die neoklassischen Modelle: Verkehrsanbindung, Steuern, Flächen, Arbeitskosten) vs. **weiche Faktoren** (schwer messbar, eher subjektiv: Image, Wohnwert, Kultur, Umweltqualität). Entscheidungen sind selten monokausal. In der heutigen WiGeo spielen Standortfaktoren nur noch eine untergeordnete Rolle; wichtiger sind Erhalt und Entwicklung bestehender Standorte, Gründungsforschung und **„windows of locational opportunity“ (Scott/Storper 1987)**: Pionierunternehmen nutzen Gelegenheitsfenster, statt Standorte rational zu vergleichen.
+
+==Satisficer statt Optimizer – und weiche Faktoren zählen oft mehr, als die Modelle annehmen.==`,
+    },
+    {
+      thema: 'Strukturelle Ansätze', titel: 'Strukturelle Ansätze',
+      text: `Strukturelle Ansätze betonen, dass Unternehmen **nicht nur auf Standortausstattungen reagieren**:
+- Standortentscheidungen werden durch **gesellschaftliche Rahmenbedingungen und externe Zwänge** bestimmt: Normen und Gesetze (z. B. Arbeitsrechte), ökonomische Abhängigkeiten zwischen Unternehmen, die Stärke von Gewerkschaften.
+- Unternehmen können Standortbedingungen **aktiv verändern**, z. B. durch Investitionen in Bildung, Infrastruktur oder Werkswohnungen.
+- Standortbedingungen sind damit **Ergebnisse sozialer Prozesse**, an denen Politik, Wirtschaft und Zivilgesellschaft beteiligt sind.
+
+Beispiel ist die **Regulationstheorie** (Akkumulationsregime und Regulationsweise nach Lipietz, siehe Einheit Globalisierung II).
+
+Drei Gruppen prozessbezogener Ansätze im Überblick: **behavioristisch** (individuelle Entscheidungen, Wahlfreiheit) · **strukturell** (Makrostrukturen) · **innovationsbezogen/dynamisch-zyklisch** (Wandel durch Innovation).
+
+==Strukturell: Standortbedingungen sind gesellschaftlich gemacht – und veränderbar.==`,
+    },
+    {
+      thema: 'Innovation', titel: 'Innovation: Invention, Innovation, Diffusion',
+      text: `**Dynamisch-zyklische Standorttheorien:** Räumliche Dynamik hängt oft mit **Innovationen** zusammen. Neue Produkte, Prozesse und Organisationsformen verändern die Standortanforderungen – Betriebe verlagern sich oder werden neu gegründet.
+
+Innovationen sind keine punktuellen Ereignisse, sondern **längerfristige Prozesse**:
+- **Invention** = die Erfindung
+- **Innovation** = die wirtschaftliche Umsetzung der Neuerung
+- **Diffusion** = die Ausbreitung, also Übernahme durch andere Marktteilnehmer
+
+**Basisinnovationen** bringen grundlegende Veränderungen (neue Produkte, Verfahren, Transport-, Logistik- oder Kommunikationssysteme, Vertriebsformen); **Verbesserungsinnovationen** verändern graduell. Nach dem Inhalt unterscheidet man Produkt-, Prozess-, Markt-, Vertriebs- und organisatorische Innovationen.
+
+==Invention = Erfindung, Innovation = Umsetzung, Diffusion = Ausbreitung.==`,
+    },
+    {
+      thema: 'Produktlebenszyklus', titel: 'Produktlebenszyklus und Standort', bild: 'plz',
+      text: `**Vernon (1966), Hirsch (1967):** Jedes Industrieprodukt durchläuft einen **phasenhaften Lebenszyklus**, verbunden mit einem **Profitzyklus**; jede Phase hat **eigene Standortanforderungen**.
+
+Vier Phasen:
+1. **Entwicklung und Einführung:** hohe Entwicklungskosten, geringer Erlös, Verlust. Wichtig: **qualifizierte Arbeitskräfte, hochwertige Infrastruktur**. Standort: **Agglomerationsraum**.
+2. **Wachstum:** Stückkosten sinken, hohe Gewinne, Übergang zur Massenproduktion. Wichtig: **Agglomerationsvorteile (Zulieferer, Dienste), Marktnähe**. Standort: **Umland der Agglomeration**.
+3. **Reife:** mehr Konkurrenz, hoher Preisdruck. Wichtig: **billige Arbeitskräfte, niedrige Standortkosten**. Standort: **periphere Regionen, Niedriglohnländer**.
+4. **Schrumpfung:** Gewinne schrumpfen, Verluste.
+
+Dabei wandelt sich die Produktion von humankapital- zu sach- bzw. arbeitsintensiv, von Produkt- zu **Prozessinnovationen**, von kleinen Losgrößen zur Massenproduktion: **intraregionale, interregionale und internationale Dezentralisierung** – ein Erklärungsbeitrag zur Globalisierung (Verlagerung in lohngünstige Länder).
+
+**Kritik:** **starrer Produktbegriff** · vernachlässigt **Anpassungsfähigkeit** und permanente **Verbesserungsinnovationen** · ohne **sozialen und regulatorischen Kontext** · **sehr linear**.
+
+==Produktlebenszyklus: Agglomeration → Umland → Peripherie/Niedriglohnland.==`,
+    },
+  ],
+  fragen: [
+    /* ---------- Neoklassische Modelle ---------- */
+    { id: 'e08-01', typ: 'offen', thema: 'Neoklassische Modelle', wichtig: 2, punkte: 4, quelle: 'VL05-06, S. 50',
+      frage: 'Nennen Sie die vier Verhaltensannahmen des homo oeconomicus in den neoklassischen Standortmodellen.',
+      antwort: `Der homo oeconomicus strebt nach Gewinnmaximierung (Wirtschaftlichkeitsprinzip). Er verfügt über vollständige Information und handelt vollständig rational. Außerdem herrscht vollständiger Wettbewerb, sodass kein einzelner Marktteilnehmer den Preis allein beeinflussen kann.`,
+      kernpunkte: ['Gewinnmaximierung', 'Vollständige Information', 'Vollständige Rationalität', 'Vollständiger Wettbewerb (niemand beeinflusst allein den Preis)'] },
+    { id: 'e08-02', typ: 'mc', thema: 'Neoklassische Modelle', wichtig: 2, quelle: 'VL05-06, S. 49',
+      frage: 'Welche Aussage trifft **nicht** auf die neoklassischen Standortmodelle zu?',
+      optionen: [
+        { t: 'Naturräumliche Unterschiede werden als wichtige Standortfaktoren einbezogen.', r: true, warum: 'Sie werden bewusst als „Störgrößen“ ausgeschlossen.' },
+        { t: 'Entfernungen im euklidischen Raum werden in Transportkosten übersetzt.', warum: 'Trifft zu: Transportkosten- bzw. Transportaufwandmodelle.' },
+        { t: 'Probleme werden durch isolierende Abstraktion in Modelle überführt.', warum: 'Trifft zu: deduktives Vorgehen.' },
+        { t: 'Sie liefern nur Partialerklärungen für einzelne Wirtschaftsbereiche.', warum: 'Trifft zu.' },
+      ] },
+    { id: 'e08-03', typ: 'paare', thema: 'Neoklassische Modelle', wichtig: 2, quelle: 'VL05-06, S. 51–57 und 63–69',
+      frage: 'Ordne jeder Person ihren Beitrag zur Standortforschung zu.',
+      paare: [
+        ['Johann Heinrich von Thünen', '„Der isolierte Staat“ (1826): Landnutzung'],
+        ['Walter Christaller', '„Die zentralen Orte in Süddeutschland“ (1933)'],
+        ['Alfred Weber', '„Reine Theorie des Standorts“ (1909): Industrie'],
+        ['Allan Pred', 'Verhaltensmatrix (behavioristischer Ansatz)'],
+        ['Vernon und Hirsch', 'Produktlebenszyklus'],
+      ] },
+    { id: 'e08-04', typ: 'mc', thema: 'Neoklassische Modelle', wichtig: 2, quelle: 'VL05-06, S. 51',
+      frage: 'Welche Modelle fragen nach dem **optimalen Standort eines einzelnen Betriebs**? (mehrere möglich)',
+      optionen: [
+        { t: 'Von Thünen', r: true, warum: 'Welche Landnutzung ist an welchem Ort optimal?' },
+        { t: 'Weber', r: true, warum: 'Transportkostenoptimaler Standort eines Industriebetriebs.' },
+        { t: 'Christaller', warum: 'Christaller erklärt die Verteilung wirtschaftlicher Zentren im Raum.' },
+        { t: 'Myrdal', warum: 'Myrdal ist eine Theorie der Regionalentwicklung (Polarisation), keine Standorttheorie.' },
+      ] },
+
+    /* ---------- Thünen ---------- */
+    { id: 'e08-05', typ: 'offen', thema: 'Thünen', wichtig: 3, punkte: 3, quelle: 'VL05-06, S. 52', bildLoesung: 'lagerente',
+      frage: 'Definieren Sie die Lagerente nach von Thünen (1 P.) und erläutern Sie, wie daraus die Thünenschen Ringe entstehen (2 P.).',
+      antwort: `Die Lagerente ist der Reinerlös pro Flächeneinheit, der sich aus der Lage zum Markt ergibt: Erlös minus Produktionskosten minus Transportkosten. Weil die Transportkosten mit der Entfernung steigen, sinkt die Lagerente mit zunehmender Distanz – je nach Preis, Kosten und Verderblichkeit/Sperrigkeit eines Produkts unterschiedlich steil. Der homo oeconomicus wählt an jedem Ort das Produkt mit der höchsten Lagerente; die Schnittpunkte der Lagerentenkurven markieren die Übergänge und ergeben ringförmige Landnutzungszonen um den Markt.`,
+      kernpunkte: ['(a) Lagerente = Erlös – Produktionskosten – Transportkosten (pro Fläche), abhängig von der Entfernung zum Markt', '(b) Lagerentenkurven fallen je Produkt unterschiedlich steil (Preis, Kosten, Verderblichkeit/Gewicht)', '(b) An jedem Ort wird das Produkt mit der höchsten Lagerente gewählt; Schnittpunkte = Ringgrenzen'] },
+    { id: 'e08-06', typ: 'offen', thema: 'Thünen', wichtig: 2, punkte: 3, quelle: 'VL05-06, S. 53', bildLoesung: 'thuenen',
+      frage: 'Nennen Sie drei Beispiele für die Anordnung der Landnutzung in den Thünenschen Ringen und begründen Sie sie.',
+      antwort: `Gemüse und Milch werden nah an der Stadt erzeugt, weil sie einen hohen Marktpreis haben und leicht verderblich sind. Bau- und Feuerholz liegt in mittlerer Entfernung, weil es schwer und sperrig ist und deshalb hohe Transportkosten verursacht. Getreide wird weiter entfernt angebaut, weil es einen niedrigen Preis hat und sich leicht lagern und transportieren lässt.`,
+      kernpunkte: ['Gemüse/Milch nah am Markt: hoher Preis, hohe Verderblichkeit', 'Bau-/Feuerholz mittlere Entfernung: schwer und sperrig, hohe Transportkosten', 'Getreide weiter entfernt: niedriger Preis, gut lager- und transportierbar'] },
+    { id: 'e08-07', typ: 'paare', thema: 'Thünen', wichtig: 2, quelle: 'VL05-06, S. 53', bild: 'thuenen-ringe', bildLoesung: 'thuenen',
+      frage: 'Ordne den Thünenschen Ringen 1–4 die Nutzung zu.',
+      paare: [
+        ['Ring 1', 'Milch und Gemüse (intensive Landwirtschaft)'],
+        ['Ring 2', 'Bau- und Feuerholz (Wald)'],
+        ['Ring 3', 'Getreide, Kartoffeln (extensive Landwirtschaft)'],
+        ['Ring 4', 'Viehzucht'],
+      ] },
+    { id: 'e08-08', typ: 'luecke', thema: 'Thünen', wichtig: 3, quelle: 'VL05-06, S. 52',
+      frage: 'Formel der Lagerente. Fülle die Lücken.',
+      text: 'Lagerente = Erlös – [[Produktionskosten]] – [[Transportkosten]]. Entscheidend ist die [[Distanz|Entfernung]] zum Markt.' },
+    { id: 'e08-09', typ: 'wf', thema: 'Thünen', wichtig: 2, quelle: 'VL05-06, S. 53',
+      aussage: 'Nach von Thünen nimmt die Intensität der Agrarproduktion mit zunehmender Entfernung vom Markt zu.',
+      wahr: false, warum: 'Sie **nimmt ab**: Nah am Markt liegt die intensive Landwirtschaft (Milch, Gemüse), weit draußen die extensive (Getreide, Viehzucht).' },
+    { id: 'e08-10', typ: 'mc', thema: 'Thünen', quelle: 'VL05-06, S. 53',
+      frage: 'Welche Aussagen zur Würdigung des Thünen-Modells treffen zu? (mehrere möglich)',
+      optionen: [
+        { t: 'Geschlossene Kühlketten verringern die Bedeutung der Verderblichkeit.', r: true, warum: 'Eine der heutigen Einschränkungen des Modells.' },
+        { t: 'Es kann historisch bedingte Landnutzungsmuster erklären.', r: true, warum: 'Ebenso Räume mit ausgeprägten Transportkosten oder -hindernissen.' },
+        { t: 'Es erklärt Veränderungsprozesse der Landnutzung besonders gut.', warum: 'Im Gegenteil: keine Erklärung von Veränderungsprozessen (statisch).' },
+        { t: 'Es berücksichtigt Agrarpolitik als zentrale Einflussgröße.', warum: 'Agrarpolitik ist gerade eine Einschränkung, die das Modell nicht abbildet.' },
+      ] },
+
+    /* ---------- Christaller ---------- */
+    { id: 'e08-11', typ: 'offen', thema: 'Christaller', wichtig: 2, punkte: 3, quelle: 'VL05-06, S. 54',
+      frage: 'Was sind zentrale Orte (1 P.), und was bedeuten innere und äußere Reichweite (2 P.)?',
+      antwort: `Zentrale Orte sind Orte mit einem Bedeutungsüberschuss: Sie versorgen nicht nur die eigene Bevölkerung, sondern auch ihr Umland. Die innere (untere) Reichweite ist die Umsatzschwelle bzw. das Mindesteinzugsgebiet, das ein Anbieter für einen rentablen Betrieb braucht. Die äußere (obere) Reichweite ist die maximale Entfernung, die Kund:innen für ein Gut in Kauf nehmen; darüber hinaus übersteigen die Kosten der Raumüberwindung den Nutzen.`,
+      kernpunkte: ['(a) Zentrale Orte: Bedeutungsüberschuss, versorgen über die eigene Bevölkerung hinaus', '(b) Innere Reichweite: für rentablen Betrieb nötige Umsatzschwelle/Mindesteinzugsgebiet', '(b) Äußere Reichweite: maximal in Kauf genommene Entfernung der Kund:innen'] },
+    { id: 'e08-12', typ: 'offen', thema: 'Christaller', wichtig: 2, punkte: 2, quelle: 'VL05-06, S. 55', bildLoesung: 'christaller',
+      frage: 'Warum ergibt sich bei Christaller eine sechseckige Struktur der Marktgebiete?',
+      antwort: `Marktgebiete sollen so angeordnet sein, dass weder Versorgungslücken (Unterversorgung) entstehen noch sich die Gebiete so stark überlappen, dass die innere Reichweite einzelner Orte unterschritten wird. Kreisförmige Gebiete erfüllen das nicht; geometrisch löst das nur eine lückenlose Sechseck- bzw. Wabenstruktur.`,
+      kernpunkte: ['Keine Versorgungslücken (wie bei nebeneinanderliegenden Kreisen)', 'Keine zu große Überlappung, die die innere Reichweite unterschreitet → Sechsecke/Waben decken lückenlos ab'] },
+    { id: 'e08-13', typ: 'offen', thema: 'Christaller', wichtig: 2, punkte: 3, quelle: 'VL05-06, S. 55',
+      frage: 'Nennen Sie drei Eigenschaften des hierarchischen Systems zentraler Orte.',
+      antwort: `Der Rang eines Zentrums ergibt sich aus dem höchstrangigen Gut, das dort angeboten wird. Höherrangige Zentren bieten zusätzlich alle Güter niedrigeren Ranges an. Zentren derselben Hierarchiestufe haben ein identisches Angebot. Daraus entsteht eine sich überlagernde Wabenstruktur; die Hierarchie folgt der Nachfragefrequenz der Güter.`,
+      kernpunkte: ['Rang = höchstrangiges angebotenes Gut', 'Höherrangige Zentren bieten auch alle niederrangigen Güter an', 'Gleiche Stufe = identisches Angebot (überlagerte Waben)'] },
+    { id: 'e08-14', typ: 'mc', thema: 'Christaller', wichtig: 3, quelle: 'VL05-06, S. 54–56; Musterklausur WS23/24, 2.6',
+      frage: 'Welche Aussagen treffen **nicht** auf das Zentrale-Orte-System in Deutschland zu? (mehrere möglich)',
+      optionen: [
+        { t: 'Es hat nur geringe Bedeutung für die räumliche Planung.', r: true, warum: 'Falsch: Das Zentrale-Orte-Prinzip ist bis heute Grundlage der Raumordnung.' },
+        { t: 'Zentren derselben Hierarchiestufe haben ein unterschiedliches Angebot.', r: true, warum: 'Falsch: Zentren gleicher Stufe haben ein identisches Angebot.' },
+        { t: 'Einzelne Ober- und Mittelzentren sind heute in ihrer Funktion gefährdet.', warum: 'Trifft zu: Herausforderung in der Praxis.' },
+        { t: 'Würzburg ist laut Landesentwicklungsprogramm Bayern ein Regionalzentrum.', warum: 'Trifft zu (Folie 2026).' },
+      ],
+      erklaerung: 'Die Musterklausur (andere Prüferin) nennt Würzburg ein „Oberzentrum“. Die Folien 2026 zeigen laut LEP Bayern die Kategorie **Regionalzentrum** – in der App gilt die Folie.' },
+    { id: 'e08-15', typ: 'offen', thema: 'Christaller', wichtig: 2, punkte: 2, quelle: 'VL05-06, S. 56',
+      frage: 'Welche Bedeutung hat das Zentrale-Orte-Prinzip heute?',
+      antwort: `Es ist Grundlage der Raumordnung: Ober-, Mittel- und Grundzentren mit typischer Ausstattung dienen als normatives Leitbild für eine ausgewogene Raumstruktur und eine gute Versorgung in der Fläche. In der Praxis gibt es Herausforderungen, etwa gefährdete Ober- und Mittelzentren; in Bayern kennt der Landesentwicklungsplan zusätzlich Regionalzentren und Metropolen (Würzburg = Regionalzentrum).`,
+      kernpunkte: ['Grundlage der Raumordnung: Ober-, Mittel-, Grundzentren als normatives Leitbild (ausgewogene Raumstruktur, Versorgung in der Fläche)', 'Praxis: Herausforderungen/Gefährdung einzelner Zentren; LEP Bayern (Würzburg = Regionalzentrum)'] },
+    { id: 'e08-16', typ: 'mc', thema: 'Christaller', wichtig: 2, quelle: 'VL05-06, S. 54',
+      frage: 'Wie heißt die maximale Entfernung, die Kund:innen für ein zentrales Gut in Kauf nehmen?',
+      optionen: [
+        { t: 'Äußere (obere) Reichweite', r: true, warum: 'Darüber übersteigen die Wegekosten den Nutzen.' },
+        { t: 'Innere (untere) Reichweite', warum: 'Das ist die Umsatzschwelle für einen rentablen Betrieb.' },
+        { t: 'Bedeutungsüberschuss', warum: 'So heißt die Versorgungsleistung über die eigene Bevölkerung hinaus.' },
+        { t: 'Kritische Isodapane', warum: 'Begriff aus Webers Industriestandortlehre.' },
+      ] },
+    { id: 'e08-17', typ: 'wf', thema: 'Christaller', wichtig: 2, quelle: 'VL05-06, S. 55',
+      aussage: 'Ein höherrangiger zentraler Ort bietet auch alle Güter der niedrigeren Hierarchiestufen an.',
+      wahr: true, warum: 'Genau so ist die Hierarchie aufgebaut; der Rang ergibt sich aus dem höchstrangigen angebotenen Gut.' },
+
+    /* ---------- Weber ---------- */
+    { id: 'e08-18', typ: 'offen', thema: 'Weber', wichtig: 2, punkte: 2, quelle: 'VL05-06, S. 57–58', bildLoesung: 'weber',
+      frage: 'Erläutern Sie Webers Grundmodell der Industriestandortwahl.',
+      antwort: `Weber nimmt an, dass der Gewinn nur von den standortabhängigen Kosten abhängt und allein durch Transportkostenersparnis maximiert wird; Materialfundorte und Absatzmarkt sind gegeben, Frachtraten und Preise konstant. Optimal ist der tonnenkilometrische Minimalpunkt: der Standort, an dem die Summe aus Entfernung mal Gewicht zwischen Materialfundorten, Produktionsort und Konsumort am kleinsten ist – im Normalfall ein Punkt innerhalb des Standortdreiecks.`,
+      kernpunkte: ['Gewinn nur von standortabhängigen Kosten abhängig, Maximierung durch Transportkostenersparnis', 'Optimum = tonnenkilometrischer Minimalpunkt (Entfernung × Gewicht) im Dreieck M1–M2–K'] },
+    { id: 'e08-19', typ: 'offen', thema: 'Weber', wichtig: 3, punkte: 2, quelle: 'VL05-06, S. 58; Musterklausur WS23/24, 2.2',
+      frage: 'Unterscheiden Sie lokalisierte und ubiquitäre Materialien nach Weber und nennen Sie jeweils ein Beispiel.',
+      antwort: `Lokalisierte Materialien sind an bestimmte Abbauorte gebunden; dazu gehören Reingewichtsmaterialien wie Edelmetalle und Gewichtsverlustmaterialien wie Steinkohle oder viele Erze. Ubiquitäre Materialien sind nicht standortgebunden, sondern überall frei verfügbar, etwa Luft, Sauerstoff oder Wasser. Werden nur Ubiquitäten oder Reingewichtsmaterialien verwendet, liegt der optimale Produktionsstandort am Konsumort.`,
+      kernpunkte: ['Lokalisiert: an Abbauorte gebunden, z. B. Edelmetalle (Reingewicht) oder Steinkohle/Erze (Gewichtsverlust)', 'Ubiquitär: überall frei verfügbar, z. B. Luft, Sauerstoff, Wasser'] },
+    { id: 'e08-20', typ: 'mc', thema: 'Weber', wichtig: 3, quelle: 'VL05-06, S. 58; Musterklausur WS23/24, 2.2',
+      frage: 'Was trifft auf ubiquitäre Materialien zu? (mehrere möglich)',
+      optionen: [
+        { t: 'Sie sind nahezu überall verfügbar, z. B. Luft oder Wasser.', r: true, warum: 'Genau das bedeutet ubiquitär.' },
+        { t: 'Werden nur sie verwendet, liegt der optimale Standort am Konsumort.', r: true, warum: 'Variante A: P = K.' },
+        { t: 'Sie kommen nur an bestimmten Fundorten vor.', warum: 'Das gilt für lokalisierte Materialien.' },
+        { t: 'Edelmetalle sind ein typisches Beispiel.', warum: 'Edelmetalle sind lokalisierte Reingewichtsmaterialien.' },
+      ] },
+    { id: 'e08-21', typ: 'mc', thema: 'Weber', wichtig: 2, quelle: 'VL05-06, S. 58',
+      frage: 'Ein Betrieb verarbeitet vor allem Gewichtsverlustmaterialien (z. B. Erz). Wohin verschiebt sich sein tonnenkilometrischer Minimalpunkt?',
+      optionen: [
+        { t: 'In Richtung der Materialfundorte', r: true, warum: 'Das Fertigprodukt ist leichter als die Rohstoffe – es ist günstiger, das Produkt zu transportieren.' },
+        { t: 'In Richtung des Konsumorts', warum: 'Das gilt eher, wenn Ubiquitäten oder Reingewichtsmaterialien überwiegen.' },
+        { t: 'Genau auf den Konsumort', warum: 'P = K gilt nur bei Ubiquitäten oder Reingewichtsmaterialien.' },
+        { t: 'Er bleibt unabhängig vom Material in der Dreiecksmitte.', warum: 'Die Lage hängt gerade vom Gewichtsverlust ab.' },
+      ] },
+    { id: 'e08-22', typ: 'offen', thema: 'Weber', wichtig: 2, punkte: 2, quelle: 'VL05-06, S. 58',
+      frage: 'Erläutern Sie die kritische Isodapane in Webers erweitertem Modell.',
+      antwort: `Isodapanen sind Linien gleicher zusätzlicher Transportkosten, die entstehen, wenn ein Betrieb vom tonnenkilometrischen Minimalpunkt abweicht. Die kritische Isodapane ist die Linie, auf der dieser Transportkostenmehraufwand genau durch die Arbeitskostenersparnis an einem billigeren Standort ausgeglichen wird. Liegt ein Standort mit niedrigen Arbeitskosten innerhalb der kritischen Isodapane, lohnt sich die Verlagerung.`,
+      kernpunkte: ['Isodapanen: Linien gleicher Zusatzkosten bei Abweichung vom Minimalpunkt', 'Kritische Isodapane: Mehrtransportkosten = Arbeitskostenersparnis; innerhalb lohnt die Verlagerung'] },
+    { id: 'e08-23', typ: 'offen', thema: 'Weber', wichtig: 2, punkte: 2, quelle: 'VL05-06, S. 59', bildLoesung: 'isodapane',
+      frage: 'Wie erklärt Weber Agglomeration?',
+      antwort: `Nach Weber entfernt sich der optimale Standort vom Minimalpunkt, wenn durch die Nähe zu anderen Betrieben Kosten gespart werden, etwa durch gemeinsam nutzbare Infrastruktur – ein Agglomerationsfaktor ist eine Verbilligung von Produktion oder Absatz durch Ballung an einem Platz. Überlappen sich die kritischen Isodapanen mehrerer Unternehmen, ist die Verlagerung in diesen gemeinsamen Agglomerationsraum wirtschaftlich rational.`,
+      kernpunkte: ['Agglomerationsvorteil = Kostenersparnis durch Ballung an einem Platz (z. B. gemeinsame Infrastruktur)', 'Überlappen die kritischen Isodapanen mehrerer Betriebe, ist der gemeinsame Agglomerationsraum rational'] },
+    { id: 'e08-24', typ: 'mc', thema: 'Weber', wichtig: 2, quelle: 'VL05-06, S. 60', bild: 'isodapane',
+      frage: 'Die kritischen Isodapanen der Firmen A, B und C überlappen sich; die von D überlappt mit keiner anderen. Welche Standorte wählen die Firmen?',
+      optionen: [
+        { t: 'A, B und C wählen den gemeinsamen Agglomerationsraum, D bleibt am Minimalpunkt.', r: true, warum: 'So auch die Lösung auf der Folie: D hat keine zur Agglomeration bereite Partnerfirma.' },
+        { t: 'Alle vier bleiben an ihrem tonnenkilometrischen Minimalpunkt.', warum: 'Für A–C lohnt die Agglomeration, weil ihre Ersparnis die Mehrtransportkosten übersteigt.' },
+        { t: 'Alle vier ziehen in den Agglomerationsraum.', warum: 'D liegt außerhalb – für D würden die Zusatzkosten die Ersparnis übersteigen.' },
+        { t: 'D wählt den Agglomerationsraum, A–C bleiben am Minimalpunkt.', warum: 'Genau umgekehrt.' },
+      ] },
+    { id: 'e08-25', typ: 'luecke', thema: 'Weber', quelle: 'VL05-06, S. 58',
+      text: '[[Isotimen]] sind Linien gleicher Transportkosten. [[Isodapanen]] sind Linien gleicher zusätzlicher Kosten, die durch eine Abweichung vom tonnenkilometrischen [[Minimalpunkt]] entstehen.' },
+    { id: 'e08-26', typ: 'wf', thema: 'Weber', wichtig: 2, quelle: 'VL05-06, S. 58–59',
+      aussage: 'Weber berücksichtigt auch in seinem erweiterten Modell ausschließlich Transportkosten.',
+      wahr: false, warum: 'Er erweitert das Grundmodell um **variable Arbeitskosten** (kritische Isodapane) und **Agglomerationseffekte**.' },
+
+    /* ---------- Würdigung ---------- */
+    { id: 'e08-27', typ: 'offen', thema: 'Würdigung', wichtig: 2, punkte: 3, quelle: 'VL05-06, S. 50 und 61',
+      frage: 'Nennen Sie drei Kritikpunkte an den neoklassischen Standortmodellen.',
+      antwort: `Sinkende Transportkosten, neue Technologien und Strukturwandel haben die beschriebenen Raummuster teilweise aufgelöst; heute spielen Transportkosten in den meisten Branchen nur eine geringe Rolle. Die rigiden Annahmen des homo oeconomicus bilden die Vielfalt menschlichen Verhaltens nur unzureichend ab. Und die Modelle sind statisch, erklären also keinen Wandel.`,
+      kernpunkte: ['Sinkende Transportkosten/neue Technologien lösen die Raummuster auf (Transportkosten heute meist unbedeutend)', 'Starre homo-oeconomicus-Annahmen bilden reales Verhalten schlecht ab', 'Statischer Charakter, keine Erklärung von Wandel'] },
+    { id: 'e08-28', typ: 'paare', thema: 'Würdigung', wichtig: 2, quelle: 'VL05-06, S. 61',
+      frage: 'Welches Modell erklärt was?',
+      paare: [
+        ['Von Thünen', 'Optimale agrarische Landnutzung'],
+        ['Christaller', 'Optimale Versorgung mit Dienstleistungen und öffentlichen Einrichtungen'],
+        ['Weber', 'Optimaler Standort für Industriebetriebe'],
+      ] },
+
+    /* ---------- Verhalten und Standortfaktoren ---------- */
+    { id: 'e08-29', typ: 'offen', thema: 'Verhalten und Standortfaktoren', wichtig: 2, punkte: 2, quelle: 'VL05-06, S. 62–63',
+      frage: 'Erläutern Sie, was der behavioristische Ansatz mit „Satisficer statt Optimizer“ meint.',
+      antwort: `Anders als der optimierende homo oeconomicus der Neoklassik handeln Unternehmen mit unvollständiger Information, begrenzter Verarbeitungskapazität, Motiven und Zwängen. Sie suchen deshalb in einem meist mehrstufigen Suchprozess nicht den optimalen, sondern einen zufriedenstellenden Standort; nach Preds Verhaltensmatrix hängt die Entscheidung von Informationsstand und der Fähigkeit ab, diese Information zu nutzen.`,
+      kernpunkte: ['Unvollständige Information, begrenzte Verarbeitung, Motive/Zwänge statt vollständiger Rationalität', 'Zufriedenstellende statt optimale Lösung im mehrstufigen Suchprozess (Pred: Informationsstand × Nutzungsfähigkeit)'] },
+    { id: 'e08-30', typ: 'offen', thema: 'Verhalten und Standortfaktoren', wichtig: 2, punkte: 2, quelle: 'VL05-06, S. 64', bildLoesung: 'standortfaktoren',
+      frage: 'Was sind Standortfaktoren (1 P.), und wie unterscheiden sich harte und weiche Standortfaktoren (1 P.)?',
+      antwort: `Standortfaktoren sind Vorteile für eine wirtschaftliche Aktivität, die an bestimmte Orte gebunden sind. Harte Standortfaktoren sind gut messbar und unmittelbar für die Geschäftstätigkeit relevant – etwa Verkehrsanbindung, Steuern, Flächen oder Arbeitskosten – und prägen die neoklassischen Modelle. Weiche Standortfaktoren wie Image, Wohnwert oder Kulturangebot sind schwer messbar und beruhen eher auf subjektiver Einschätzung, können aber entscheidend sein.`,
+      kernpunkte: ['(a) Standortfaktoren: ortsgebundene Vorteile für eine wirtschaftliche Aktivität', '(b) Hart = gut messbar, direkt relevant (Verkehr, Steuern, Arbeitskosten); weich = schwer messbar, subjektiv (Image, Wohnwert, Kultur)'] },
+    { id: 'e08-31', typ: 'karte', thema: 'Verhalten und Standortfaktoren', quelle: 'VL05-06, S. 64',
+      vorne: '„Windows of locational opportunity“ (Scott/Storper 1987)',
+      hinten: `Pionierunternehmen entscheiden weniger auf Grundlage rationaler Standortvergleiche, sondern nutzen **sich bietende Gelegenheitsfenster** für ihre Standortwahl.` },
+    { id: 'e08-32', typ: 'mc', thema: 'Strukturelle Ansätze', quelle: 'VL05-06, S. 62 und 65–66',
+      frage: 'Welcher Ansatz betont, dass Standortentscheidungen von gesellschaftlichen Makrostrukturen abhängen und Standortbedingungen Ergebnis sozialer Prozesse sind?',
+      optionen: [
+        { t: 'Strukturelle Ansätze', r: true, warum: 'Z. B. Gesetze, Gewerkschaften, Abhängigkeiten; Unternehmen gestalten Bedingungen aktiv mit.' },
+        { t: 'Behavioristische Ansätze', warum: 'Sie betonen individuelle Entscheidungen, Information und Wahlfreiheit.' },
+        { t: 'Dynamisch-zyklische Ansätze', warum: 'Sie erklären Standortwandel durch Innovationen und Zyklen.' },
+        { t: 'Neoklassische Standortmodelle', warum: 'Sie gehen vom optimierenden Einzelbetrieb aus.' },
+      ] },
+    { id: 'e08-33', typ: 'offen', thema: 'Strukturelle Ansätze', punkte: 2, quelle: 'VL05-06, S. 65–66',
+      frage: 'Erläutern Sie die Sicht struktureller Ansätze auf Standortentscheidungen.',
+      antwort: `Strukturelle Ansätze sehen Standortentscheidungen durch gesellschaftliche Rahmenbedingungen und externe Zwänge bestimmt, etwa durch Gesetze und Arbeitsrechte, ökonomische Abhängigkeiten zwischen Unternehmen oder die Stärke von Gewerkschaften. Zugleich reagieren Unternehmen nicht nur auf Standortbedingungen, sondern verändern sie aktiv, z. B. durch Investitionen in Bildung oder Infrastruktur – Standortbedingungen sind damit Ergebnis sozialer Prozesse.`,
+      kernpunkte: ['Entscheidungen durch gesellschaftliche Rahmenbedingungen/Zwänge bestimmt (Gesetze, Abhängigkeiten, Gewerkschaften)', 'Unternehmen gestalten Standortbedingungen aktiv mit – diese sind Ergebnis sozialer Prozesse'] },
+
+    /* ---------- Innovation ---------- */
+    { id: 'e08-34', typ: 'offen', thema: 'Innovation', wichtig: 2, punkte: 3, quelle: 'VL05-06, S. 67',
+      frage: 'Unterscheiden Sie Invention, Innovation und Diffusion.',
+      antwort: `Eine Invention ist die Erfindung selbst. Innovation bezeichnet den Prozess der wirtschaftlichen Umsetzung dieser Neuerung. Diffusion ist die anschließende Ausbreitung der Innovation, also ihre Übernahme durch andere Marktteilnehmer.`,
+      kernpunkte: ['Invention = Erfindung', 'Innovation = wirtschaftliche Umsetzung der Neuerung', 'Diffusion = Ausbreitung/Übernahme durch andere Marktteilnehmer'] },
+    { id: 'e08-35', typ: 'wf', thema: 'Innovation', quelle: 'VL05-06, S. 67',
+      aussage: 'Basisinnovationen sind graduelle Verbesserungen bestehender Produkte.',
+      wahr: false, warum: 'Das sind **Verbesserungsinnovationen**. Basisinnovationen bringen grundlegende Veränderungen: neue Produkte, Verfahren, Transport- oder Kommunikationssysteme, Vertriebsformen.' },
+
+    /* ---------- Produktlebenszyklus ---------- */
+    { id: 'e08-36', typ: 'reihe', thema: 'Produktlebenszyklus', wichtig: 2, quelle: 'VL05-06, S. 69', bildLoesung: 'plz',
+      frage: 'Bring die Phasen des Produktlebenszyklus in die richtige Reihenfolge.',
+      schritte: ['Entwicklung und Einführung', 'Wachstum', 'Reife', 'Schrumpfung'],
+      erklaerung: 'Die Textfolie nummeriert den Profitzyklus mit I–V, die Grafiken zeigen vier Phasen; die App nutzt die vier Phasen.' },
+    { id: 'e08-37', typ: 'offen', thema: 'Produktlebenszyklus', wichtig: 3, punkte: 3, quelle: 'VL05-06, S. 69–72', bildLoesung: 'plz',
+      frage: 'Erläutern Sie das Modell des Produktlebenszyklus und die Veränderung der Standortanforderungen.',
+      antwort: `Nach Vernon und Hirsch durchläuft jedes Industrieprodukt die Phasen Entwicklung/Einführung, Wachstum, Reife und Schrumpfung, begleitet von einem Profitzyklus. In der Einführungsphase sind qualifizierte Arbeitskräfte und hochwertige Infrastruktur entscheidend, optimaler Standort ist der Agglomerationsraum; in der Wachstumsphase zählen Agglomerationsvorteile und Marktnähe, die Produktion rückt ins Umland. In Reife und Schrumpfung dominieren Kostendruck, billige Arbeitskräfte und niedrige Standortkosten – die Produktion wandert in periphere Regionen und Niedriglohnländer (Dezentralisierung, Globalisierung).`,
+      kernpunkte: ['Phasen Entwicklung/Einführung – Wachstum – Reife – Schrumpfung mit Profitzyklus', 'Einführung: qualifizierte Arbeit, Infrastruktur → Agglomerationsraum; Wachstum: Zulieferer, Marktnähe → Umland', 'Reife/Schrumpfung: billige Arbeit, niedrige Kosten → Peripherie/Niedriglohnländer (Dezentralisierung)'] },
+    { id: 'e08-38', typ: 'offen', thema: 'Produktlebenszyklus', wichtig: 3, punkte: 3, quelle: 'VL05-06, S. 72; Musterklausur WS23/24, 1.3',
+      frage: 'Nennen Sie drei Kritikpunkte am Modell des Produktlebenszyklus.',
+      antwort: `Das Modell arbeitet mit einem starren Produktbegriff. Es vernachlässigt die Anpassungsfähigkeit von Unternehmen und die permanenten Verbesserungsinnovationen, die Produkte verändern und den Zyklus verlängern. Außerdem blendet es den sozialen und regulatorischen Kontext aus und ist insgesamt sehr linear.`,
+      kernpunkte: ['Starrer Produktbegriff', 'Vernachlässigt Anpassungsfähigkeit und permanente Verbesserungsinnovationen', 'Ohne sozialen und regulatorischen Kontext / sehr linear'],
+      erklaerung: 'Die Musterklausur (1.3, 3 P.) fragt nach Kritik an Produktlebenszyklus **und** Theorie der langen Wellen zusammen. Kritik an den langen Wellen steht nicht in den Folien – siehe Zusatz-Einheit.' },
+    { id: 'e08-39', typ: 'paare', thema: 'Produktlebenszyklus', wichtig: 2, quelle: 'VL05-06, S. 71',
+      frage: 'Ordne jeder Phase den optimalen Produktionsstandort zu.',
+      paare: [
+        ['Entwicklung und Einführung', 'Agglomerationsraum'],
+        ['Wachstum', 'Umland der Agglomeration'],
+        ['Reife und Schrumpfung', 'Periphere Regionen, Niedriglohnländer'],
+      ] },
+    { id: 'e08-40', typ: 'mc', thema: 'Produktlebenszyklus', wichtig: 2, quelle: 'VL05-06, S. 71',
+      frage: 'Welche Standortanforderungen sind in der Entwicklungs- und Einführungsphase **sehr wichtig**? (mehrere möglich)',
+      optionen: [
+        { t: 'Qualifizierte Arbeitskräfte', r: true, warum: 'In der Tabelle mit ++ bewertet.' },
+        { t: 'Hochwertige Infrastruktur', r: true, warum: 'Ebenfalls ++.' },
+        { t: 'Billige Arbeitskräfte', warum: 'Erst in Reife und Schrumpfung sehr wichtig.' },
+        { t: 'Niedrige Standortkosten', warum: 'Erst in Reife und Schrumpfung sehr wichtig.' },
+      ] },
+    { id: 'e08-41', typ: 'wf', thema: 'Produktlebenszyklus', quelle: 'VL05-06, S. 71',
+      aussage: 'Im Verlauf des Produktlebenszyklus verschieben sich die Innovationen von Prozess- zu Produktinnovationen.',
+      wahr: false, warum: 'Umgekehrt: von **Produkt-** zu **Prozessinnovationen**, von F&E- zu Rationalisierungsinvestitionen, von kleinen Losgrößen zur Massenproduktion.' },
+  ],
+});
+//# sourceURL=content/wirtschaftsgeographie/e08.js
+</script>
+<script>
 /* Eigene Skizzen zum Kurs Wirtschaftsgeographie (nachgezeichnet und vereinfacht, keine Abbildungen aus den Folien).
    Format und Farbklassen: docs/INHALTE.md, Abschnitt 5. Eingebunden über bild / bildLoesung in Skript und Fragen. */
 
@@ -2269,6 +2640,152 @@ Lerni.grafik('wirtschaftsgeographie', 'exportbasis', {
   <text class="k b tp" x="212" y="32">Multiplikator</text><text class="k" x="212" y="48">größer bei hoher</text><text class="k" x="212" y="61">Konsumquote und</text><text class="k" x="212" y="74">niedriger Importquote</text>
 </svg>`,
 });
+
+/* ---------- e08 Standorttheorien ---------- */
+(() => {
+  const K = 'wirtschaftsgeographie';
+  /* Sechseck mit Spitze oben bzw. mit flacher Oberseite (Mittelpunkt, Radius) */
+  const pkt = (cx, cy, r, w) => (cx + r * Math.cos(w * Math.PI / 180)).toFixed(1) + ',' + (cy + r * Math.sin(w * Math.PI / 180)).toFixed(1);
+  const hexSpitz = (cx, cy, r) => [-90, -30, 30, 90, 150, 210].map((w) => pkt(cx, cy, r, w)).join(' ');
+  const hexFlach = (cx, cy, r) => [0, 60, 120, 180, 240, 300].map((w) => pkt(cx, cy, r, w)).join(' ');
+
+  Lerni.grafik(K, 'lagerente', {
+    titel: 'Lagerentenkurven und Landnutzungszonen (von Thünen)',
+    text: 'Lagerente = Erlös – Produktionskosten – Transportkosten. Je Entfernung wird das Produkt mit der höchsten Lagerente angebaut; die Lotrechten der Schnittpunkte sind die Zonengrenzen (VL05-06, S. 52).',
+    svg: `<svg viewBox="0 0 340 214" role="img" aria-label="Drei fallende Lagerentenkurven und die daraus folgenden Zonen">
+    <line x1="30" y1="14" x2="30" y2="160"/><line x1="30" y1="160" x2="334" y2="160"/>
+    <polygon class="pf" points="30,8 26,16 34,16"/><polygon class="pf" points="340,160 332,156 332,164"/>
+    <text class="k m" transform="translate(20 110) rotate(-90)">Lagerente</text>
+    <g class="n d sm"><line x1="61" y1="87" x2="61" y2="160"/><line x1="126" y1="124" x2="126" y2="160"/></g>
+    <line class="s2" x1="30" y1="30" x2="100" y2="160"/><line class="s3" x1="30" y1="70" x2="190" y2="160"/><line class="s1" x1="30" y1="105" x2="310" y2="160"/>
+    <g class="k b"><text class="to" x="50" y="30">Gemüse, Milch</text><text class="tm" x="104" y="96">Holz</text><text class="tp" x="200" y="132">Getreide</text></g>
+    <rect class="f2 s0" x="30" y="166" width="31" height="12"/><rect class="f3 s0" x="61" y="166" width="65" height="12"/><rect class="f1 s0" x="126" y="166" width="184" height="12"/>
+    <g class="k" text-anchor="middle"><text x="46" y="194">1</text><text x="93" y="194">2</text><text x="218" y="194">3</text></g>
+    <text class="k m" x="30" y="208">Markt</text><text class="k m" x="332" y="208" text-anchor="end">Entfernung vom Markt →</text>
+    <circle class="pf" cx="30" cy="160" r="4"/>
+  </svg>`,
+  });
+
+  const ringe = (legende) => `<svg viewBox="0 0 340 196" role="img" aria-label="Thünensche Ringe um den Markt">
+    <circle class="fl" cx="96" cy="98" r="92"/><circle class="f1" cx="96" cy="98" r="76"/><circle class="f3" cx="96" cy="98" r="56"/><circle class="f2" cx="96" cy="98" r="36"/><circle class="f0" cx="96" cy="98" r="17"/>
+    <circle class="pf" cx="96" cy="98" r="4"/>
+    <g class="b" text-anchor="middle"><text x="123" y="102">1</text><text x="142" y="102">2</text><text x="162" y="102">3</text><text x="180" y="102">4</text></g>
+    ${legende ? `<g class="k">
+      <text x="206" y="30"><tspan class="b">Mitte</tspan> Stadt (Markt)</text>
+      <text x="206" y="54"><tspan class="b">1</tspan> Milch, Gemüse</text><text class="m" x="218" y="67">intensive Landwirtschaft</text>
+      <text x="206" y="90"><tspan class="b">2</tspan> Bau- und Feuerholz</text><text class="m" x="218" y="103">Wald</text>
+      <text x="206" y="126"><tspan class="b">3</tspan> Getreide, Kartoffeln</text><text class="m" x="218" y="139">extensive Landwirtschaft</text>
+      <text x="206" y="162"><tspan class="b">4</tspan> Viehzucht</text><text class="m" x="206" y="184">außen: Ödland</text>
+    </g>` : `<text class="k m" x="206" y="70">Mitte = Markt (Stadt)</text><text class="k m" x="206" y="90">Welche Nutzung</text><text class="k m" x="206" y="104">gehört in welchen</text><text class="k m" x="206" y="118">Ring?</text>`}
+  </svg>`;
+  Lerni.grafik(K, 'thuenen', { titel: 'Thünensche Ringe', text: 'Nach der Tabelle in VL05-06, S. 53 (Braun/Schulz): Die Intensität der Nutzung nimmt mit der Entfernung vom Markt ab.', svg: ringe(true) });
+  Lerni.grafik(K, 'thuenen-ringe', { titel: 'Thünensche Ringe (ohne Beschriftung)', svg: ringe(false) });
+
+  const B = [0, 60, 120, 180, 240, 300].map((w) => [100 + 38.1 * Math.cos((w + 30) * Math.PI / 180), 100 + 38.1 * Math.sin((w + 30) * Math.PI / 180)]);
+  Lerni.grafik(K, 'christaller', {
+    titel: 'Zentrale Orte: Sechsecke und Hierarchie (Christaller)',
+    text: 'Kreisförmige Marktgebiete ließen Lücken oder überlappten zu stark – Sechsecke decken den Raum lückenlos ab. Das höherrangige Zentrum bietet auch alle niederrangigen Güter an (VL05-06, S. 54–55).',
+    svg: `<svg viewBox="0 0 340 214" role="img" aria-label="Wabenmuster mit einem höherrangigen und sechs niederrangigen Zentren">
+    <g class="f2 n">${[[100, 100]].concat(B).map(([x, y]) => `<polygon points="${hexSpitz(x, y, 22)}"/>`).join('')}</g>
+    <polygon class="s1 w d" points="${hexFlach(100, 100, 38.1)}"/>
+    <g class="pf">${B.map(([x, y]) => `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="3.5"/>`).join('')}</g>
+    <circle class="pfp" cx="100" cy="100" r="7"/>
+    <g class="k">
+      <circle class="pfp" cx="12" cy="176" r="5"/><text x="22" y="180">höherrangiges Zentrum (alle Güter)</text>
+      <circle class="pf" cx="12" cy="192" r="3.5"/><text x="22" y="196">niederrangige Zentren</text>
+      <line class="s1 w d" x1="4" y1="206" x2="20" y2="206"/><text x="24" y="210">Marktgebiet eines höherrangigen Guts</text>
+    </g>
+    <g class="n">
+      <circle cx="232" cy="28" r="12"/><circle cx="256" cy="28" r="12"/><circle cx="280" cy="28" r="12"/>
+      <circle cx="232" cy="82" r="14"/><circle cx="252" cy="82" r="14"/><circle cx="272" cy="82" r="14"/>
+      <polygon class="f2" points="${hexSpitz(232, 140, 13)}"/><polygon class="f2" points="${hexSpitz(254.5, 140, 13)}"/><polygon class="f2" points="${hexSpitz(277, 140, 13)}"/>
+    </g>
+    <g class="k">
+      <text x="298" y="24">Lücken</text><text class="m" x="298" y="37">(Unter-</text><text class="m" x="298" y="49">versorgung)</text>
+      <text x="292" y="78">zu viel</text><text x="292" y="91">Über-</text><text x="292" y="104">lappung</text>
+      <text x="294" y="137">Waben:</text><text x="294" y="150">lückenlos</text>
+    </g>
+    <text class="k b" x="256" y="116" text-anchor="middle">↓</text><text class="k b" x="256" y="60" text-anchor="middle">↓</text>
+  </svg>`,
+  });
+
+  Lerni.grafik(K, 'weber', {
+    titel: 'Webers Standortdreieck: tonnenkilometrischer Minimalpunkt',
+    text: 'M1, M2 = Fundorte der Materialien, K = Konsumort, P = optimaler Produktionsstandort (VL05-06, S. 58).',
+    svg: `<svg viewBox="0 0 340 204" role="img" aria-label="Zwei Standortdreiecke: P am Konsumort und P im Dreieck">
+    <text class="k b" x="84" y="14" text-anchor="middle">A</text><text class="k b" x="256" y="14" text-anchor="middle">B (Normalfall)</text>
+    <polygon class="f1 s1" points="24,28 40,142 150,86"/>
+    <polygon class="f1 s1" points="190,28 204,142 326,86"/>
+    <g class="n d"><line x1="244" y1="88" x2="190" y2="28"/><line x1="244" y1="88" x2="204" y2="142"/><line x1="244" y1="88" x2="326" y2="86"/></g>
+    <g class="pf"><rect x="19" y="23" width="10" height="10"/><rect x="35" y="137" width="10" height="10"/><rect x="185" y="23" width="10" height="10"/><rect x="199" y="137" width="10" height="10"/></g>
+    <rect class="f0" x="145" y="81" width="10" height="10"/><rect class="f0" x="321" y="81" width="10" height="10"/>
+    <circle class="pfp" cx="150" cy="86" r="4"/><circle class="pfp" cx="244" cy="88" r="4.5"/>
+    <g class="k b"><text x="34" y="30">M1</text><text x="50" y="150">M2</text><text x="126" y="76">P = K</text><text x="200" y="22">M1</text><text x="214" y="152">M2</text><text x="316" y="76">K</text><text class="tp" x="250" y="104">P</text></g>
+    <g class="k">
+      <text x="4" y="168">A: Ubiquitäten oder Reingewichts-</text><text x="4" y="181">materialien → P liegt am Konsumort</text>
+      <text x="186" y="168">B: P liegt im Dreieck;</text><text x="186" y="181">je mehr Gewichtsverlust,</text><text x="186" y="194">desto näher an M1, M2</text>
+    </g>
+  </svg>`,
+  });
+
+  Lerni.grafik(K, 'isodapane', {
+    titel: 'Agglomeration nach Weber: überlappende kritische Isodapanen',
+    text: 'Innerhalb seiner kritischen Isodapane spart ein Betrieb durch Agglomeration mehr, als er an Transportkosten zusätzlich zahlt. Überlappen sich die Isodapanen mehrerer Betriebe, ist der gemeinsame Agglomerationsraum rational (nach VL05-06, S. 59–60).',
+    svg: `<svg viewBox="0 0 340 214" role="img" aria-label="Kritische Isodapanen der Firmen A, B, C überlappen, D liegt allein">
+    <defs><clipPath id="wgIsoA"><circle cx="95" cy="80" r="62"/></clipPath><clipPath id="wgIsoB"><circle cx="175" cy="80" r="62"/></clipPath></defs>
+    <g clip-path="url(#wgIsoA)"><g clip-path="url(#wgIsoB)"><circle class="f3 s0" cx="135" cy="145" r="62"/></g></g>
+    <g class="d"><circle cx="95" cy="80" r="62"/><circle cx="175" cy="80" r="62"/><circle cx="135" cy="145" r="62"/><circle cx="290" cy="70" r="40"/></g>
+    <g class="pfp"><circle cx="95" cy="80" r="4"/><circle cx="175" cy="80" r="4"/><circle cx="135" cy="145" r="4"/><circle cx="290" cy="70" r="4"/></g>
+    <g class="b"><text x="80" y="76">A</text><text x="182" y="76">B</text><text x="142" y="160">C</text><text x="297" y="66">D</text></g>
+    <text class="k b" x="135" y="104" text-anchor="middle">Agglo-</text><text class="k b" x="135" y="116" text-anchor="middle">meration</text>
+    <g class="k">
+      <circle class="pfp" cx="222" cy="148" r="4"/><text x="230" y="152">tonnenkilometrischer</text><text x="230" y="164">Minimalpunkt je Firma</text>
+      <line class="d" x1="214" y1="180" x2="230" y2="180"/><text x="234" y="184">kritische Isodapane</text>
+      <rect class="f3 s0" x="214" y="192" width="16" height="10"/><text x="234" y="201">gemeinsamer Raum</text>
+    </g>
+  </svg>`,
+  });
+
+  Lerni.grafik(K, 'plz', {
+    titel: 'Produktlebenszyklus und optimaler Produktionsstandort',
+    text: 'Nach VL05-06, S. 69–71 (Vernon, Hirsch; Kulke, Schätzl): Mit jeder Phase ändern sich die Standortanforderungen – die Produktion wandert aus den Agglomerationen in die Peripherie.',
+    svg: `<svg viewBox="0 0 340 232" role="img" aria-label="Produktlebenszyklus-Kurve mit vier Phasen und den jeweiligen Standorten">
+    <g class="k b" text-anchor="middle"><text x="57" y="14">I Entwicklung,</text><text x="57" y="26">Einführung</text><text x="132" y="20">II Wachstum</text><text x="210" y="20">III Reife</text><text x="290" y="20">IV Schrumpfung</text></g>
+    <g class="n d sm"><line x1="95" y1="30" x2="95" y2="124"/><line x1="170" y1="30" x2="170" y2="124"/><line x1="250" y1="30" x2="250" y2="124"/></g>
+    <line x1="20" y1="124" x2="332" y2="124"/><text class="k m" x="332" y="118" text-anchor="end">Zeit</text>
+    <path class="s1 w" d="M22 120 C70 118 110 90 150 60 C185 36 225 34 250 48 C280 64 305 86 330 104"/>
+    <text class="k m" x="24" y="44">Produktion</text>
+    <g class="k" text-anchor="middle">
+      <text class="m" x="10" y="144" text-anchor="start">Wichtig:</text>
+      <text x="57" y="158">qualifizierte Arbeit,</text><text x="57" y="170">Infrastruktur</text>
+      <text x="132" y="158">Zulieferer,</text><text x="132" y="170">Marktnähe</text>
+      <text x="250" y="158">billige Arbeitskräfte,</text><text x="250" y="170">niedrige Standortkosten</text>
+      <text class="m" x="10" y="188" text-anchor="start">Optimaler Standort:</text>
+      <text class="b" x="57" y="202">Agglomeration</text>
+      <text class="b" x="132" y="202">Umland</text>
+      <text class="b" x="250" y="202">Peripherie, Niedriglohnländer</text>
+    </g>
+    <line class="s1" x1="20" y1="216" x2="324" y2="216"/><polygon class="pfp" points="332,216 322,211 322,221"/>
+    <text class="k" x="170" y="229" text-anchor="middle">intraregionale → interregionale → internationale Dezentralisierung</text>
+  </svg>`,
+  });
+
+  Lerni.grafik(K, 'standortfaktoren', {
+    titel: 'Harte und weiche Standortfaktoren',
+    text: 'Vereinfacht nach VL05-06, S. 64 (Grabow et al.): Harte Faktoren sind gut messbar und direkt relevant, weiche eher subjektiv und indirekt – aber oft entscheidend (IW-Studie: 49 % Lebensqualität).',
+    svg: `<svg viewBox="0 0 340 204" role="img" aria-label="Harte und weiche Standortfaktoren nach Messbarkeit und Relevanz">
+    <line x1="24" y1="10" x2="24" y2="176"/><line x1="24" y1="176" x2="334" y2="176"/>
+    <text class="k m" transform="translate(14 172) rotate(-90)">Messbarkeit: gut → schlecht</text>
+    <text class="k m" x="332" y="192" text-anchor="end">Relevanz: unmittelbar → nur indirekt</text>
+    <path class="s1 d" d="M40 30 C120 60 200 120 330 170"/>
+    <text class="b tm" x="36" y="118">Harte Faktoren</text><text class="b tp" x="200" y="30">Weiche Faktoren</text>
+    <g class="k">
+      <text x="36" y="136">Verkehrsanbindung · Steuern</text><text x="36" y="150">Flächen · Arbeitskosten</text><text x="36" y="164">Nähe zu Zulieferern · Absatzmarkt</text>
+      <text x="150" y="50">Image · soziales Klima · Freizeitwert</text><text x="170" y="66">Wohnwert · Kulturangebot</text><text x="190" y="82">Umweltqualität · Schulen</text><text x="210" y="98">Forschung, Ausbildung</text>
+    </g>
+  </svg>`,
+  });
+})();
 //# sourceURL=content/wirtschaftsgeographie/grafiken.js
 </script>
 <script>
