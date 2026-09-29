@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- LERNI – gebaut 29.09.2026, 22:30. Nicht direkt öffnen: py tools/build.py setzt CSS, Code und Inhalte ein und schreibt dist/index.html -->
+<!-- LERNI – gebaut 29.09.2026, 22:34. Nicht direkt öffnen: py tools/build.py setzt CSS, Code und Inhalte ein und schreibt dist/index.html -->
 <html lang="de">
 <head>
   <meta charset="utf-8">
@@ -414,7 +414,7 @@ details.card[open] summary { margin-bottom: 10px; }
 </head>
 <body>
   <noscript>Lerni braucht JavaScript.</noscript>
-<script>const LERNI_BUILD = {"id": "119f50a-20260929223034", "stamp": "29.09.2026, 22:30", "commit": "119f50a"};</script>
+<script>const LERNI_BUILD = {"id": "ddb17ea-20260929223416", "stamp": "29.09.2026, 22:34", "commit": "ddb17ea"};</script>
 <script>
 /* LERNI – Hilfsfunktionen: DOM, Datum, Text, Zufall.
    Läuft auch in Node (tools/check.js): beim Laden nichts am DOM anfassen. */
@@ -1125,7 +1125,7 @@ Die strenge **Sektorgliederung ist immer weniger zeitgemäß**: Tätigkeiten inn
 - **Geodeterminismus (Friedrich Ratzel):** Naturgegebenheiten bestimmen menschliches Handeln weitgehend einseitig.
 - **Wechselwirkungsprinzip (Rudolf Lütgens):** Der wirtschaftende Mensch gestaltet die Natur zugleich um; ersetzt ab den 1920ern teilweise den Geodeterminismus.
 - **Alfred Hettner** integriert die WiGeo in die **Länder- und Landschaftskunde**: Wirtschaft als ein Geofaktor unter vielen, Beschreibung der sichtbaren Kulturlandschaft. Im deutschsprachigen Raum hielt sich das länger als im englisch- und französischsprachigen.
-- **Bis zum II. Weltkrieg** außerdem: Wirtschaftsraum/Wirtschaftslandschaft, erste Standorttheorien (Christaller, Lösch).
+- **Bis zum II. Weltkrieg** außerdem: Wirtschaftsraum/Wirtschaftslandschaft, modelltheoretische Standorttheorien (Christaller, Lösch); statistische Raumbeschreibungen gab es schon im 19. Jh. (von Thünen, Weber).
 - **Kritik an der Länderkunde (Geographentag Kiel 1969)** → **quantitative Wende**: vom **idiographischen** Interesse (Besonderheiten einzelner Räume) zum **nomothetischen** (allgemeingültige Gesetzmäßigkeiten). In den USA: spatial analysis, regional science (**Walter Isard**).
 - **Seit 1980/90ern:** Globalisierungsforschung und **New (regional) Economic Geography** (Scott, Storper, Cluster) – nicht zu verwechseln mit den **Geographical Economics** von **Krugman**, die Raum in die Wirtschaftswissenschaften einbeziehen.
 - **21. Jh.: Pluralisierung** der Methoden und Ansätze.
@@ -1273,7 +1273,7 @@ Warum wandeln sich Denkstile (Paradigma nach **Thomas Kuhn**)? (1) **Empirische 
       kernpunkte: ['Idiographisch: Besonderheiten einzelner Räume beschreiben → Länderkunde', 'Nomothetisch: allgemeingültige Gesetzmäßigkeiten suchen → Raumwirtschaftslehre/quantitative Wende nach Kiel 1969'] },
     { id: 'e01-18', typ: 'reihe', thema: 'Entwicklung', wichtig: 2, quelle: 'VL03, S. 20 und 36',
       frage: 'Bring die Phasen der Wirtschaftsgeographie in die zeitliche Reihenfolge.',
-      schritte: ['Länderkundliche Beschreibung, Produktenkunde, Welthandelsgeographie', 'Wirtschaftsraum/Wirtschaftslandschaft, erste Standorttheorien', 'Quantitative Revolution: Raumwirtschaftslehre', 'Globalisierungsforschung, New Economic Geography', 'Pluralisierung: relational, evolutionär, institutionell …'] },
+      schritte: ['Länderkundliche Beschreibung, Produktenkunde, Welthandelsgeographie', 'Wirtschaftsraum/Wirtschaftslandschaft, Standorttheorien (Christaller, Lösch)', 'Quantitative Revolution: Raumwirtschaftslehre', 'Globalisierungsforschung, New Economic Geography', 'Pluralisierung: relational, evolutionär, institutionell …'] },
     { id: 'e01-19', typ: 'mc', thema: 'Entwicklung', quelle: 'VL03, S. 20',
       frage: 'Was trifft auf „New (regional) Economic Geography“ und „Geographical Economics“ zu? (mehrere möglich)',
       optionen: [
@@ -3947,7 +3947,7 @@ Lerni.einheit('wirtschaftsgeographie', {
     },
     {
       thema: 'Green Economy', titel: 'Green Economy oder Postwachstum?', bild: 'greeneconomy',
-      text: `**EEG und Green Economy** beruhen überwiegend auf **ökologischer Modernisierung**: der optimistischen, **empirisch nicht belegten** Annahme, dass technische und marktbasierte Innovationen den Ressourcenverbrauch senken (**Entkopplungsthese**) – daher **grünes Wachstum** (green jobs, green tech).
+      text: `**Environmental Economic Geography und Green Economy** beruhen überwiegend auf **ökologischer Modernisierung**: der optimistischen, **empirisch nicht belegten** Annahme, dass technische und marktbasierte Innovationen den Ressourcenverbrauch senken (**Entkopplungsthese**) – daher **grünes Wachstum** (green jobs, green tech).
 
 **Postwachstum** dagegen ist ein Wirtschaftssystem, das menschliche Bedürfnisse **nicht auf Grundlage von Wirtschaftswachstum** befriedigt und sich von einer rein **monetären Bewertung von Wohlstand** abwendet.
 
@@ -5056,7 +5056,7 @@ Lerni.grafik('wirtschaftsgeographie', 'exportbasis', {
     </g>` : `<text class="k m" x="206" y="70">Mitte = Markt (Stadt)</text><text class="k m" x="206" y="90">Welche Nutzung</text><text class="k m" x="206" y="104">gehört in welchen</text><text class="k m" x="206" y="118">Ring?</text>`}
   </svg>`;
   Lerni.grafik(K, 'thuenen', { titel: 'Thünensche Ringe', text: 'Nach der Tabelle in VL05-06, S. 53 (Braun/Schulz): Die Intensität der Nutzung nimmt mit der Entfernung vom Markt ab.', svg: ringe(true) });
-  Lerni.grafik(K, 'thuenen-ringe', { titel: 'Thünensche Ringe (ohne Beschriftung)', svg: ringe(false) });
+  Lerni.grafik(K, 'thuenen-ringe', { titel: 'Thünensche Ringe 1–4', svg: ringe(false) });
 
   const B = [0, 60, 120, 180, 240, 300].map((w) => [100 + 38.1 * Math.cos((w + 30) * Math.PI / 180), 100 + 38.1 * Math.sin((w + 30) * Math.PI / 180)]);
   Lerni.grafik(K, 'christaller', {
