@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- LERNI – gebaut 29.09.2026, 21:54. Nicht direkt öffnen: py tools/build.py setzt CSS, Code und Inhalte ein und schreibt dist/index.html -->
+<!-- LERNI – gebaut 29.09.2026, 22:04. Nicht direkt öffnen: py tools/build.py setzt CSS, Code und Inhalte ein und schreibt dist/index.html -->
 <html lang="de">
 <head>
   <meta charset="utf-8">
@@ -414,7 +414,7 @@ details.card[open] summary { margin-bottom: 10px; }
 </head>
 <body>
   <noscript>Lerni braucht JavaScript.</noscript>
-<script>const LERNI_BUILD = {"id": "6232da7-20260929215457", "stamp": "29.09.2026, 21:54", "commit": "6232da7"};</script>
+<script>const LERNI_BUILD = {"id": "f12380e-20260929220434", "stamp": "29.09.2026, 22:04", "commit": "f12380e"};</script>
 <script>
 /* LERNI – Hilfsfunktionen: DOM, Datum, Text, Zufall.
    Läuft auch in Node (tools/check.js): beim Laden nichts am DOM anfassen. */
@@ -1783,6 +1783,741 @@ Feministische WiGeo: Sorgearbeit (reproduktive Arbeit) steht nie außerhalb der 
 //# sourceURL=content/wirtschaftsgeographie/e02.js
 </script>
 <script>
+/* e03 Globalisierung I: Begriff, Befunde, Unternehmen, Voraussetzungen – VL04-05 Teil 1 a–c (Rosol, 07.05.2026).
+   Analyse: quellen/wirtschaftsgeographie/analyse/VL04-05-Globalisierung.md (PDF-Seiten 2–40) */
+Lerni.einheit('wirtschaftsgeographie', {
+  id: 'e03',
+  titel: 'Globalisierung I: Begriff, Befunde, Unternehmen, Voraussetzungen',
+  quelle: 'VL04-05 Globalisierung (Rosol), PDF-Seiten 2–40',
+  skript: [
+    {
+      thema: 'Begriff', titel: 'Was ist Globalisierung?',
+      text: `Globalisierung ist die **rezente Phase kapitalistischer Entwicklung** der letzten 40–50 Jahre, ein **planetarer Prozess**, der die räumliche und zeitliche Organisation der Weltwirtschaft massiv verändert hat.
+
+Definitionen:
+- **Kulke** (enger, ökonomischer Sinn): „Herausbildung von weltweit eng verflochtenen **Produktions-, Transport- und Marktsystemen**“.
+- **MacKinnon/Cumbers:** zunehmende **Verbindungen zwischen Menschen, Firmen und Märkten** an verschiedenen Orten – sichtbar in wachsenden Strömen von Gütern, Dienstleistungen, Geld, Informationen und Menschen.
+- **Schamp:** historischer Prozess, in dem **mächtige Akteure** eine weltweite Integration zuvor territorial getrennter Wirtschaftssektoren und Produktionssysteme bewirken.
+- **Braun/Schulz:** fortwährende **Internationalisierung** wirtschaftlicher Aktivitäten inklusive ihres institutionellen und gesellschaftlichen Umfelds.
+
+Ökonomische Globalisierung ist **mehr als Welthandel**: weltweite **Produktion** – eine **neue weltweite Arbeitsteilung**. Dimensionen des Austauschs: Außenhandel, Kapitalverkehr (Auslandsinvestitionen), Wissens- und Technologietransfer, Migration.
+
+Neu ist vor allem die **Qualität**: Seit den 1960ern entstehen **global integrierte Produktionsnetzwerke**, mit Folgen für Produktion, Handel, Finanz- und Wissensströme, Arbeit, Umwelt und politische Steuerung.
+
+==Globalisierung = weltweit verflochtene Produktion, nicht nur Handel – eine neue Arbeitsteilung.==`,
+    },
+    {
+      thema: 'Befunde', titel: 'Empirische Befunde: Handel, Dienstleistungen, ADI',
+      text: `- **Welthandel** wächst mit Einbrüchen in Krisen; **China** stieg zum Handelsriesen auf.
+- **Dienstleistungen:** Bis in die **1990er** dominierten nationale Märkte, denn Dienstleistungen sind **immateriell, nicht lagerfähig, interaktiv** und folgen dem **uno-actu-Prinzip** (Produktion und Konsum fallen zusammen). Internationalisierung brauchte Internet sowie Privatisierung und Liberalisierung von Post, Telekommunikation und Verkehr. Unternehmen gehen **pro-aktiv** (z. B. Call-Center im Niedriglohnland) oder **re-aktiv** (ihren Kunden folgend) ins Ausland.
+- Weitere Befunde: globale Finanzmärkte, Aufstieg von Ökonomien des Globalen Südens (BRICS), mehr Migration; **Remittances übertreffen FDI und Entwicklungshilfe**.
+- **Internationalisierung der Unternehmen:** Bis in die **1970er** produzierten Unternehmen überwiegend **im Heimatland und exportierten**; seither verlagern sie Produktion und bauen **globale Produktionssysteme** auf (eigene Werke oder Zulieferer).
+
+**Ausländische Direktinvestitionen (ADI/FDI):** Kapitalexporte, um im Ausland Betriebsstätten zu errichten (**greenfield**) oder Unternehmen bzw. Anteile zu erwerben (**brownfield**). FDI reagieren deutlich auf Krisen.
+
+**Vier Motive nach John Dunning:** natural resource seeking · market seeking · efficiency seeking · strategic asset seeking.
+
+==ADI: greenfield = neu bauen, brownfield = kaufen. Dunning: Rohstoffe, Märkte, Kosten, Wissen.==`,
+      bild: 'dunning',
+    },
+    {
+      thema: 'Unternehmen', titel: 'Transnationale Unternehmen und Folgen der Globalisierung',
+      text: `**Vom internationalen zum transnationalen Unternehmen:**
+- **International:** vertreibt weltweit per Export, **produziert aber nur im Heimatland**.
+- **Multinational:** eigene Werke und Niederlassungen in vielen Ländern, aber **hierarchisch vom Heimatstandort koordiniert**.
+- **Transnational** (im engeren Sinn): auch wichtige **Kompetenzen und Koordinationsaufgaben dezentral** verteilt. (Weiter gefasst: Niederlassungen in mindestens zwei Ländern.)
+
+TNCs sind **zentrale Akteure**, weil sie Transaktionen in transnationalen Produktionsnetzen **kontrollieren**, **geographische Unterschiede** (Kapital, Arbeitskosten, Rohstoffe, Steuern, Zölle, Umweltauflagen) **ausnutzen**, Ressourcen **flexibel verlagern** und mit ihren Standortentscheidungen **nationale Ökonomien umbauen** können.
+
+**Problematische Folgen:**
+- verschärfte **Standortkonkurrenz** um Kapital, Technologie und Humankapital → soziale und ökologische Standards sinken: **„race to the bottom“**
+- Übernahmen und Fusionen → **Oligopolisierung** der Weltmärkte
+- mobiles Kapital → **Volatilität** der Wechselkurse, mögliche Finanzkrisen
+- Gewinnverlagerung in Niedrigsteuerländer → **Aushöhlung der Steuerbasis**
+
+Globalisierung ist ein **fortwährender Prozess, kein Endzustand**, und **ungleich**: Wohlstand hier, Marginalisierung dort – mit populistischem Backlash (Brexit, Trump) und Debatten über De-Globalisierung.
+
+==Race to the bottom: Standorte unterbieten sich bei Sozial- und Umweltstandards, um mobiles Kapital zu halten.==`,
+    },
+    {
+      thema: 'Voraussetzungen', titel: 'Voraussetzungen der Globalisierung',
+      text: `**Technologisch:**
+- Innovationen in **Transport und Logistik** – Schlüsseltechnologie ist der standardisierte **Container** (intermodale Logistik ohne aufwändiges Umladen).
+- **Informations- und Kommunikationstechnologien** (Satelliten, Glasfaser, Internet, Cloud, Smartphones) senken die Kosten der Informationsbeschaffung. Das Internet wirkt generell **dekonzentrierend**; **Konzentration** bleibt, wo **face-to-face-Kontakte**, nicht standardisierte Tätigkeiten und **tacit knowledge** zählen.
+
+**Organisatorisch:**
+- Übergang vom **fordistischen** zum **post-fordistischen** Produktionssystem: weltweite Arbeitsteilung, flexible Spezialisierung, just-in-time, Auslagerung arbeitsintensiver Schritte in Niedriglohnländer.
+- **Globale Standards** (z. B. Normalspur 1,435 m, heute 60 % aller Strecken; ISO-Normen auch für Management-Abläufe).
+
+**Politisch:**
+- **Liberalisierung** des Güter- und Kapitalverkehrs (Freihandel, Deregulierung, Handelsabkommen)
+- **Privatisierung** (z. B. Telekommunikation)
+
+Ergebnis: Zeit und Kosten sinken massiv; **Infrastruktur, nicht Distanz** entscheidet über Erreichbarkeit. Unternehmen nutzen Standortvorteile wie billige Arbeit, Steueranreize oder laxe Umweltauflagen.
+
+==Globalisierung passiert nicht zufällig, sondern wird aktiv hergestellt – technologisch, organisatorisch, politisch.==`,
+    },
+    {
+      thema: 'Weltwirtschaftsordnung', titel: 'Weltwirtschaftsordnung und Rolle der Nationalstaaten', bild: 'weltordnung',
+      text: `**Bretton-Woods-System (Juli 1944, 44 Länder, Führung der USA):** **Weltbank (IBRD)** = Weltwirtschaftsordnung, **IWF** = Weltwährungsordnung, **GATT** (1948) = Welthandelsordnung. Feste Wechselkurse mit **Goldbindung**, Leitwährung **US-Dollar**. **1971** kündigen die USA die Gold-Einlösung des Dollars – Ende der festen Wechselkurse; IWF, Weltbank und GATT bleiben.
+
+**Washington Consensus (seit den 1980ern, neoliberal):** Kredite und Schuldenerlass nur gegen **Strukturanpassungsprogramme (SAPs)**:
+1. **Konsolidierung der Staatshaushalte:** Kürzung öffentlicher (v. a. sozialer) Ausgaben, Steuersenkungen, Privatisierung
+2. **Marktöffnung und Liberalisierung:** Handel, Auslandsinvestitionen, Kapitalmärkte, Deregulierung, wettbewerbsfähige Wechselkurse
+
+Ergebnis der SAPs: eingeschränkte Souveränität, regionale Finanzkrisen, kein positiver Wachstumseffekt, Sozialabbau → Kritik seit Ende der 1990er.
+
+**WTO (1995, 166 Mitglieder):** Säulen **GATT** (Waren), **GATS** (Dienstleistungen), **TRIPS** (geistiges Eigentum).
+
+**Nationalstaaten verschwinden nicht, sie transformieren sich.** Rollen: (1) **Garant und letzter Ausweg** (Krisen seit 2008), (2) **Architekt und Regulierer** der Ökonomie (Handels-, ADI-, Industrie-, Arbeitsmarktpolitik), (3) **Eigentümer** öffentlicher Unternehmen, (4) **Bereitsteller** von Infrastruktur und Dienstleistungen. Typen des Kapitalismus nach Dicken: neoliberaler Markt-, sozialer Markt-, entwicklungsstaatlicher und autoritärer Kapitalismus (zunehmende Staatsbeteiligung).
+
+==Nicht das Ende des Nationalstaats – sein Umbau.==`,
+    },
+  ],
+  fragen: [
+    /* ---------- Begriff ---------- */
+    { id: 'e03-01', typ: 'offen', thema: 'Begriff', wichtig: 3, punkte: 2, quelle: 'VL04-05, S. 3–4',
+      frage: 'Definieren Sie Globalisierung aus wirtschaftsgeographischer Sicht.',
+      antwort: `Im engeren, ökonomischen Sinn ist Globalisierung nach Kulke die Herausbildung von weltweit eng verflochtenen Produktions-, Transport- und Marktsystemen; MacKinnon/Cumbers betonen die zunehmenden Verbindungen zwischen Menschen, Firmen und Märkten an verschiedenen Orten, sichtbar in Strömen von Gütern, Dienstleistungen, Geld, Informationen und Menschen. Entscheidend ist, dass es um mehr als Handel geht: Auch die Produktion wird weltweit organisiert, sodass eine neue weltweite Arbeitsteilung entsteht – die rezente Phase kapitalistischer Entwicklung.`,
+      kernpunkte: ['Weltweit eng verflochtene Produktions-, Transport- und Marktsysteme bzw. zunehmende Verbindungen/Ströme zwischen Menschen, Firmen, Märkten', 'Mehr als Handel: weltweite Produktion, neue weltweite Arbeitsteilung'] },
+    { id: 'e03-02', typ: 'luecke', thema: 'Begriff', wichtig: 3, quelle: 'VL04-05, S. 3',
+      frage: 'Definition nach Kulke. Fülle die Lücken.',
+      text: 'Globalisierung (im engeren, ökonomischen Sinn) ist die Herausbildung von weltweit eng [[verflochtenen]] [[Produktions|Produktion]]-, Transport- und [[Marktsystemen|Marktsysteme|Markt]].' },
+    { id: 'e03-03', typ: 'paare', thema: 'Begriff', wichtig: 2, quelle: 'VL04-05, S. 3',
+      frage: 'Ordne jede Globalisierungsdefinition ihren Autor:innen zu.',
+      paare: [
+        ['Kulke', 'Weltweit eng verflochtene Produktions-, Transport- und Marktsysteme'],
+        ['Schamp', 'Mächtige Akteure integrieren zuvor getrennte Sektoren und Produktionssysteme'],
+        ['Braun/Schulz', 'Fortwährende Internationalisierung inklusive institutionellem Umfeld'],
+        ['MacKinnon/Cumbers', 'Mehr Verbindungen zwischen Menschen, Firmen und Märkten'],
+      ] },
+    { id: 'e03-04', typ: 'karte', thema: 'Begriff', quelle: 'VL04-05, S. 5',
+      vorne: 'Vier Dimensionen des internationalen wirtschaftlichen Austauschs',
+      hinten: `**Außenhandel** (Waren, Dienstleistungen) · **Kapitalverkehr** (Auslandsinvestitionen) · **Transfer von Wissen und Technologie** · **Migration** (Arbeit).` },
+    { id: 'e03-05', typ: 'wf', thema: 'Begriff', wichtig: 2, quelle: 'VL04-05, S. 6',
+      aussage: 'Neu an der Globalisierung ist laut Vorlesung vor allem, dass mengenmäßig mehr gehandelt wird.',
+      wahr: false, warum: 'Entscheidend ist der **qualitative** Umbruch seit den 1960ern: global integrierte Produktionsnetzwerke und globale Arbeitsteilung.' },
+
+    /* ---------- Befunde ---------- */
+    { id: 'e03-06', typ: 'offen', thema: 'Befunde', punkte: 2, quelle: 'VL04-05, S. 11',
+      frage: 'Warum dominierten bis in die 1990er Jahre nationale Dienstleistungsmärkte?',
+      antwort: `Dienstleistungen sind immateriell, nicht lagerfähig und beruhen auf Interaktion; nach dem uno-actu-Prinzip fallen Produktion und Konsum zusammen, sodass Anbieter und Kund:in meist am selben Ort sein müssen. Eine Internationalisierung brauchte daher erst besondere technologische, organisatorische und regulatorische Weichenstellungen, etwa das Internet sowie die Privatisierung und Liberalisierung von Post, Telekommunikation und Verkehr.`,
+      kernpunkte: ['Eigenschaften: immateriell, nicht lagerfähig, interaktiv, uno-actu (Produktion = Konsum)', 'Voraussetzungen fehlten: Internet, Privatisierung/Liberalisierung von Post, Telekommunikation, Verkehr'] },
+    { id: 'e03-07', typ: 'mc', thema: 'Befunde', quelle: 'VL04-05, S. 11',
+      frage: 'Was bedeutet das uno-actu-Prinzip bei Dienstleistungen?',
+      optionen: [
+        { t: 'Produktion und Konsum fallen zeitlich zusammen.', r: true, warum: 'Deshalb waren Dienstleistungen lange an den Ort gebunden.' },
+        { t: 'Dienstleistungen werden nur von einem Anbieter erbracht.', warum: 'Das wäre ein Monopol, kein uno-actu-Prinzip.' },
+        { t: 'Dienstleistungen lassen sich einmal herstellen und lagern.', warum: 'Im Gegenteil: Sie sind nicht lagerfähig.' },
+        { t: 'Dienstleistungen folgen immer den Warenexporten.', warum: 'Das trifft nur für einen Teil zu (z. B. Wartung), nicht für das Prinzip.' },
+      ] },
+    { id: 'e03-08', typ: 'wf', thema: 'Befunde', quelle: 'VL04-05, S. 13',
+      aussage: 'Bis in die 1970er Jahre stellten Unternehmen ihre Produkte überwiegend im Ausland her.',
+      wahr: false, warum: 'Bis in die 1970er produzierten sie überwiegend **im Heimatland und exportierten**; erst danach verlagerten sie Produktion ins Ausland.' },
+    { id: 'e03-09', typ: 'offen', thema: 'Befunde', wichtig: 2, punkte: 3, quelle: 'VL04-05, S. 14', bildLoesung: 'dunning',
+      frage: 'Definieren Sie ausländische Direktinvestitionen (1 P.) und nennen Sie die vier Motive nach Dunning (2 P.).',
+      antwort: `Ausländische Direktinvestitionen sind Kapitalexporte in ein anderes Land, um dort Betriebsstätten oder Tochterunternehmen neu zu errichten (greenfield) oder ausländische Unternehmen bzw. Anteile daran zu erwerben (brownfield). Dunning nennt vier Motive: natural resource seeking (Zugang zu Rohstoffen), market seeking (Absatzmärkte), efficiency seeking (Kostenvorteile) und strategic asset seeking (Zugang zu Wissen oder etablierten Märkten durch Übernahmen).`,
+      kernpunkte: ['(a) ADI: Kapitalexport, um im Ausland Betriebe zu errichten (greenfield) oder Unternehmen/Anteile zu kaufen (brownfield)', '(b) natural resource seeking und market seeking', '(b) efficiency seeking und strategic asset seeking'] },
+    { id: 'e03-10', typ: 'paare', thema: 'Befunde', wichtig: 2, quelle: 'VL04-05, S. 14 und 42', bildLoesung: 'dunning',
+      frage: 'Ordne jedem Motiv nach Dunning das Beispiel aus der Vorlesung zu.',
+      paare: [
+        ['Natural resource seeking', 'Land grabbing, Zugang zu Rohstoffen'],
+        ['Market seeking', 'Deutsche Automobilindustrie in den USA'],
+        ['Efficiency seeking', 'Deutsche Bekleidungsindustrie in Asien'],
+        ['Strategic asset seeking', 'Übernahme für Zugang zu F&E-Know-how'],
+      ] },
+    { id: 'e03-11', typ: 'mc', thema: 'Befunde', quelle: 'VL04-05, S. 14',
+      frage: 'Ein deutscher Konzern kauft ein bestehendes Unternehmen in Polen. Wie heißt diese Form der Direktinvestition?',
+      optionen: [
+        { t: 'Brownfield investment', r: true, warum: 'Erwerb bestehender Unternehmen oder Anteile daran.' },
+        { t: 'Greenfield investment', warum: 'Das wäre der Neubau einer Betriebsstätte.' },
+        { t: 'Export', warum: 'Beim Export wird im Ausland nicht investiert, sondern nur verkauft.' },
+        { t: 'Subcontracting', warum: 'Das ist Auslagerung an Zulieferer ohne Eigentum.' },
+      ] },
+
+    /* ---------- Unternehmen ---------- */
+    { id: 'e03-12', typ: 'offen', thema: 'Unternehmen', wichtig: 2, punkte: 3, quelle: 'VL04-05, S. 18',
+      frage: 'Unterscheiden Sie internationale, multinationale und transnationale Unternehmen.',
+      antwort: `Internationale Unternehmen vertreiben ihre Produkte weltweit per Export, produzieren aber nur im Heimatland. Multinationale Unternehmen haben eigene Produktionsstätten und Niederlassungen in vielen Ländern, koordinieren diese aber hierarchisch vom Heimatstandort aus. Transnationale Unternehmen im engeren Sinn verteilen nicht nur die Produktion, sondern auch wichtige Kompetenzen und Koordinationsaufgaben dezentral.`,
+      kernpunkte: ['International: Export weltweit, Produktion nur im Heimatland', 'Multinational: Produktion in vielen Ländern, hierarchisch vom Heimatstandort gesteuert', 'Transnational: auch Kompetenzen und Koordination dezentral'] },
+    { id: 'e03-13', typ: 'mc', thema: 'Unternehmen', wichtig: 2, quelle: 'VL04-05, S. 18',
+      frage: 'Ein Unternehmen hat Werke in 20 Ländern; alle wichtigen Entscheidungen fallen aber in der Zentrale im Heimatland. Welcher Typ ist das?',
+      optionen: [
+        { t: 'Multinationales Unternehmen', r: true, warum: 'Produktion im Ausland, Koordination hierarchisch vom Heimatstandort.' },
+        { t: 'Internationales Unternehmen', warum: 'Das produziert nur im Heimatland und exportiert.' },
+        { t: 'Transnationales Unternehmen (im engeren Sinn)', warum: 'Dort wären auch Kompetenzen und Koordination dezentral verteilt.' },
+        { t: 'Lead firm eines Produktionsnetzwerks', warum: 'Lead firms koordinieren oft Betriebe, die ihnen gar nicht gehören – das Beispiel beschreibt eigene Werke.' },
+      ] },
+    { id: 'e03-14', typ: 'offen', thema: 'Unternehmen', wichtig: 2, punkte: 3, quelle: 'VL04-05, S. 19',
+      frage: 'Nennen Sie drei Gründe, warum transnationale Unternehmen zentrale Akteure der Globalisierung sind.',
+      antwort: `Sie können vielfältige Prozesse und Transaktionen innerhalb transnationaler Produktionsnetze kontrollieren. Sie können geographische Unterschiede in der Faktorausstattung (Kapital, Arbeitskräfte, Arbeitskosten, Rohstoffe) und in den politischen Rahmenbedingungen (Steuern, Zölle, Subventionen, Umweltauflagen) ausnutzen. Und sie sind räumlich flexibel, können Ressourcen zwischen Standorten verschieben und mit ihren Standortentscheidungen nationale Ökonomien restrukturieren.`,
+      kernpunkte: ['Kontrolle von Prozessen/Transaktionen in transnationalen Produktionsnetzen', 'Ausnutzen geographischer Unterschiede (Faktorausstattung, Steuern, Zölle, Umweltauflagen)', 'Räumliche Flexibilität, Verlagerung; Restrukturierung nationaler Ökonomien'] },
+    { id: 'e03-15', typ: 'offen', thema: 'Unternehmen', wichtig: 3, punkte: 2, quelle: 'VL04-05, S. 19 und 30; Musterklausur WS23/24, 1.4',
+      frage: 'Was beschreibt der Ausdruck „race to the bottom“, und in welchem Kontext wird er verwendet?',
+      antwort: `„Race to the bottom“ beschreibt einen Unterbietungswettlauf: Weil Staaten und Regionen verschärft um mobiles Kapital, Technologie und Humankapital konkurrieren, passen sie ihre sozialen und ökologischen Standards nach unten an. Der Begriff stammt aus dem Kontext der Globalisierung: Transnationale Unternehmen können in globalen Produktionsnetzen geographische Unterschiede ausnutzen, etwa billige, nicht gewerkschaftlich organisierte Arbeit oder laxe Umwelt- und Sozialauflagen.`,
+      kernpunkte: ['Unterbietungswettlauf: verschärfte Standortkonkurrenz führt zur Absenkung sozialer und ökologischer Standards', 'Kontext Globalisierung: mobile TNCs nutzen Standortunterschiede in globalen Produktionsnetzen (laxe Auflagen, billige Arbeit)'],
+      erklaerung: 'Musterklausur 1.4 fragt zusätzlich nach dem Zusammenhang mit dem Lieferkettengesetz (1 P.) – das steht nicht in den Folien, siehe Zusatz-Einheit.' },
+    { id: 'e03-16', typ: 'offen', thema: 'Unternehmen', wichtig: 2, punkte: 3, quelle: 'VL04-05, S. 19',
+      frage: 'Nennen Sie drei problematische Folgen der Globalisierung.',
+      antwort: `Die verschärfte Standortkonkurrenz um Kapital, Technologie und Humankapital führt zu einem „race to the bottom“ bei sozialen und ökologischen Standards. Übernahmen und Fusionen bewirken eine Oligopolisierung der Weltmärkte und mehr Einfluss der Konzerne. Liberalisierte Kapitalmärkte erhöhen die Volatilität der Wechselkurse und das Risiko von Finanzkrisen; zudem erleichtert die Globalisierung Gewinnverlagerungen in Niedrigsteuerländer und höhlt so die Steuerbasis aus.`,
+      kernpunkte: ['Race to the bottom (Standortkonkurrenz senkt Sozial-/Umweltstandards)', 'Oligopolisierung der Weltmärkte durch Übernahmen/Fusionen', 'Volatile Wechselkurse/Finanzkrisen oder Aushöhlung der Steuerbasis durch Gewinnverlagerung'] },
+    { id: 'e03-17', typ: 'mc', thema: 'Unternehmen', wichtig: 2, quelle: 'VL04-05, S. 19',
+      frage: 'Welche der folgenden ist **keine** der problematischen Folgen der Globalisierung laut Vorlesung?',
+      optionen: [
+        { t: 'Stärkung der nationalen Steuerbasis', r: true, warum: 'Im Gegenteil: Gewinnverlagerung in Niedrigsteuerländer höhlt die Steuerbasis aus.' },
+        { t: 'Oligopolisierung der Weltmärkte', warum: 'Wird genannt (Übernahmen, Fusionen).' },
+        { t: 'Volatilität von Wechselkursen', warum: 'Wird genannt (liberalisierte Kapitalmärkte).' },
+        { t: 'Absenkung sozialer und ökologischer Standards', warum: 'Wird genannt (race to the bottom).' },
+      ] },
+    { id: 'e03-18', typ: 'wf', thema: 'Unternehmen', quelle: 'VL04-05, S. 20',
+      aussage: 'Nach MacKinnon/Cumbers ist Globalisierung ein abgeschlossener Endzustand, der für alle Orte Wohlstand gebracht hat.',
+      wahr: false, warum: 'Sie ist ein **fortwährender Prozess, kein Endzustand**, und **ungleich**: Wohlstand an einigen Orten, Marginalisierung an anderen.' },
+
+    /* ---------- Voraussetzungen ---------- */
+    { id: 'e03-19', typ: 'offen', thema: 'Voraussetzungen', wichtig: 2, punkte: 3, quelle: 'VL04-05, S. 21–39',
+      frage: 'Nennen Sie je zwei technologische, organisatorische und politische Voraussetzungen der Globalisierung.',
+      antwort: `Technologisch: Innovationen in Transport und Logistik (z. B. der Container) sowie Informations- und Kommunikationstechnologien (z. B. Internet, Glasfaser, Satelliten). Organisatorisch: der Wandel zur post-fordistischen, flexiblen Produktion mit weltweiter Arbeitsteilung und just-in-time sowie globale Standards (z. B. ISO-Normen). Politisch: die Liberalisierung des Güter- und Kapitalverkehrs (Freihandel, Deregulierung, Handelsabkommen) und die Privatisierung staatlicher Unternehmen und Dienstleistungen.`,
+      kernpunkte: ['Technologisch: Transport/Logistik (Container) und IKT (Internet)', 'Organisatorisch: post-fordistische Produktion/weltweite Arbeitsteilung und globale Standards', 'Politisch: Liberalisierung von Güter-/Kapitalverkehr und Privatisierung'] },
+    { id: 'e03-20', typ: 'mc', thema: 'Voraussetzungen', wichtig: 2, quelle: 'VL04-05, S. 21 und 33',
+      frage: 'Welche sind **politische** Voraussetzungen der Globalisierung? (mehrere möglich)',
+      optionen: [
+        { t: 'Liberalisierung des Güter- und Kapitalverkehrs', r: true, warum: 'Freihandel, Deregulierung, Handelsabkommen.' },
+        { t: 'Privatisierung staatlicher Unternehmen', r: true, warum: 'Z. B. Telekommunikation.' },
+        { t: 'Der standardisierte Container', warum: 'Das ist eine technologische Voraussetzung.' },
+        { t: 'Globale Standards wie ISO-Normen', warum: 'Das ist eine organisatorische Voraussetzung.' },
+      ] },
+    { id: 'e03-21', typ: 'offen', thema: 'Voraussetzungen', wichtig: 2, punkte: 2, quelle: 'VL04-05, S. 22–27',
+      frage: 'Erläutern Sie die Bedeutung des Containers und der Informations- und Kommunikationstechnologien für die Globalisierung.',
+      antwort: `Der standardisierte Container ist die Basiseinheit und Schlüsseltechnologie der modernen Globalisierung: Er verbindet Schiff, Bahn und Lkw ohne aufwändiges Umladen (intermodale Logistik) und senkt Transportzeit und -kosten massiv. Informations- und Kommunikationstechnologien wie Glasfaser, Satelliten und Internet erhöhen Informationsmenge und Übertragungsgeschwindigkeit und senken die Kosten der Informationsbeschaffung – so lässt sich weltweit verteilte Produktion steuern.`,
+      kernpunkte: ['Container: standardisierte Basiseinheit, intermodale Logistik, senkt Transportzeit und -kosten', 'IKT: mehr und schnellere Information, geringere Kosten → Steuerung weltweit verteilter Produktion'] },
+    { id: 'e03-22', typ: 'mc', thema: 'Voraussetzungen', wichtig: 2, quelle: 'VL04-05, S. 27',
+      frage: 'Welche Aussage zur räumlichen Wirkung des Internets trifft laut Vorlesung zu?',
+      optionen: [
+        { t: 'Es wirkt generell dekonzentrierend, bei face-to-face und tacit knowledge bleibt Konzentration.', r: true, warum: 'Sinkende Raumüberwindungskosten vs. personengebundenes Expertenwissen.' },
+        { t: 'Es bedeutet den „Tod der Distanz“ in allen Branchen.', warum: 'Wo persönliche Kontakte und implizites Wissen zählen, bleibt räumliche Nähe wichtig.' },
+        { t: 'Es wirkt ausschließlich konzentrierend.', warum: 'Generell senkt es Raumüberwindungskosten und wirkt dekonzentrierend.' },
+        { t: 'Gerade standardisierte Tätigkeiten ballen sich deshalb stärker.', warum: 'Standardisierte Tätigkeiten lassen sich besonders leicht verlagern.' },
+      ] },
+    { id: 'e03-23', typ: 'karte', thema: 'Voraussetzungen', quelle: 'VL04-05, S. 31–32',
+      vorne: 'Warum sind Standards eine Voraussetzung der Globalisierung? Nenne ein Beispiel.',
+      hinten: `Weltweite Arbeitsteilung braucht **kompatible Normen**: z. B. die **Normalspur von 1,435 m** (heute 60 % aller Bahnstrecken) oder **ISO-Normen**, inzwischen auch für Abläufe wie Qualitäts- und Umweltmanagement.` },
+    { id: 'e03-24', typ: 'wf', thema: 'Voraussetzungen', quelle: 'VL04-05, S. 39',
+      aussage: 'Globalisierung passiert laut Vorlesung nicht zufällig, sondern wird aktiv hergestellt.',
+      wahr: true, warum: 'Durch Technologie, Organisation und Politik (Liberalisierung, Privatisierung, Abkommen, Weltwirtschaftsordnung).' },
+
+    /* ---------- Weltwirtschaftsordnung ---------- */
+    { id: 'e03-25', typ: 'offen', thema: 'Weltwirtschaftsordnung', wichtig: 2, punkte: 3, quelle: 'VL04-05, S. 34', bildLoesung: 'weltordnung',
+      frage: 'Erläutern Sie das Bretton-Woods-System und sein Ende.',
+      antwort: `Im Juli 1944 schufen 44 Länder unter Führung der USA in Bretton Woods eine Weltwirtschaftsordnung mit Weltbank (IBRD) und Internationalem Währungsfonds; 1948 kam das GATT als Welthandelsordnung hinzu. Kern war ein System fester Wechselkurse mit Goldbindung und dem US-Dollar als Leitwährung. 1971 kündigten die USA die Gold-Einlösung der Dollarguthaben anderer Länder auf; damit endeten in den 1970ern die festen Wechselkurse, während IWF, Weltbank und GATT bestehen blieben.`,
+      kernpunkte: ['1944, 44 Länder, Führung USA: Weltbank (IBRD), IWF (+ GATT 1948)', 'Feste Wechselkurse mit Goldbindung, Leitwährung US-Dollar', '1971 kündigen die USA die Gold-Einlösung → Ende der festen Wechselkurse'] },
+    { id: 'e03-26', typ: 'mc', thema: 'Weltwirtschaftsordnung', wichtig: 2, quelle: 'VL04-05, S. 34–36',
+      frage: 'Welche Organisation gehörte **nicht** zum ursprünglichen Bretton-Woods-System (1944/48)?',
+      optionen: [
+        { t: 'Welthandelsorganisation (WTO)', r: true, warum: 'Die WTO wurde erst 1995 gegründet (Nachfolge des GATT).' },
+        { t: 'Internationaler Währungsfonds (IWF)', warum: 'Gehört dazu: Weltwährungsordnung.' },
+        { t: 'Weltbank (IBRD)', warum: 'Gehört dazu: Weltwirtschaftsordnung.' },
+        { t: 'GATT', warum: 'Gehört dazu: Welthandelsordnung (1948).' },
+      ] },
+    { id: 'e03-27', typ: 'offen', thema: 'Weltwirtschaftsordnung', wichtig: 2, punkte: 3, quelle: 'VL04-05, S. 34–35',
+      frage: 'Erläutern Sie den Washington Consensus und die Folgen der Strukturanpassungsprogramme.',
+      antwort: `Der Washington Consensus ist die neoliberale Leitlinie seit den 1980ern: Kredite oder Schuldenerlass für Länder in der Schuldenkrise wurden an Strukturanpassungsprogramme gekoppelt. Diese verlangten eine Konsolidierung der Staatshaushalte (Kürzung v. a. sozialer Ausgaben, Steuersenkungen, Privatisierung) sowie Marktöffnung und Liberalisierung (Handel, Auslandsinvestitionen, Kapitalmärkte, Deregulierung). Ergebnis waren eingeschränkte Souveränität, regionale Finanzkrisen, kein positiver Wachstumseffekt und Sozialabbau – daher wachsende Kritik seit Ende der 1990er.`,
+      kernpunkte: ['Seit 1980ern, neoliberal: Kredite/Schuldenerlass nur gegen SAPs (Schuldenkrise)', 'Inhalte: Haushaltskonsolidierung (Austerität, Privatisierung) und Marktöffnung/Liberalisierung', 'Folgen: Souveränitätsverlust, Finanzkrisen, kein Wachstum, Sozialabbau'] },
+    { id: 'e03-28', typ: 'reihe', thema: 'Weltwirtschaftsordnung', wichtig: 2, quelle: 'VL04-05, S. 34–36', bildLoesung: 'weltordnung',
+      frage: 'Bring die Stationen der Weltwirtschaftsordnung in die zeitliche Reihenfolge.',
+      schritte: ['Konferenz von Bretton Woods: Weltbank und IWF', 'GATT als Welthandelsordnung', 'USA kündigen die Gold-Einlösung des Dollars', 'Washington Consensus und Strukturanpassungsprogramme', 'Gründung der WTO'] },
+    { id: 'e03-29', typ: 'luecke', thema: 'Weltwirtschaftsordnung', quelle: 'VL04-05, S. 35–36',
+      text: 'Die WTO wurde [[1995]] gegründet und hat 166 Mitglieder. Ihre Säulen sind das GATT (Waren), das [[GATS]] (Dienstleistungen) und [[TRIPS]] (geistiges Eigentum).' },
+    { id: 'e03-30', typ: 'offen', thema: 'Weltwirtschaftsordnung', wichtig: 2, punkte: 3, quelle: 'VL04-05, S. 37–38',
+      frage: '„Der Nationalstaat verschwindet nicht im Zuge der Globalisierung, sondern transformiert sich.“ Nennen Sie drei Rollen, die Nationalstaaten weiterhin spielen.',
+      antwort: `Nationalstaaten sind Garant, Bürge und letzter Ausweg, wie die Krisenbearbeitung seit 2008 gezeigt hat. Sie sind Architekten und Regulierer der (inter-)nationalen Ökonomie, etwa über Handels-, ADI-, Industrie- und Arbeitsmarktpolitik. Außerdem sind sie Eigentümer öffentlicher Unternehmen und stellen öffentliche Einrichtungen, Dienstleistungen und Infrastruktur bereit, auch für Forschung.`,
+      kernpunkte: ['Garant, Bürge und letzter Ausweg (Krisen seit 2008)', 'Architekt und Regulierer (Handels-, ADI-, Industrie-, Arbeitsmarktpolitik)', 'Eigentümer öffentlicher Unternehmen / Bereitsteller von Infrastruktur und Dienstleistungen'] },
+    { id: 'e03-31', typ: 'mc', thema: 'Weltwirtschaftsordnung', quelle: 'VL04-05, S. 38',
+      frage: 'Welcher Kapitalismustyp nach Dicken hat die **geringste direkte** staatliche Beteiligung an der Wirtschaft?',
+      optionen: [
+        { t: 'Neoliberaler Marktkapitalismus', r: true, warum: 'Direkte Beteiligung relativ gering, indirekte aber hoch.' },
+        { t: 'Sozialer Marktkapitalismus', warum: 'Stärkere Staatsbeteiligung als im neoliberalen Typ.' },
+        { t: 'Entwicklungsstaatlicher Kapitalismus', warum: 'Hier steuert der Staat die Entwicklung stark.' },
+        { t: 'Autoritärer Kapitalismus', warum: 'Hier ist die direkte Beteiligung sehr hoch.' },
+      ] },
+    { id: 'e03-32', typ: 'mc', thema: 'Weltwirtschaftsordnung', wichtig: 2, quelle: 'VL04-05, S. 39–40',
+      frage: 'Welche räumlichen Resultate der Globalisierung nennt das Fazit der Vorlesung? (mehrere möglich)',
+      optionen: [
+        { t: 'Verschärfte internationale Konkurrenz', r: true, warum: 'So im Fazit.' },
+        { t: 'Zugleich weltweite Angleichungen und wachsende regionale Ungleichheit', r: true, warum: 'Fragmentierte Entwicklung statt homogener Weltgesellschaft.' },
+        { t: 'Eine homogene Weltgesellschaft', warum: 'Ausdrücklich nicht: die Entwicklung ist fragmentiert.' },
+        { t: 'Bedeutungsverlust transnationaler Unternehmen', warum: 'TNCs sind die Schlüsselakteure.' },
+      ] },
+  ],
+});
+//# sourceURL=content/wirtschaftsgeographie/e03.js
+</script>
+<script>
+/* e04 Globalisierung II: Theorien der Globalisierung – VL04-05 Teil 1 d (Rosol, 07.05.2026).
+   Analyse: quellen/wirtschaftsgeographie/analyse/VL04-05-Globalisierung.md (PDF-Seiten 41–56) */
+Lerni.einheit('wirtschaftsgeographie', {
+  id: 'e04',
+  titel: 'Globalisierung II: Theorien der Globalisierung',
+  quelle: 'VL04-05 Globalisierung (Rosol), PDF-Seiten 41–56',
+  skript: [
+    {
+      thema: 'Regulationstheorie', titel: 'Regulationstheorie', bild: 'regulation',
+      text: `Die Vorlesung stellt fünf Theorien vor: Regulationstheorie · (Neo-)Liberalismus · spatial fix (Harvey) · spatial division of labour (Massey) · ungleiche Entwicklung.
+
+**Regulationstheorie** (Lipietz): Wirtschaftliche Akkumulation und gesellschaftliche Regulation bedingen einander.
+- **Akkumulationsregime** = „Wachstumsstruktur“: ein Modus der Produktion, der über längere Zeit ein **Entsprechungsverhältnis zwischen den materiellen Produktionsbedingungen** (eingesetztes Kapital, Branchenstruktur, Produktionsnormen) **und dem gesellschaftlichen Verbrauch** (Konsum) gewährleistet.
+- **Regulationsweise** = „Koordinierungsmechanismus“: die **Gesamtheit institutioneller Formen, Netze, expliziter und impliziter Normen**, die die **Vereinbarkeit** der Verhältnisse im Akkumulationsregime sichern – Gesetze, Normen, Machtverhältnisse, Gepflogenheiten; Institutionen wie Staat, Unternehmer- und Arbeitnehmerorganisationen.
+
+**Globalisierung** erscheint hier als **konflikthafte Suche nach einer Antwort auf die Krise des Fordismus** (Akkumulations- und Hegemoniekrise). Beispiel: **Maquiladoras** als „bloody taylorism“ – international organisierte, flexible Massenproduktion **ohne** den sozialen und finanziellen Ausgleich, den der Fordismus den Lohnabhängigen bot.
+
+==Akkumulationsregime: Produktion passt zu Konsum. Regulationsweise: Regeln und Institutionen, die das absichern.==`,
+    },
+    {
+      thema: 'Fordismus', titel: 'Fordismus und Post-Fordismus',
+      text: `Vergleich nach Kulke:
+
+**Produktionsorganisation**
+- Fordismus: **Massenproduktion** standardisierter Produkte (**economies of scale**), große Lager, viele direkte Zulieferer, **hohe vertikale Integration**, Einzwecktechnik
+- Post-Fordismus: **flexible Produktion** von Varianten (**economies of scope**), **just-in-time**, wenige Systemlieferanten, geringe Fertigungstiefe, **Subcontracting**, Mehrzwecktechnik
+
+**Arbeitsorganisation**
+- Fordismus: viele Hierarchiestufen, kleine Arbeitsschritte, starke Spezialisierung, **geringe Qualifikation**
+- Post-Fordismus: horizontale Organisation, **Gruppenarbeit**, Mitverantwortung, **höhere Qualifikation**
+
+**Raumorganisation**
+- Fordismus: räumlich-funktionale Hierarchie, räumliche Nähe vertikal integrierter Firmen, nationale Regionalpolitik
+- Post-Fordismus: **weltweite Lieferbeziehungen** und Subcontracting, **Cluster und Agglomerationen**, Dezentralisierung, regionale Regionalpolitik
+
+==Fordismus: groß, standardisiert, integriert. Post-Fordismus: flexibel, vernetzt, global.==`,
+    },
+    {
+      thema: 'Neoliberalismus', titel: 'Liberalismus und Neoliberalismus',
+      text: `**Historischer Liberalismus / Freihandelstheorien:** **Adam Smith** und **David Ricardo** wandten sich gegen den **Merkantilismus** (Exportförderung, hohe Importsteuern, Protektionismus). Ricardos Theorie der **komparativen Kostenvorteile** ist bis heute Grundlage der orthodoxen Welthandelstheorie.
+
+**Neoliberales Kernprogramm:** beruht auf der **neoklassischen** Theorie – Ressourcen (Kapital, Boden, Arbeit) werden am effizientesten verteilt, wenn sie dem **von Preisen geleiteten Kalkül** der Marktteilnehmer folgen (freier Wettbewerb). Deshalb: **staatlichen Einfluss zurückdrängen**, sich selbst regulierender Markt → mehr Wettbewerb, Innovation, Wohlstand. Spielart **Ordoliberalismus**: Der Staat garantiert die Bedingungen des freien Wettbewerbs (Ordnungspolitik).
+
+Vordenker: **Friedrich August von Hayek** (gegen Keynes’ nachfrageorientierte Politik) und **Milton Friedman** (Chicago). Politisch setzte sich der Neoliberalismus zuerst im **Süden** durch (**Chile, 1970er**), ab den 1980ern im Norden (**Thatcher, Reagan**).
+
+Strategien: De- und Reregulierung, **Privatisierung**, **Liberalisierung der Kapitalmärkte**, **Flexibilisierung** der Beschäftigung und Schwächung der Gewerkschaften, **Umverteilung von unten nach oben**, Umbau des Sozialstaats **von welfare zu workfare**. Neoliberalismus ist ideologische Voraussetzung („Sachzwang Weltmarkt“) und Folge der Globalisierung.
+
+==Neoliberal: Markt statt Staat – Privatisierung, Liberalisierung, Flexibilisierung.==`,
+    },
+    {
+      thema: 'Spatial fix', titel: 'Harvey: spatial fix', bild: 'spatialfix',
+      text: `**David Harvey** beschreibt eine **geographische Krisenlogik** des Kapitalismus:
+- **Überakkumulation:** Überschuss an Kapital (Warenschwemme, ungenutzte Kapazitäten, Geld ohne profitable Anlage) und an Arbeit (Arbeitslosigkeit) in einem territorialen System.
+- **Spatial fix:** räumliche „Lösung“ durch **geographische Expansion** – das Kapital wird mobiler.
+- **Temporal fix:** zeitliche Verschiebung durch Investitionen, deren Rückfluss in der Zukunft liegt (Infrastruktur, Immobilien, Bildung). Kombination: **spatio-temporal fix**.
+
+**Vier räumliche Strategien:** Erschließung **neuer Märkte** · **Verlagerung** der Produktion · Nutzung **billiger Arbeitskräfte** · **Export der Entwertung** über das Finanzsystem (regionale Finanzkrisen).
+
+**Time-space compression:** Transport- und Kommunikationsinnovationen verkürzen die Zirkulationszeit des Kapitals – „**Vernichtung von Raum durch Zeit**“ (Marx), Distanz verliert an Bedeutung.
+
+Aber: „Es gibt keinen dauerhaften spatial fix für die inneren Widersprüche des Kapitalismus.“ Seit den 1970ern ist der Kapitalismus von chronischer Überakkumulation geprägt; frühere fixes – vor allem die **Finanzialisierung** als Absorption überschüssigen Kapitals – führten selbst in die nächste Krise (**2008**).
+
+==Spatial fix = Krise räumlich verschieben – funktioniert nie dauerhaft.==`,
+    },
+    {
+      thema: 'Massey', titel: 'Massey: spatial division of labour',
+      text: `**Doreen Massey** (1984): Mit der **Internationalisierung der Produktion seit den 1960ern** verlagert Kapital Produktionsschritte – erst innerhalb nationaler Ökonomien, dann international. Es entsteht nicht nur eine soziale Arbeitsteilung (wie bei Adam Smith), sondern eine **räumliche Arbeitsteilung**, mit Folgen für Raum- und Sozialstruktur.
+
+**Rounds of accumulation** – eine „Zick-Zack-Bewegung“: Investitionen prägen die Geographie eines Ortes; diese Geographie prägt wiederum künftige Investitionen und Desinvestitionen.
+
+Produktionskomplexe sind nicht statisch, der Kapitalismus ist **dynamisch-expansiv**: Manche Regionen erfinden sich neu (**Liverpool, London Docklands, Silicon Valley**), andere nur auf wackeligen Beinen (**Lausitz, Ruhrgebiet, Nordostengland**), wieder andere verfallen ohne Perspektive (**Detroit, Teile der Midlands**).
+
+==Massey: Kapital verteilt Arbeit im Raum um – und jede Investitionsrunde prägt die nächste.==`,
+    },
+    {
+      thema: 'Ungleiche Entwicklung', titel: 'Ungleiche Entwicklung und Globalisierung',
+      text: `Globalisierung führt zu **Polarisierung statt Homogenisierung** und zu **Wachstumsinseln statt globaler Entwicklung** (Braun/Schulz).
+
+**Ungleiche Entwicklung** = die Tendenz von Wachstum, Arbeit, Investitionen und Branchen, sich an bestimmten Orten zu **konzentrieren** – mit Folgen für diese und die mit ihnen verbundenen Räume; zentraler Gegenstand der WiGeo.
+
+Zwei Deutungen (MacKinnon/Cumbers):
+- **Neoklassik:** ein **temporärer** Zustand, der sich ausgleicht.
+- **Geographische Politische Ökonomie:** ein **Wesensmerkmal des Kapitalismus**. „Globalisierung produziert und nutzt Ungleichheit – nicht zufällig, sondern strategisch“; „Globalization is uneven geographical development“. Globale Produktion spielt Territorien gegeneinander aus (Kosten, Steuern, Umweltauflagen, Arbeitskontrolle).
+
+**Zusammenfassung der Theorien:** Regulationstheorie – Globalisierung als konflikthafte Antwort auf die Fordismuskrise · Harvey – Globalisierung als (auf Dauer scheiternder) spatial fix der Überakkumulation seit den 1970ern · Massey – räumliche Arbeitsteilung · GPE – ungleiche Entwicklung als Wesensmerkmal.
+
+==Neoklassik: Ungleichheit vorübergehend. GPE: Globalisierung ist ungleiche Entwicklung.==`,
+    },
+  ],
+  fragen: [
+    /* ---------- Regulationstheorie ---------- */
+    { id: 'e04-01', typ: 'offen', thema: 'Regulationstheorie', wichtig: 3, punkte: 2, quelle: 'VL04-05, S. 43; Musterklausur WS23/24, 2.5', bildLoesung: 'regulation',
+      frage: 'Erläutern Sie die Begriffe Akkumulationsregime und Regulationsweise der Regulationstheorie.',
+      antwort: `Ein Akkumulationsregime ist nach Lipietz ein Modus der Produktion, der über eine längere Periode ein Entsprechungsverhältnis zwischen den materiellen Produktionsbedingungen (eingesetztes Kapital, Branchenstruktur, Produktionsnormen) und dem gesellschaftlichen Verbrauch gewährleistet. Die Regulationsweise ist die Gesamtheit institutioneller Formen, Netze sowie expliziter und impliziter Normen – etwa Gesetze, Machtverhältnisse, Staat und Verbände –, die die Vereinbarkeit der Verhältnisse im Rahmen dieses Akkumulationsregimes sichern.`,
+      kernpunkte: ['Akkumulationsregime: dauerhafte Entsprechung zwischen Produktionsbedingungen und gesellschaftlichem Verbrauch', 'Regulationsweise: Institutionen, Netze, Normen (Gesetze, Machtverhältnisse), die die Vereinbarkeit im Akkumulationsregime sichern'] },
+    { id: 'e04-02', typ: 'luecke', thema: 'Regulationstheorie', wichtig: 3, quelle: 'VL04-05, S. 43',
+      frage: 'Akkumulationsregime nach Lipietz. Fülle die Lücken.',
+      text: 'Ein Akkumulationsregime ist ein bestimmter Modus der Produktion, der über eine längere Periode ein [[Entsprechungsverhältnis]] zwischen den materiellen [[Produktionsbedingungen]] und dem gesellschaftlichen [[Verbrauch|Konsum]] gewährleistet.' },
+    { id: 'e04-03', typ: 'luecke', thema: 'Regulationstheorie', wichtig: 3, quelle: 'VL04-05, S. 43',
+      frage: 'Regulationsweise nach Lipietz. Fülle die Lücken.',
+      text: 'Die Regulationsweise ist die Gesamtheit [[institutioneller]] Formen, Netze, expliziter und impliziter [[Normen]], die die [[Vereinbarkeit]] von Verhältnissen im Rahmen eines Akkumulationsregimes sichern.' },
+    { id: 'e04-04', typ: 'mc', thema: 'Regulationstheorie', wichtig: 3, quelle: 'VL04-05, S. 43; Musterklausur WS23/24, 2.5',
+      frage: 'Was trifft auf die Regulationstheorie zu? (mehrere möglich)',
+      optionen: [
+        { t: 'Das Akkumulationsregime sichert über längere Zeit die Entsprechung von Produktion und gesellschaftlichem Verbrauch.', r: true, warum: 'Definition nach Lipietz.' },
+        { t: 'Zur Regulationsweise gehören Gesetze, Normen, Machtverhältnisse und Institutionen.', r: true, warum: 'Sie sichert die Vereinbarkeit der Verhältnisse.' },
+        { t: 'Sie berücksichtigt vor allem technische Zusammenhänge der Produktion.', warum: 'Im Gegenteil: Sie betont die gesellschaftliche Regulation (Institutionen, Normen, Macht).' },
+        { t: 'Ihr zentrales Begriffspaar sind Akkumulationsregime und Differenzialregime.', warum: 'Das Begriffspaar ist Akkumulationsregime und **Regulationsweise**; „Differenzialregime“ gibt es nicht.' },
+      ] },
+    { id: 'e04-05', typ: 'offen', thema: 'Regulationstheorie', wichtig: 2, punkte: 2, quelle: 'VL04-05, S. 45 und 56',
+      frage: 'Wie erklärt die Regulationstheorie die Globalisierung?',
+      antwort: `Die Regulationstheorie deutet Globalisierung als konflikthafte Suche nach einer Antwort auf die Krise des Fordismus, die zugleich eine Akkumulations- und Hegemoniekrise war. Ein Beispiel sind die Maquiladoras als „bloody taylorism“: international organisierte, flexible Massenproduktion, jedoch ohne den sozialen und finanziellen Ausgleich für die Lohnabhängigen, den der Fordismus kannte.`,
+      kernpunkte: ['Globalisierung als konflikthafte Suche nach Antwort auf die Fordismuskrise (Akkumulations- und Hegemoniekrise)', 'Beispiel Maquiladoras/„bloody taylorism“: flexible Massenproduktion ohne fordistischen sozialen Ausgleich'] },
+
+    /* ---------- Fordismus ---------- */
+    { id: 'e04-06', typ: 'offen', thema: 'Fordismus', wichtig: 2, punkte: 3, quelle: 'VL04-05, S. 44',
+      frage: 'Vergleichen Sie Fordismus und Post-Fordismus hinsichtlich Produktions-, Arbeits- und Raumorganisation.',
+      antwort: `In der Produktion setzt der Fordismus auf Massenproduktion standardisierter Produkte (economies of scale) mit großer Lagerhaltung und hoher vertikaler Integration, der Post-Fordismus auf flexible Produktion von Varianten (economies of scope), just-in-time und Subcontracting. In der Arbeit gibt es im Fordismus viele Hierarchiestufen, kleine Arbeitsschritte und geringe Qualifikationsanforderungen, im Post-Fordismus horizontale Organisation, Gruppenarbeit und höhere Qualifikationen. Räumlich prägen den Fordismus Hierarchie und Nähe vertikal integrierter Firmen, den Post-Fordismus weltweite Lieferbeziehungen, Cluster und Dezentralisierung.`,
+      kernpunkte: ['Produktion: Massenproduktion, economies of scale, vertikale Integration ↔ flexible Varianten, economies of scope, just-in-time, Subcontracting', 'Arbeit: Hierarchie, kleine Schritte, geringe Qualifikation ↔ Gruppenarbeit, Mitverantwortung, höhere Qualifikation', 'Raum: Hierarchie, Nähe integrierter Firmen ↔ weltweite Lieferbeziehungen, Cluster, Dezentralisierung'] },
+    { id: 'e04-07', typ: 'mc', thema: 'Fordismus', wichtig: 2, quelle: 'VL04-05, S. 44',
+      frage: 'Welche Merkmale gehören zum **Post-Fordismus**? (mehrere möglich)',
+      optionen: [
+        { t: 'Flexible Produktion von Produktvarianten (economies of scope)', r: true, warum: 'Typisch post-fordistisch.' },
+        { t: 'Just-in-time mit wenigen Systemlieferanten', r: true, warum: 'Geringe Lagerhaltung, abnehmende Fertigungstiefe.' },
+        { t: 'Hohe vertikale Integration und große Lagerhaltung', warum: 'Das ist fordistisch.' },
+        { t: 'Kleine Arbeitsschritte mit geringen Qualifikationsanforderungen', warum: 'Das ist fordistisch (Taylorismus).' },
+      ] },
+    { id: 'e04-08', typ: 'wf', thema: 'Fordismus', quelle: 'VL04-05, S. 44',
+      aussage: 'Im Fordismus war die Fertigungstiefe gering; viel wurde an Subunternehmer ausgelagert.',
+      wahr: false, warum: 'Der Fordismus hatte eine **hohe vertikale Integration** (Fertigungstiefe). Subcontracting und geringe Fertigungstiefe sind post-fordistisch.' },
+
+    /* ---------- Neoliberalismus ---------- */
+    { id: 'e04-09', typ: 'offen', thema: 'Neoliberalismus', wichtig: 2, punkte: 3, quelle: 'VL04-05, S. 46–47',
+      frage: 'Erläutern Sie das neoliberale Kernprogramm und seine Strategien.',
+      antwort: `Der Neoliberalismus beruht auf der neoklassischen Wirtschaftstheorie: Ressourcen werden am effizientesten verteilt, wenn sie dem von Preisen geleiteten Kalkül der Marktteilnehmer im freien Wettbewerb folgen. Daher soll der staatliche Einfluss zurückgedrängt werden; ein sich selbst regulierender Markt bringe Wettbewerb, Innovation und Wohlstand. Strategien sind unter anderem Privatisierung, Liberalisierung der Kapitalmärkte, Flexibilisierung der Beschäftigung und Schwächung der Gewerkschaften, Umverteilung von unten nach oben sowie der Umbau des Sozialstaats von welfare zu workfare.`,
+      kernpunkte: ['Neoklassische Basis: effiziente Allokation über Preise und freien Wettbewerb', 'Staat zurückdrängen, sich selbst regulierender Markt → Wettbewerb, Innovation, Wohlstand', 'Strategien: Privatisierung, Liberalisierung, Flexibilisierung, Umverteilung nach oben, welfare → workfare'] },
+    { id: 'e04-10', typ: 'mc', thema: 'Neoliberalismus', quelle: 'VL04-05, S. 46',
+      frage: 'Welche Aussage beschreibt den **Ordoliberalismus**?',
+      optionen: [
+        { t: 'Der Staat garantiert die Bedingungen des freien Wettbewerbs (Ordnungspolitik).', r: true, warum: 'Spielart des Neoliberalismus mit Rolle des Staates als Hüter des Wettbewerbs.' },
+        { t: 'Der Staat steuert die Nachfrage aktiv durch Ausgabenpolitik.', warum: 'Das ist Keynesianismus.' },
+        { t: 'Der Staat soll vollständig aus der Wirtschaft verschwinden.', warum: 'Gerade nicht: Der Ordoliberalismus gibt dem Staat eine Ordnungsaufgabe.' },
+        { t: 'Importe werden besteuert, Exporte gefördert.', warum: 'Das beschreibt den Merkantilismus.' },
+      ] },
+    { id: 'e04-11', typ: 'luecke', thema: 'Neoliberalismus', quelle: 'VL04-05, S. 46',
+      text: 'Adam Smith und David Ricardo wandten sich gegen den [[Merkantilismus]]. Ricardos Theorie der [[komparativen]] Kostenvorteile ist bis heute Grundlage der orthodoxen Welthandelstheorie.',
+      erklaerung: 'Die Folie nennt für Ricardo die Jahre „1806–1823“; gelebt hat er 1772–1823. Jahreszahlen werden nicht abgefragt.' },
+    { id: 'e04-12', typ: 'paare', thema: 'Neoliberalismus', wichtig: 2, quelle: 'VL04-05, S. 43–53',
+      frage: 'Ordne jeder Person das passende Konzept zu.',
+      paare: [
+        ['Alain Lipietz', 'Akkumulationsregime und Regulationsweise'],
+        ['David Harvey', 'Spatial fix'],
+        ['Doreen Massey', 'Spatial division of labour'],
+        ['David Ricardo', 'Komparative Kostenvorteile'],
+        ['Friedrich A. von Hayek', 'Neoliberalismus gegen Keynes'],
+        ['John M. Keynes', 'Nachfrageorientierte Wirtschaftspolitik'],
+      ] },
+    { id: 'e04-13', typ: 'wf', thema: 'Neoliberalismus', quelle: 'VL04-05, S. 47',
+      aussage: 'Politisch setzte sich der Neoliberalismus zuerst im Globalen Süden durch, in Chile in den 1970er Jahren.',
+      wahr: true, warum: 'Ab den 1980ern dann im Norden (Thatcher in Großbritannien, Reagan in den USA).' },
+
+    /* ---------- Spatial fix ---------- */
+    { id: 'e04-14', typ: 'offen', thema: 'Spatial fix', wichtig: 2, punkte: 3, quelle: 'VL04-05, S. 48–51', bildLoesung: 'spatialfix',
+      frage: 'Erläutern Sie Harveys Konzept des „spatial fix“.',
+      antwort: `Nach Harvey gerät der Kapitalismus immer wieder in Überakkumulationskrisen: In einem territorialen System gibt es einen Überschuss an Kapital und Arbeit, für den es keine profitable Verwendung mehr gibt. Der spatial fix ist der Versuch einer räumlichen Lösung durch geographische Expansion – neue Märkte, Verlagerung der Produktion, billige Arbeitskräfte; ergänzt durch den temporal fix, der Investitionen mit spätem Rückfluss (z. B. Infrastruktur) nutzt. Einen dauerhaften fix gibt es jedoch nicht: Die Widersprüche werden nur verschoben und führen in neue Krisen, etwa über die Finanzialisierung in die Krise 2008.`,
+      kernpunkte: ['Überakkumulationskrise: Überschuss an Kapital und Arbeit ohne profitable Anlage', 'Spatial fix = räumliche Lösung durch geographische Expansion (neue Märkte, Verlagerung, billige Arbeit); temporal fix = zeitliche Verschiebung', 'Kein dauerhafter fix: Krise wird nur verschoben (z. B. Finanzialisierung → 2008)'] },
+    { id: 'e04-15', typ: 'offen', thema: 'Spatial fix', wichtig: 2, punkte: 4, quelle: 'VL04-05, S. 49',
+      frage: 'Nennen Sie die vier räumlichen Strategien des spatial fix nach Harvey.',
+      antwort: `Erstens die Erschließung neuer Märkte, zweitens die Verlagerung der Produktion, drittens die Nutzung kostengünstiger Arbeitskräfte und viertens der Export der Entwertung, also die räumliche Verlagerung der Entwertungskrise mittels des Finanzsystems, was zu regionalen Finanzkrisen führt.`,
+      kernpunkte: ['Erschließung neuer Märkte', 'Verlagerung der Produktion', 'Nutzung kostengünstiger Arbeitskräfte', 'Export der Entwertung über das Finanzsystem (regionale Finanzkrisen)'] },
+    { id: 'e04-16', typ: 'wf', thema: 'Spatial fix', wichtig: 2, quelle: 'VL04-05, S. 49–50',
+      aussage: 'Nach Harvey kann ein spatial fix die Krisen des Kapitalismus dauerhaft lösen.',
+      wahr: false, warum: '„Es gibt keinen dauerhaften spatial fix für die inneren Widersprüche des Kapitalismus.“ Frühere fixes führten selbst in neue Krisen.' },
+    { id: 'e04-17', typ: 'karte', thema: 'Spatial fix', wichtig: 2, quelle: 'VL04-05, S. 49–50',
+      vorne: 'Time-space compression (Harvey)',
+      hinten: `Innovationen in Transport- und Kommunikationstechnik verkürzen die Zirkulationszeit des Kapitals: „**Vernichtung von Raum durch Zeit**“ (Marx) – die Bedeutung von Distanz nimmt ab.` },
+    { id: 'e04-18', typ: 'mc', thema: 'Spatial fix', wichtig: 2, quelle: 'VL04-05, S. 48',
+      frage: 'Überschüssiges Kapital fließt in Infrastrukturen und Immobilien, deren Rückfluss weit in der Zukunft liegt. Wie nennt Harvey das?',
+      optionen: [
+        { t: 'Temporal fix', r: true, warum: 'Zeitliche Verschiebung der Überakkumulation.' },
+        { t: 'Spatial fix', warum: 'Das wäre die räumliche Lösung durch geographische Expansion.' },
+        { t: 'Time-space compression', warum: 'Das beschreibt die schrumpfende Bedeutung von Distanz.' },
+        { t: 'Export der Entwertung', warum: 'Das ist die Verlagerung der Krise über das Finanzsystem.' },
+      ] },
+
+    /* ---------- Massey ---------- */
+    { id: 'e04-19', typ: 'offen', thema: 'Massey', wichtig: 2, punkte: 2, quelle: 'VL04-05, S. 52',
+      frage: 'Was versteht Doreen Massey unter „spatial division of labour“ und „rounds of accumulation“?',
+      antwort: `Mit der Internationalisierung der Produktion seit den 1960ern verlagert Kapital Produktionsschritte, zunächst innerhalb nationaler Ökonomien, dann international; so entsteht neben der sozialen auch eine räumliche Arbeitsteilung mit Folgen für Raum- und Sozialstruktur. „Rounds of accumulation“ beschreiben eine Zick-Zack-Bewegung: Investitionen prägen die Geographie eines Ortes, und diese Geographie prägt wiederum künftige Investitionen und Desinvestitionen.`,
+      kernpunkte: ['Spatial division of labour: Verlagerung von Produktion schafft räumliche (nicht nur soziale) Arbeitsteilung', 'Rounds of accumulation: Investitionen prägen einen Ort, der Ort prägt künftige (Des-)Investitionen'] },
+    { id: 'e04-20', typ: 'mc', thema: 'Massey', quelle: 'VL04-05, S. 53',
+      frage: 'Welche Regionen haben sich laut Vorlesung nach einer Krise ihrer Produktionsform **neu erfunden**? (mehrere möglich)',
+      optionen: [
+        { t: 'London Docklands', r: true, warum: 'Ebenso Liverpool und Silicon Valley.' },
+        { t: 'Silicon Valley', r: true, warum: 'Wird als Beispiel gelungener Neuerfindung genannt.' },
+        { t: 'Detroit', warum: 'Beispiel für Niedergang ohne positive Zukunft.' },
+        { t: 'Lausitz', warum: 'Beispiel für eine Erneuerung auf „wackeligen Beinen“.' },
+      ] },
+
+    /* ---------- Ungleiche Entwicklung ---------- */
+    { id: 'e04-21', typ: 'offen', thema: 'Ungleiche Entwicklung', wichtig: 3, punkte: 3, quelle: 'VL04-05, S. 54–55',
+      frage: 'Was versteht die Wirtschaftsgeographie unter ungleicher Entwicklung, und wie deuten Neoklassik und Geographische Politische Ökonomie sie?',
+      antwort: `Ungleiche Entwicklung ist die Tendenz von Wachstum, Arbeit, Investitionen und Branchen, sich an bestimmten Orten zu konzentrieren, mit Folgen für diese und die mit ihnen verbundenen Räume. Die Neoklassik sieht darin einen temporären Zustand, der sich ausgleicht. Die Geographische Politische Ökonomie sieht sie als Wesensmerkmal des Kapitalismus: Globalisierung produziert und nutzt Ungleichheit strategisch – „Globalization is uneven geographical development“.`,
+      kernpunkte: ['Ungleiche Entwicklung: Konzentration von Wachstum, Arbeit, Investitionen, Branchen an bestimmten Orten', 'Neoklassik: temporärer Zustand', 'GPE: Wesensmerkmal des Kapitalismus; Globalisierung nutzt Ungleichheit strategisch'] },
+    { id: 'e04-22', typ: 'luecke', thema: 'Ungleiche Entwicklung', wichtig: 2, quelle: 'VL04-05, S. 54',
+      text: 'Folgen der Globalisierung: [[Polarisierung]] statt Homogenisierung, [[Wachstumsinseln|Wachstumsinsel]] statt globaler Entwicklung.' },
+    { id: 'e04-23', typ: 'paare', thema: 'Ungleiche Entwicklung', wichtig: 2, quelle: 'VL04-05, S. 56',
+      frage: 'Wie deuten die Theorien die Globalisierung? Ordne zu.',
+      paare: [
+        ['Regulationstheorie', 'Konflikthafte Suche nach Antwort auf die Fordismuskrise'],
+        ['Harvey', 'Auf Dauer scheiternder spatial fix der Überakkumulation'],
+        ['Massey', 'Neue räumliche Arbeitsteilung durch Verlagerung'],
+        ['Geographische Politische Ökonomie', 'Ungleiche Entwicklung als Wesensmerkmal des Kapitalismus'],
+      ] },
+  ],
+});
+//# sourceURL=content/wirtschaftsgeographie/e04.js
+</script>
+<script>
+/* e05 Globalisierung III: Ketten, Netzwerke, De-Globalisierung – VL04-05 Teil 2 (Rosol, 21.05.2026).
+   Analyse: quellen/wirtschaftsgeographie/analyse/VL04-05-Globalisierung.md (PDF-Seiten 57–85) */
+Lerni.einheit('wirtschaftsgeographie', {
+  id: 'e05',
+  titel: 'Globalisierung III: Ketten, Netzwerke, De-Globalisierung',
+  quelle: 'VL04-05 Globalisierung (Rosol), PDF-Seiten 57–85',
+  skript: [
+    {
+      thema: 'Thesen', titel: 'Globalisierung als Produktionsnetzwerk',
+      text: `Drei Thesen der Vorlesung:
+1. Globalisierung ist **nicht über Handel, sondern über die Internationalisierung der Produktion** definiert – zunehmend in globalen Produktions- und Vertriebsketten und -netzwerken.
+2. Nicht „Verflechtungen zwischen Volkswirtschaften“ stehen im Zentrum, sondern **„entgrenzte Produktion“** – das verlangt eine **Netzwerkperspektive**.
+3. Globale Warenketten und Netzwerke sind **Ausdruck**, **Triebkraft** und **analytischer Zugang** zur Globalisierung.
+
+Kettenansätze beschreiben Produktion, Distribution und Konsum als **Verbindungen von Aktivitäten**, verknüpft durch materielle und immaterielle Ströme. Sie bilden **relationale Strukturen** mit **ungleichen Machtbeziehungen** zwischen Firmen, Staaten und Gruppen (Beispiele: Kaffee, Jeans, Banane, Frühstück).
+
+Drei Konzepte:
+- **GCC** – global commodity chains / globale Warenketten: Wallerstein, Gereffi; 1980er/90er; eher **analytisch-politisch**
+- **GVC** – global value chains / globale Wertschöpfungsketten: Gereffi et al.; Mitte 2000er; **firmen-, anwendungs-, managementorientiert**
+- **GPN** – global production networks / globale Produktionsnetzwerke: Dicken, Coe, Yeung u. a. („Manchester School“); frühe 2000er; **Netzwerk statt Kette**
+
+==GCC analytisch-politisch, GVC firmenorientiert (Upgrading), GPN Netzwerk mit Macht, Wert, Einbettung.==`,
+    },
+    {
+      thema: 'GCC', titel: 'Global Commodity Chains',
+      text: `Definition (Hopkins/Wallerstein): ein **Netzwerk von Arbeits- und Produktionsprozessen**, an dessen Ende eine fertige Ware steht. Wer diese Netzwerke verfolgt, erkennt die Arbeitsteilung und die Entwicklung des weltwirtschaftlichen Produktionssystems.
+
+Merkmale:
+- Weltwirtschaft als grenzüberschreitende **Interaktion zwischen Unternehmen**, nicht zwischen Staaten
+- alle materiellen (Arbeit, Rohstoffe) und immateriellen Inputs (Wissen) erfassen und verorten; Produzentenstandorte = **Knoten**
+- **politischer Ansatz**: erklärt, **wie und warum der Mehrwert ungleich verteilt** wird – Polarisierung in **Zentren und Peripherien**; lange, **intransparente** Ketten erschweren Kontrolle und politischen Widerstand
+
+**Gereffi: Machtbeziehungen** – **produzentengetriebene** Ketten (der Hersteller steuert Zulieferer und Handel) vs. **käufergetriebene** Ketten (Markenartikel- und Handelsunternehmen steuern die Hersteller). Achtung: „**Käufer**“ sind **nicht die Endverbraucher:innen**, sondern Markenartikler und Handelsbetriebe.
+
+==GCC: Mehrwert wird ungleich verteilt – Käufer = Marken und Handel, nicht Kund:innen.==`,
+    },
+    {
+      thema: 'GVC', titel: 'Global Value Chains', bild: ['governance', 'smile'],
+      text: `Der **GVC-Ansatz** (Gereffi et al., ab Mitte der 2000er) ist **firmenzentriert**, betriebswirtschaftlich beeinflusst (Transaktionskosten) und **anwendungsorientiert**. Leitfrage: Unter welchen Bedingungen bringt die Weltmarktintegration von Betrieben – vor allem im Globalen Süden – **positive lokale Entwicklungseffekte**? Schlüsselbegriffe: **Governance** und **Upgrading**.
+
+**Vier analytische Dimensionen (Gereffi):** (1) **Input-Output-Struktur** (Kettenglieder) · (2) **Territorialität** (Verortung) · (3) **Governance-Struktur** (Kontrolle, Macht) · (4) **institutioneller Rahmen** (Politik, Gesetze, Praktiken). Zentral: Wie verteilen sich Aufgaben, Kosten, Risiken und Profite?
+
+**Governance-Typen:** Markt – Modular – Relational – Abhängig (captive) – Hierarchie, mit zunehmender expliziter Koordination und Machtasymmetrie. Der Typ hängt ab von der **Komplexität der Transaktionen**, der **Kodifizierbarkeit des Wissens** und den **Fähigkeiten der Zulieferer**.
+
+**Lead firm:** hat die Macht, Abläufe in mehreren Ländern zu koordinieren und zu kontrollieren, **auch ohne Eigentümer zu sein** (Dicken).
+
+**Upgrading:** Akteure (Staaten, Firmen, Beschäftigte) steigen von **niedrig- zu höherwertigen Aktivitäten** auf. **Smiling curve (Apple):** Hohe Wertschöpfung bei F&E, Design und Marketing (Apple, USA), am wenigsten bei der Fertigung (Hon Hai, Pegatron).
+
+==GVC: Governance und Upgrading – wer steuert, und wie kommt man in der Kette nach oben?==`,
+    },
+    {
+      thema: 'GPN', titel: 'Global Production Networks', bild: 'gpn',
+      text: `Die **„Manchester School“** (Coe, Yeung, Hess, Dicken, Henderson) entwickelte Anfang der 2000er den GPN-Ansatz aus der **Kritik an Kettenansätzen**: Eine „Kette“ ist zu **linear und unterkomplex** → **Netzwerk**; und nicht nur Unternehmen zählen, sondern auch der **institutionelle Rahmen und weitere Akteure** (Staaten, Gewerkschaften, Zivilgesellschaft, Konsument:innen, Finanzsystem).
+
+Definition (Coe et al.): Ein GPN ist ein **System, das von einer global bedeutsamen transnationalen Unternehmung koordiniert und kontrolliert wird** und ein großes Netzwerk internationaler Partner, Kunden und Organisationen umfasst. Typisch: unklare Firmengrenzen, **Kooperation und Konkurrenz zugleich**, Ausdehnung auch durch Finanzialisierung.
+
+**Zentrale Analysekategorien:**
+- **Macht (power):** korporativ, kollektiv, institutionell
+- **Wert (value):** Schöpfung, Anreicherung, Aneignung
+- **Einbettung (embeddedness):** territorial, Netzwerk, gesellschaftlich
+
+Vergleich: GCC/GVC sehen Wertschöpfung als **sequentielle Folge** (Kategorien: Input-Output, Territorialität, Governance, institutioneller Rahmen); GPN als **relationalen, multiskaligen Prozess** mit Firmen und Nicht-Firmen.
+
+==GPN: Macht, Wert, Einbettung – nicht Input-Output und Governance (das ist GVC).==`,
+    },
+    {
+      thema: 'Kritik', titel: 'Kritik und Fazit der Ketten- und Netzwerkansätze',
+      text: `**„Dark sides“ (Werner 2015):** Vor allem der GVC-Ansatz betont die **Inklusion** in Lieferketten und übersieht:
+1. periodische Marktkrisen und ihre Folgen für lokale Arbeitsmärkte
+2. den Zusammenhang von **Geschlechterungleichheit** und Ausbeutung
+3. neue, **digital vermittelte Kontrolle** von Zulieferern und Arbeiter:innen
+4. Fragmentierung, soziale Polarisierung, Enteignung am „südlichen Ende“
+5. negative **Umweltfolgen**
+
+**Fazit:** Transnationale Produktionsnetze schaffen eine neue Qualität internationaler Arbeitsteilung. Ketten- und Netzwerkansätze blicken nicht auf **Containerräume**, sondern auf **Ströme und ungleiche Beziehungen**; sie sind **nicht staatszentriert** und überwinden den **methodologischen Nationalismus**. Sie zeigen den Weg eines Produkts und erklären die Weltwirtschaft in ihren räumlichen Ausprägungen – ein wichtiger Beitrag der Wirtschaftsgeographie.
+
+==Ketten und Netzwerke: Ströme statt Containerräume – aber Achtung vor den „dark sides“.==`,
+    },
+    {
+      thema: 'De-Globalisierung', titel: 'Globalisierung oder De-Globalisierung?',
+      text: `Auslöser der Debatte: Finanzkrise 2008/09, Brexit 2016, Trump I (2017–21), COVID-19, Ukraine-Krieg, Trump II, neue Rolle Chinas – Ursachen, Symptome oder Verstärker?
+
+**Anzeichen einer De-Globalisierung:**
+- Handel wächst **langsamer als die Wirtschaft** (1960–2019: Wirtschaft ×6, Handel ×18; 2011–2019: Wirtschaft +19 %, Handel nur +3,5 %)
+- „**Slowbalisation**“ (The Economist 2019) schon vor Corona
+- **Handelsstreits**, aufgekündigte Abkommen (Trump I: NAFTA, TTIP, TPP)
+- **Near-shoring/Re-shoring** essentieller Produkte seit der Pandemie
+- **neuer Protektionismus** (Inflation Reduction Act 2022, Trump II)
+
+**Periodisierung nach Coe:** internationale Arbeitsteilung (1850–1950, imperiale Staaten) → **neue internationale Arbeitsteilung** (1950–1990, TNCs, FDI) → **globale Arbeitsteilung/GPN-Ära** (1990–2010, lead firms, China als Hub) → „**Slowbalisation**“ (seit 2010, „nationalistische“ Staaten, Makro-Regionalisierung).
+
+**„Globalization 2.0“ (Poon 2025):** **friend-shoring** unter Biden, Sicherheitsinteressen und Unabhängigkeit von China; unter Trump II erratisch, Abkehr von regelbasierter Handelspolitik.
+
+**Vorläufige Einschätzung:** Globalisierung ist **ungebrochen** – keine Umkehr, sondern **Verlangsamung** und **Neukonfiguration** von GPN (de-coupling, re-shoring). Sehr fraglich, dass die Wirtschaft dadurch fairer und resilienter wird: „GVCs are here to stay“.
+
+==Nicht das Ende der Globalisierung, sondern Verlangsamung und Umbau.==`,
+    },
+  ],
+  fragen: [
+    /* ---------- Thesen ---------- */
+    { id: 'e05-01', typ: 'offen', thema: 'Thesen', wichtig: 2, punkte: 3, quelle: 'VL04-05, S. 58',
+      frage: 'Nennen Sie die drei Thesen der Vorlesung zur Globalisierung als Produktionsnetzwerk.',
+      antwort: `Erstens ist Globalisierung nicht über Handel, sondern über die Internationalisierung der Produktion definiert, die zunehmend in globalen Produktions- und Vertriebsketten und -netzwerken stattfindet. Zweitens geht es weniger um Verflechtungen zwischen Volkswirtschaften als um „entgrenzte Produktion“, was eine Netzwerkperspektive erfordert. Drittens sind globale Warenketten und Netzwerke zugleich Ausdruck, Triebkraft und wertvoller analytischer Zugang zur Globalisierung.`,
+      kernpunkte: ['Globalisierung = Internationalisierung der Produktion (nicht Handel), in Ketten und Netzwerken', '„Entgrenzte Produktion“ statt Verflechtung von Volkswirtschaften → Netzwerkperspektive', 'Ketten/Netzwerke sind Ausdruck, Triebkraft und analytischer Zugang'] },
+    { id: 'e05-02', typ: 'wf', thema: 'Thesen', wichtig: 2, quelle: 'VL04-05, S. 58',
+      aussage: 'Laut der ersten These der Vorlesung ist Globalisierung vor allem über den wachsenden Welthandel definiert.',
+      wahr: false, warum: 'Sie ist über die **Internationalisierung der Produktion** definiert, nicht über Handel.' },
+    { id: 'e05-03', typ: 'offen', thema: 'Thesen', wichtig: 3, punkte: 3, quelle: 'VL04-05, S. 62–75',
+      frage: 'Unterscheiden Sie die Ansätze Global Commodity Chains, Global Value Chains und Global Production Networks (Entstehung, Vertreter, Schwerpunkt).',
+      antwort: `Global Commodity Chains (Wallerstein, Gereffi; 1980er/90er) sind ein eher analytisch-politischer Ansatz, der die internationale Arbeitsteilung und die ungleiche Verteilung des Mehrwerts zwischen Zentren und Peripherien untersucht. Global Value Chains (Gereffi et al.; Mitte 2000er) sind firmenzentriert und anwendungsorientiert und fragen mit den Begriffen Governance und Upgrading, wie Firmen im Globalen Süden ihre Position verbessern. Global Production Networks (Manchester School: Coe, Dicken, Yeung u. a.; frühe 2000er) ersetzen die lineare Kette durch Netzwerke, beziehen Nicht-Firmen-Akteure ein und analysieren Macht, Wert und Einbettung.`,
+      kernpunkte: ['GCC: Wallerstein/Gereffi, 1980er/90er; analytisch-politisch, Arbeitsteilung, ungleiche Mehrwertverteilung', 'GVC: Gereffi et al., Mitte 2000er; firmen-/anwendungsorientiert, Governance und Upgrading', 'GPN: Manchester School (Coe, Dicken, Yeung), frühe 2000er; Netzwerk, auch Nicht-Firmen; Macht, Wert, Einbettung'] },
+    { id: 'e05-04', typ: 'paare', thema: 'Thesen', wichtig: 2, quelle: 'VL04-05, S. 62 und 75',
+      frage: 'Ordne jedem Ansatz seine Vertreter und seine Entstehungszeit zu.',
+      paare: [
+        ['Global Commodity Chains', 'Wallerstein, Gereffi – 1980er/90er'],
+        ['Global Value Chains', 'Gereffi, Humphrey, Sturgeon – Mitte der 2000er'],
+        ['Global Production Networks', 'Coe, Dicken, Yeung, Henderson – frühe 2000er'],
+      ] },
+
+    /* ---------- GCC ---------- */
+    { id: 'e05-05', typ: 'mc', thema: 'GCC', wichtig: 2, quelle: 'VL04-05, S. 63–64',
+      frage: 'Was trifft auf den Ansatz der Global Commodity Chains zu? (mehrere möglich)',
+      optionen: [
+        { t: 'Er versteht die Weltwirtschaft als Interaktion zwischen Unternehmen, nicht zwischen Staaten.', r: true, warum: 'Grenzüberschreitende Interaktion von Unternehmen; Produzenten als Knoten.' },
+        { t: 'Er erklärt die ungleiche Verteilung des Mehrwerts zwischen Zentren und Peripherien.', r: true, warum: 'Stärker politischer Ansatz (Wallerstein).' },
+        { t: 'Sein Schlüsselbegriff ist das Upgrading von Firmen im Globalen Süden.', warum: 'Upgrading ist ein Schlüsselbegriff des GVC-Ansatzes.' },
+        { t: 'Er stellt Nicht-Firmen-Akteure wie Gewerkschaften ins Zentrum.', warum: 'Das ist ein Kennzeichen des GPN-Ansatzes.' },
+      ] },
+    { id: 'e05-06', typ: 'mc', thema: 'GCC', wichtig: 2, quelle: 'VL04-05, S. 65',
+      frage: 'Wer sind die „Käufer“ in käuferdominierten Warenketten nach Gereffi?',
+      optionen: [
+        { t: 'Markenartikelunternehmen und Handelsbetriebe', r: true, warum: 'Sie steuern Hersteller, Großhandel und ausländische Einkäufer.' },
+        { t: 'Die Endverbraucher:innen', warum: 'Genau das betont die Folie: Die Käufer sind **nicht** die Endverbraucher:innen.' },
+        { t: 'Die Rohstoffproduzenten', warum: 'Sie stehen am Anfang der Kette und steuern sie in der Regel nicht.' },
+        { t: 'Staatliche Einkaufsagenturen', warum: 'Davon ist in dem Modell nicht die Rede.' },
+      ] },
+    { id: 'e05-07', typ: 'wf', thema: 'GCC', quelle: 'VL04-05, S. 64',
+      aussage: 'Nach Wallerstein erschweren lange, intransparente Warenketten den politischen Widerstand gegen die ungleiche Verteilung des Mehrwerts.',
+      wahr: true, warum: 'Die Intransparenz der Mehrwertverteilung minimiert politischen Widerstand.' },
+
+    /* ---------- GVC ---------- */
+    { id: 'e05-08', typ: 'offen', thema: 'GVC', wichtig: 2, punkte: 4, quelle: 'VL04-05, S. 68',
+      frage: 'Nennen Sie die vier analytischen Dimensionen globaler Wertschöpfungsketten nach Gereffi.',
+      antwort: `Erstens die Input-Output-Struktur, also die Konfiguration der Kette mit ihren Gliedern. Zweitens die räumliche Struktur bzw. Territorialität, also wo die Kettenglieder verortet sind. Drittens die Governance-Struktur, also Kontrolle und steuernde Machtstrukturen. Viertens das institutionelle Gefüge aus lokalen, nationalen und internationalen Politiken, Gesetzen und Praktiken, in das die Kette eingebettet ist.`,
+      kernpunkte: ['Input-Output-Struktur', 'Territorialität (räumliche Struktur)', 'Governance-Struktur', 'Institutionelles Gefüge (Rahmen)'] },
+    { id: 'e05-09', typ: 'offen', thema: 'GVC', wichtig: 2, punkte: 3, quelle: 'VL04-05, S. 69', bildLoesung: 'governance',
+      frage: 'Nennen Sie die drei Faktoren, die nach Gereffi et al. die Koordinationsform (Governance) einer Wertschöpfungskette bestimmen.',
+      antwort: `Die Koordinationsform hängt ab von der Komplexität der Transaktionen, von der Möglichkeit, das nötige Wissen zu kodifizieren und damit leicht zu übertragen, und von den Fähigkeiten der Zulieferer.`,
+      kernpunkte: ['Komplexität der Transaktionen', 'Kodifizierbarkeit (Übertragbarkeit) des Wissens', 'Fähigkeiten der Zulieferer'] },
+    { id: 'e05-10', typ: 'reihe', thema: 'GVC', wichtig: 2, quelle: 'VL04-05, S. 69', bildLoesung: 'governance',
+      frage: 'Ordne die Governance-Typen nach zunehmender expliziter Koordination und Machtasymmetrie.',
+      schritte: ['Markt', 'Modular', 'Relational', 'Abhängig (captive)', 'Hierarchie'] },
+    { id: 'e05-11', typ: 'offen', thema: 'GVC', wichtig: 2, punkte: 2, quelle: 'VL04-05, S. 67–69',
+      frage: 'Definieren Sie „lead firm“ (1 P.) und „Upgrading“ (1 P.).',
+      antwort: `Eine lead firm ist ein Hauptunternehmen, das die Macht hat, Abläufe in mehr als einem Land zu koordinieren und zu kontrollieren, auch wenn es die beteiligten Betriebe nicht besitzt. Upgrading bezeichnet den Prozess, in dem wirtschaftliche Akteure – Staaten, Firmen, Beschäftigte – von niedrigwertigen zu höherwertigen Aktivitäten in globalen Produktionsnetzen aufsteigen.`,
+      kernpunkte: ['(a) Lead firm: koordiniert und kontrolliert Abläufe in mehreren Ländern, auch ohne Eigentum', '(b) Upgrading: Aufstieg von niedrig- zu höherwertigen Aktivitäten in der Kette'] },
+    { id: 'e05-12', typ: 'offen', thema: 'GVC', wichtig: 2, punkte: 2, quelle: 'VL04-05, S. 68', bildLoesung: 'smile',
+      frage: 'Was zeigt die „smiling curve“ am Beispiel Apple?',
+      antwort: `Die smiling curve zeigt die Wertschöpfung entlang der Kette: Hoch ist sie am Anfang bei Forschung, Produktdesign und Supply-Chain-Management und am Ende bei Marketing, Markenmanagement und Kundendienst – beides übernimmt Apple in den USA. Am niedrigsten ist sie in der Mitte bei der Fertigung durch Auftragsfertiger wie Hon Hai oder Pegatron; die Kurve gleicht deshalb einem Lächeln.`,
+      kernpunkte: ['Hohe Wertschöpfung am Anfang (F&E, Design) und Ende (Marketing, Marke, Service) – bei Apple in den USA', 'Niedrigste Wertschöpfung in der Fertigung (Hon Hai, Pegatron) → Kurve wie ein Lächeln'] },
+    { id: 'e05-13', typ: 'mc', thema: 'GVC', wichtig: 2, quelle: 'VL04-05, S. 68', bildLoesung: 'smile',
+      frage: 'Wo ist die Wertschöpfung entlang der smiling curve am **niedrigsten**?',
+      optionen: [
+        { t: 'Bei der Fertigung und Montage', r: true, warum: 'Die Mitte der Kurve: Auftragsfertiger wie Hon Hai oder Pegatron.' },
+        { t: 'Bei Forschung und Produktdesign', warum: 'Hohe Wertschöpfung am Anfang der Kette.' },
+        { t: 'Bei Marketing und Markenmanagement', warum: 'Hohe Wertschöpfung am Ende der Kette.' },
+        { t: 'Beim Kundendienst', warum: 'Gehört zum wertschöpfungsstarken Ende.' },
+      ] },
+
+    /* ---------- GPN ---------- */
+    { id: 'e05-14', typ: 'offen', thema: 'GPN', wichtig: 3, punkte: 3, quelle: 'VL04-05, S. 71–72; Musterklausur WS23/24, 2.7', bildLoesung: 'gpn',
+      frage: 'Nennen Sie die zentralen analytischen Kategorien des GPN-Ansatzes mit je einer Ausprägung.',
+      antwort: `Der GPN-Ansatz analysiert Macht (power), die korporativ, kollektiv oder institutionell sein kann; Wert (value) mit Wertschöpfung, Wertanreicherung und Wertaneignung; sowie Einbettung (embeddedness), die territorial, als Netzwerk-Einbettung oder gesellschaftlich sein kann.`,
+      kernpunkte: ['Macht (power): korporativ, kollektiv, institutionell', 'Wert (value): Schöpfung, Anreicherung, Aneignung', 'Einbettung (embeddedness): territorial, Netzwerk, gesellschaftlich'] },
+    { id: 'e05-15', typ: 'mc', thema: 'GPN', wichtig: 3, quelle: 'VL04-05, S. 71–72; Musterklausur WS23/24, 2.7',
+      frage: 'Welche analytischen Kategorien liegen den Global Production Networks zugrunde? (mehrere möglich)',
+      optionen: [
+        { t: 'Power', r: true, warum: 'Macht: korporativ, kollektiv, institutionell.' },
+        { t: 'Embeddedness', r: true, warum: 'Einbettung: territorial, Netzwerk, gesellschaftlich.' },
+        { t: 'Complexity', warum: 'Keine GPN-Kategorie; „Komplexität der Transaktionen“ bestimmt im GVC-Ansatz die Governance.' },
+        { t: 'Interaction', warum: 'Keine GPN-Kategorie; „Interaktion“ ist ein Systemelement der Raumwirtschaftslehre.' },
+      ],
+      erklaerung: 'Dritte Kategorie ist **Value (Wert)**. Die Musterklausur fragte genau diese vier Optionen.' },
+    { id: 'e05-16', typ: 'mc', thema: 'GPN', wichtig: 2, quelle: 'VL04-05, S. 68 und 75',
+      frage: 'Welche Kategorie gehört zum **GVC**-Ansatz und nicht zu den GPN-Kategorien?',
+      optionen: [
+        { t: 'Input-Output-Struktur', r: true, warum: 'Eine der vier GVC-Dimensionen nach Gereffi.' },
+        { t: 'Einbettung (embeddedness)', warum: 'GPN-Kategorie.' },
+        { t: 'Wert (value)', warum: 'GPN-Kategorie.' },
+        { t: 'Macht (power)', warum: 'GPN-Kategorie.' },
+      ] },
+    { id: 'e05-17', typ: 'paare', thema: 'GPN', wichtig: 2, quelle: 'VL04-05, S. 71–72', bildLoesung: 'gpn',
+      frage: 'Ordne jeder GPN-Kategorie ihre Unterformen zu.',
+      paare: [
+        ['Macht', 'Korporativ, kollektiv, institutionell'],
+        ['Wert', 'Schöpfung, Anreicherung, Aneignung'],
+        ['Einbettung', 'Territorial, Netzwerk, gesellschaftlich'],
+      ] },
+    { id: 'e05-18', typ: 'offen', thema: 'GPN', wichtig: 2, punkte: 2, quelle: 'VL04-05, S. 70 und 75',
+      frage: 'Welche Kritik an den Kettenansätzen führte zum GPN-Ansatz?',
+      antwort: `Erstens gilt die Vorstellung einer „Kette“ als zu linear und unterkomplex; Produktion ist ein Netzwerk mit multiskalaren, relationalen Beziehungen. Zweitens konzentrieren sich Kettenansätze auf Unternehmen, während der GPN-Ansatz auch den institutionellen Rahmen und weitere Akteure einbezieht, etwa Staaten, Gewerkschaften, Zivilgesellschaft, Konsument:innen und das Finanzsystem.`,
+      kernpunkte: ['Kette zu linear/unterkomplex → Netzwerk (relational, multiskalar)', 'Nicht nur Unternehmen: institutioneller Rahmen und weitere Akteure (Staat, Gewerkschaften, Zivilgesellschaft)'] },
+    { id: 'e05-19', typ: 'wf', thema: 'GPN', wichtig: 2, quelle: 'VL04-05, S. 70–72',
+      aussage: 'Der GPN-Ansatz betrachtet ausschließlich Unternehmen.',
+      wahr: false, warum: 'Er bezieht ausdrücklich **Nicht-Firmen-Akteure** ein: Staaten und überstaatliche Regulierung, Gewerkschaften, Zivilgesellschaft, Konsument:innen, Finanzsystem.' },
+    { id: 'e05-20', typ: 'karte', thema: 'GPN', wichtig: 2, quelle: 'VL04-05, S. 70',
+      vorne: 'Global Production Network – Definition (Coe et al.)',
+      hinten: `Ein **System, das von einer global bedeutsamen transnationalen Unternehmung koordiniert und kontrolliert wird** und ein großes Netzwerk an internationalen Partnern, Kunden und Organisationen umfasst.` },
+
+    /* ---------- Kritik ---------- */
+    { id: 'e05-21', typ: 'offen', thema: 'Kritik', wichtig: 2, punkte: 3, quelle: 'VL04-05, S. 73',
+      frage: 'Nennen Sie drei „dark sides“, die der GVC-Ansatz laut Werner (2015) vernachlässigt.',
+      antwort: `Der GVC-Ansatz betont die Inklusion in Lieferketten und übersieht dabei periodische Marktkrisen mit ihren Folgen für lokale Arbeitsmärkte, den Zusammenhang zwischen Geschlechterungleichheit und Ausbeutung in Wertschöpfungsketten sowie neue, digital vermittelte Kontrollstrategien gegenüber Zulieferern und Arbeiter:innen. Außerdem vernachlässigt er Fragmentierung, soziale Polarisierung und Enteignung am „südlichen Ende“ sowie negative Umweltfolgen.`,
+      kernpunkte: ['Marktkrisen und Folgen für lokale Arbeitsmärkte', 'Geschlechterungleichheit und Ausbeutung / digitale Kontrolle von Zulieferern und Beschäftigten', 'Polarisierung und Enteignung am „südlichen Ende“ / Umweltfolgen'] },
+    { id: 'e05-22', typ: 'wf', thema: 'Kritik', quelle: 'VL04-05, S. 74',
+      aussage: 'Ketten- und Netzwerkansätze sind nicht staatszentriert und wenden sich gegen einen methodologischen Nationalismus.',
+      wahr: true, warum: 'Sie blicken auf Ströme und (ungleiche) Beziehungen statt auf „Containerräume“.' },
+
+    /* ---------- De-Globalisierung ---------- */
+    { id: 'e05-23', typ: 'offen', thema: 'De-Globalisierung', wichtig: 2, punkte: 3, quelle: 'VL04-05, S. 81',
+      frage: 'Nennen Sie drei Anzeichen einer De-Globalisierung.',
+      antwort: `Der Warenhandel wächst inzwischen langsamer als die Wirtschaft (2011–2019: Wirtschaft +19 %, Handel +3,5 %) – die „Slowbalisation“ begann schon vor Corona. Handelsstreits und aufgekündigte Freihandelsabkommen unter Trump I kamen hinzu. Seit der Pandemie wird über Near- und Re-shoring essentieller Produkte diskutiert, und ein neuer Protektionismus (Inflation Reduction Act 2022, Trump II) fördert gezielt die inländische Produktion.`,
+      kernpunkte: ['Handel wächst langsamer als die Wirtschaft („Slowbalisation“)', 'Handelsstreits, aufgekündigte Freihandelsabkommen (Trump I)', 'Near-/Re-shoring und neuer Protektionismus (Inflation Reduction Act, Trump II)'] },
+    { id: 'e05-24', typ: 'offen', thema: 'De-Globalisierung', punkte: 2, quelle: 'VL04-05, S. 83',
+      frage: 'Was ist mit „Globalization 2.0“ (Poon 2025) gemeint?',
+      antwort: `Gemeint ist keine De-Globalisierung, sondern eine neue Form: Unter Biden wurden Lieferketten per „friend-shoring“ auf politische Verbündete ausgerichtet; die Geoökonomie wird von Sicherheitsinteressen und dem Ziel der Unabhängigkeit von China bestimmt. Unter Trump II wird die Handelspolitik erratisch und wendet sich von regelbasierten Abkommen ab; damit zählen nicht mehr vor allem Konsumentenwohlfahrt oder Standortvorteile wie niedrige Löhne.`,
+      kernpunkte: ['Friend-shoring: Lieferketten über politische Verbündete, Sicherheitsinteressen, Unabhängigkeit von China', 'Abkehr von regelbasierter Handelspolitik (Trump II); nicht mehr nur Wohlfahrts- und Standortlogik'] },
+    { id: 'e05-25', typ: 'reihe', thema: 'De-Globalisierung', wichtig: 2, quelle: 'VL04-05, S. 82',
+      frage: 'Bring die Phasen der Globalisierung nach Coe in die richtige Reihenfolge.',
+      schritte: ['Internationale Arbeitsteilung: imperiale Staaten, Handel mit Rohstoffen und Fertigwaren', 'Neue internationale Arbeitsteilung: TNCs, FDI in arbeitsintensiven Industrien', 'Globale Arbeitsteilung (GPN-Ära): lead firms, China als Produktions-Hub', '„Slowbalisation“: nationalistische Staaten, Makro-Regionalisierung'],
+      erklaerung: '1850–1950 · 1950–1990 · 1990–2010 · seit 2010.' },
+    { id: 'e05-26', typ: 'mc', thema: 'De-Globalisierung', wichtig: 2, quelle: 'VL04-05, S. 84',
+      frage: 'Wie lautet die vorläufige Einschätzung der Vorlesung zur De-Globalisierung?',
+      optionen: [
+        { t: 'Globalisierung ist ungebrochen; sie verlangsamt sich und Produktionsnetze werden neu konfiguriert.', r: true, warum: 'Keine Umkehr, sondern Verlangsamung, de-coupling, re-shoring – „GVCs are here to stay“.' },
+        { t: 'Die Globalisierung ist seit der Pandemie beendet.', warum: 'Laut Fazit gibt es keine Umkehr.' },
+        { t: 'Die Neukonfiguration macht die Wirtschaft sicher fairer und resilienter.', warum: 'Das hält die Vorlesung für sehr fraglich.' },
+        { t: 'Globale Wertschöpfungsketten werden durch nationale Produktion ersetzt.', warum: 'Nur in einzelnen Regionen und Produktgruppen gibt es Re-shoring.' },
+      ] },
+    { id: 'e05-27', typ: 'karte', thema: 'De-Globalisierung', quelle: 'VL04-05, S. 81',
+      vorne: '„Slowbalisation“',
+      hinten: `Begriff des Economist (2019): Der Welthandel wächst schon **vor Corona** kaum noch – langsamer als die Wirtschaft (2011–2019: Wirtschaftsleistung +19 %, Handel +3,5 %).` },
+  ],
+});
+//# sourceURL=content/wirtschaftsgeographie/e05.js
+</script>
+<script>
 /* e06 Regionalentwicklung: raumwirtschaftliche Modelle – VL05-06 Teil 3.1, Abschnitte 1–2 (Rosol, 21.05.2026).
    Analyse: quellen/wirtschaftsgeographie/analyse/VL05-06-Regionale-Entwicklung-und-Standort.md (PDF-Seiten 2–18) */
 Lerni.einheit('wirtschaftsgeographie', {
@@ -2784,6 +3519,129 @@ Lerni.grafik('wirtschaftsgeographie', 'exportbasis', {
       <text x="36" y="136">Verkehrsanbindung · Steuern</text><text x="36" y="150">Flächen · Arbeitskosten</text><text x="36" y="164">Nähe zu Zulieferern · Absatzmarkt</text>
       <text x="150" y="50">Image · soziales Klima · Freizeitwert</text><text x="170" y="66">Wohnwert · Kulturangebot</text><text x="190" y="82">Umweltqualität · Schulen</text><text x="210" y="98">Forschung, Ausbildung</text>
     </g>
+  </svg>`,
+  });
+})();
+
+/* ---------- e03–e05 Globalisierung ---------- */
+(() => {
+  const K = 'wirtschaftsgeographie';
+
+  Lerni.grafik(K, 'weltordnung', {
+    titel: 'Weltwirtschaftsordnung seit 1944',
+    text: 'Nach VL04-05, S. 34–36: vom Bretton-Woods-System mit festen Wechselkursen zum neoliberalen Washington Consensus und zur WTO.',
+    svg: `<svg viewBox="0 0 340 214" role="img" aria-label="Zeitstrahl von Bretton Woods 1944 bis zur WTO 1995">
+    <line class="s1 w" x1="22" y1="20" x2="22" y2="200"/>
+    <g class="pfp"><circle cx="22" cy="24" r="6"/><circle cx="22" cy="64" r="6"/><circle cx="22" cy="104" r="6"/><circle cx="22" cy="144" r="6"/><circle cx="22" cy="186" r="6"/></g>
+    <g class="k">
+      <text x="36" y="22"><tspan class="b">1944 Bretton Woods</tspan> (44 Länder, Führung USA)</text>
+      <text x="36" y="36">Weltbank (IBRD) · IWF · feste Wechselkurse,</text><text x="36" y="49">Goldbindung, Leitwährung US-Dollar</text>
+      <text x="36" y="68"><tspan class="b">1948 GATT</tspan> – Welthandelsordnung,</text><text x="36" y="81">Zollsenkungsrunden</text>
+      <text x="36" y="108"><tspan class="b">1971</tspan> USA kündigen die Gold-Einlösung des Dollars</text><text x="36" y="121">→ Ende der festen Wechselkurse</text>
+      <text x="36" y="148"><tspan class="b">ab 1980er Washington Consensus</tspan></text><text x="36" y="161">Kredite nur mit Strukturanpassungsprogrammen:</text><text x="36" y="174">Sparpolitik, Marktöffnung, Privatisierung</text>
+      <text x="36" y="190"><tspan class="b">1995 WTO</tspan> (166 Mitglieder): GATT · GATS · TRIPS</text>
+    </g>
+  </svg>`,
+  });
+
+  Lerni.grafik(K, 'dunning', {
+    titel: 'Motive ausländischer Direktinvestitionen (Dunning)',
+    text: 'VL04-05, S. 14 und 42: vier Motive mit den Beispielen aus der Vorlesung.',
+    svg: `<svg viewBox="0 0 340 196" role="img" aria-label="Vier Felder mit den Motiven nach Dunning">
+    <rect class="f2" x="4" y="4" width="164" height="90" rx="10"/><rect class="f1" x="172" y="4" width="164" height="90" rx="10"/>
+    <rect class="f3" x="4" y="100" width="164" height="90" rx="10"/><rect class="f4" x="172" y="100" width="164" height="90" rx="10"/>
+    <g class="k">
+      <text class="b" x="14" y="24">natural resource seeking</text><text x="14" y="42">Zugang zu Rohstoffen,</text><text x="14" y="56">Beschaffung</text><text class="m" x="14" y="80">z. B. land grabbing</text>
+      <text class="b" x="182" y="24">market seeking</text><text x="182" y="42">Absatzmärkte erschließen,</text><text x="182" y="56">Marktposition</text><text class="m" x="182" y="74">z. B. dt. Autoindustrie</text><text class="m" x="182" y="87">in den USA</text>
+      <text class="b" x="14" y="120">efficiency seeking</text><text x="14" y="138">Kostenvorteile (Löhne,</text><text x="14" y="152">Umweltauflagen)</text><text class="m" x="14" y="170">z. B. dt. Bekleidungs-</text><text class="m" x="14" y="183">industrie in Asien</text>
+      <text class="b" x="182" y="120">strategic asset seeking</text><text x="182" y="138">Übernahmen für Zugang</text><text x="182" y="152">zu Wissen und Märkten</text><text class="m" x="182" y="176">z. B. Know-how in F&amp;E</text>
+    </g>
+  </svg>`,
+  });
+
+  Lerni.grafik(K, 'regulation', {
+    titel: 'Regulationstheorie: Akkumulationsregime und Regulationsweise',
+    text: 'Nach VL04-05, S. 43 (Kulke nach Bathelt; Lipietz 1985): Wirtschaftliche Akkumulation und gesellschaftliche Regulation bedingen einander.',
+    svg: `<svg viewBox="0 0 340 204" role="img" aria-label="Zwei Kästen Akkumulationsregime und Regulationsweise mit Wechselwirkung">
+    <rect class="f2" x="4" y="4" width="150" height="170" rx="10"/><rect class="f1" x="186" y="4" width="150" height="170" rx="10"/>
+    <g class="k">
+      <text class="b" x="14" y="24">Akkumulationsregime</text><text class="m" x="14" y="38">„Wachstumsstruktur“</text>
+      <text x="14" y="60">Entsprechung von</text><text x="14" y="74">Produktion (Kapital,</text><text x="14" y="88">Branchen, Normen)</text><text x="14" y="102">und gesellschaftlichem</text><text x="14" y="116">Verbrauch (Konsum)</text>
+      <text class="m" x="14" y="142">z. B. Massenproduktion</text><text class="m" x="14" y="156">+ Massenkonsum</text>
+      <text class="b" x="196" y="24">Regulationsweise</text><text class="m" x="196" y="38">„Koordinierung“</text>
+      <text x="196" y="60">Institutionen, Netze,</text><text x="196" y="74">Normen, Gesetze,</text><text x="196" y="88">Machtverhältnisse,</text><text x="196" y="102">Gepflogenheiten – sie</text><text x="196" y="116">sichern die Vereinbarkeit</text>
+      <text class="m" x="196" y="142">z. B. Staat, Gewerk-</text><text class="m" x="196" y="156">schaften, Verbände</text>
+    </g>
+    <line x1="158" y1="80" x2="180" y2="80"/><polygon class="pf" points="184,80 176,76 176,84"/>
+    <line x1="182" y1="100" x2="160" y2="100"/><polygon class="pf" points="156,100 164,96 164,104"/>
+    <text class="k" x="170" y="194" text-anchor="middle">Fordismus → Krise → Post-Fordismus: neues Regime braucht neue Regulation</text>
+  </svg>`,
+  });
+
+  Lerni.grafik(K, 'spatialfix', {
+    titel: 'Harvey: Überakkumulation und spatio-temporal fix',
+    text: 'VL04-05, S. 48–51: Räumliche und zeitliche „Lösungen“ verschieben die Krise nur – einen dauerhaften fix gibt es nicht.',
+    svg: `<svg viewBox="0 0 340 236" role="img" aria-label="Kreislauf aus Überakkumulation, spatial fix, temporal fix und neuer Krise">
+    <rect class="f4" x="100" y="6" width="140" height="44" rx="10"/><text class="k b" x="170" y="24" text-anchor="middle">Überakkumulation</text><text class="k" x="170" y="39" text-anchor="middle">Kapital und Arbeit im Überschuss</text>
+    <rect class="f1" x="4" y="84" width="150" height="64" rx="10"/><text class="k b" x="14" y="102">spatial fix</text><text class="k" x="14" y="117">geographische Expansion:</text><text class="k" x="14" y="130">neue Märkte, Verlagerung,</text><text class="k" x="14" y="143">billige Arbeit</text>
+    <rect class="f2" x="186" y="84" width="150" height="64" rx="10"/><text class="k b" x="196" y="102">temporal fix</text><text class="k" x="196" y="117">Rückfluss in die Zukunft</text><text class="k" x="196" y="130">verschoben: Infrastruktur,</text><text class="k" x="196" y="143">Immobilien, Bildung</text>
+    <rect class="f3" x="90" y="170" width="160" height="40" rx="10"/><text class="k b" x="170" y="187" text-anchor="middle">nächste Krise</text><text class="k" x="170" y="201" text-anchor="middle">z. B. Finanzialisierung → 2008</text>
+    <line x1="130" y1="50" x2="96" y2="80"/><polygon class="pf" points="92,84 94,74 101,80"/>
+    <line x1="210" y1="50" x2="244" y2="80"/><polygon class="pf" points="248,84 239,80 246,74"/>
+    <line x1="80" y1="148" x2="110" y2="168"/><polygon class="pf" points="114,171 104,170 108,162"/>
+    <line x1="260" y1="148" x2="230" y2="168"/><polygon class="pf" points="226,171 232,162 236,170"/>
+    <text class="k b" x="170" y="228" text-anchor="middle">↺ und wieder von vorn: Es gibt keinen dauerhaften fix.</text>
+  </svg>`,
+  });
+
+  Lerni.grafik(K, 'smile', {
+    titel: 'Smiling curve am Beispiel Apple',
+    text: 'Nach VL04-05, S. 68 (MacKinnon/Cumbers nach Grimes/Sun): Die meiste Wertschöpfung liegt am Anfang und Ende der Kette, die wenigste in der Fertigung.',
+    svg: `<svg viewBox="0 0 340 204" role="img" aria-label="U-förmige Kurve der Wertschöpfung entlang der Kette">
+    <line x1="24" y1="10" x2="24" y2="150"/><line x1="24" y1="150" x2="334" y2="150"/>
+    <text class="k m" transform="translate(16 120) rotate(-90)">Wertschöpfung</text>
+    <path class="s1 w" d="M36 30 C90 120 140 138 178 138 C216 138 266 120 322 30"/>
+    <g class="pfp"><circle cx="46" cy="44" r="4"/><circle cx="178" cy="138" r="4"/><circle cx="312" cy="44" r="4"/><circle cx="110" cy="112" r="3.5"/><circle cx="246" cy="112" r="3.5"/></g>
+    <g class="k">
+      <text x="54" y="36" class="b">F&amp;E, Design,</text><text x="54" y="49">Supply-Chain-Management</text><text class="m" x="54" y="62">(Apple, USA)</text>
+      <text x="304" y="36" class="b" text-anchor="end">Marketing, Marke,</text><text x="304" y="49" text-anchor="end">Kundendienst</text><text class="m" x="304" y="62" text-anchor="end">(Apple, USA)</text>
+      <text x="178" y="118" text-anchor="middle" class="b">Fertigung/Montage</text><text class="m" x="178" y="131" text-anchor="middle">(Hon Hai, Pegatron …)</text>
+      <text x="84" y="104">Bauteile</text>
+    </g>
+    <line x1="24" y1="172" x2="326" y2="172"/><polygon class="pf" points="334,172 326,168 326,176"/>
+    <text class="k m" x="24" y="190">Beginn der Kette</text><text class="k m" x="330" y="190" text-anchor="end">Ende der Kette</text>
+  </svg>`,
+  });
+
+  Lerni.grafik(K, 'governance', {
+    titel: 'Governance-Typen globaler Wertschöpfungsketten (Gereffi et al. 2005)',
+    text: 'VL04-05, S. 69: Von Markt zu Hierarchie nehmen explizite Koordination und Machtasymmetrie zu. Bestimmt wird der Typ durch Komplexität der Transaktionen, Kodifizierbarkeit des Wissens und Fähigkeiten der Zulieferer.',
+    svg: `<svg viewBox="0 0 340 150" role="img" aria-label="Skala von Markt über modular, relational, abhängig bis Hierarchie">
+    <g class="k b" text-anchor="middle">
+      <rect class="f2" x="4" y="16" width="62" height="40" rx="8"/><text x="35" y="40">Markt</text>
+      <rect class="f2" x="72" y="16" width="62" height="40" rx="8"/><text x="103" y="40">Modular</text>
+      <rect class="f3" x="140" y="16" width="62" height="40" rx="8"/><text x="171" y="40">Relational</text>
+      <rect class="f4" x="208" y="16" width="62" height="40" rx="8"/><text x="239" y="34">Abhängig</text><text class="m" x="239" y="48">(captive)</text>
+      <rect class="f4" x="276" y="16" width="60" height="40" rx="8"/><text x="306" y="40">Hierarchie</text>
+    </g>
+    <line class="s1 w" x1="10" y1="80" x2="324" y2="80"/><polygon class="pfp" points="334,80 322,74 322,86"/>
+    <text class="k" x="10" y="100">niedrig</text><text class="k" x="330" y="100" text-anchor="end">hoch</text>
+    <text class="k b" x="170" y="100" text-anchor="middle">explizite Koordination, Machtasymmetrie</text>
+    <text class="k m" x="170" y="126" text-anchor="middle">Lead firm: koordiniert und kontrolliert Abläufe in</text><text class="k m" x="170" y="140" text-anchor="middle">mehreren Ländern, auch ohne Eigentum (Dicken)</text>
+  </svg>`,
+  });
+
+  Lerni.grafik(K, 'gpn', {
+    titel: 'Analyserahmen Global Production Networks',
+    text: 'VL04-05, S. 71–72 (Coe et al. 2008; Dicken 2011): drei zentrale Kategorien mit ihren Unterformen.',
+    svg: `<svg viewBox="0 0 340 214" role="img" aria-label="Drei Kategorien Macht, Wert, Einbettung">
+    <circle class="f1" cx="100" cy="72" r="62"/><circle class="f2" cx="240" cy="72" r="62"/><circle class="f3" cx="170" cy="146" r="62"/>
+    <g class="k" text-anchor="middle">
+      <text class="b g" x="92" y="56">Macht</text><text x="92" y="72">korporativ</text><text x="92" y="86">kollektiv</text><text x="92" y="100">institutionell</text>
+      <text class="b g" x="248" y="56">Wert</text><text x="248" y="72">Schöpfung</text><text x="248" y="86">Anreicherung</text><text x="248" y="100">Aneignung</text>
+      <text class="b g" x="170" y="160">Einbettung</text><text x="170" y="176">territorial</text><text x="170" y="190">Netzwerk</text><text x="170" y="204">gesellschaftlich</text>
+    </g>
+    <text class="k m" x="170" y="118" text-anchor="middle">GPN</text>
   </svg>`,
   });
 })();
