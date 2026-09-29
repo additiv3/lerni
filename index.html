@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- LERNI – gebaut 28.09.2026, 14:20. Nicht direkt öffnen: py tools/build.py setzt CSS, Code und Inhalte ein und schreibt dist/index.html -->
+<!-- LERNI – gebaut 29.09.2026, 21:27. Nicht direkt öffnen: py tools/build.py setzt CSS, Code und Inhalte ein und schreibt dist/index.html -->
 <html lang="de">
 <head>
   <meta charset="utf-8">
@@ -230,6 +230,24 @@ details.skript .btn { margin: 0 16px 16px; }
 .md ul, .md ol { margin: 0 0 10px; padding-left: 22px; }
 .md li { margin: 3px 0; }
 .md h4 { margin: 14px 0 6px; font-size: 16px; }
+/* Eigene Skizzen (Lerni.grafik): Farben über Tokens, damit hell und dunkel passen. Antippen vergrößert. */
+.grafik { margin: 12px 0; padding: 10px; background: var(--card2); border-radius: 12px; cursor: zoom-in; }
+.grafik .gsvg svg { display: block; width: 100%; height: auto; max-height: 440px; stroke: var(--text); stroke-width: 1.4; fill: none; font-size: 12.5px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
+.grafik svg text { fill: var(--text); stroke: none; }
+.grafik svg .k { font-size: 10.5px; } .grafik svg .g { font-size: 15px; } .grafik svg .b { font-weight: 700; }
+.grafik svg .m, .grafik svg .m text { fill: var(--muted); } .grafik svg .tp, .grafik svg .tp text { fill: var(--pri); } .grafik svg .to, .grafik svg .to text { fill: var(--ok); }
+.grafik svg .tm, .grafik svg .tm text { fill: var(--mid); } .grafik svg .tb, .grafik svg .tb text { fill: var(--bad); }
+.grafik svg .f0 { fill: var(--card); } .grafik svg .f1 { fill: var(--pri-soft); } .grafik svg .f2 { fill: var(--ok-soft); } .grafik svg .f3 { fill: var(--mid-soft); } .grafik svg .f4 { fill: var(--bad-soft); } .grafik svg .fl { fill: var(--line); }
+.grafik svg .s1 { stroke: var(--pri); } .grafik svg .s2 { stroke: var(--ok); } .grafik svg .s3 { stroke: var(--mid); } .grafik svg .s4 { stroke: var(--bad); } .grafik svg .sm { stroke: var(--muted); } .grafik svg .s0 { stroke: none; }
+.grafik svg .d { stroke-dasharray: 5 4; } .grafik svg .w { stroke-width: 2.6; } .grafik svg .n { stroke-width: .9; }
+.grafik svg .pf { fill: var(--text); stroke: none; } .grafik svg .pfp { fill: var(--pri); stroke: none; }
+.grafik figcaption { margin-top: 8px; font-size: 14px; color: var(--muted); line-height: 1.35; }
+.grafik figcaption b { color: var(--text); }
+.glupe { position: fixed; inset: 0; z-index: 45; background: var(--bg); overflow: auto; padding: calc(var(--safe-t) + 56px) 12px calc(var(--safe-b) + 20px); animation: dlgin .15s; }
+.glupe .grafik { cursor: zoom-out; max-width: 1100px; margin: 0 auto; }
+.glupe .grafik .gsvg svg { max-height: none; }
+.glupe .ib { position: fixed; top: calc(var(--safe-t) + 8px); right: 12px; z-index: 46; background: var(--card); border-radius: 50%; }
+.glupe .ghint { text-align: center; color: var(--muted); font-size: 13px; margin-top: 10px; }
 mark { background: color-mix(in srgb, var(--mid) 28%, transparent); color: inherit; border-radius: 3px; padding: 0 2px; }
 code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .9em; background: var(--card2); border-radius: 5px; padding: 1px 5px; }
 .math { font-family: "Times New Roman", Georgia, serif; font-style: italic; font-size: 1.05em; white-space: nowrap; }
@@ -395,7 +413,7 @@ details.card[open] summary { margin-bottom: 10px; }
 </head>
 <body>
   <noscript>Lerni braucht JavaScript.</noscript>
-<script>const LERNI_BUILD = {"id": "fce9291-20260928142047", "stamp": "28.09.2026, 14:20", "commit": "fce9291"};</script>
+<script>const LERNI_BUILD = {"id": "5548a36-20260929212801", "stamp": "29.09.2026, 21:27", "commit": "5548a36"};</script>
 <script>
 /* LERNI – Hilfsfunktionen: DOM, Datum, Text, Zufall.
    Läuft auch in Node (tools/check.js): beim Laden nichts am DOM anfassen. */
@@ -563,9 +581,14 @@ const STUFEN = ['', 'Erkennen', 'Erinnern', 'Erklären'];
 const Lerni = {
   kurse: [], kursById: {}, fragen: {},            // fragen: qid → Frage
   _roh: [],                                       // Einheiten in Ladereihenfolge, verknüpft in fertig()
+  grafiken: {},                                   // 'kurs:id' → { titel, svg, text } – eigene Skizzen (SVG), siehe docs/INHALTE.md
 
   kurs(def) { this.kurse.push(def); this.kursById[def.id] = def; def.einheitenListe = []; },
   einheit(kursId, def) { this._roh.push({ kursId, def }); },
+  grafik(kursId, id, def) { this.grafiken[kursId + ':' + id] = def; },
+  grafikVon(kursId, id) { return this.grafiken[kursId + ':' + id]; },
+  /* Grafik-Namen eines Felds (bild: 'x' oder ['x', 'y']) als Liste */
+  bilder(v) { return v == null || v === '' ? [] : Array.isArray(v) ? v : [v]; },
 
   /* Nach dem Laden aller Inhaltsdateien: Einheiten den Kursen zuordnen, Fragen verknüpfen und nummerieren */
   fertig() {
@@ -634,7 +657,8 @@ const Lerni = {
         if (eids[e.id]) F(we, 'Einheit doppelt'); eids[e.id] = 1;
         if (leer(e.titel)) F(we, 'titel fehlt');
         if (!Array.isArray(e.fragen)) { F(we, 'fragen muss eine Liste sein'); continue; }
-        for (const s of e.skript || []) { if (leer(s.titel) || leer(s.text)) F(we, 'Skript-Abschnitt ohne titel oder text'); }
+        const bildOk = (w, v) => { for (const b of this.bilder(v)) if (!this.grafikVon(k.id, b)) F(w, 'Grafik „' + b + '“ gibt es nicht (Lerni.grafik fehlt)'); };
+        for (const s of e.skript || []) { if (leer(s.titel) || leer(s.text)) F(we, 'Skript-Abschnitt ohne titel oder text'); bildOk(we + ' / Skript ' + s.titel, s.bild); }
         for (const f of e.fragen) {
           const w = we + ' / ' + (f.id || '(ohne id)');
           if (!/^[A-Za-z0-9._-]+$/.test(f.id || '')) { F(w, 'id fehlt oder enthält Sonderzeichen'); continue; }
@@ -646,10 +670,19 @@ const Lerni = {
           if (![1, 2, 3].includes(f.stufe)) F(w, 'stufe muss 1, 2 oder 3 sein');
           if (![1, 2, 3].includes(f.wichtig)) F(w, 'wichtig muss 1, 2 oder 3 sein');
           if (leer(f.thema)) H(w, 'thema fehlt (für Lernpfad und Mischen)');
+          bildOk(w, f.bild); bildOk(w, f.bildLoesung);
           this._pruefeTyp(f, w, F, H);
         }
       }
       for (const id of entfernt) if (!/^[A-Za-z0-9._-]+$/.test(id)) F(wk, 'kurs.entfernt enthält ungültige id ' + id);
+    }
+    for (const [key, g] of Object.entries(this.grafiken)) {
+      const w = 'Grafik ' + key;
+      if (!this.kursById[key.split(':')[0]]) F(w, 'Kurs fehlt');
+      if (!g || typeof g.svg !== 'string' || !/^\s*<svg[\s>]/.test(g.svg) || !/<\/svg>\s*$/.test(g.svg)) F(w, 'svg muss mit <svg beginnen und mit </svg> enden');
+      else if (/<script|\son\w+\s*=|javascript:|<foreignObject/i.test(g.svg)) F(w, 'svg enthält Skript oder Ereignis-Attribute');
+      else if (!/viewBox=/.test(g.svg)) F(w, 'svg braucht viewBox (sonst skaliert es nicht)');
+      if (!g || leer(g.titel)) H(w, 'titel fehlt');
     }
     return { fehler, hinweise };
   },
@@ -708,6 +741,7 @@ Lerni.kurs({
   einheiten: ['e01', 'e02', 'e03'],
   entfernt: [],                                   // IDs gelöschter Fragen – nie wiederverwenden
   reihenfolge: 99,
+  versteckt: true,                                // echter Kurs ist da (Wirtschaftsgeographie)
 });
 //# sourceURL=content/demo/kurs.js
 </script>
@@ -1005,6 +1039,415 @@ Hängst du an einer Aufgabe: Stichpunkte notieren, weitergehen, später zurückk
   ],
 });
 //# sourceURL=content/demo/e03.js
+</script>
+<script>
+/* Kurs Wirtschaftsgeographie (JMU Würzburg, SoSe 2026, Klausur 08.10.2026).
+   Grundlage: Vorlesungsfolien VL 2–11 und Musterklausur WS 2023/24 (quellen/wirtschaftsgeographie/, Analyse in analyse/).
+   Verbindliche Regeln: quellen/wirtschaftsgeographie/analyse/01-Entscheidungen.md.
+   Quelle je Frage: PDF-Seite ('VL03, S. 14'); bei A4-PDFs enthält eine Seite zwei Folien.
+   e15 ist die gekennzeichnete Zusatz-Einheit (Themen der Musterklausur, nicht in den Folien 2026). */
+Lerni.kurs({
+  id: 'wirtschaftsgeographie',
+  name: 'Wirtschaftsgeographie',
+  kurz: 'WiGeo',
+  beschreibung: 'Einführung in die Wirtschaftsgeographie (JMU Würzburg, SoSe 2026): Kurzskripte und Fragen zu VL 2–11, dazu Themen der Musterklausur.',
+  klausur: '2026-10-08',
+  einheiten: ['e01', 'e02', 'e03', 'e04', 'e05', 'e06', 'e07', 'e08', 'e09', 'e10', 'e11', 'e12', 'e13', 'e14', 'e15'],
+  entfernt: [],                                   // IDs gelöschter Fragen – nie wiederverwenden
+  reihenfolge: 1,
+});
+//# sourceURL=content/wirtschaftsgeographie/kurs.js
+</script>
+<script>
+/* e01 Einführung: Begriff, Abgrenzung, Denkstile – VL03 (Rosol, 30.04.2026). Analyse: quellen/wirtschaftsgeographie/analyse/VL03-Einfuehrung.md */
+Lerni.einheit('wirtschaftsgeographie', {
+  id: 'e01',
+  titel: 'Einführung: Begriff, Abgrenzung, Denkstile',
+  quelle: 'VL03 Einführung (Rosol), PDF-Seiten 6–36',
+  skript: [
+    {
+      thema: 'Gegenstand', titel: 'Was ist Wirtschaftsgeographie?', bild: 'kondratieff',
+      text: `Die Wirtschaftsgeographie (WiGeo) ist ein **sozialwissenschaftlicher Teilbereich der Geographie**. Sie untersucht die **Wechselwirkungen von Raum und Wirtschaft**: die räumliche Ordnung und Organisation der Wirtschaft, ökonomische Prozesse aus **räumlicher Perspektive**.
+
+Warum eine Geographie der Wirtschaft? (Bathelt/Glückler)
+- Ressourcen, Arbeitskräfte, Wissen, Kapital und Konsument:innen sind **geographisch ungleich verteilt**.
+- Keine Region hat sich kontinuierlich entwickelt: Wachstum ist **zeitlich unbeständig und räumlich unterschiedlich**.
+- Der geographische Kontext prägt Lebensbedingungen – und damit Chancen.
+
+Typische Fragen: Warum wachsen manche Orte, während andere schrumpfen? Warum verdient jemand in New York ein Vielfaches eines Menschen im ländlichen Sambia? Warum lohnt sich eine Jeans mit 50.000 km Produktionsweg?
+
+Makroperspektive: Die **langen Wellen (Kondratieff)** zeigen, dass Schwankungen der Weltkonjunktur mit der **Dominanz unterschiedlicher Regionen** und Leitindustrien einhergehen.
+
+==WiGeo fragt nach der räumlichen Dimension wirtschaftlicher Beziehungen – und warum Entwicklung räumlich ungleich verläuft.==`,
+    },
+    {
+      thema: 'Definitionen', titel: 'Definitionen und Leitfragen',
+      text: `Drei Definitionen sollte man fast wörtlich können:
+- **Braun/Schulz (2012):** WiGeo ist eine **Teildisziplin der Geographie**, die sich aus **räumlicher Perspektive** auf **unterschiedlichen Maßstabsebenen** mit der **Beschreibung, Analyse und Erklärung** des **Produzierens, Tauschens, Verteilens und Konsumierens** von Gütern und Dienstleistungen beschäftigt – samt den **sozio-institutionellen Kontexten** und den **Implikationen für die natürliche Umwelt**.
+- **Bathelt/Glückler (2018):** Beobachtung und Erklärung **zeitlich und räumlich situierten ökonomischen Handelns**, um kontextabhängig institutionalisierte, lokalisierbare, **ungleich verteilte ökonomische Beziehungen** zu erfassen.
+- **MacKinnon/Cumbers (2018):** konkrete Fragen zur **Lokalisierung und Verteilung** wirtschaftlicher Aktivitäten, zur Rolle **ungleicher geographischer Entwicklung** und zu Prozessen der **lokalen und regionalen Entwicklung**.
+
+**Coe/Kelly/Yeung** fragen: (1) Wie sind Aktivitäten **ungleich über den Raum verteilt**? (2) Wie prägen die **Merkmale bestimmter Orte** die Wirtschaft? (3) Wie sind Aktivitäten an verschiedenen Orten **miteinander verbunden**? (4) Wie zeigt sich **Macht über den Raum** (Territorien, Staat)?
+
+Arbeitsweise: Was? Wo? Wann? → Wie? Warum? → Welche Folgen?
+
+==Braun/Schulz: räumliche Perspektive · Maßstabsebenen · Produzieren, Tauschen, Verteilen, Konsumieren · Kontexte und Umwelt.==`,
+    },
+    {
+      thema: 'Abgrenzung', titel: 'Abgrenzung zu den Wirtschaftswissenschaften',
+      text: `Die Wirtschaftswissenschaften arbeiten mathematisch-modellierend und suchen kontext- und empirieunabhängige, statische Gesetzmäßigkeiten; die **Neoklassik dominiert**. Sie unterstellen eine **unterschiedslose, „laborförmige“ Welt**. Die WiGeo sieht dagegen eine Welt voller **räumlicher Unterschiede und Ungleichheit** und will sie erklären.
+
+Vergleich nach MacKinnon/Cumbers (Ökonomie ↔ WiGeo):
+- Wirtschaft: **autonome Sphäre** mit eigenen „Gesetzen“ ↔ **eingebettet** in soziale, politische, kulturelle Beziehungen
+- Grundlage: **rationales Handeln** eigeninteressierter Individuen ↔ Individuen und Gruppen in **bestimmten geographischen Kontexten**
+- Geographie: **ignoriert**, überall wirken dieselben Kräfte ↔ **grundlegend**
+- Ungleiche Entwicklung: **vorübergehend**, Marktkräfte beseitigen sie ↔ **dauerhaft und tief verwurzelt**
+
+Die WiGeo war zunächst unabhängig von der Ökonomie (Länderkunde), näherte sich ihr ab den 1960ern an (quantitative Revolution) und ist heute **empirisch, kontextbetont und pluralistisch** (auch qualitative Methoden). Sie nutzt orthodoxe und heterodoxe Theorien und gilt selbst als Teil der heterodoxen Wirtschaftswissenschaften.
+
+==Mainstream-Ökonomie: Raum egal, Ungleichheit vorübergehend. WiGeo: Raum grundlegend, Ungleichheit dauerhaft.==`,
+    },
+    {
+      thema: 'Gliederung', titel: 'Gliederung der Wirtschaftsgeographie',
+      text: `Drei Gliederungen (VL03, S. 18–19):
+1. **Nach Sektoren**, angelehnt an die **Drei-Sektoren-Hypothese (Jean Fourastié)**: primär = Urproduktion (Land-, Forstwirtschaft, Fischerei, Bergbau) → Agrargeographie · sekundär = Sachgüterproduktion (Industrie, Bau, produzierendes Handwerk) → Industriegeographie · tertiär = Dienstleistungen (Handel, Banken, Verkehr, Bildung, Kultur, Gesundheit) → Dienstleistungs-, Handels-, Verkehrs-, Tourismusgeographie.
+2. **Einzelwirtschaftlich (mikro)**: der einzelne Betrieb, seine Standortfaktoren und Standortmuster · **gesamtwirtschaftlich (makro)**: Aktivitäten mit ihren Beziehungs- und Standortmustern in einem Wirtschaftsraum (Staat, Industrieregion).
+3. **Nach theoretischen Ansätzen** (siehe Denkstile).
+
+Die strenge **Sektorgliederung ist immer weniger zeitgemäß**: Tätigkeiten innerhalb von Großunternehmen lassen sich statistisch schwer zuordnen, und Produktionssysteme werden **immer komplexer und sektorübergreifend**. Neuere Lehrbücher vermeiden sie. Wichtig bleibt der **sektorale Strukturwandel**.
+
+==Sektoren, mikro/makro, Theorien – die Sektorgliederung verliert an Bedeutung.==`,
+    },
+    {
+      thema: 'Entwicklung', titel: 'Entwicklung der Disziplin',
+      text: `- **19. Jh.:** eng mit der **kolonialen Expansion** verbunden – Geographie als Dienstleister des imperialen Projekts: Inventarisierung von Ressourcen (**Produktenkunde**), Geographie des Welthandels (**Karl Andree**); naturdeterministisch, teils rassistisch.
+- **Geodeterminismus (Friedrich Ratzel):** Naturgegebenheiten bestimmen menschliches Handeln weitgehend einseitig.
+- **Wechselwirkungsprinzip (Rudolf Lütgens):** Der wirtschaftende Mensch gestaltet die Natur zugleich um; ersetzt ab den 1920ern teilweise den Geodeterminismus.
+- **Alfred Hettner** integriert die WiGeo in die **Länder- und Landschaftskunde**: Wirtschaft als ein Geofaktor unter vielen, Beschreibung der sichtbaren Kulturlandschaft. Im deutschsprachigen Raum hielt sich das länger als im englisch- und französischsprachigen.
+- **Bis zum II. Weltkrieg** außerdem: Wirtschaftsraum/Wirtschaftslandschaft, erste Standorttheorien (Christaller, Lösch).
+- **Kritik an der Länderkunde (Geographentag Kiel 1969)** → **quantitative Wende**: vom **idiographischen** Interesse (Besonderheiten einzelner Räume) zum **nomothetischen** (allgemeingültige Gesetzmäßigkeiten). In den USA: spatial analysis, regional science (**Walter Isard**).
+- **Seit 1980/90ern:** Globalisierungsforschung und **New (regional) Economic Geography** (Scott, Storper, Cluster) – nicht zu verwechseln mit den **Geographical Economics** von **Krugman**, die Raum in die Wirtschaftswissenschaften einbeziehen.
+- **21. Jh.: Pluralisierung** der Methoden und Ansätze.
+
+==Länderkunde (idiographisch) → Kiel 1969 → Raumwirtschaftslehre (nomothetisch) → Pluralisierung.==`,
+    },
+    {
+      thema: 'RWL', titel: 'Raumwirtschaftslehre', bild: 'raumsystem',
+      text: `Nach 1969 wird die **Raumwirtschaftslehre (RWL)** dominant: „Wissenschaft von der räumlichen Ordnung und der räumlichen Organisation der Wirtschaft“ (Schätzl). Sie ist ein geschlossenes, stark an den Wirtschaftswissenschaften orientiertes Theoriegebäude mit dem Menschenbild des **homo oeconomicus** (vollständig rational, perfekt informiert, nutzenmaximierend) und nähert sich der Regionalökonomie an.
+
+Ein **ökonomisches Raumsystem** hat **drei Systemelemente**, die wechselseitig voneinander abhängen (Liefner/Schätzl):
+1. **Struktur:** Verteilung ökonomischer Aktivitäten (Produktion, Konsum) auf Standorte (**Standortstruktur**) bzw. Regionen (**Regionalstruktur**).
+2. **Interaktion:** Bewegung mobiler Produktionsfaktoren (Arbeit, Kapital, Wissen), Güter und Dienstleistungen zwischen Standorten bzw. Regionen.
+3. **Prozess:** Veränderung von Standort- und Regionalstruktur als Folge standort- bzw. regionsinterner Wachstumsdeterminanten.
+
+Drei **Hauptbeiträge**: Standorttheorien · räumliche Mobilitätstheorien · regionale Wachstums- und Entwicklungstheorien. Der **Akteursgruppenansatz** (Kulke) entwickelt die RWL weiter: Anbieter, Nachfrager und Planer/Politiker prägen Standorte und Raumsysteme.
+
+==Struktur – Interaktion – Prozess. „Relationalität“ gehört nicht dazu!==`,
+    },
+    {
+      thema: 'Relational', titel: 'Relationale Wirtschaftsgeographie',
+      text: `Die **relationale WiGeo** untersucht nicht „die Raumwirtschaft“, sondern die **Struktur und Dynamik ökonomischer Beziehungen** in räumlicher Perspektive. Sie ist **akteurs- und handlungsorientiert** und beachtet soziale, kulturelle und gesellschaftliche Rahmenbedingungen: **Einbettung (embeddedness)**.
+
+Drei Prinzipien (Bathelt/Glückler):
+1. **Kontextualität:** Handeln ist situiert und nicht durch universelle Gesetze erklärbar.
+2. **Pfadabhängigkeit:** Entscheidungen und Interaktionen der Vergangenheit prägen die Handlungskontexte der Gegenwart.
+3. **Kontingenz:** Die Geschichte eines Pfades legt die Zukunft nicht fest – neue Wachstumspfade sind möglich.
+
+Typische Fragen: Welche transnationalen Machtbeziehungen bestehen zwischen Unternehmensstandorten? Wie läuft Wissenstransfer? Welche Netzwerke bauen Unternehmen auf? (RWL dagegen: Wo wurde investiert? Welche Standortfaktoren?)
+
+Vergleich (Länderkunde · RWL · relationale WiGeo):
+- **Raumkonzept:** „natürliche“ Länder, Landschaftsräume · Wirtschaftsraum · Raum als soziales Konstrukt, räumliche Perspektive
+- **Forschungsziel:** idiographische Raumbeschreibung · räumliche Gesetzmäßigkeiten · Prinzipien sozioökonomischen Austauschs in räumlichen Strukturen
+- **Menschenbild:** deterministisch, possibilistisch · homo oeconomicus · plural (homo socio-oeconomicus, Satisficer)
+
+==Relational: Kontextualität, Pfadabhängigkeit, Kontingenz – und Raum als Perspektive statt Container.==`,
+    },
+    {
+      thema: 'Paradigmen', titel: 'Paradigmen und Denkstile heute',
+      text: `„Nicht eine, sondern viele neue Wirtschaftsgeographien“: Chu, Hassink und Yılmaz (2024) unterscheiden **fünf Paradigmen**:
+- **Evolutionary Economic Geography** (evolutionäre WiGeo): Routinen, Pfadabhängigkeit, Lock-ins, Branching. Wandel über **Variation, Selektion, Replikation/Retention**; Pfade entstehen aus zufälligen Ereignissen und **selbstverstärkenden Mechanismen**.
+- **Relational Economic Geography:** Netzwerke, Macht, Embeddedness.
+- **Institutional Economic Geography:** formelle und informelle **Institutionen** = gesellschaftliche Spielregeln und Normen (≠ Organisationen wie WTO oder EU); institutional thickness, untraded interdependencies.
+- **Geographische Politische Ökonomie (GPE):** Kapitalismus, Arbeit, Kapital, Ungleichheit. Gründungstext **Harvey, The Limits to Capital (1982)**; beginnt bei der **Produktion**, Arbeit als Quelle von Wert; Entwicklung hängt von der **Position im Gesamtsystem** ab; ungleiche Entwicklung ist **Kern** kapitalistischer Entwicklung.
+- **Alternative Economic Geography:** Performativität, Diskurs, diverse Ökonomien.
+
+Warum wandeln sich Denkstile (Paradigma nach **Thomas Kuhn**)? (1) **Empirische Veränderungen**: Krise der Massenproduktion, Hightech- und Finanzzentren, Drittes Italien, keine Angleichung durch Globalisierung. (2) Das verlangt **neue Ansätze**: Cluster; das containerhafte Raumverständnis passt nicht; Unternehmen **gestalten** Standortfaktoren. (3) **Veränderungen der Disziplin**: Pluralität, blinde Flecken (Umwelt, Geschlecht, Märkte).
+
+==Fünf Paradigmen: evolutionär, relational, institutionell, politisch-ökonomisch (GPE), alternativ.==`,
+    },
+  ],
+  fragen: [
+    /* ---------- Gegenstand ---------- */
+    { id: 'e01-01', typ: 'karte', thema: 'Gegenstand', wichtig: 2, quelle: 'VL03, S. 6',
+      vorne: 'Womit beschäftigt sich die Wirtschaftsgeographie (Kerndefinition)?',
+      hinten: `Sozialwissenschaftlicher Teilbereich der Geographie: Sie untersucht die **Wechselwirkungen von Raum und Wirtschaft**, fragt nach räumlicher Ordnung und Organisation der Wirtschaft und betrachtet ökonomische Prozesse aus **räumlicher Perspektive**.` },
+    { id: 'e01-02', typ: 'offen', thema: 'Gegenstand', wichtig: 1, punkte: 3, quelle: 'VL03, S. 6',
+      frage: 'Nennen Sie drei Gründe, warum es eine „Geographie der Wirtschaft“ braucht (nach Bathelt/Glückler).',
+      antwort: `Erstens sind natürliche Ressourcen, Arbeitskräfte, Wissen, Kapital und Konsument:innen geographisch ungleich verteilt. Zweitens hat sich keine Region kontinuierlich entwickelt: Wachstum ist zeitlich unbeständig und räumlich unterschiedlich. Drittens ist der geographische Kontext Quelle ökonomischer Bedingungen und Lebenssituationen – so entstehen regionale Ungleichheiten und unterschiedliche Chancen.`,
+      kernpunkte: ['Ressourcen, Arbeitskräfte, Wissen, Kapital, Konsument:innen sind ungleich verteilt', 'Entwicklung ist zeitlich unbeständig und räumlich unterschiedlich (keine Region wuchs kontinuierlich)', 'Geographischer Kontext prägt Bedingungen und Lebenssituationen → regionale Ungleichheit, ungleiche Chancen'] },
+    { id: 'e01-03', typ: 'karte', thema: 'Gegenstand', quelle: 'VL03, S. 8', bildLoesung: 'kondratieff',
+      vorne: 'Was zeigen die langen Wellen nach Kondratieff aus wirtschaftsgeographischer Sicht?',
+      hinten: `Langfristige Auf- und Abschwünge der Weltkonjunktur, jeweils getragen von anderen **Leitindustrien** (Textil/Dampfkraft → Eisenbahn/Stahl → Schiffbau/Elektrizität → Auto/Elektronik/Petrochemie → Halbleiter/Biotechnologie). Sie gehen mit der **Dominanz unterschiedlicher Regionen** einher (Großbritannien → Deutschland → USA → Deutschland/Japan).` },
+
+    /* ---------- Definitionen ---------- */
+    { id: 'e01-04', typ: 'offen', thema: 'Definitionen', wichtig: 3, punkte: 3, quelle: 'VL03, S. 14 und 35',
+      frage: 'Definieren Sie Wirtschaftsgeographie nach Braun/Schulz (2012).',
+      antwort: `Die Wirtschaftsgeographie ist eine Teildisziplin der Geographie, die sich aus einer räumlichen Perspektive auf unterschiedlichen Maßstabsebenen beschäftigt. Sie beschreibt, analysiert und erklärt die wirtschaftlichen Tätigkeiten des Produzierens, Tauschens, Verteilens und Konsumierens von Gütern und Dienstleistungen. Dazu gehören auch die hierfür relevanten sozio-institutionellen Kontexte und die Implikationen für die natürliche Umwelt.`,
+      kernpunkte: ['Teildisziplin der Geographie: räumliche Perspektive auf unterschiedlichen Maßstabsebenen', 'Beschreibung, Analyse, Erklärung des Produzierens, Tauschens, Verteilens und Konsumierens von Gütern und Dienstleistungen', 'einschließlich sozio-institutioneller Kontexte und Implikationen für die natürliche Umwelt'] },
+    { id: 'e01-05', typ: 'luecke', thema: 'Definitionen', wichtig: 3, quelle: 'VL03, S. 14',
+      frage: 'Definition nach MacKinnon/Cumbers (2018). Fülle die Lücken.',
+      text: 'Wirtschaftsgeographie beschäftigt sich mit konkreten Fragen bzgl. der [[Lokalisierung|Lokalisation]] und Verteilung wirtschaftlicher Aktivitäten, der Rolle [[ungleicher]] geographischer Entwicklung und Prozessen der lokalen und [[regionalen]] wirtschaftlichen Entwicklung.' },
+    { id: 'e01-06', typ: 'luecke', thema: 'Definitionen', wichtig: 2, quelle: 'VL03, S. 14',
+      frage: 'Definition nach Bathelt/Glückler (2018). Fülle die Lücken.',
+      text: 'Wirtschaftsgeographische Forschung zielt auf die Beobachtung und Erklärung zeitlich und räumlich [[situierten]] ökonomischen Handelns, um kontextabhängig institutionalisierte und somit lokalisierbare, [[ungleich]] verteilte ökonomische [[Beziehungen]] zu erfassen.' },
+    { id: 'e01-07', typ: 'offen', thema: 'Definitionen', wichtig: 2, punkte: 4, quelle: 'VL03, S. 12 und 35',
+      frage: 'Nennen Sie die vier Leitfragen der Wirtschaftsgeographie nach Coe, Kelly und Yeung.',
+      antwort: `1. Wie sind wirtschaftliche Aktivitäten ungleichmäßig über den Raum verteilt, und wie lässt sich das erklären? 2. Wie prägen die einzigartigen Merkmale bestimmter Orte die Form und Entwicklung wirtschaftlicher Aktivitäten? 3. Wie sind wirtschaftliche Aktivitäten im Raum miteinander verbunden, sodass das Geschehen an einem Ort andere Orte beeinflusst? 4. Wie zeigt sich Macht über den Raum, vor allem in staatlich kontrollierten Territorien, im Wirtschaftsleben?`,
+      kernpunkte: ['Ungleiche Verteilung wirtschaftlicher Aktivitäten im Raum (und ihre Erklärung)', 'Einfluss der besonderen Merkmale von Orten (place)', 'Verbindungen zwischen Orten (Netzwerke): was an einem Ort passiert, beeinflusst andere', 'Macht über den Raum (Territorien, Staat)'],
+      erklaerung: 'Die dahinterliegenden Schlüsselkonzepte: **ungleiche Entwicklung, Ort (place), Netzwerke, territoriale Macht**.' },
+
+    /* ---------- Abgrenzung ---------- */
+    { id: 'e01-08', typ: 'offen', thema: 'Abgrenzung', wichtig: 2, punkte: 4, quelle: 'VL03, S. 15',
+      frage: 'Nennen Sie vier Unterschiede zwischen der neoklassischen Mainstream-Ökonomie und der Wirtschaftsgeographie (nach MacKinnon/Cumbers).',
+      antwort: `Die Mainstream-Ökonomie sieht die Wirtschaft als autonome Sphäre mit eigenen Gesetzen, die Wirtschaftsgeographie als eingebettet in soziale, politische und kulturelle Beziehungen. Die Ökonomie geht vom rationalen Handeln eigeninteressierter Individuen aus, die WiGeo von Individuen und Gruppen, die in bestimmten geographischen Kontexten handeln. Für die Ökonomie ist Geographie unwichtig, weil überall dieselben Kräfte wirken; für die WiGeo ist sie grundlegend. Ungleiche Entwicklung gilt der Ökonomie als vorübergehend (Marktkräfte gleichen aus), der WiGeo als dauerhaft und tief verwurzelt.`,
+      kernpunkte: ['Wirtschaft: autonome Sphäre ↔ eingebettet in soziale, politische, kulturelle Beziehungen', 'Handeln: rationale, eigeninteressierte Individuen ↔ Akteure in bestimmten geographischen Kontexten', 'Geographie: ignoriert (universelle Kräfte) ↔ grundlegend', 'Ungleiche Entwicklung: vorübergehend, von Marktkräften beseitigt ↔ dauerhaft, tief verwurzelt'] },
+    { id: 'e01-09', typ: 'mc', thema: 'Abgrenzung', wichtig: 2, quelle: 'VL03, S. 15–16',
+      frage: 'Wie sieht die neoklassische Mainstream-Ökonomie laut Vorlesung ungleiche räumliche Entwicklung?',
+      optionen: [
+        { t: 'Als vorübergehendes Phänomen, das Marktkräfte beseitigen', r: true, warum: 'Genau so steht es in der Tabelle nach MacKinnon/Cumbers.' },
+        { t: 'Als dauerhaftes, tief verwurzeltes Merkmal', warum: 'Das ist die Sicht der Wirtschaftsgeographie.' },
+        { t: 'Als Wesensmerkmal der kapitalistischen Entwicklung', warum: 'Das ist die Sicht der Geographischen Politischen Ökonomie (Harvey).' },
+        { t: 'Als Folge unterschiedlicher Denkstile der Forschung', warum: 'Denkstile erklären Theorien, nicht ungleiche Entwicklung selbst.' },
+      ] },
+    { id: 'e01-10', typ: 'wf', thema: 'Abgrenzung', wichtig: 2, quelle: 'VL03, S. 16',
+      aussage: 'Der Mainstream der Wirtschaftswissenschaften geht laut Vorlesung von einer „laborförmigen“ Welt aus, in der überall die gleichen Bedingungen und Gesetze gelten.',
+      wahr: true, warum: 'Die WiGeo setzt dagegen eine Welt voraus, die durch räumliche Unterschiede und Ungleichheit geprägt ist.' },
+
+    /* ---------- Gliederung ---------- */
+    { id: 'e01-11', typ: 'mc', thema: 'Gliederung', quelle: 'VL03, S. 18',
+      frage: 'Gliederung nach Wirtschaftssektoren: Welche Zuordnung trifft **nicht** zu?',
+      optionen: [
+        { t: 'Fischerei – sekundärer Sektor', r: true, warum: 'Fischerei ist Urproduktion und gehört zum primären Sektor.' },
+        { t: 'Bergbau – primärer Sektor', warum: 'Trifft zu: Bergbau zählt zur Urproduktion.' },
+        { t: 'Bauwirtschaft – sekundärer Sektor', warum: 'Trifft zu: Bau gehört zur Sachgüterproduktion.' },
+        { t: 'Banken – tertiärer Sektor', warum: 'Trifft zu: Banken sind Dienstleistungen.' },
+      ] },
+    { id: 'e01-12', typ: 'offen', thema: 'Gliederung', punkte: 2, quelle: 'VL03, S. 18',
+      frage: 'Begründen Sie, warum eine streng sektorale Gliederung der Wirtschaftsgeographie immer weniger zeitgemäß ist.',
+      antwort: `Zum einen gibt es statistische Zuordnungsprobleme, weil etwa in Großunternehmen ganz unterschiedliche Tätigkeiten (Produktion, Forschung, Vertrieb, Dienstleistungen) zusammenfallen. Zum anderen werden Produktionssysteme immer komplexer und reichen über Branchen- und Sektorgrenzen hinweg. Neuere Lehrbücher vermeiden die Sektorgliederung deshalb; wichtig bleibt aber der sektorale Strukturwandel.`,
+      kernpunkte: ['Statistische Zuordnungsprobleme (verschiedene Tätigkeiten innerhalb von Großunternehmen)', 'Produktionssysteme immer komplexer, branchen- und sektorübergreifend'] },
+    { id: 'e01-13', typ: 'mc', thema: 'Gliederung', quelle: 'VL03, S. 19',
+      frage: 'Eine Studie untersucht, nach welchen Standortfaktoren ein einzelnes Unternehmen seinen neuen Standort auswählt. Welcher Betrachtungsweise entspricht das?',
+      optionen: [
+        { t: 'Einzelwirtschaftlich (mikroökonomisch)', r: true, warum: 'Im Mittelpunkt steht der einzelne Betrieb mit seinen Standortfaktoren.' },
+        { t: 'Gesamtwirtschaftlich (makroökonomisch)', warum: 'Makro betrachtet Aktivitäten und Standortmuster eines ganzen Wirtschaftsraums (Staat, Industrieregion).' },
+        { t: 'Sektoral (Drei-Sektoren-Hypothese)', warum: 'Die Sektorgliederung ordnet nach Wirtschaftszweigen, nicht nach der Betrachtungsebene.' },
+        { t: 'Idiographisch (länderkundlich)', warum: 'Idiographisch beschreibt die Besonderheiten eines Raumausschnitts, nicht Standortentscheidungen.' },
+      ] },
+
+    /* ---------- Entwicklung ---------- */
+    { id: 'e01-14', typ: 'paare', thema: 'Entwicklung', quelle: 'VL03, S. 18 und 20–22',
+      frage: 'Ordne jeder Person ihren Beitrag zu.',
+      paare: [
+        ['Karl Andree', 'Geographie des Welthandels'],
+        ['Friedrich Ratzel', 'Geodeterminismus'],
+        ['Rudolf Lütgens', 'Wechselwirkungsprinzip'],
+        ['Alfred Hettner', 'WiGeo als Teil der Länderkunde'],
+        ['Walter Isard', 'Regional science (USA)'],
+        ['Jean Fourastié', 'Drei-Sektoren-Hypothese'],
+      ] },
+    { id: 'e01-15', typ: 'mc', thema: 'Entwicklung', wichtig: 2, quelle: 'VL03, S. 20–21',
+      frage: 'Was trifft auf das Wechselwirkungsprinzip (Rudolf Lütgens) zu?',
+      optionen: [
+        { t: 'Der wirtschaftende Mensch gestaltet die Natur durch sein Handeln zugleich um.', r: true, warum: 'Das ist der Kern; es ersetzte ab den 1920ern teilweise den Geodeterminismus.' },
+        { t: 'Naturgegebenheiten bestimmen menschliches Handeln weitgehend einseitig.', warum: 'Das ist der Geodeterminismus (Ratzel).' },
+        { t: 'Die Wirtschaft ist nur ein Geofaktor unter vielen in der Landschaftskunde.', warum: 'Das beschreibt Hettners Integration in die Länderkunde.' },
+        { t: 'Standortstrukturen ändern sich durch regionsinterne Wachstumsdeterminanten.', warum: 'Das ist das Systemelement „Prozess“ der Raumwirtschaftslehre.' },
+      ] },
+    { id: 'e01-16', typ: 'luecke', thema: 'Entwicklung', wichtig: 2, quelle: 'VL03, S. 22',
+      text: 'Nach der Kritik an der Länderkunde auf dem Geographentag in [[Kiel]] (1969) wandelte sich das Erkenntnisinteresse: statt der [[idiographischen|idiographische]] Frage nach den Besonderheiten einzelner Räume nun das [[nomothetische|nomothetisch]] Interesse an allgemeingültigen raumökonomischen Gesetzmäßigkeiten.' },
+    { id: 'e01-17', typ: 'offen', thema: 'Entwicklung', wichtig: 2, punkte: 2, quelle: 'VL03, S. 22 und 26',
+      frage: 'Erläutern Sie den Unterschied zwischen idiographischem und nomothetischem Erkenntnisinteresse und ordnen Sie beide der Entwicklung der Disziplin zu.',
+      antwort: `Idiographisch heißt: Man beschreibt die individuellen Merkmale bestimmter Erdoberflächenausschnitte – typisch für die Länder- und Landschaftskunde. Nomothetisch heißt: Man sucht allgemeingültige raumökonomische Gesetzmäßigkeiten – typisch für die Raumwirtschaftslehre nach der quantitativen Wende (Kiel 1969).`,
+      kernpunkte: ['Idiographisch: Besonderheiten einzelner Räume beschreiben → Länderkunde', 'Nomothetisch: allgemeingültige Gesetzmäßigkeiten suchen → Raumwirtschaftslehre/quantitative Wende nach Kiel 1969'] },
+    { id: 'e01-18', typ: 'reihe', thema: 'Entwicklung', wichtig: 2, quelle: 'VL03, S. 20 und 36',
+      frage: 'Bring die Phasen der Wirtschaftsgeographie in die zeitliche Reihenfolge.',
+      schritte: ['Länderkundliche Beschreibung, Produktenkunde, Welthandelsgeographie', 'Wirtschaftsraum/Wirtschaftslandschaft, erste Standorttheorien', 'Quantitative Revolution: Raumwirtschaftslehre', 'Globalisierungsforschung, New Economic Geography', 'Pluralisierung: relational, evolutionär, institutionell …'] },
+    { id: 'e01-19', typ: 'mc', thema: 'Entwicklung', quelle: 'VL03, S. 20',
+      frage: 'Was trifft auf „New (regional) Economic Geography“ und „Geographical Economics“ zu? (mehrere möglich)',
+      optionen: [
+        { t: 'New Economic Geography (Scott, Storper) befasst sich u. a. mit regionalen Clustern.', r: true, warum: 'So auf der Folie: Globalisierungsforschung, regionale Cluster, eingebundene Theoriebildung.' },
+        { t: 'Geographical Economics (Krugman) bezieht den Raum in die Wirtschaftswissenschaften ein.', r: true, warum: 'Die Folie betont: „Einbeziehung von Raum in die WiWi“.' },
+        { t: 'Beide Begriffe bezeichnen denselben Ansatz.', warum: 'Die Folie hebt ausdrücklich hervor: New Economic Geography ≠ Geographical Economics.' },
+        { t: 'Beide entstanden in der Länderkunde des 19. Jahrhunderts.', warum: 'Beide gehören in die Zeit ab den 1980/90ern.' },
+      ] },
+    { id: 'e01-20', typ: 'wf', thema: 'Entwicklung', quelle: 'VL03, S. 20–21',
+      aussage: 'Die frühe Wirtschaftsgeographie des 19. Jahrhunderts war eng mit der kolonialen Expansion europäischer Mächte verbunden.',
+      wahr: true, warum: 'Sie diente dem „imperial-kolonialen Projekt“, z. B. durch Produktenkunde (Inventarisierung von Ressourcen); sie war naturdeterministisch und teils rassistisch geprägt.' },
+
+    /* ---------- Raumwirtschaftslehre ---------- */
+    { id: 'e01-21', typ: 'mc', thema: 'RWL', wichtig: 3, quelle: 'VL03, S. 23; Musterklausur WS23/24, 2.4',
+      frage: 'Der raumwirtschaftliche Ansatz unterscheidet drei Systemelemente eines ökonomischen Raumsystems. Welches gehört **nicht** dazu?',
+      optionen: [
+        { t: 'Relationalität', r: true, warum: 'Relationalität gehört zur späteren relationalen Wirtschaftsgeographie, nicht zur RWL.' },
+        { t: 'Struktur', warum: 'Gehört dazu: Verteilung der Aktivitäten auf Standorte und Regionen.' },
+        { t: 'Interaktion', warum: 'Gehört dazu: Bewegung von Produktionsfaktoren, Gütern, Dienstleistungen.' },
+        { t: 'Prozess', warum: 'Gehört dazu: Veränderung der Strukturen durch interne Wachstumsdeterminanten.' },
+      ] },
+    { id: 'e01-22', typ: 'offen', thema: 'RWL', wichtig: 3, punkte: 3, quelle: 'VL03, S. 23; Musterklausur WS23/24, 2.4', bildLoesung: 'raumsystem',
+      frage: 'Nennen und erläutern Sie die drei Systemelemente eines ökonomischen Raumsystems im raumwirtschaftlichen Ansatz.',
+      antwort: `Struktur meint die Verteilung ökonomischer Aktivitäten (Produktion, Konsum) auf Standorte (Standortstruktur) bzw. Regionen (Regionalstruktur). Interaktion meint die Bewegung mobiler Produktionsfaktoren (Arbeit, Kapital, Wissen) sowie von Gütern und Dienstleistungen zwischen Standorten bzw. Regionen. Prozess meint die Veränderung von Standort- und Regionalstruktur als Folge standort- bzw. regionsinterner Wachstumsdeterminanten. Die drei Elemente hängen wechselseitig voneinander ab.`,
+      kernpunkte: ['Struktur: Verteilung ökonomischer Aktivitäten auf Standorte bzw. Regionen', 'Interaktion: Bewegung von Arbeit, Kapital, Wissen, Gütern, Dienstleistungen zwischen Standorten/Regionen', 'Prozess: Veränderung der Standort-/Regionalstruktur durch interne Wachstumsdeterminanten'],
+      erklaerung: 'Die Folie formuliert „Prozess“ verkürzt („… von Standortstruktur und Regionalstruktur als Folge standort- bzw. regionsinterner Wachstumsdeterminanten“); gemeint ist die **Veränderung** der Strukturen.' },
+    { id: 'e01-23', typ: 'karte', thema: 'RWL', wichtig: 2, quelle: 'VL03, S. 22',
+      vorne: 'Raumwirtschaftslehre (Definition nach Schätzl) und ihr Menschenbild',
+      hinten: `„Wissenschaft von der **räumlichen Ordnung und der räumlichen Organisation der Wirtschaft**.“ Menschenbild: **homo oeconomicus** – vollständig rational, perfekt informiert, nutzenmaximierend (wie in der Neoklassik).` },
+    { id: 'e01-24', typ: 'mc', thema: 'RWL', wichtig: 2, quelle: 'VL03, S. 22–23 und 26',
+      frage: 'Welche Aussagen treffen auf die Raumwirtschaftslehre zu? (mehrere möglich)',
+      optionen: [
+        { t: 'Ihr Menschenbild ist der homo oeconomicus.', r: true, warum: 'Vollständig rational, perfekt informiert, nutzenmaximierend.' },
+        { t: 'Ihr Ziel ist es, räumliche Gesetzmäßigkeiten zu finden.', r: true, warum: 'Nomothetisch, modelltheoretisch, positivistisch.' },
+        { t: 'Ihr Ziel ist die idiographische Raumbeschreibung.', warum: 'Das ist das Ziel der Länderkunde.' },
+        { t: 'Sie versteht Raum als soziales Konstrukt.', warum: 'Das ist das Raumkonzept der relationalen WiGeo; die RWL denkt in Wirtschaftsräumen.' },
+      ] },
+    { id: 'e01-25', typ: 'mc', thema: 'RWL', quelle: 'VL03, S. 23',
+      frage: 'Welcher der folgenden ist **kein** Hauptbeitrag des raumwirtschaftlichen Ansatzes?',
+      optionen: [
+        { t: 'Theorien der sozialen Einbettung (embeddedness)', r: true, warum: 'Einbettung ist ein Begriff der relationalen bzw. institutionellen WiGeo.' },
+        { t: 'Standorttheorien', warum: 'Hauptbeitrag: optimaler Standort des Einzelbetriebs, optimale Verteilung aller Standorte.' },
+        { t: 'Räumliche Mobilitätstheorien', warum: 'Hauptbeitrag: Ursachen und Wirkungen der Mobilität von Faktoren, Gütern, Dienstleistungen.' },
+        { t: 'Regionale Wachstums- und Entwicklungstheorien', warum: 'Hauptbeitrag: Entwicklung einzelner Regionen und interregionale Unterschiede erklären.' },
+      ] },
+    { id: 'e01-26', typ: 'karte', thema: 'RWL', quelle: 'VL03, S. 23',
+      vorne: 'Akteursgruppenansatz (Kulke)',
+      hinten: `Weiterentwicklung des raumwirtschaftlichen Ansatzes: Drei Akteursgruppen – **Anbieter** (Unternehmen/Betriebe), **Nachfrager** (Konsument:innen) und **Planer/Politiker** – prägen über Waren- und Informationsströme sowie Lenkung die Struktur und Dynamik von Standorten und Raumsystemen.` },
+
+    /* ---------- Relationale WiGeo ---------- */
+    { id: 'e01-27', typ: 'offen', thema: 'Relational', wichtig: 3, punkte: 3, quelle: 'VL03, S. 24',
+      frage: 'Erläutern Sie die drei Prinzipien der relationalen Wirtschaftsgeographie (Bathelt/Glückler).',
+      antwort: `Kontextualität: Wirtschaftliches Handeln ist situiert und lässt sich nicht durch universelle Gesetze erklären, sondern nur aus seinen raumzeitlichen Beziehungskontexten. Pfadabhängigkeit: Diese Kontexte übertragen sich historisch – Entscheidungen und Interaktionen der Vergangenheit prägen die Handlungskontexte der Gegenwart. Kontingenz: Trotzdem legt die Geschichte eines Entwicklungspfades die Zukunft nicht fest; neue Wachstumspfade sind möglich.`,
+      kernpunkte: ['Kontextualität: situiertes Handeln, nicht durch universelle Gesetze erklärbar', 'Pfadabhängigkeit: Entscheidungen der Vergangenheit prägen heutige Handlungskontexte', 'Kontingenz: Pfadgeschichte determiniert die Zukunft nicht, neue Pfade möglich'] },
+    { id: 'e01-28', typ: 'mc', thema: 'Relational', wichtig: 2, quelle: 'VL03, S. 24–25',
+      frage: 'Welche Aussage trifft **nicht** auf die relationale Wirtschaftsgeographie zu?',
+      optionen: [
+        { t: 'Wirtschaftliches Handeln lässt sich durch universelle Raumgesetze erklären.', r: true, warum: 'Widerspricht dem Prinzip der Kontextualität – das ist eher der Anspruch der RWL.' },
+        { t: 'Gegenstand ist die Struktur und Dynamik ökonomischer Beziehungen in räumlicher Perspektive.', warum: 'Trifft zu.' },
+        { t: 'Sie ist akteurs- und handlungsorientiert und betont Einbettung (embeddedness).', warum: 'Trifft zu.' },
+        { t: 'Die Geschichte eines Entwicklungspfades determiniert die Zukunft nicht.', warum: 'Trifft zu: Prinzip der Kontingenz.' },
+      ] },
+    { id: 'e01-29', typ: 'wf', thema: 'Relational', wichtig: 2, quelle: 'VL03, S. 24',
+      aussage: 'Nach dem Prinzip der Kontingenz legt die Geschichte eines Entwicklungspfades die weitere Entwicklung einer Region fest.',
+      wahr: false, warum: 'Kontingenz heißt gerade: Die Pfadgeschichte **determiniert die Zukunft nicht**, neue Wachstumspfade sind möglich. Dass die Vergangenheit prägt, beschreibt die Pfadabhängigkeit.' },
+    { id: 'e01-30', typ: 'paare', thema: 'Relational', wichtig: 3, quelle: 'VL03, S. 26; Musterklausur WS23/24, 1.2',
+      frage: 'Raumkonzepte: Ordne jedem Denkstil sein Raumverständnis zu.',
+      paare: [
+        ['Länderkunde', '„Natürliche“ Länder und Landschaftsräume'],
+        ['Raumwirtschaftslehre', 'Wirtschaftsraum'],
+        ['Relationale WiGeo', 'Raum als soziales Konstrukt, räumliche Perspektive'],
+      ] },
+    { id: 'e01-31', typ: 'offen', thema: 'Relational', wichtig: 2, punkte: 3, quelle: 'VL03, S. 26',
+      frage: 'Vergleichen Sie Raumwirtschaftslehre und relationale Wirtschaftsgeographie hinsichtlich Forschungsgegenstand, Forschungsziel und Menschenbild.',
+      antwort: `Gegenstand der RWL ist das ökonomische Raumsystem, Gegenstand der relationalen WiGeo sind wirtschaftliche Beziehungen im räumlichen Kontext. Die RWL will räumliche Gesetzmäßigkeiten finden, die relationale WiGeo Prinzipien sozioökonomischen Austauschs in räumlichen Strukturen. Die RWL arbeitet mit dem homo oeconomicus, die relationale WiGeo mit einem pluralen Menschenbild (z. B. homo socio-oeconomicus, Satisficer).`,
+      kernpunkte: ['Gegenstand: ökonomisches Raumsystem ↔ wirtschaftliche Beziehungen im räumlichen Kontext', 'Ziel: räumliche Gesetzmäßigkeiten ↔ Prinzipien sozioökonomischen Austauschs', 'Menschenbild: homo oeconomicus ↔ plural (homo socio-oeconomicus, Satisficer)'] },
+    { id: 'e01-32', typ: 'offen', thema: 'Relational', wichtig: 3, punkte: 2, quelle: 'VL03, S. 26 und 32; Musterklausur WS23/24, 1.2',
+      frage: 'Warum gibt es keine allgemeingültige Definition für „Raum“?',
+      antwort: `Was „Raum“ ist, hängt vom jeweiligen Denkstil bzw. Paradigma ab: Die Länderkunde denkt in „natürlichen“ Ländern und Landschaftsräumen, die Raumwirtschaftslehre in Wirtschaftsräumen (containerhaftes Raumverständnis), die relationale WiGeo versteht Raum als soziales Konstrukt bzw. als Perspektive. Diese Konzepte folgen unterschiedlichen Erkenntnisinteressen – Raumbeschreibung, Gesetzmäßigkeiten oder Beziehungen – und lassen sich nicht auf eine Definition zurückführen.`,
+      kernpunkte: ['Raumverständnis hängt vom Denkstil/Paradigma ab (Landschaftsraum – Wirtschaftsraum/Container – soziales Konstrukt)', 'Unterschiedliche Erkenntnisinteressen und Forschungsziele erfordern unterschiedliche Raumkonzepte'],
+      erklaerung: 'Die Musterklausur fragt das direkt (1.2, 2 P.). Vertiefung zu absoluten und relationalen Raumkonzepten: Zusatz-Einheit am Ende.' },
+
+    /* ---------- Paradigmen und Denkstile ---------- */
+    { id: 'e01-33', typ: 'paare', thema: 'Paradigmen', wichtig: 2, quelle: 'VL03, S. 28',
+      frage: 'Ordne jedem Paradigma (Chu/Hassink/Yılmaz 2024) seine Schlüsselbegriffe zu.',
+      paare: [
+        ['Evolutionary Economic Geography', 'Routinen, Pfadabhängigkeit, Lock-ins'],
+        ['Relational Economic Geography', 'Netzwerke, Macht, Embeddedness'],
+        ['Institutional Economic Geography', 'Formelle und informelle Institutionen'],
+        ['Geographische Politische Ökonomie', 'Kapitalismus, Arbeit, Kapital, Ungleichheit'],
+        ['Alternative Economic Geography', 'Performativität, Diskurs, diverse Ökonomien'],
+      ] },
+    { id: 'e01-34', typ: 'mc', thema: 'Paradigmen', wichtig: 2, quelle: 'VL03, S. 30',
+      frage: 'Was trifft auf die Geographische Politische Ökonomie (GPE) zu? (mehrere möglich)',
+      optionen: [
+        { t: 'Zentraler Gründungstext ist Harveys „The Limits to Capital“ (1982).', r: true, warum: 'Eine geographische Kritik und Erweiterung von Marx’ Theorie des Kapitalismus.' },
+        { t: 'Ungleiche Entwicklung gilt als Kern kapitalistischer Wirtschaftsentwicklung.', r: true, warum: 'Genau das unterscheidet sie von der Neoklassik.' },
+        { t: 'Sie beginnt wie die Neoklassik beim Tausch.', warum: 'Die GPE beginnt bei der Produktion; menschliche Arbeit ist Quelle der Wertschöpfung.' },
+        { t: 'Die Entwicklung einer Region folgt vor allem aus ihren ortsbasierten Attributen.', warum: 'Entscheidend ist die Position im wirtschaftlichen Gesamtsystem und die Beziehungen zu anderen Orten.' },
+      ] },
+    { id: 'e01-35', typ: 'luecke', thema: 'Paradigmen', wichtig: 2, quelle: 'VL03, S. 29',
+      frage: 'Evolutionary Economic Geography (evolutionäre Wirtschaftsgeographie). Fülle die Lücken.',
+      text: 'Sie erklärt wirtschaftlichen Wandel mit Begriffen der biologischen Evolutionstheorie: [[Variation]], [[Selektion]] und Replikation bzw. Retention. Entwicklungspfade entstehen aus zufälligen, offenen Ereignissen, die sich durch [[selbstverstärkende]] Mechanismen verfestigen.' },
+    { id: 'e01-36', typ: 'wf', thema: 'Paradigmen', wichtig: 2, quelle: 'VL03, S. 30',
+      aussage: 'Institutionen im Sinne der institutionellen Wirtschaftsgeographie sind Organisationen wie die UN, die WTO oder die EU.',
+      wahr: false, warum: 'Institutionen sind gesellschaftliche **Spielregeln und Normen** (formell und informell) – ausdrücklich **nicht** Organisationen.' },
+    { id: 'e01-37', typ: 'offen', thema: 'Paradigmen', wichtig: 2, punkte: 3, quelle: 'VL03, S. 31–32',
+      frage: 'Nennen Sie drei Gründe, warum sich die Denkstile der Wirtschaftsgeographie verändert haben.',
+      antwort: `Erstens gab es empirische Veränderungen: Die industrielle Massenproduktion geriet ab Ende der 1970er in die Krise (Detroit, Ruhrgebiet), während Hightech-Standorte, Finanzzentren und flexibel produzierende Regionen wie das Dritte Italien aufstiegen; Globalisierung führte nicht zu einer Angleichung. Zweitens erforderte das neue Ansätze: Die klassische Standortfaktorenlehre mit ihrem containerhaften Raumverständnis konnte Cluster nicht erklären, und Unternehmen reagieren nicht nur auf Standortfaktoren, sondern gestalten sie. Drittens veränderte sich die Disziplin selbst: mehr Pluralität und Aufmerksamkeit für blinde Flecken wie Umwelt, Geschlechterverhältnisse und die Herstellung von Märkten.`,
+      kernpunkte: ['Empirische Veränderungen (Krise der Massenproduktion; Hightech-/Finanzzentren, Drittes Italien; keine Angleichung durch Globalisierung)', 'Neue Ansätze nötig: Cluster, containerhaftes Raumverständnis ungeeignet, Unternehmen gestalten Standortfaktoren', 'Veränderung der Disziplin: Pluralität, blinde Flecken (Umwelt, Geschlecht, Märkte)'] },
+    { id: 'e01-38', typ: 'karte', thema: 'Paradigmen', quelle: 'VL03, S. 31',
+      vorne: 'Paradigma (nach Thomas Kuhn)',
+      hinten: `Von vielen Wissenschaftler:innen geteilte Vorstellungen über den theoretischen Zugang und die methodische Basis des Arbeitens – die zu einer bestimmten Zeit geltende „Wahrheit“. Paradigmen prägen **Denkstile** („wissenschaftliche Brillen“).` },
+  ],
+});
+//# sourceURL=content/wirtschaftsgeographie/e01.js
+</script>
+<script>
+/* Eigene Skizzen zum Kurs Wirtschaftsgeographie (nachgezeichnet und vereinfacht, keine Abbildungen aus den Folien).
+   Format und Farbklassen: docs/INHALTE.md, Abschnitt 5. Eingebunden über bild / bildLoesung in Skript und Fragen. */
+
+/* ---------- e01 Einführung ---------- */
+Lerni.grafik('wirtschaftsgeographie', 'kondratieff', {
+  titel: 'Lange Wellen (Kondratieff)',
+  text: 'Vereinfacht nach VL03, S. 8 (Kulke 2013 nach Johnston 1995): Jede Welle hat andere tragende Industrien und Regionen.',
+  svg: `<svg viewBox="0 0 340 250" role="img" aria-label="Fünf lange Wellen mit Wendepunkten, tragenden Industrien und Regionen">
+  <text class="k m" x="4" y="12">Auf- und Abschwung der Weltkonjunktur, je ca. 50 Jahre</text>
+  <polyline class="s1 w" points="16,90 47,42 78,90 109,42 140,90 171,42 202,90 233,42 264,90 295,42 326,66"/>
+  <g class="k" text-anchor="middle">
+    <text x="47" y="34">1825/6</text><text x="109" y="34">1873/4</text><text x="171" y="34">1913/4</text><text x="233" y="34">1966/7</text>
+    <text x="16" y="104">1790</text><text x="78" y="104">1847/8</text><text x="140" y="104">1893/4</text><text x="202" y="104">1940/5</text><text x="264" y="104">1989/90</text>
+  </g>
+  <g class="k b" text-anchor="middle">
+    <circle class="f1 s0" cx="47" cy="74" r="8"/><text x="47" y="78">1</text><circle class="f1 s0" cx="109" cy="74" r="8"/><text x="109" y="78">2</text>
+    <circle class="f1 s0" cx="171" cy="74" r="8"/><text x="171" y="78">3</text><circle class="f1 s0" cx="233" cy="74" r="8"/><text x="233" y="78">4</text>
+    <circle class="f1 s0" cx="295" cy="74" r="8"/><text x="295" y="78">5</text>
+  </g>
+  <line class="n sm" x1="4" y1="114" x2="336" y2="114"/>
+  <g class="k">
+    <text x="4" y="132"><tspan class="b">1</tspan>  Textilindustrie, Dampfkraft <tspan class="m">· Großbritannien</tspan></text>
+    <text x="4" y="152"><tspan class="b">2</tspan>  Eisenbahn, Stahl, Kohlebergbau <tspan class="m">· Großbritannien</tspan></text>
+    <text x="4" y="172"><tspan class="b">3</tspan>  Schiffbau, Elektrizität <tspan class="m">· Großbritannien, Deutschland</tspan></text>
+    <text x="4" y="192"><tspan class="b">4</tspan>  Auto, Elektronik, Petrochemie, Flugzeugbau <tspan class="m">· USA</tspan></text>
+    <text x="4" y="212"><tspan class="b">5</tspan>  Halbleiter, Biotechnologie <tspan class="m">· Deutschland, Japan</tspan></text>
+  </g>
+  <line class="n sm" x1="4" y1="222" x2="336" y2="222"/>
+  <text class="k" x="4" y="240"><tspan class="m">Produktion: </tspan>Manufaktur → Industrieproduktion → Fordismus → flexibel</text>
+</svg>`,
+});
+
+Lerni.grafik('wirtschaftsgeographie', 'raumsystem', {
+  titel: 'Ökonomisches Raumsystem (raumwirtschaftlicher Ansatz)',
+  text: '① Struktur = Verteilung der Aktivitäten auf Standorte und Regionen · ② Interaktion = Ströme von Arbeit, Kapital, Wissen, Gütern und Dienstleistungen · ③ Prozess = Veränderung der Struktur durch interne Wachstumsdeterminanten.',
+  svg: `<svg viewBox="0 0 340 196" role="img" aria-label="Zwei Regionen zu zwei Zeitpunkten: Struktur, Interaktion, Prozess">
+  <text class="b" x="80" y="16" text-anchor="middle">Zeitpunkt t₁</text><text class="b" x="262" y="16" text-anchor="middle">Zeitpunkt t₂</text>
+  <ellipse class="f1" cx="42" cy="92" rx="32" ry="50"/><ellipse class="f2" cx="118" cy="92" rx="32" ry="50"/>
+  <g class="pfp"><circle cx="34" cy="70" r="4"/><circle cx="50" cy="96" r="4"/><circle cx="36" cy="118" r="4"/></g>
+  <g class="pf"><circle cx="112" cy="72" r="4"/><circle cx="126" cy="104" r="4"/></g>
+  <line x1="76" y1="84" x2="84" y2="84"/><polygon class="pf" points="88,84 81,80 81,88"/><polygon class="pf" points="72,84 79,80 79,88"/>
+  <line x1="72" y1="100" x2="88" y2="100" class="d"/>
+  <text class="k" x="42" y="158" text-anchor="middle">Region A</text><text class="k" x="118" y="158" text-anchor="middle">Region B</text>
+  <ellipse class="f1" cx="224" cy="92" rx="32" ry="50"/><ellipse class="f2" cx="300" cy="92" rx="32" ry="50"/>
+  <g class="pfp"><circle cx="214" cy="64" r="4"/><circle cx="232" cy="80" r="4"/><circle cx="216" cy="98" r="4"/><circle cx="234" cy="112" r="4"/><circle cx="220" cy="126" r="4"/></g>
+  <g class="pf"><circle cx="300" cy="92" r="4"/></g>
+  <text class="k" x="224" y="158" text-anchor="middle">Region A</text><text class="k" x="300" y="158" text-anchor="middle">Region B</text>
+  <line class="s1 w" x1="156" y1="92" x2="180" y2="92"/><polygon class="pfp" points="188,92 178,86 178,98"/>
+  <g class="k b">
+    <circle class="f0" cx="18" cy="30" r="9"/><text x="18" y="34" text-anchor="middle">1</text>
+    <circle class="f0" cx="80" cy="60" r="9"/><text x="80" y="64" text-anchor="middle">2</text>
+    <circle class="f0" cx="170" cy="72" r="9"/><text x="170" y="76" text-anchor="middle">3</text>
+  </g>
+  <text class="k m" x="170" y="186" text-anchor="middle">● Standorte (Betriebe)   ⇄ Ströme zwischen den Regionen</text>
+</svg>`,
+});
+//# sourceURL=content/wirtschaftsgeographie/grafiken.js
 </script>
 <script>
 /* LERNI – Lernstand im Browser (localStorage): Antworten, Logbuch, Einstellungen, Sicherung.
@@ -1397,8 +1840,20 @@ const Bewerter = {
   offen: (f, abgehakt) => ({ s: f.kernpunkte.length ? abgehakt / f.kernpunkte.length : 0 }),
 };
 
+/* Eigene Skizze(n) als HTML: bild ist ein Name oder eine Liste von Namen aus Lerni.grafik(kurs, name, …) */
+function grafikHtml(kursId, bild) {
+  return Lerni.bilder(bild).map((b) => {
+    const g = Lerni.grafikVon(kursId, b); if (!g) return '';
+    return '<figure class="grafik" data-grafik="' + U.esc(b) + '"><div class="gsvg">' + g.svg + '</div>' +
+      (g.titel || g.text ? '<figcaption>' + (g.titel ? '<b>' + U.inline(U.esc(g.titel)) + '</b>' : '') + (g.text ? ' ' + U.inline(U.esc(g.text)) : '') + '</figcaption>' : '') + '</figure>';
+  }).join('');
+}
+
 /* Lösung als HTML (für Rückmeldung, Frage-Details, Klausur-Auswertung) */
 function loesungHtml(f) {
+  return loesungOhneBild(f) + grafikHtml(f.kurs, f.bildLoesung);
+}
+function loesungOhneBild(f) {
   const E = (t) => t ? '<div class="erkl">' + U.md(t) + '</div>' : '';
   switch (f.typ) {
     case 'offen': return '<div class="muster">' + U.md(f.antwort) + '</div><div class="kp-t">Kernpunkte</div><ul class="kp-l">' + f.kernpunkte.map((k) => '<li>' + U.inline(U.esc(k)) + '</li>').join('') + '</ul>' + E(f.erklaerung);
@@ -1415,14 +1870,16 @@ function loesungHtml(f) {
   }
   return '';
 }
-/* Fragetext (ohne Antwortbereich) */
+/* Fragetext (ohne Antwortbereich), mit Skizze, falls die Frage eine hat (bild) */
 function frageHtml(f) {
+  let t;
   switch (f.typ) {
-    case 'karte': return U.md(f.vorne);
-    case 'wf': return U.md(f.aussage);
-    case 'luecke': return U.md(f.frage || 'Fülle die Lücken.');
-    default: return U.md(f.frage);
+    case 'karte': t = U.md(f.vorne); break;
+    case 'wf': t = U.md(f.aussage); break;
+    case 'luecke': t = U.md(f.frage || 'Fülle die Lücken.'); break;
+    default: t = U.md(f.frage);
   }
+  return t + grafikHtml(f.kurs, f.bild);
 }
 /* Text für „Mit Claude prüfen“ */
 function claudePrompt(f, antwort) {
@@ -1604,7 +2061,7 @@ const TYP_UI = {
   /* ---------- Karteikarte: umdrehen, selbst einschätzen ---------- */
   karte: {
     render(f, ctx) {
-      const rueck = el('div', { class: 'kbk hidden', html: U.md(f.hinten) + (f.erklaerung ? '<div class="erkl">' + U.md(f.erklaerung) + '</div>' : '') });
+      const rueck = el('div', { class: 'kbk hidden', html: U.md(f.hinten) + grafikHtml(f.kurs, f.bildLoesung) + (f.erklaerung ? '<div class="erkl">' + U.md(f.erklaerung) + '</div>' : '') });
       const bew = el('div', { class: 'selbst hidden' }, [
         el('button', { class: 'sb bad', text: 'Nicht gewusst', onclick: () => ctx.fertig(0, false) }),
         el('button', { class: 'sb mid', text: 'Halb', onclick: () => ctx.fertig(0.5, true) }),
@@ -1639,6 +2096,7 @@ const TYP_UI = {
         const alle = (v) => { haken.fill(v); liste.querySelectorAll('.kp').forEach((b) => b.setAttribute('aria-pressed', String(v))); stand(); };
         box.appendChild(el('div', { class: 'loesung' }, [
           el('div', { class: 'lt-t', text: 'Musterantwort' }), el('div', { class: 'muster', html: U.md(f.antwort) }),
+          f.bildLoesung ? el('div', { html: grafikHtml(f.kurs, f.bildLoesung) }) : null,
           f.erklaerung ? el('div', { class: 'erkl', html: U.md(f.erklaerung) }) : null,
         ]));
         box.appendChild(el('div', { class: 'kpbox' }, [
@@ -1741,6 +2199,19 @@ const App = {
     this.bannerEl = el('div', { id: 'banner', class: 'hidden' });
     document.body.append(this.bannerEl, this.view, this.tabs, this.toastEl);
     this.theme();
+    // Skizzen antippen → groß ansehen (Querformat, Zwei-Finger-Zoom)
+    this.view.addEventListener('click', (e) => { const g = e.target.closest && e.target.closest('figure.grafik'); if (g) this.lupe(g); });
+  },
+  lupe(fig) {
+    const zu = () => { d.remove(); document.removeEventListener('keydown', esc); };
+    const esc = (e) => { if (e.key === 'Escape') zu(); };
+    const d = el('div', { class: 'glupe', role: 'dialog', 'aria-modal': 'true', 'aria-label': 'Grafik groß', onclick: (e) => { if (!e.target.closest('.ib')) zu(); } }, [
+      el('button', { class: 'ib', 'aria-label': 'Schließen', html: ICON.zu, onclick: zu }),
+      fig.cloneNode(true),
+      el('div', { class: 'ghint', text: 'Tipp: iPhone quer halten oder mit zwei Fingern zoomen. Antippen schließt.' }),
+    ]);
+    document.addEventListener('keydown', esc);
+    document.body.appendChild(d);
   },
   theme() {
     const t = Store.data.set.theme, root = document.documentElement;
@@ -1969,7 +2440,7 @@ const UIScreens = {
         const n = s.thema ? ef.filter((f) => f.thema === s.thema).length : 0;
         inhalt.push(el('details', { class: 'skript' }, [
           el('summary', {}, [el('span', { text: s.titel }), n ? el('small', { text: U.plural(n, 'Frage', 'Fragen') }) : null]),
-          el('div', { class: 'md', html: U.md(s.text) }),
+          el('div', { class: 'md', html: U.md(s.text) + grafikHtml(k.id, s.bild) }),
           n ? el('button', { class: 'btn small primary', text: 'Fragen zu „' + s.titel + '“ üben', onclick: () => this.starte('thema', { einheit: eid, thema: s.thema }, s.titel) }) : null,
         ]));
       });
@@ -2237,7 +2708,7 @@ const UILernen = {
         res.s > 0 && res.s < 1 ? el('span', { text: U.fmtPct(res.s) }) : null,
         unsicher && erg === 'richtig' ? el('span', { class: 'muted', text: 'kommt trotzdem bald wieder' }) : null,
       ]));
-      const mehr = ['wf', 'zahl', 'reihe'].includes(f.typ) ? loesungHtml(f) : (f.erklaerung ? '<div class="erkl">' + U.md(f.erklaerung) + '</div>' : '');
+      const mehr = ['wf', 'zahl', 'reihe'].includes(f.typ) ? loesungHtml(f) : grafikHtml(f.kurs, f.bildLoesung) + (f.erklaerung ? '<div class="erkl">' + U.md(f.erklaerung) + '</div>' : '');
       if (mehr) rueck.appendChild(el('div', { class: 'md', html: mehr }));
       if (f.quelle) rueck.appendChild(el('div', { class: 'quelle', text: 'Quelle: ' + f.quelle }));
     };
@@ -2397,7 +2868,7 @@ const UIKlausur = {
       schliessen: async () => { if (await this.bestaetigen('Simulation unterbrechen?', 'Du kannst sie später unter „Klausur-Simulation“ fortsetzen. Die Zeit läuft weiter.', 'Unterbrechen')) this.tab('lernen'); },
       aktionen: [uhr],
       inhalt: [nav,
-        el('div', { class: 'card frage-k' }, [el('div', { class: 'meta' }, [el('span', { text: punkte(f) + ' Punkte' })]), el('div', { class: 'md frage-t', html: U.md(f.frage) }), ta]),
+        el('div', { class: 'card frage-k' }, [el('div', { class: 'meta' }, [el('span', { text: punkte(f) + ' Punkte' })]), el('div', { class: 'md frage-t', html: frageHtml(f) }), ta]),
         el('div', { class: 'row' }, [
           K.i > 0 ? el('button', { class: 'btn', text: 'Zurück', onclick: () => gehe(K.i - 1) }) : null,
           K.i + 1 < fr.length ? el('button', { class: 'btn primary', text: 'Nächste Aufgabe', onclick: () => gehe(K.i + 1) }) : null,
@@ -2429,9 +2900,9 @@ const UIKlausur = {
       titel: 'Auswertung ' + (K.ri + 1) + ' / ' + fr.length, ueber: 'Klausur-Simulation', ohneTabs: true,
       schliessen: async () => { if (await this.bestaetigen('Auswertung unterbrechen?', 'Du kannst sie später fortsetzen.', 'Unterbrechen')) this.tab('lernen'); },
       inhalt: [
-        el('div', { class: 'card frage-k' }, [el('div', { class: 'md frage-t', html: U.md(f.frage) })]),
+        el('div', { class: 'card frage-k' }, [el('div', { class: 'md frage-t', html: frageHtml(f) })]),
         el('div', { class: 'card' }, [el('div', { class: 'lt-t', text: 'Deine Antwort' }), antwort.trim() ? el('p', { class: 'vorlage', text: antwort }) : el('p', { class: 'muted', text: '(leer)' })]),
-        el('div', { class: 'card loesung' }, [el('div', { class: 'lt-t', text: 'Musterantwort' }), el('div', { class: 'md muster', html: U.md(f.antwort) }), f.erklaerung ? el('div', { class: 'erkl', html: U.md(f.erklaerung) }) : null]),
+        el('div', { class: 'card loesung' }, [el('div', { class: 'lt-t', text: 'Musterantwort' }), el('div', { class: 'md muster', html: U.md(f.antwort) }), f.bildLoesung ? el('div', { html: grafikHtml(f.kurs, f.bildLoesung) }) : null, f.erklaerung ? el('div', { class: 'erkl', html: U.md(f.erklaerung) }) : null]),
         el('div', { class: 'card kpbox' }, [el('div', { class: 'kphead' }, [el('span', { class: 'lt-t', text: 'Welche Kernpunkte hattest du?' }), stand]), liste,
           el('button', { class: 'btn small', text: 'Mit Claude prüfen', onclick: async () => { const ok = await U.kopieren(claudePrompt(f, antwort)); this.toast(ok ? 'Kopiert – in der Claude-App einfügen' : 'Kopieren ging nicht'); } })]),
         weiter,

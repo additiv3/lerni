@@ -159,6 +159,7 @@
     for (const f of alleFragen) {
       fang('Frage ' + f.qid, () => {
         App.stapel = []; App.oeffne(App.lernSeite, new Sitzung([f], { modus: 'fragen', titel: 'Test', kurs: f.kurs }));
+        for (const b of Lerni.bilder(f.bild)) ok(!!App.view.querySelector('.frage-k figure.grafik[data-grafik="' + b + '"] svg'), f.qid + ': Skizze ' + b + ' fehlt bei der Frage');
         beantworte(f);
         const r = Store.rec(f.qid);
         ok(r && r.n === 1 && r.h[0][1] === 100, f.qid + ' (' + f.typ + '): über die Oberfläche nicht als richtig gespeichert (' + JSON.stringify(r && r.h) + ')');
@@ -171,6 +172,27 @@
     klick($$('.opt').find((b) => txt(b) === (f.wahr ? 'Falsch' : 'Wahr'))); klick($('#pruefen'));
     ok(!!$('.rueck.falsch'), 'falsche Antwort wird als falsch gezeigt'); klick($('#weiter'));
     ok(/2 \/ 2/.test(txt($('.kopf h1'))), 'falsche Frage kommt in der Runde wieder');
+  });
+
+  /* ---------- Skizzen (Lerni.grafik): jede im Skript bzw. in der Lösung sichtbar ---------- */
+  fang('Skizzen', () => {
+    const genutzt = new Set();
+    for (const k of Lerni.kurse) for (const e of k.einheitenListe) {
+      const soll = [].concat(...(e.skript || []).map((s) => Lerni.bilder(s.bild)));
+      if (!soll.length) continue;
+      const vorher = Store.data.set.kurs; Store.data.set.kurs = k.id;
+      App.stapel = []; App.oeffne(App.einheit, e.id);
+      for (const b of soll) { genutzt.add(k.id + ':' + b); ok(!!App.view.querySelector('details.skript figure.grafik[data-grafik="' + b + '"] svg'), 'Einheit ' + e.id + ': Skizze ' + b + ' fehlt im Skript'); }
+      Store.data.set.kurs = vorher;
+    }
+    for (const f of alleFragen) {
+      for (const b of Lerni.bilder(f.bild).concat(Lerni.bilder(f.bildLoesung))) genutzt.add(f.kurs + ':' + b);
+      if (f.bildLoesung) ok(loesungHtml(f).includes('data-grafik="' + Lerni.bilder(f.bildLoesung)[0] + '"'), f.qid + ': Skizze fehlt in der Lösung');
+    }
+    for (const key of Object.keys(Lerni.grafiken)) ok(genutzt.has(key), 'Skizze ' + key + ' wird nirgends verwendet');
+    // Antippen vergrößert, Schließen räumt auf
+    const fig = App.view.querySelector('figure.grafik');
+    if (fig) { fig.click(); const L = document.querySelector('.glupe'); ok(!!(L && L.querySelector('svg')), 'Lupe öffnet die Skizze'); if (L) L.click(); ok(!document.querySelector('.glupe'), 'Lupe schließt'); }
   });
 
   /* ---------- Oberfläche: alle Seiten ---------- */
