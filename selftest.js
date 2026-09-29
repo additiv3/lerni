@@ -212,15 +212,81 @@
     ok(!!document.getElementById('startHeute') || !!App.view.querySelector('.fertig'), 'Start: Lernen-Knopf oder „erledigt“');
     ok(App.view.querySelectorAll('.kachel').length >= 10, 'Start: Kacheln');
     App.tab('lernen'); klick(document.getElementById('k_mix')); ok(!!App.view.querySelector('.frage-k'), 'Kachel „Alles gemischt“ startet Runde');
-    // Klausur-Simulation einmal ganz durch
-    App.tab('lernen'); App.oeffne(App.klausurStart); klick(document.getElementById('klausurLos'));
-    const K = App.klausurOffen(); ok(K && K.qids.length > 0, 'Klausur angelegt');
+    // Klausur-Simulation (nur offene Fragen) einmal ganz durch
+    App.tab('lernen'); App._kcfg.modus = 'offen'; App.oeffne(App.klausurStart); klick(document.getElementById('klausurLos'));
+    const K = App.klausurOffen(); ok(K && K.qids.length > 0 && !K.modus, 'Klausur angelegt');
     const ta = App.view.querySelector('textarea'); setze(ta, 'Testantwort');
     App.ersetze(App.klausurAuswertung, Object.assign(K, { antworten: ['Testantwort'], abgegeben: true, tEnde: Date.now(), ri: 0 }));
-    for (let i = 0; i < K.qids.length; i++) { klick(document.getElementById('kWeiter')); }
+    for (let i = 0; i < K.qids.length && document.getElementById('kWeiter'); i++) klick(document.getElementById('kWeiter'));
     ok(/Klausur-Ergebnis/.test(txt(App.view.querySelector('.kopf h1'))), 'Klausur-Ergebnis erreicht');
     ok(!App.klausurOffen(), 'Klausur nach Ergebnis abgeschlossen');
+    App._kcfg.modus = null;
     App.tab('lernen');
+  });
+
+  /* ---------- Vollklausur: Auswahl, Zeit, Bewertung, Neustart ---------- */
+  fang('Vollklausur', () => {
+    const k = App.kurs(), offenPool = k.alleFragen.filter((f) => f.typ === 'offen'), mcPool = k.alleFragen.filter((f) => f.typ === 'mc');
+    if (!offenPool.length || !mcPool.length) return;
+    Store.data = Store.defaults(); localStorage.removeItem('lerni.klausur');
+    const einheitenMit = new Set(offenPool.concat(mcPool).map((f) => f.einheit));
+    for (let t = 0; t < 20; t++) {
+      const w = App._kVollWahl(offenPool, mcPool, ['kritisch', 'neu', 'zufall'][t % 3]), alle = w.offen.concat(w.mc);
+      gleich([w.offen.length, w.mc.length], [Math.min(8, offenPool.length), Math.min(10, mcPool.length)], 'Vollklausur: 8 offene + 10 MC');
+      const summe = w.offen.reduce((a, f) => a + (f.punkte || 2), 0);
+      ok(offenPool.length < 8 || Math.abs(summe - 20) <= 1, 'Vollklausur: offene Fragen ergeben etwa 20 Punkte (war ' + summe + ')');
+      ok(new Set(alle.map((f) => f.einheit)).size >= Math.min(einheitenMit.size, alle.length), 'Vollklausur: Themenabdeckung (' + new Set(alle.map((f) => f.einheit)).size + ' von ' + einheitenMit.size + ' Einheiten)');
+      ok(new Set(alle).size === alle.length, 'Vollklausur: keine Frage doppelt');
+    }
+    // über die Oberfläche anlegen
+    App.stapel = []; Object.assign(App._kcfg, { modus: 'voll', aus: null, vollMin: 45, wahl: 'kritisch' });
+    App.oeffne(App.klausurStart); ok(/30/.test(txt(App.view)) && /15/.test(txt(App.view)), 'Start zeigt 30 Punkte / Bestehen ab 15');
+    klick(document.getElementById('klausurLos'));
+    let K = App.klausurOffen();
+    ok(K && K.modus === 'voll' && K.dauer === 45 * 60000 && K.qids.length === 18, 'Vollklausur angelegt: 18 Aufgaben, 45 min');
+    const fr = K.qids.map((q) => Lerni.fragen[q]), iMc = fr.findIndex((f) => f.typ === 'mc'), nOff = fr.filter((f) => f.typ !== 'mc').length;
+    gleich(iMc, nOff, 'Vollklausur: erst offene Fragen, dann Multiple Choice');
+    setze(App.view.querySelector('textarea'), 'Meine Antwort');
+    klick($$('.knav .kn')[iMc]);
+    const f0 = fr[iMc], nR = f0.optionen.filter((o) => o.r).length;
+    ok(!App.view.querySelector('.opt .warum') && !$$('.opt').some((b) => /\bok\b|\bbad\b/.test(b.className)), 'MC in der Klausur ohne Lösungshinweise');
+    $$('.opt').forEach((b) => { const o = f0.optionen.find((x) => plainT(x.t) === txt(b.querySelector('.ot'))); if (o && o.r) klick(b); });
+    K = App.klausurOffen();
+    gleich((K.antworten[iMc] || []).length, nR, 'MC-Kreuze gespeichert');
+    gleich(K.antworten[0], 'Meine Antwort', 'Antwort der offenen Frage nach Seitenwechsel gespeichert');
+    App.ersetze(App.klausurLauf, App.klausurOffen());                 // wie nach einem App-Neustart
+    gleich($$('.opt[aria-pressed="true"]').length, nR, 'MC-Kreuze nach Neustart sichtbar');
+    // restliche MC richtig ankreuzen, Zeit ablaufen lassen → automatische Abgabe
+    K = App.klausurOffen();
+    fr.forEach((f, i) => { if (f.typ === 'mc' && i !== iMc) K.antworten[i] = f.optionen.map((o, j) => (o.r ? j : -1)).filter((j) => j >= 0); });
+    K.t0 = Date.now() - 46 * 60000; App._kSpeichern(K);
+    App.ersetze(App.klausurLauf, K);
+    ok(K.abgegeben === true, 'Zeit abgelaufen: Abgabe ausgelöst');
+    App.ersetze(App.klausurAuswertung, K);                                  // räumt den Abgabe-Timer auf
+    ok(K.mcGewertet && fr.every((f, i) => f.typ !== 'mc' || K.bewertung[i] === 1), 'MC automatisch bewertet');
+    const vorher = Store.data.log.length;
+    App.ersetze(App.klausurAuswertung, K);
+    gleich(Store.data.log.length, vorher, 'MC nur einmal ins Logbuch');
+    // erste offene Frage: alle Kernpunkte abhaken, Rest ohne
+    $$('.kps .kp').forEach((b) => klick(b));
+    ok(/· \d+(,5)? P\./.test(txt(document.getElementById('kWeiter'))), 'Punkteanzeige in der Auswertung');
+    for (let i = 0; i < 18 && document.getElementById('kWeiter'); i++) klick(document.getElementById('kWeiter'));
+    const max = fr.reduce((a, f) => a + (f.typ === 'mc' ? 1 : f.punkte || 2), 0), soll = fr.filter((f) => f.typ === 'mc').length + (fr[0].punkte || 2);
+    gleich(txt(document.getElementById('kGesamt')), U.fmtNum(soll) + ' von ' + U.fmtNum(max) + ' Punkten', 'Vollklausur: Gesamtpunkte');
+    ok(/bestanden/i.test(txt(App.view)) && !!document.getElementById('kEinheiten'), 'Ergebnis mit Bestehensgrenze und Einheiten');
+    const S = Store.data.sitzungen[Store.data.sitzungen.length - 1];
+    ok(S && S.titel === 'Vollklausur' && S.p === soll && S.pmax === max, 'Vollklausur im Logbuch (Punkte)');
+    ok(!App.klausurOffen(), 'Vollklausur abgeschlossen');
+    App.ersetze(App.logbuch, 'verlauf'); ok(/P\./.test(txt(App.view)), 'Logbuch-Verlauf zeigt Klausurpunkte');
+    // Rundung: halbe Punkte
+    gleich(App._kPunkte({ modus: 'voll' }, { typ: 'offen', punkte: 3 }, 1 / 3), 1, 'Rundung auf 0,5 (1 von 3)');
+    gleich(App._kPunkte({ modus: 'voll' }, { typ: 'offen', punkte: 3 }, 0.5), 1.5, 'Rundung auf 0,5 (1,5 von 3)');
+    gleich(App._kPunkte({ modus: 'voll' }, { typ: 'mc' }, 0.5), 0.5, 'MC-Teilpunkte');
+    // alter Stand ohne modus läuft als Simulation weiter
+    App.ersetze(App.klausurLauf, { qids: [offenPool[0].qid], antworten: ['x'], i: 0, t0: Date.now(), dauer: 0, kurs: k.id, abgegeben: false, bewertung: [], ri: 0 });
+    ok(/Klausur-Simulation/.test(txt(App.view.querySelector('.kopf'))) && !!App.view.querySelector('textarea'), 'Alter Klausurstand ohne modus läuft weiter');
+    Object.assign(App._kcfg, { modus: null });
+    App.tab('lernen'); localStorage.removeItem('lerni.klausur');
   });
 
   /* ---------- Aufräumen, Ergebnis ---------- */

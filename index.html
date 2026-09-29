@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- LERNI – gebaut 29.09.2026, 21:47. Nicht direkt öffnen: py tools/build.py setzt CSS, Code und Inhalte ein und schreibt dist/index.html -->
+<!-- LERNI – gebaut 29.09.2026, 21:54. Nicht direkt öffnen: py tools/build.py setzt CSS, Code und Inhalte ein und schreibt dist/index.html -->
 <html lang="de">
 <head>
   <meta charset="utf-8">
@@ -397,6 +397,7 @@ details.card[open] summary { margin-bottom: 10px; }
 .knav .kn { width: 38px; height: 38px; border-radius: 10px; background: var(--card); box-shadow: var(--shadow); font-weight: 700; }
 .knav .kn.voll { background: var(--pri-soft); color: var(--pri); }
 .knav .kn.on { background: var(--pri); color: var(--pri-t); }
+.knav .kn.mc { border-radius: 50%; }                                   /* Vollklausur: Teil 2 (Multiple Choice) */
 
 /* ---------- Dialog ---------- */
 .dlg { position: fixed; inset: 0; z-index: 40; background: rgba(8, 10, 20, .45); display: flex; align-items: flex-end; justify-content: center; padding: 16px 16px calc(var(--safe-b) + 16px); animation: dlgin .15s; }
@@ -413,7 +414,7 @@ details.card[open] summary { margin-bottom: 10px; }
 </head>
 <body>
   <noscript>Lerni braucht JavaScript.</noscript>
-<script>const LERNI_BUILD = {"id": "fdc679d-20260929214758", "stamp": "29.09.2026, 21:47", "commit": "fdc679d"};</script>
+<script>const LERNI_BUILD = {"id": "6232da7-20260929215457", "stamp": "29.09.2026, 21:54", "commit": "6232da7"};</script>
 <script>
 /* LERNI – Hilfsfunktionen: DOM, Datum, Text, Zufall.
    Läuft auch in Node (tools/check.js): beim Laden nichts am DOM anfassen. */
@@ -3720,7 +3721,7 @@ const UIScreens = {
       ...['kritisch', 'falsch', 'wackelig', 'oftfalsch', 'glueck', 'neu', 'gemerkt', 'sitzt'].map((id) => kachel(id, LISTE_BY_ID[id].name, z[id], LISTE_BY_ID[id].desc, () => this.starte('liste', { liste: id }, LISTE_BY_ID[id].name))),
       kachel('offen', 'Nur offene Fragen', nOffen, 'Wie in der Klausur: erklären, dann Kernpunkte abhaken', () => this.starte('offen', {}, 'Offene Fragen')),
       kachel('mix', 'Alles gemischt', fr.length, 'Zufällige Fragen aus allen Einheiten', () => this.starte('mix', {}, 'Gemischt')),
-      kachel('klausur', 'Klausur-Simulation', nOffen, 'Mit Zeit, ohne Hilfe – Auswertung am Ende', () => this.oeffne(this.klausurStart)),
+      kachel('klausur', 'Klausur-Simulation', nOffen, fr.some((f) => f.typ === 'mc') ? 'Vollklausur: 30 Punkte in 45 min, ohne Hilfe' : 'Mit Zeit, ohne Hilfe – Auswertung am Ende', () => this.oeffne(this.klausurStart)),
     ]));
 
     // Einheiten
@@ -3878,7 +3879,7 @@ const UIScreens = {
       out.push(el('h2', { class: 'abschnitt', text: 'Lernrunden' }));
       out.push(el('div', { class: 'liste' }, S.map((s) => el('div', { class: 'zeile statisch' }, [
         el('span', { class: 'zb' }, [el('span', { class: 'zt', text: s.titel || s.modus }), el('span', { class: 'zm', text: U.fmtDay(U.dayNum(s.t * 1000), true) + ' ' + U.fmtTime(s.t) + ' · ' + U.plural(s.n, 'Frage', 'Fragen') + ' · ' + U.fmtDur(s.ms) })]),
-        el('b', { class: 'quote', text: U.fmtPct(s.r / s.n) }),
+        el('b', { class: 'quote', text: s.pmax ? U.fmtNum(s.p) + '/' + U.fmtNum(s.pmax) + ' P.' : U.fmtPct(s.r / s.n) }),
       ]))));
     }
     out.push(el('h2', { class: 'abschnitt', text: 'Letzte Antworten' }));
@@ -4129,46 +4130,79 @@ Object.assign(App, UILernen);
 //# sourceURL=js/lernen.js
 </script>
 <script>
-/* LERNI – Klausur-Simulation: offene Fragen mit Zeitlimit, ohne Hilfe. Erst am Ende Musterantworten und Selbstbewertung.
-   Eine laufende Simulation steht in localStorage (KLAUSUR_KEY), damit sie weiterläuft, wenn iOS die App im Hintergrund beendet. */
+/* LERNI – Klausur-Simulation mit Zeitlimit, ohne Hilfe. Erst am Ende Musterantworten und Selbstbewertung.
+   Zwei Modi:
+   - 'offen' (bisher): nur offene Fragen, Anzahl und Zeit frei wählbar.
+   - 'voll' (Vollklausur): wie die echte Klausur – 8 offene Fragen (Summe möglichst 20 P.) + 10 Multiple-Choice-Fragen
+     à 1 P. = 30 P., 45 min, bestanden ab der Hälfte. Auswahl nach Schwächen mit Themenabdeckung (möglichst jede Einheit).
+     MC wird automatisch bewertet (Teilpunkte nach Bewerter.mc), offene Fragen über Kernpunkte; Punkte auf 0,5 gerundet.
+   Eine laufende Simulation steht in localStorage (KLAUSUR_KEY), damit sie weiterläuft, wenn iOS die App im Hintergrund beendet.
+   Stand K: { qids, antworten[], i, t0, dauer, kurs, abgegeben, bewertung[], ri, tEnde?, gespeichert?,
+              modus? ('voll'; fehlt = 'offen'), ord? (MC-Optionsreihenfolge je Aufgabe), mcGewertet? } –
+   ältere Stände ohne modus laufen unverändert als 'offen' weiter. */
 'use strict';
 
 const KLAUSUR_KEY = 'lerni.klausur';
+const VOLL = { offen: 8, zielPunkte: 20, mc: 10, mcPunkte: 1, min: 45 };
 
 const UIKlausur = {
-  _kcfg: { n: 5, min: 30, wahl: 'kritisch', aus: null },
+  _kcfg: { n: 5, min: 30, wahl: 'kritisch', aus: null, modus: null, vollMin: VOLL.min },
 
   klausurOffen() { try { const K = JSON.parse(localStorage.getItem(KLAUSUR_KEY) || 'null'); return K && K.qids && K.qids.every((q) => Lerni.fragen[q]) ? K : null; } catch (e) { return null; } },
   _kSpeichern(K) { try { localStorage.setItem(KLAUSUR_KEY, JSON.stringify(K)); } catch (e) { /* voll – läuft trotzdem */ } },
   _kLoeschen() { try { localStorage.removeItem(KLAUSUR_KEY); } catch (e) { /* egal */ } },
 
+  /* Punkte einer Aufgabe im jeweiligen Modus; Rundung wie beim Prüfer auf 0,5 */
+  _kMax(K, f) { return K.modus === 'voll' ? (f.typ === 'mc' ? VOLL.mcPunkte : f.punkte || 2) : f.punkte || 10; },
+  _kRund: (x) => Math.round(x * 2) / 2,
+  _kPunkte(K, f, s) { return K.modus === 'voll' ? this._kRund((s || 0) * this._kMax(K, f)) : Math.round((s || 0) * this._kMax(K, f) * 10) / 10; },
+  _kZahl: (x) => x.toLocaleString('de-DE', { maximumFractionDigits: 1 }),
+
   klausurStart() {
     const k = this.kurs(), C = this._kcfg, offen = this.klausurOffen();
-    const pool = (aus) => k.alleFragen.filter((f) => f.typ === 'offen' && (!aus || aus.indexOf(f.einheit) >= 0));
-    const n = pool(C.aus).length;
+    const pool = (typ, aus) => k.alleFragen.filter((f) => f.typ === typ && (!aus || aus.indexOf(f.einheit) >= 0));
+    if (!C.modus) C.modus = pool('offen').length && pool('mc').length ? 'voll' : 'offen';
+    const voll = C.modus === 'voll';
+    const nOffen = pool('offen', C.aus).length, nMc = pool('mc', C.aus).length;
     const rer = () => this.ersetze(this.klausurStart);
     const inhalt = [];
-    if (offen) inhalt.push(el('div', { class: 'card hinweis' }, [el('b', { text: 'Eine Simulation läuft noch' }), el('p', { text: 'Begonnen ' + U.relDay(U.dayNum(offen.t0)) + ' um ' + U.fmtTime(offen.t0 / 1000) + ', ' + offen.qids.length + ' Aufgaben.' }),
+    if (offen) inhalt.push(el('div', { class: 'card hinweis' }, [el('b', { text: (offen.modus === 'voll' ? 'Eine Vollklausur' : 'Eine Simulation') + ' läuft noch' }), el('p', { text: 'Begonnen ' + U.relDay(U.dayNum(offen.t0)) + ' um ' + U.fmtTime(offen.t0 / 1000) + ', ' + offen.qids.length + ' Aufgaben.' }),
       el('div', { class: 'row' }, [el('button', { class: 'btn primary', text: 'Fortsetzen', onclick: () => this.ersetze(offen.abgegeben ? this.klausurAuswertung : this.klausurLauf, offen) }),
         el('button', { class: 'btn', text: 'Verwerfen', onclick: () => { this._kLoeschen(); rer(); } })])]));
-    inhalt.push(el('p', { text: 'Wie in der echten Klausur: Du beantwortest offene Fragen ohne Hilfe und mit Zeitlimit. Erst am Ende siehst du die Musterantworten und bewertest dich anhand der Kernpunkte.' }));
     const zeile = (t, ctrl) => el('div', { class: 'einst' }, [el('div', { class: 'et', text: t }), ctrl]);
-    inhalt.push(el('div', { class: 'card' }, [
-      zeile('Aufgaben', this.wahl([[3, '3'], [5, '5'], [8, '8'], [12, '12']], C.n, (v) => { C.n = v; rer(); })),
-      zeile('Zeit', this.wahl([[0, 'ohne'], [15, '15 min'], [30, '30 min'], [60, '60 min'], [90, '90 min']], C.min, (v) => { C.min = v; rer(); })),
-      zeile('Auswahl', this.wahl([['kritisch', 'Schwächen'], ['neu', 'Neue zuerst'], ['zufall', 'Zufall']], C.wahl, (v) => { C.wahl = v; rer(); })),
-    ]));
+    inhalt.push(this.wahl([['voll', 'Vollklausur'], ['offen', 'Nur offene Fragen']], C.modus, (v) => { C.modus = v; rer(); }));
+    if (voll) {
+      const max = VOLL.zielPunkte + VOLL.mc * VOLL.mcPunkte;
+      inhalt.push(el('div', { class: 'card' }, [
+        el('b', { text: 'Wie die echte Klausur' }),
+        el('p', { class: 'small', html: '<b>Teil 1:</b> ' + VOLL.offen + ' offene Fragen (zusammen ' + VOLL.zielPunkte + ' Punkte) · <b>Teil 2:</b> ' + VOLL.mc + ' Multiple-Choice-Fragen à ' + VOLL.mcPunkte + ' Punkt<br>Max. Punktezahl <b>' + max + '</b>, zum Bestehen mindestens <b>' + max / 2 + '</b>. Punkte in halben Schritten.' }),
+        el('p', { class: 'muted small', text: 'Ohne Hilfe, mit Uhr. Bei Multiple Choice können mehrere Antworten richtig sein; Teilpunkte gibt es für richtige minus falsche Kreuze. Die Auswahl deckt möglichst jede Einheit ab und bevorzugt deine Schwächen.' }),
+      ]));
+      inhalt.push(el('div', { class: 'card' }, [
+        zeile('Zeit', this.wahl([[45, '45 min'], [0, 'ohne']], C.vollMin, (v) => { C.vollMin = v; rer(); })),
+        zeile('Auswahl', this.wahl([['kritisch', 'Schwächen'], ['neu', 'Neue zuerst'], ['zufall', 'Zufall']], C.wahl, (v) => { C.wahl = v; rer(); })),
+      ]));
+    } else {
+      inhalt.push(el('p', { text: 'Du beantwortest offene Fragen ohne Hilfe und mit Zeitlimit. Erst am Ende siehst du die Musterantworten und bewertest dich anhand der Kernpunkte.' }));
+      inhalt.push(el('div', { class: 'card' }, [
+        zeile('Aufgaben', this.wahl([[3, '3'], [5, '5'], [8, '8'], [12, '12']], C.n, (v) => { C.n = v; rer(); })),
+        zeile('Zeit (min)', this.wahl([[0, 'ohne'], [15, '15'], [30, '30'], [45, '45'], [60, '60'], [90, '90']], C.min, (v) => { C.min = v; rer(); })),
+        zeile('Auswahl', this.wahl([['kritisch', 'Schwächen'], ['neu', 'Neue zuerst'], ['zufall', 'Zufall']], C.wahl, (v) => { C.wahl = v; rer(); })),
+      ]));
+    }
     if (k.einheitenListe.length > 1) {
       const aus = C.aus || k.einheitenListe.map((e) => e.id);
       inhalt.push(el('h2', { class: 'abschnitt', text: 'Einheiten' }));
       inhalt.push(el('div', { class: 'chips' }, k.einheitenListe.map((e, i) => this.chip((i + 1) + ' · ' + e.titel, aus.indexOf(e.id) >= 0, () => {
         const neu = aus.indexOf(e.id) >= 0 ? aus.filter((x) => x !== e.id) : aus.concat(e.id);
         C.aus = neu.length === k.einheitenListe.length ? null : neu; rer();
-      }, pool([e.id]).length))));
+      }, pool('offen', [e.id]).length + (voll ? pool('mc', [e.id]).length : 0)))));
     }
-    inhalt.push(el('p', { class: 'muted small', text: n + ' offene Fragen in der Auswahl.' }));
-    inhalt.push(el('button', { class: 'btn primary wide gross', id: 'klausurLos', text: 'Klausur beginnen', disabled: !n, onclick: () => {
-      const K = { qids: this._kWahl(pool(C.aus), Math.min(C.n, n), C.wahl).map((f) => f.qid), antworten: [], i: 0, t0: Date.now(), dauer: C.min * 60000, kurs: k.id, abgegeben: false, bewertung: [], ri: 0 };
+    const bereit = voll ? nOffen > 0 && nMc > 0 : nOffen > 0;
+    inhalt.push(el('p', { class: 'muted small', text: voll ? nOffen + ' offene und ' + nMc + ' Multiple-Choice-Fragen in der Auswahl.' : nOffen + ' offene Fragen in der Auswahl.' }));
+    inhalt.push(el('button', { class: 'btn primary wide gross', id: 'klausurLos', text: voll ? 'Vollklausur beginnen' : 'Klausur beginnen', disabled: !bereit, onclick: () => {
+      const K = voll ? this._kVollAnlegen(k, pool('offen', C.aus), pool('mc', C.aus), C) :
+        { qids: this._kWahl(pool('offen', C.aus), Math.min(C.n, nOffen), C.wahl).map((f) => f.qid), antworten: [], i: 0, t0: Date.now(), dauer: C.min * 60000, kurs: k.id, abgegeben: false, bewertung: [], ri: 0 };
       this._kSpeichern(K); this.ersetze(this.klausurLauf, K);
     } }));
     return this.seite({ titel: 'Klausur-Simulation', ueber: k.name, zurueck: true, inhalt });
@@ -4183,64 +4217,138 @@ const UIKlausur = {
     return U.shuffle(erste.concat(rest.slice(0, n - nk)));
   },
 
+  /* ---------- Vollklausur: Auswahl mit Themenabdeckung, Punktsumme und Gewicht nach Schwächen ---------- */
+  /* Gewicht einer Frage für die Auswahl: Schwächen und klausurrelevante Fragen öfter, Neues je nach Einstellung */
+  _kGewicht(f, wahl) {
+    if (wahl === 'zufall') return 1;
+    const i = Lernlogik.info(f), w = 1 + 0.25 * (f.wichtig - 1);
+    if (wahl === 'neu') return (i.neu ? 4 : 1) * w;
+    return (i.neu ? 1 : 0.4 + 3 * i.crit) * w;
+  },
+  _kZiehe(liste, gew, rnd) {                        // gewichtete Zufallsauswahl, entfernt das Element aus liste
+    const summe = liste.reduce((a, f) => a + gew.get(f), 0); let x = rnd() * summe;
+    for (let j = 0; j < liste.length; j++) { x -= gew.get(liste[j]); if (x <= 0) return liste.splice(j, 1)[0]; }
+    return liste.pop();
+  },
+  /* Wählt n Fragen: zuerst je eine aus möglichst vielen Einheiten (bevorzugt aus „bevorzugt“), dann gewichtet auffüllen */
+  _kZug(pool, n, gew, rnd, bevorzugt) {
+    const rest = pool.slice(), out = [], einheiten = U.shuffle([...new Set(pool.map((f) => f.einheit))], rnd);
+    if (bevorzugt) einheiten.sort((a, b) => (bevorzugt.has(a) ? 0 : 1) - (bevorzugt.has(b) ? 0 : 1));
+    for (const e of einheiten) {
+      if (out.length >= n) break;
+      const kand = rest.filter((f) => f.einheit === e); if (!kand.length) continue;
+      const f = this._kZiehe(kand, gew, rnd); rest.splice(rest.indexOf(f), 1); out.push(f);
+    }
+    while (out.length < n && rest.length) out.push(this._kZiehe(rest, gew, rnd));
+    return out;
+  },
+  _kVollWahl(offenPool, mcPool, wahl, rnd = Math.random) {
+    const gew = new Map(offenPool.concat(mcPool).map((f) => [f, this._kGewicht(f, wahl)]));
+    // Offene Fragen: viele Versuche, bester nach Punktsumme (Ziel 20) und Gewicht
+    let best = null;
+    for (let t = 0; t < 400; t++) {
+      const zug = this._kZug(offenPool, Math.min(VOLL.offen, offenPool.length), gew, rnd);
+      const summe = zug.reduce((a, f) => a + (f.punkte || 2), 0);
+      const wert = zug.reduce((a, f) => a + gew.get(f), 0) - 6 * Math.abs(summe - VOLL.zielPunkte);
+      if (!best || wert > best.wert) best = { zug, wert };
+    }
+    const abgedeckt = new Set(best.zug.map((f) => f.einheit));
+    const fehlend = new Set(mcPool.map((f) => f.einheit).filter((e) => !abgedeckt.has(e)));
+    const mc = this._kZug(mcPool, Math.min(VOLL.mc, mcPool.length), gew, rnd, fehlend);
+    return { offen: best.zug.sort((a, b) => a.ord - b.ord), mc: mc.sort((a, b) => a.ord - b.ord) };
+  },
+  _kVollAnlegen(k, offenPool, mcPool, C) {
+    const w = this._kVollWahl(offenPool, mcPool, C.wahl);
+    const fr = w.offen.concat(w.mc);
+    return { modus: 'voll', qids: fr.map((f) => f.qid), antworten: fr.map((f) => (f.typ === 'mc' ? [] : '')),
+      ord: fr.map((f) => (f.typ === 'mc' ? U.shuffle(f.optionen.map((_, j) => j)) : null)),
+      i: 0, t0: Date.now(), dauer: C.vollMin * 60000, kurs: k.id, abgegeben: false, bewertung: [], ri: 0 };
+  },
+
   klausurLauf(K) {
-    const fr = K.qids.map((q) => Lerni.fragen[q]), f = fr[K.i];
+    const fr = K.qids.map((q) => Lerni.fragen[q]), f = fr[K.i], voll = K.modus === 'voll';
     const ende = K.dauer ? K.t0 + K.dauer : 0;
     const uhr = el('span', { class: 'uhr' });
     const tick = () => {
       if (!ende) { uhr.textContent = U.fmtClock((Date.now() - K.t0) / 1000); return; }
       const rest = (ende - Date.now()) / 1000; uhr.textContent = U.fmtClock(rest); uhr.classList.toggle('knapp', rest < 300);
-      if (rest <= 0 && !K.abgegeben) { clearInterval(iv); K.abgegeben = true; setTimeout(() => { this.toast('Zeit ist um – Abgabe'); abgeben(); }, 0); }   // nicht mitten im Aufbau der Seite wechseln
+      if (rest <= 0 && !K.abgegeben) { clearInterval(iv); K.abgegeben = true; this._kat = setTimeout(() => { this.toast('Zeit ist um – Abgabe'); abgeben(); }, 0); }   // nicht mitten im Aufbau der Seite wechseln
     };
     const iv = setInterval(tick, 1000);
-    this._aufraeumen = () => { clearInterval(iv); clearTimeout(this._kt); this._kSpeichern(K); };   // letzte Tastendrücke sichern
-    const ta = el('textarea', { class: 'antw gross', rows: 10, placeholder: 'Deine Antwort …', 'aria-label': 'Antwort auf Aufgabe ' + (K.i + 1) });
-    ta.value = K.antworten[K.i] || '';
-    ta.addEventListener('input', () => { K.antworten[K.i] = ta.value; clearTimeout(this._kt); this._kt = setTimeout(() => this._kSpeichern(K), 300); });
-    const gehe = (i) => { K.antworten[K.i] = ta.value; K.i = i; this._kSpeichern(K); this.ersetze(this.klausurLauf, K); };
-    const abgeben = () => { K.antworten[K.i] = ta.value; K.abgegeben = true; K.tEnde = Date.now(); K.ri = 0; this._kSpeichern(K); this.ersetze(this.klausurAuswertung, K); };
-    const punkte = (x) => x.punkte || 10;
-    const nav = el('div', { class: 'knav' }, fr.map((x, i) => el('button', { class: 'kn' + (i === K.i ? ' on' : '') + ((K.antworten[i] || '').trim() ? ' voll' : ''), text: String(i + 1), 'aria-label': 'Aufgabe ' + (i + 1), onclick: () => gehe(i) })));
+    this._aufraeumen = () => { clearInterval(iv); clearTimeout(this._kt); clearTimeout(this._kat); this._kSpeichern(K); };   // letzte Tastendrücke sichern
+    const leer = (i) => { const a = K.antworten[i]; return Array.isArray(a) ? !a.length : !String(a || '').trim(); };
+    let eingabe, lesen = () => K.antworten[K.i];
+    if (f.typ === 'mc') {
+      const gew = new Set(K.antworten[K.i] || []), ord = (K.ord && K.ord[K.i]) || f.optionen.map((_, j) => j);
+      eingabe = el('div', { class: 'opts mehr' }, [el('div', { class: 'hint', text: 'Eine oder mehrere Antworten können zutreffen.' })].concat(ord.map((j) => el('button', { class: 'opt', 'aria-pressed': String(gew.has(j)), html: '<span class="mk"></span><span class="ot">' + U.inline(U.esc(f.optionen[j].t)) + '</span>', onclick: (ev) => {
+        if (gew.has(j)) gew.delete(j); else gew.add(j);
+        ev.currentTarget.setAttribute('aria-pressed', String(gew.has(j)));
+        K.antworten[K.i] = [...gew].sort((a, b) => a - b); this._kSpeichern(K);
+        nav.children[K.i].classList.toggle('voll', gew.size > 0);
+      } }))));
+    } else {
+      const ta = el('textarea', { class: 'antw gross', rows: 10, placeholder: 'Deine Antwort …', 'aria-label': 'Antwort auf Aufgabe ' + (K.i + 1) });
+      ta.value = K.antworten[K.i] || '';
+      ta.addEventListener('input', () => { K.antworten[K.i] = ta.value; clearTimeout(this._kt); this._kt = setTimeout(() => this._kSpeichern(K), 300); });
+      eingabe = ta; lesen = () => ta.value;
+    }
+    const gehe = (i) => { K.antworten[K.i] = lesen(); K.i = i; this._kSpeichern(K); this.ersetze(this.klausurLauf, K); };
+    const abgeben = () => { K.antworten[K.i] = lesen(); K.abgegeben = true; K.tEnde = K.tEnde || Date.now(); K.ri = 0; this._kSpeichern(K); this.ersetze(this.klausurAuswertung, K); };
+    const nav = el('div', { class: 'knav' }, fr.map((x, i) => el('button', { class: 'kn' + (i === K.i ? ' on' : '') + (leer(i) ? '' : ' voll') + (voll && x.typ === 'mc' ? ' mc' : ''), text: String(i + 1), 'aria-label': 'Aufgabe ' + (i + 1) + (x.typ === 'mc' ? ', Multiple Choice' : ''), onclick: () => gehe(i) })));
+    const pk = this._kMax(K, f);
+    const teil = voll ? (f.typ === 'mc' ? 'Teil 2 · Multiple Choice · ' : 'Teil 1 · Offene Frage · ') : '';
     tick();
     return this.seite({
-      titel: 'Aufgabe ' + (K.i + 1) + ' / ' + fr.length, ueber: 'Klausur-Simulation', ohneTabs: true, klasse: 'klausur',
+      titel: 'Aufgabe ' + (K.i + 1) + ' / ' + fr.length, ueber: voll ? 'Vollklausur' : 'Klausur-Simulation', ohneTabs: true, klasse: 'klausur',
       schliessen: async () => { if (await this.bestaetigen('Simulation unterbrechen?', 'Du kannst sie später unter „Klausur-Simulation“ fortsetzen. Die Zeit läuft weiter.', 'Unterbrechen')) this.tab('lernen'); },
       aktionen: [uhr],
       inhalt: [nav,
-        el('div', { class: 'card frage-k' }, [el('div', { class: 'meta' }, [el('span', { text: punkte(f) + ' Punkte' })]), el('div', { class: 'md frage-t', html: frageHtml(f) }), ta]),
+        el('div', { class: 'card frage-k' }, [el('div', { class: 'meta' }, [el('span', { text: teil + this._kZahl(pk) + (pk === 1 ? ' Punkt' : ' Punkte') })]), el('div', { class: 'md frage-t', html: frageHtml(f) }), eingabe]),
         el('div', { class: 'row' }, [
           K.i > 0 ? el('button', { class: 'btn', text: 'Zurück', onclick: () => gehe(K.i - 1) }) : null,
           K.i + 1 < fr.length ? el('button', { class: 'btn primary', text: 'Nächste Aufgabe', onclick: () => gehe(K.i + 1) }) : null,
         ]),
         el('button', { class: 'btn wide' + (K.i + 1 === fr.length ? ' primary' : ''), id: 'abgeben', text: 'Abgeben', onclick: async () => {
-          const leer = fr.filter((_, i) => !(i === K.i ? ta.value : K.antworten[i] || '').trim()).length;
-          if (await this.bestaetigen('Abgeben?', leer ? leer + ' Aufgabe(n) sind noch leer.' : 'Danach siehst du die Musterantworten.', 'Abgeben')) abgeben();
+          K.antworten[K.i] = lesen();
+          const n = fr.filter((_, i) => leer(i)).length;
+          if (await this.bestaetigen('Abgeben?', n ? n + ' Aufgabe(n) sind noch leer.' : 'Danach siehst du die Musterantworten.', 'Abgeben')) abgeben();
         } }),
       ],
     });
   },
 
-  /* Auswertung: jede Aufgabe mit Musterantwort und Kernpunkten, danach die Gesamtpunkte */
+  /* MC-Aufgaben der Vollklausur automatisch bewerten und ins Logbuch schreiben (nur einmal) */
+  _kMcWerten(K, fr) {
+    if (K.modus !== 'voll' || K.mcGewertet) return;
+    const ms = Math.round(((K.tEnde || Date.now()) - K.t0) / fr.length);
+    fr.forEach((f, i) => { if (f.typ !== 'mc') return; const s = Bewerter.mc(f, K.antworten[i] || []).s; K.bewertung[i] = s; Store.antwort(f, s, false, ms, 'k'); });
+    K.mcGewertet = true; K.tEnde = K.tEnde || Date.now(); this._kSpeichern(K);
+  },
+
+  /* Auswertung: jede offene Aufgabe mit Musterantwort und Kernpunkten, danach die Gesamtpunkte */
   klausurAuswertung(K) {
-    const fr = K.qids.map((q) => Lerni.fragen[q]);
-    if (K.ri >= fr.length) return this.klausurErgebnis(K, fr);
-    const f = fr[K.ri], antwort = K.antworten[K.ri] || '', haken = f.kernpunkte.map(() => false);
+    const fr = K.qids.map((q) => Lerni.fragen[q]), voll = K.modus === 'voll';
+    this._kMcWerten(K, fr);
+    const offenIdx = fr.map((f, i) => (f.typ === 'mc' ? -1 : i)).filter((i) => i >= 0);
+    if (K.ri >= offenIdx.length) return this.klausurErgebnis(K, fr);
+    const qi = offenIdx[K.ri], f = fr[qi], antwort = K.antworten[qi] || '', haken = f.kernpunkte.map(() => false);
     const stand = el('span', { class: 'kpstand' });
     const weiter = el('button', { class: 'btn primary wide', id: 'kWeiter', onclick: () => {
       const s = Bewerter.offen(f, haken.filter(Boolean).length).s;
-      K.bewertung[K.ri] = s;
+      K.bewertung[qi] = s;
       Store.antwort(f, s, false, Math.round(((K.tEnde || Date.now()) - K.t0) / fr.length), 'k', antwort);
       K.ri++; this._kSpeichern(K); this.ersetze(this.klausurAuswertung, K);
     } });
-    const neu = () => { const n = haken.filter(Boolean).length; stand.textContent = n + ' von ' + f.kernpunkte.length; weiter.textContent = (K.ri + 1 < fr.length ? 'Nächste Aufgabe' : 'Zum Ergebnis') + ' · ' + Math.round(Bewerter.offen(f, n).s * (f.punkte || 10) * 10) / 10 + ' P.'; };
+    const neu = () => { const n = haken.filter(Boolean).length; stand.textContent = n + ' von ' + f.kernpunkte.length; weiter.textContent = (K.ri + 1 < offenIdx.length ? 'Nächste Aufgabe' : 'Zum Ergebnis') + ' · ' + this._kZahl(this._kPunkte(K, f, Bewerter.offen(f, n).s)) + ' P.'; };
     const liste = el('div', { class: 'kps' }, f.kernpunkte.map((k, i) => el('button', { class: 'kp', 'aria-pressed': 'false', html: '<span class="mk"></span><span>' + U.inline(U.esc(k)) + '</span>', onclick: (ev) => { haken[i] = !haken[i]; ev.currentTarget.setAttribute('aria-pressed', String(haken[i])); neu(); } })));
     neu();
     return this.seite({
-      titel: 'Auswertung ' + (K.ri + 1) + ' / ' + fr.length, ueber: 'Klausur-Simulation', ohneTabs: true,
+      titel: 'Auswertung ' + (K.ri + 1) + ' / ' + offenIdx.length, ueber: voll ? 'Vollklausur · offene Fragen' : 'Klausur-Simulation', ohneTabs: true,
       schliessen: async () => { if (await this.bestaetigen('Auswertung unterbrechen?', 'Du kannst sie später fortsetzen.', 'Unterbrechen')) this.tab('lernen'); },
       inhalt: [
-        el('div', { class: 'card frage-k' }, [el('div', { class: 'md frage-t', html: frageHtml(f) })]),
-        el('div', { class: 'card' }, [el('div', { class: 'lt-t', text: 'Deine Antwort' }), antwort.trim() ? el('p', { class: 'vorlage', text: antwort }) : el('p', { class: 'muted', text: '(leer)' })]),
+        voll && K.ri === 0 ? el('p', { class: 'muted small', text: 'Die Multiple-Choice-Fragen sind schon automatisch bewertet. Jetzt die offenen Fragen: Hake ehrlich ab, welche Kernpunkte in deiner Antwort stehen – 1 Kernpunkt = 1 Punkt.' }) : null,
+        el('div', { class: 'card frage-k' }, [el('div', { class: 'meta' }, [el('span', { text: 'Aufgabe ' + (qi + 1) + ' · ' + this._kZahl(this._kMax(K, f)) + ' Punkte' })]), el('div', { class: 'md frage-t', html: frageHtml(f) })]),
+        el('div', { class: 'card' }, [el('div', { class: 'lt-t', text: 'Deine Antwort' }), String(antwort).trim() ? el('p', { class: 'vorlage', text: antwort }) : el('p', { class: 'muted', text: '(leer)' })]),
         el('div', { class: 'card loesung' }, [el('div', { class: 'lt-t', text: 'Musterantwort' }), el('div', { class: 'md muster', html: U.md(f.antwort) }), f.bildLoesung ? el('div', { html: grafikHtml(f.kurs, f.bildLoesung) }) : null, f.erklaerung ? el('div', { class: 'erkl', html: U.md(f.erklaerung) }) : null]),
         el('div', { class: 'card kpbox' }, [el('div', { class: 'kphead' }, [el('span', { class: 'lt-t', text: 'Welche Kernpunkte hattest du?' }), stand]), liste,
           el('button', { class: 'btn small', text: 'Mit Claude prüfen', onclick: async () => { const ok = await U.kopieren(claudePrompt(f, antwort)); this.toast(ok ? 'Kopiert – in der Claude-App einfügen' : 'Kopieren ging nicht'); } })]),
@@ -4248,39 +4356,57 @@ const UIKlausur = {
       ],
     });
   },
+
+  /* Ergebnis: Gesamtpunkte, Bestehensgrenze (Hälfte), bei der Vollklausur Teile und Einheiten */
   klausurErgebnis(K, fr) {
-    const max = fr.reduce((a, f) => a + (f.punkte || 10), 0), erreicht = fr.reduce((a, f, i) => a + (K.bewertung[i] || 0) * (f.punkte || 10), 0);
-    const q = max ? erreicht / max : 0;
+    const voll = K.modus === 'voll';
+    const pk = fr.map((f, i) => this._kPunkte(K, f, K.bewertung[i])), mx = fr.map((f) => this._kMax(K, f));
+    const max = mx.reduce((a, b) => a + b, 0), erreicht = pk.reduce((a, b) => a + b, 0);
+    const q = max ? erreicht / max : 0, grenze = max / 2, bestanden = erreicht >= grenze;
     if (!K.gespeichert) {
       K.gespeichert = true;
-      Store.sitzungEnde({ t: Math.floor(K.t0 / 1000), modus: 'klausur', titel: 'Klausur-Simulation', kurs: K.kurs, n: fr.length, r: K.bewertung.filter((s) => s >= RICHTIG).length, ms: (K.tEnde || Date.now()) - K.t0 });
+      Store.sitzungEnde({ t: Math.floor(K.t0 / 1000), modus: 'klausur', titel: voll ? 'Vollklausur' : 'Klausur-Simulation', kurs: K.kurs, n: fr.length, r: K.bewertung.filter((s) => s >= RICHTIG).length, ms: (K.tEnde || Date.now()) - K.t0, p: erreicht, pmax: max });
       this._kLoeschen();
     }
+    const Z = (x) => this._kZahl(x), B = (j) => String.fromCharCode(65 + j);
     const alles = () => [
-      'Bitte korrigiere meine Probeklausur wie ein strenger, fairer Prüfer. Gib je Aufgabe Punkte, sag was fehlt oder falsch ist, und fasse am Ende meine größten Lücken zusammen.', '',
-      ...fr.map((f, i) => ['AUFGABE ' + (i + 1) + ' (' + (f.punkte || 10) + ' Punkte): ' + U.plain(f.frage), 'Kernpunkte: ' + f.kernpunkte.map(U.plain).join('; '), 'Meine Antwort: ' + ((K.antworten[i] || '').trim() || '(leer)'), ''].join('\n')),
+      'Bitte korrigiere meine Probeklausur wie ein strenger, fairer Prüfer. Gib je offener Aufgabe Punkte in halben Schritten (1 Punkt je Kernpunkt), sag was fehlt oder falsch ist, und fasse am Ende meine größten Lücken zusammen.' + (voll ? ' Die Multiple-Choice-Aufgaben sind schon automatisch bewertet; erkläre dort nur meine Fehler.' : ''), '',
+      ...fr.map((f, i) => (f.typ === 'mc'
+        ? ['MC-AUFGABE ' + (i + 1) + ' (' + Z(mx[i]) + ' P., erreicht ' + Z(pk[i]) + '): ' + U.plain(f.frage), 'Optionen: ' + f.optionen.map((o, j) => B(j) + ') ' + U.plain(o.t)).join(' · '),
+          'Meine Kreuze: ' + ((K.antworten[i] || []).map(B).join(', ') || '(keine)'), 'Richtig: ' + f.optionen.map((o, j) => (o.r ? B(j) : '')).filter(Boolean).join(', '), '']
+        : ['AUFGABE ' + (i + 1) + ' (' + Z(mx[i]) + ' Punkte): ' + U.plain(f.frage), 'Kernpunkte: ' + f.kernpunkte.map(U.plain).join('; '), 'Meine Antwort: ' + (String(K.antworten[i] || '').trim() || '(leer)'), '']).join('\n')),
     ].join('\n');
-    return this.seite({
-      titel: 'Klausur-Ergebnis', ueber: 'Klausur-Simulation', ohneTabs: true, schliessen: () => this.tab('lernen'),
-      inhalt: [
-        el('div', { class: 'card ergebnis' }, [
-          this.ring(q, U.fmtPct(q), 'Punkte', q >= 0.8 ? 'var(--ok)' : q >= 0.5 ? 'var(--mid)' : 'var(--bad)'),
-          el('div', { class: 'einfo' }, [
-            el('b', { text: (Math.round(erreicht * 10) / 10).toLocaleString('de-DE') + ' von ' + max + ' Punkten' }),
-            el('div', { class: 'muted small', text: q >= 0.5 ? 'Nach der üblichen 50-%-Grenze bestanden.' : 'Unter der üblichen 50-%-Grenze – die Kernpunkte unten zeigen, wo es hakt.' }),
-            el('div', { class: 'muted small', text: 'Bearbeitungszeit ' + U.fmtDur((K.tEnde || Date.now()) - K.t0) }),
-          ]),
+    const inhalt = [
+      el('div', { class: 'card ergebnis' }, [
+        this.ring(q, Z(erreicht), 'von ' + Z(max), bestanden ? (q >= 0.8 ? 'var(--ok)' : 'var(--mid)') : 'var(--bad)'),
+        el('div', { class: 'einfo' }, [
+          el('b', { id: 'kGesamt', text: Z(erreicht) + ' von ' + Z(max) + ' Punkten' }),
+          el('div', { class: 'small', text: bestanden ? 'Bestanden (ab ' + Z(grenze) + ' Punkten).' : 'Nicht bestanden – es fehlen ' + Z(grenze - erreicht) + ' Punkte bis zur Grenze von ' + Z(grenze) + '.' }),
+          el('div', { class: 'muted small', text: 'Bearbeitungszeit ' + U.fmtDur((K.tEnde || Date.now()) - K.t0) }),
         ]),
-        el('div', { class: 'liste' }, fr.map((f, i) => el('button', { class: 'zeile frage', onclick: () => this.oeffne(this.frageDetail, f.qid) }, [
-          el('span', { class: 'dots' }, [el('i', { class: Lernlogik.ergebnis(K.bewertung[i] || 0) })]),
-          el('span', { class: 'zb' }, [el('span', { class: 'zt', text: U.short(f.frage, 100) }), el('span', { class: 'zm', text: Math.round((K.bewertung[i] || 0) * (f.punkte || 10) * 10) / 10 + ' / ' + (f.punkte || 10) + ' Punkte' })]),
-        ]))),
-        el('div', { class: 'row wrap' }, [
-          el('button', { class: 'btn', text: 'Ganze Klausur an Claude', onclick: async () => { const ok = await U.kopieren(alles()); this.toast(ok ? 'Kopiert – in der Claude-App einfügen' : 'Kopieren ging nicht'); } }),
-          el('button', { class: 'btn primary', text: 'Fertig', onclick: () => this.tab('lernen') }),
-        ]),
-      ],
-    });
+      ]),
+    ];
+    if (voll) {
+      const summe = (bed) => fr.reduce((a, f, i) => (bed(f) ? [a[0] + pk[i], a[1] + mx[i]] : a), [0, 0]);
+      const farbe = (x) => (x >= 0.8 ? 'var(--ok)' : x >= 0.5 ? 'var(--mid)' : 'var(--bad)');
+      const balken = (titel, [a, b]) => el('div', { class: 'eb' }, [el('div', { class: 'ebt' }, [el('span', { text: titel }), el('small', { text: Z(a) + ' / ' + Z(b) + ' P.' })]),
+        el('div', { class: 'sbar' }, [el('i', { style: `width:${(b ? a / b * 100 : 0).toFixed(1)}%;background:${farbe(b ? a / b : 0)}` })])]);
+      const k = Lerni.kursById[K.kurs];
+      inhalt.push(el('h2', { class: 'abschnitt', text: 'Nach Teilen' }));
+      inhalt.push(el('div', { class: 'card' }, [balken('Teil 1 · offene Fragen', summe((f) => f.typ !== 'mc')), balken('Teil 2 · Multiple Choice', summe((f) => f.typ === 'mc'))]));
+      inhalt.push(el('h2', { class: 'abschnitt', text: 'Nach Einheiten' }));
+      inhalt.push(el('div', { class: 'card', id: 'kEinheiten' }, (k ? k.einheitenListe : []).map((e) => [e, summe((f) => f.einheit === e.id)]).filter(([, x]) => x[1] > 0).map(([e, x]) => balken(e.titel, x))));
+    }
+    inhalt.push(el('h2', { class: 'abschnitt', text: 'Aufgaben' }));
+    inhalt.push(el('div', { class: 'liste' }, fr.map((f, i) => el('button', { class: 'zeile frage', onclick: () => this.oeffne(this.frageDetail, f.qid) }, [
+      el('span', { class: 'dots' }, [el('i', { class: Lernlogik.ergebnis(K.bewertung[i] || 0) })]),
+      el('span', { class: 'zb' }, [el('span', { class: 'zt', text: (i + 1) + '. ' + U.short(f.frage, 100) }), el('span', { class: 'zm', text: (f.typ === 'mc' ? 'Multiple Choice · ' : '') + Z(pk[i]) + ' / ' + Z(mx[i]) + ' Punkte' })]),
+    ]))));
+    inhalt.push(el('div', { class: 'row wrap' }, [
+      el('button', { class: 'btn', text: 'Ganze Klausur an Claude', onclick: async () => { const ok = await U.kopieren(alles()); this.toast(ok ? 'Kopiert – in der Claude-App einfügen' : 'Kopieren ging nicht'); } }),
+      el('button', { class: 'btn primary', text: 'Fertig', onclick: () => this.tab('lernen') }),
+    ]));
+    return this.seite({ titel: voll ? 'Vollklausur: Ergebnis' : 'Klausur-Ergebnis', ueber: 'Klausur-Simulation', ohneTabs: true, schliessen: () => this.tab('lernen'), inhalt });
   },
 };
 Object.assign(App, UIKlausur);
