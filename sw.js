@@ -1,6 +1,6 @@
 /* LERNI – Service Worker: offline lernen, online immer die neueste Version.
-   Vorlage: tools/build.py ersetzt f1673a4-20260929222744 und schreibt dist/sw.js. */
-const CACHE = 'lerni-f1673a4-20260929222744';
+   Vorlage: tools/build.py ersetzt 119f50a-20260929223034 und schreibt dist/sw.js. */
+const CACHE = 'lerni-119f50a-20260929223034';
 const ASSETS = ['./', './index.html', './manifest.webmanifest', './icons/icon-180.png', './icons/icon-192.png', './icons/icon-512.png'];
 
 self.addEventListener('install', (e) => {

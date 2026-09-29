@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- LERNI – gebaut 29.09.2026, 22:27. Nicht direkt öffnen: py tools/build.py setzt CSS, Code und Inhalte ein und schreibt dist/index.html -->
+<!-- LERNI – gebaut 29.09.2026, 22:30. Nicht direkt öffnen: py tools/build.py setzt CSS, Code und Inhalte ein und schreibt dist/index.html -->
 <html lang="de">
 <head>
   <meta charset="utf-8">
@@ -414,7 +414,7 @@ details.card[open] summary { margin-bottom: 10px; }
 </head>
 <body>
   <noscript>Lerni braucht JavaScript.</noscript>
-<script>const LERNI_BUILD = {"id": "f1673a4-20260929222744", "stamp": "29.09.2026, 22:27", "commit": "f1673a4"};</script>
+<script>const LERNI_BUILD = {"id": "119f50a-20260929223034", "stamp": "29.09.2026, 22:30", "commit": "119f50a"};</script>
 <script>
 /* LERNI – Hilfsfunktionen: DOM, Datum, Text, Zufall.
    Läuft auch in Node (tools/check.js): beim Laden nichts am DOM anfassen. */
@@ -4432,6 +4432,199 @@ Ziel: ökonomische Prioritäten neu ausrichten und den **allumfassenden Wachstum
 //# sourceURL=content/wirtschaftsgeographie/e13.js
 </script>
 <script>
+/* e14 Digitalisierung, Plattformen, KI – VL11 (Schumacher, 09.07.2026). Analyse: quellen/wirtschaftsgeographie/analyse/VL11-Digitalisierung.md
+   Stichwortartige Folien: nur Folieninhalt; nur genannte Begriffe (symbolische/subsymbolische KI, Extropianismus …) werden nicht abgefragt (01-Entscheidungen.md, D).
+   Quellen: PDF-Seite = Folie. */
+Lerni.einheit('wirtschaftsgeographie', {
+  id: 'e14',
+  titel: 'Digitalisierung, Plattformen, KI',
+  quelle: 'VL11 Digitalisierung (Schumacher), PDF-Seiten 2–47 (1 Seite = 1 Folie)',
+  skript: [
+    {
+      thema: 'Digitalisierung', titel: 'Digitalisierung: Begriffe und Geographie',
+      text: `**Digitalisierung:** „die Ausbreitung und zunehmende Bedeutung von **digitalen Technologien, Logiken und Anwendungen** in einer großen Breite von gesellschaftlichen und ökonomischen Bereichen“. **Digital** heißt: auf dem **Binärsystem** basierend.
+
+**Algorithmus:** eine Anleitung in Teilschritten, eine **Handlungsanweisung zur Lösung eines Problems** (Matheaufgabe, Kochrezept, Computerprogramm); benannt nach dem Gelehrten **al-Chwarizmi**. Vorläufer der Digitalisierung sind **Lochkarten** (ab dem 18. Jh., z. B. Webstühle).
+
+**Digitale Geographien (Ash et al. 2018):** Geographien, die **durch** das Digitale (**through** – Produktion von Raum), **vom** Digitalen (**by** – Wissensproduktion) und **des** Digitalen (**of** – digitale Räume) hervorgebracht werden.
+
+Das Digitale ist ein **schwieriges Forschungsfeld**: Abgrenzung („ist nicht alles digital?“), neue Phänomene, schwer „greifbar“, **hohe Geschwindigkeit** der Entwicklungen, **Blackbox** (proprietäre, vertrauliche Systeme), **Hype** und Emotionalität – Versprechen vs. Realität.
+
+==Digitalisierung = Ausbreitung digitaler Technologien, Logiken, Anwendungen; Geographien through, by und of the digital.==`,
+    },
+    {
+      thema: 'Plattformen', titel: 'Plattformökonomien', bild: 'plattform',
+      text: `**Digitale Plattformen** lassen sich als **Unternehmen verstehen, die über die Bereitstellung von Märkten Netzwerkeffekte generieren und kapitalisieren** (Boeckler). Sie sind **digitale Infrastrukturen**, die **Interaktionen** zwischen voneinander abhängigen Anbietern und Nutzer:innen **kuratieren** (Grabher/König), wirtschaftliche und soziale Beziehungen strukturieren und dabei **neue Abhängigkeiten** schaffen.
+
+Arten: E-Commerce, Social Media, Streaming, **Sharing Economy/Peer-to-Peer**, Fintech …
+
+**Charakteristiken nach Shy:** Komplementarität, Kompatibilität, Standards, **Externalitäten**, **Wechselkosten (switching costs)**, **große Skaleneffekte** → **zwei- oder mehrseitige Plattformen**: die Plattform als **„two-sided matchmaker“** zwischen z. B. Gastgebern und Gästen.
+
+**Räumliche Auswirkungen am Beispiel Airbnb:**
+- weniger langfristig verfügbare **Mietwohnungen**, steigende **Mieten und Immobilienpreise**
+- **Verdrängung** von Anwohner:innen
+- **Umwandlung von Wohnquartieren** in touristische Bezirke
+- Reaktion: zunehmende **Regulierung** durch Städte (z. B. Barcelona)
+
+==Plattform = Markt bereitstellen, Netzwerkeffekte kapitalisieren – mit spürbaren Folgen für Städte.==`,
+    },
+    {
+      thema: 'Umweltgovernance', titel: 'Digitalisierung und Umweltgovernance',
+      text: `Digitalisierung und KI haben in der Umweltgovernance drei Funktionen: **Generierung von Wissen · Bewertung · automatisierte Entscheidungsfindung**. Beispiele: Tracking von Tieren mit Mikrosensoren, Satellitendaten (teils in Echtzeit), digitale Zwillinge, Klimamodelle, „smart Earth“-Technologien (Bakker).
+
+**Chancen – neues Wissen:** mehr Daten, neue Erhebungsformen, **Echtzeitdaten**, bessere Vergleichbarkeit, neue Beteiligung (**citizen science**), „predictive ecology“.
+
+**Mögliche Probleme:** zu viele Daten und fragliche Datenqualität, fehlende **Transparenz**, **Datenlücken und ungleiche Beteiligung** (bias, Blackbox), Infrastruktur, **ethische Fragen** (Privatsphäre), Nähe zu **Sicherheit und Überwachung**, politisch-ökonomische Fragen.
+
+Beispiel Entwaldung: Satelliten machen den Waldverlust sichtbar, doch die **Treiber** (Fleisch, Schokolade, Palmöl) **bleiben im Verborgenen**.
+
+**Grundsätzliche Frage:** Wer erhebt welche Daten zu welchem Zweck? **Bedeuten mehr Daten eine bessere Umweltgovernance?**
+
+==Mehr Daten ≠ automatisch bessere Umweltpolitik – entscheidend ist, wer sie wofür erhebt.==`,
+    },
+    {
+      thema: 'KI', titel: 'Künstliche Intelligenz: Definition und Geschichte', bild: 'kigeschichte',
+      text: `**Warum ist KI schwer zu definieren?** Es gibt **keine Definition von Intelligenz** (der Begriff hat eine enge Beziehung zur **Eugenik**), die **Funktionsweise menschlichen Denkens ist bis heute nicht geklärt**, und KI verleitet zu **Anthropomorphismus** (menschliche Eigenschaften werden Maschinen zugeschrieben). Es gibt eine Vielzahl sehr verschiedener Systeme.
+
+**Geschichte:** 1930er **Turing-Maschine** · 1940er Idee **neuronaler Netze** · **1956 Dartmouth Summer School** (McCarthy, Minsky) · 1960er **ELIZA** (Joseph Weizenbaum). Nach Hype-Phasen kamen „**KI-Winter**“ (um 1975 und 1990); seit etwa **2017** boomt KI. Offen: Wirkt KI umfassend, verfliegt die Aufregung – oder **platzt die Blase**?
+
+**„AI boom or AI doom?“** Szenarien einer übermächtigen KI („AI doom“) **lenken von bereits existierenden Problemen ab**: **Überwachung**, **Profiling und Scoring**, **Aushöhlung von Sozialsystemen und Rechtsstaat**, **Kriegseinsätze**.
+
+**KI-Blase?** Rechenzentren werden über **Vendor Financing** (z. B. 100 Mrd. US-$ von Nvidia an OpenAI) und zunehmend über **Risikokapital** finanziert – ob das auf Dauer produktiv ist, ist offen.
+
+==KI: keine klare Definition, lange Hype-Geschichte – und die Doom-Debatte verdeckt reale Probleme.==`,
+    },
+    {
+      thema: 'KI-Folgen', titel: 'Folgen von KI',
+      text: `**Umweltfolgen:** Rohstoffe für Chips und Computer, hoher **Energieverbrauch**, **Wasserverbrauch** von Rechenzentren, **Elektroschrott** als am schnellsten wachsender Müllanteil. Offen: Überwiegen **Effizienzgewinne** oder regt KI **Konsum und Wachstum** an (Rebound)?
+
+**Soziale Folgen:** **Ausbeutung von Daten (data colonialism)**, „Enteignung“ und Urheberrechtsverletzungen. Arbeitsmarkt: **nicht unbedingt Jobverluste, aber eventuell schlechtere Bedingungen und Bezahlung**. **Gig-Arbeit:** geschätzt 154–435 Mio. „gig workers“ weltweit (laut Folie ≈ 12,5 % der Arbeitskräfte), oft über mehrere Stufen ausgelagert – Arbeit auch dort, wo es sonst wenig gibt, aber **wenig Arbeitsschutz**, kaum Sicherheit, stupide bis belastende Tätigkeiten.
+
+**Ökonomische Folgen:** massive Investitionen durch **Risikokapital**, **Finanzialisierung von Tech-Unternehmen** (Gefahr einer platzenden Blase), **Monopolbildung** („big five“, „magnificent seven“), stark wachsende **Ungleichheit** – „vom Plattform-Kapitalismus zum **Techno-Feudalismus**?“
+
+**Politische Folgen:** **Bias**, weil maschinelles Lernen Muster bisheriger Daten übernimmt · fehlende **Transparenz** · **Delegation von Verantwortung** · **Konzentration von Macht** und neue Abhängigkeiten (finanziell, politisch, militärisch) · wachsender Einfluss rechter Ideologien aus dem Tech-Umfeld – Gefährdung der Demokratie?
+
+==KI-Folgen: Ressourcen und Energie, Ausbeutung von Daten und Arbeit, Monopole, Machtkonzentration.==`,
+    },
+  ],
+  fragen: [
+    /* ---------- Digitalisierung ---------- */
+    { id: 'e14-01', typ: 'offen', thema: 'Digitalisierung', wichtig: 2, punkte: 2, quelle: 'VL11, S. 6 und 8',
+      frage: 'Definieren Sie Digitalisierung (1 P.) und Algorithmus (1 P.).',
+      antwort: `Digitalisierung ist die Ausbreitung und zunehmende Bedeutung digitaler, also auf dem Binärsystem basierender Technologien, Logiken und Anwendungen in einer großen Breite gesellschaftlicher und ökonomischer Bereiche. Ein Algorithmus ist eine Anleitung in Teilschritten, also eine Handlungsanweisung zur Lösung eines Problems – etwa eine Matheaufgabe, ein Kochrezept oder ein Computerprogramm.`,
+      kernpunkte: ['(a) Digitalisierung: Ausbreitung und wachsende Bedeutung digitaler Technologien, Logiken, Anwendungen in vielen Bereichen', '(b) Algorithmus: Handlungsanweisung in Teilschritten zur Lösung eines Problems'] },
+    { id: 'e14-02', typ: 'luecke', thema: 'Digitalisierung', wichtig: 2, quelle: 'VL11, S. 6',
+      frage: 'Definition aus der Vorlesung. Fülle die Lücken.',
+      text: 'Digitalisierung ist die Ausbreitung und zunehmende Bedeutung von digitalen [[Technologien]], Logiken und [[Anwendungen]] in einer großen Breite von gesellschaftlichen und ökonomischen Bereichen. Digital heißt: auf dem [[Binärsystem]] basierend.' },
+    { id: 'e14-03', typ: 'karte', thema: 'Digitalisierung', quelle: 'VL11, S. 8–9',
+      vorne: 'Woher hat der Algorithmus seinen Namen – und was gilt als früher Vorläufer der Digitalisierung?',
+      hinten: `Benannt nach dem Mathematiker und Gelehrten **al-Chwarizmi**. Frühe Vorläufer: **Lochkarten** (ab dem 18. Jh., z. B. zur Steuerung von Webstühlen).` },
+    { id: 'e14-04', typ: 'offen', thema: 'Digitalisierung', wichtig: 2, punkte: 3, quelle: 'VL11, S. 11–12',
+      frage: 'Erläutern Sie die Unterscheidung von Geographien „through“, „by“ und „of the digital“ (Ash et al. 2018).',
+      antwort: `Geographies through the digital sind Räume, die durch digitale Technologien mit hervorgebracht werden – es geht um die Produktion von Raum. Geographies by the digital meint die Wissensproduktion mithilfe digitaler Methoden und Daten. Geographies of the digital sind digitale Räume selbst, die als eigener Gegenstand untersucht werden.`,
+      kernpunkte: ['Through the digital: Produktion von Raum durch digitale Technologien', 'By the digital: Wissensproduktion mit digitalen Mitteln', 'Of the digital: digitale Räume als Gegenstand'] },
+    { id: 'e14-05', typ: 'offen', thema: 'Digitalisierung', punkte: 3, quelle: 'VL11, S. 13',
+      frage: 'Nennen Sie drei Probleme bei der Erforschung des Digitalen.',
+      antwort: `Schwierig ist die Abgrenzung, denn fast alles ist inzwischen digital. Die Entwicklungen sind sehr schnell und schnelllebig, und viele Systeme sind eine Blackbox, weil sie proprietär und vertraulich sind. Hinzu kommen Hype und Emotionalität: Versprechen und Realität klaffen oft auseinander, und das Digitale ist schwer „greifbar“.`,
+      kernpunkte: ['Abgrenzung schwierig („ist nicht alles digital?“)', 'Geschwindigkeit/Schnelllebigkeit der Entwicklungen', 'Blackbox (proprietär, vertraulich) oder Hype/Emotionalität, schwere Greifbarkeit'] },
+
+    /* ---------- Plattformen ---------- */
+    { id: 'e14-06', typ: 'offen', thema: 'Plattformen', wichtig: 2, punkte: 3, quelle: 'VL11, S. 15–18',
+      frage: 'Was ist eine digitale Plattform nach Boeckler (1 P.)? Nennen Sie zwei Charakteristiken von Plattformen nach Shy (2 P.).',
+      antwort: `Digitale Plattformen sind Unternehmen, die über die Bereitstellung von Märkten Netzwerkeffekte generieren und kapitalisieren. Shy nennt als Charakteristiken unter anderem Komplementarität, Kompatibilität, Standards, Externalitäten, Wechselkosten und große Skaleneffekte; daraus ergeben sich zwei- oder mehrseitige Plattformen, die als „two-sided matchmaker“ Anbieter und Nutzer:innen zusammenbringen.`,
+      kernpunkte: ['(a) Unternehmen, die über die Bereitstellung von Märkten Netzwerkeffekte generieren und kapitalisieren', '(b) Erste Charakteristik, z. B. Externalitäten/Netzwerkeffekte oder Skaleneffekte', '(b) Zweite, z. B. Wechselkosten, Standards, Komplementarität, Kompatibilität'] },
+    { id: 'e14-07', typ: 'luecke', thema: 'Plattformen', wichtig: 2, quelle: 'VL11, S. 15',
+      frage: 'Definition nach Boeckler (2023). Fülle die Lücken.',
+      text: 'Plattformen lassen sich als Unternehmen verstehen, die über die Bereitstellung von [[Märkten]] [[Netzwerkeffekte]] generieren und [[kapitalisieren]].' },
+    { id: 'e14-08', typ: 'mc', thema: 'Plattformen', quelle: 'VL11, S. 17',
+      frage: 'Welche gehören zu den Charakteristiken von Plattformen nach Shy? (mehrere möglich)',
+      optionen: [
+        { t: 'Wechselkosten (switching costs)', r: true, warum: 'Nutzer:innen bleiben, weil ein Wechsel teuer ist.' },
+        { t: 'Externalitäten', r: true, warum: 'Netzwerkeffekte: Jede weitere Nutzerin macht die Plattform attraktiver.' },
+        { t: 'Hohe vertikale Integration', warum: 'Das ist ein Merkmal fordistischer Produktion, keine Plattform-Charakteristik bei Shy.' },
+        { t: 'Hohe Transportkosten', warum: 'Transportkosten spielen bei digitalen Plattformen keine Rolle in Shys Liste.' },
+      ],
+      erklaerung: 'Alle sechs: complementarity, compatibility, standards, externalities, switching costs, significant economies of scale.' },
+    { id: 'e14-09', typ: 'offen', thema: 'Plattformen', wichtig: 2, punkte: 3, quelle: 'VL11, S. 20', bildLoesung: 'plattform',
+      frage: 'Nennen Sie drei räumliche Auswirkungen von Airbnb.',
+      antwort: `Airbnb verringert das Angebot an langfristig verfügbaren Mietwohnungen, sodass Mieten und Immobilienpreise steigen. Anwohner:innen werden verdrängt, und ganze Wohnquartiere wandeln sich in touristische Bezirke. Als Reaktion regulieren Städte wie Barcelona die Plattform zunehmend.`,
+      kernpunkte: ['Weniger langfristige Mietwohnungen, steigende Mieten/Immobilienpreise', 'Verdrängung von Anwohner:innen', 'Umwandlung von Wohnquartieren in touristische Bezirke (Reaktion: Regulierung, z. B. Barcelona)'] },
+    { id: 'e14-10', typ: 'karte', thema: 'Plattformen', quelle: 'VL11, S. 18–19',
+      vorne: 'Plattform als „two-sided matchmaker“',
+      hinten: `Die Plattform ist **Intermediär**: Sie bringt zwei Seiten zusammen (z. B. Gastgeber und Gäste), **kuratiert ihre Interaktionen** und strukturiert so wirtschaftliche und soziale Beziehungen – oft mit **neuen Abhängigkeiten**.`,
+      bildLoesung: 'plattform' },
+
+    /* ---------- Umweltgovernance ---------- */
+    { id: 'e14-11', typ: 'offen', thema: 'Umweltgovernance', punkte: 4, quelle: 'VL11, S. 25–27',
+      frage: 'Nennen Sie je zwei Chancen und zwei Probleme digitaler Umweltdaten.',
+      antwort: `Chancen sind etwa, dass mehr und neue Daten entstehen, auch in Echtzeit und besser vergleichbar, und dass neue Formen der Beteiligung wie Citizen Science möglich werden. Probleme sind zum Beispiel die Datenqualität und Datenlücken mit ungleicher Beteiligung (Bias, Blackbox) sowie ethische Fragen wie Privatsphäre und die Nähe zu Sicherheit und Überwachung.`,
+      kernpunkte: ['Chance: mehr/neue Daten, Echtzeitdaten, Vergleichbarkeit', 'Chance: neue Beteiligung (Citizen Science) oder Vorhersagen (predictive ecology)', 'Problem: Datenqualität, Datenlücken, ungleiche Beteiligung, Blackbox', 'Problem: ethische Fragen (Privatsphäre), Überwachung, wer erhebt Daten wozu'] },
+    { id: 'e14-12', typ: 'mc', thema: 'Umweltgovernance', quelle: 'VL11, S. 21',
+      frage: 'Welche Funktionen haben Digitalisierung und KI in der Umweltgovernance laut Vorlesung? (mehrere möglich)',
+      optionen: [
+        { t: 'Generierung von Wissen', r: true, warum: 'Z. B. Satelliten- und Sensordaten.' },
+        { t: 'Bewertung', r: true, warum: 'Daten werden analysiert und bewertet.' },
+        { t: 'Automatisierte Entscheidungsfindung', r: true, warum: 'Die dritte genannte Funktion.' },
+        { t: 'Ersatz jeder politischen Regulierung', warum: 'Davon ist keine Rede – im Gegenteil stellt die Vorlesung politisch-ökonomische Fragen.' },
+      ] },
+    { id: 'e14-13', typ: 'wf', thema: 'Umweltgovernance', quelle: 'VL11, S. 26–28',
+      aussage: 'Laut Vorlesung führen mehr Umweltdaten automatisch zu einer besseren Umweltgovernance.',
+      wahr: false, warum: 'Das bleibt die offene Grundfrage („Wer erhebt welche Daten zu welchem Zweck?“). Beispiel Entwaldung: Satelliten zeigen den Waldverlust, die Treiber (Fleisch, Schokolade, Palmöl) bleiben verborgen.' },
+
+    /* ---------- KI ---------- */
+    { id: 'e14-14', typ: 'offen', thema: 'KI', wichtig: 2, punkte: 2, quelle: 'VL11, S. 31',
+      frage: 'Warum ist eine Definition von Künstlicher Intelligenz schwierig?',
+      antwort: `Es gibt keine allgemein anerkannte Definition von Intelligenz, und der Begriff steht historisch in enger Beziehung zur Eugenik. Zudem ist die Funktionsweise menschlichen Denkens bis heute nicht geklärt; KI verleitet außerdem zum Anthropomorphismus, also dazu, Maschinen menschliche Eigenschaften zuzuschreiben.`,
+      kernpunkte: ['Keine Definition von Intelligenz (Nähe zur Eugenik)', 'Menschliches Denken nicht geklärt / Anthropomorphismus'] },
+    { id: 'e14-15', typ: 'reihe', thema: 'KI', quelle: 'VL11, S. 32–33', bildLoesung: 'kigeschichte',
+      frage: 'Bring die Stationen der KI-Geschichte in die richtige Reihenfolge.',
+      schritte: ['Turing-Maschine', 'Idee neuronaler Netze', 'Dartmouth Summer School', 'ELIZA (Weizenbaum)', 'Boom seit etwa 2017'],
+      erklaerung: '1930er · 1940er · 1956 · 1960er · seit 2017 (dazwischen „KI-Winter“ um 1975 und 1990).' },
+    { id: 'e14-16', typ: 'offen', thema: 'KI', punkte: 2, quelle: 'VL11, S. 35–36',
+      frage: 'Warum lenken „AI doom“-Szenarien laut Vorlesung ab?',
+      antwort: `Szenarien einer übermächtigen, gefährlichen KI richten den Blick auf eine spekulative Zukunft. Dabei geraten bereits existierende Probleme aus dem Blick: Überwachung, Profiling und Scoring, die Aushöhlung von Sozialsystemen und Rechtsstaat sowie Kriegseinsätze von KI.`,
+      kernpunkte: ['Fokus auf spekulative Zukunftsgefahr statt auf die Gegenwart', 'Verdeckt reale Probleme: Überwachung, Profiling/Scoring, Aushöhlung von Sozialstaat und Rechtsstaat, Kriegseinsätze'] },
+    { id: 'e14-17', typ: 'offen', thema: 'KI', punkte: 2, quelle: 'VL11, S. 2 und 43–47',
+      frage: 'Was ist mit der „KI-Blase“ gemeint?',
+      antwort: `Der Ausbau von KI und Rechenzentren wird zunehmend über Risikokapital und Vendor Financing finanziert – etwa 100 Milliarden US-Dollar von Nvidia an OpenAI zur Finanzierung von Rechenzentren. Ob diese Investitionen auf Dauer produktiv sind, ist fraglich; die Finanzialisierung der Tech-Unternehmen birgt die Gefahr, dass die Blase platzt.`,
+      kernpunkte: ['Finanzierung über Risikokapital und Vendor Financing (z. B. Nvidia → OpenAI)', 'Fraglich, ob dauerhaft produktiv – Gefahr, dass die Blase platzt'] },
+
+    /* ---------- KI-Folgen ---------- */
+    { id: 'e14-18', typ: 'offen', thema: 'KI-Folgen', wichtig: 2, punkte: 3, quelle: 'VL11, S. 38–39',
+      frage: 'Nennen Sie drei Umweltfolgen von KI.',
+      antwort: `KI benötigt Rohstoffe für die Herstellung von Chips und Computern und verbraucht sehr viel Energie. Rechenzentren verbrauchen außerdem viel Wasser zur Kühlung. Hinzu kommt Elektroschrott, der am schnellsten wachsende Müllanteil; offen ist zudem, ob Effizienzgewinne überwiegen oder KI Konsum und Wachstum anregt.`,
+      kernpunkte: ['Rohstoffe für Chips und Computer', 'Energie- und Wasserverbrauch (Rechenzentren)', 'Elektroschrott (oder Rebound: Konsum und Wachstum)'] },
+    { id: 'e14-19', typ: 'offen', thema: 'KI-Folgen', wichtig: 2, punkte: 3, quelle: 'VL11, S. 40–42',
+      frage: 'Nennen Sie drei soziale Folgen von KI.',
+      antwort: `KI beruht auf der Ausbeutung von Daten (data colonialism) und teils auf Enteignung und Urheberrechtsverletzungen. Auf dem Arbeitsmarkt drohen nicht unbedingt Jobverluste, aber eventuell schlechtere Bedingungen und Bezahlung. Und KI stützt sich auf Gig-Arbeit – Millionen Menschen arbeiten oft ausgelagert mit wenig Arbeitsschutz und Sicherheit an stupiden bis belastenden Aufgaben.`,
+      kernpunkte: ['Ausbeutung von Daten (data colonialism), Urheberrechtsverletzungen', 'Arbeitsmarkt: eher schlechtere Bedingungen/Bezahlung als Jobverlust', 'Gig-Arbeit mit wenig Arbeitsschutz und Sicherheit'] },
+    { id: 'e14-20', typ: 'luecke', thema: 'KI-Folgen', quelle: 'VL11, S. 41',
+      frage: 'Merkzahl Gig-Arbeit (Weltbank 2023).',
+      text: 'Weltweit gibt es geschätzt [[154]] bis [[435]] Millionen „gig workers“.' },
+    { id: 'e14-21', typ: 'wf', thema: 'KI-Folgen', wichtig: 2, quelle: 'VL11, S. 40',
+      aussage: 'Laut Vorlesung führt KI nachweislich zu Massenarbeitslosigkeit.',
+      wahr: false, warum: 'Die Folie sagt: **nicht unbedingt Jobverluste**, aber eventuell schlechtere Arbeitsbedingungen und Bezahlung.' },
+    { id: 'e14-22', typ: 'offen', thema: 'KI-Folgen', wichtig: 2, punkte: 3, quelle: 'VL11, S. 43–44',
+      frage: 'Nennen Sie drei ökonomische Folgen von KI.',
+      antwort: `KI zieht massive Investitionen von Risikokapital an, und Tech-Unternehmen werden zunehmend finanzialisiert – mit der Gefahr, dass eine KI-Blase platzt. Es kommt zu Monopolbildung um wenige Konzerne („big five“, „magnificent seven“). Zudem wächst die Ungleichheit stark; diskutiert wird ein Übergang vom Plattform-Kapitalismus zum „Techno-Feudalismus“.`,
+      kernpunkte: ['Massive Risikokapital-Investitionen, Finanzialisierung der Tech-Unternehmen (Blasengefahr)', 'Monopolbildung („big five“, „magnificent seven“)', 'Wachsende Ungleichheit – „Techno-Feudalismus“?'] },
+    { id: 'e14-23', typ: 'offen', thema: 'KI-Folgen', wichtig: 2, punkte: 3, quelle: 'VL11, S. 45–46',
+      frage: 'Nennen Sie drei politische Folgen von KI.',
+      antwort: `Weil maschinelles Lernen Muster aus bisherigen Daten übernimmt, entsteht Bias. Fehlende Transparenz erschwert Kontrolle und Klagen, und Verantwortung wird an Systeme delegiert. Außerdem konzentrieren sich Macht und Einfluss bei wenigen Konzernen, es entstehen finanzielle, politische und militärische Abhängigkeiten, und rechte Ideologien aus dem Tech-Umfeld gewinnen Einfluss – bis hin zur Gefährdung der Demokratie.`,
+      kernpunkte: ['Bias durch Lernen aus bisherigen Daten', 'Fehlende Transparenz / Delegation von Verantwortung', 'Machtkonzentration und Abhängigkeiten, Einfluss rechter Ideologien – Gefahr für Demokratie'] },
+    { id: 'e14-24', typ: 'mc', thema: 'KI-Folgen', quelle: 'VL11, S. 36',
+      frage: 'Welche bereits existierenden Probleme werden laut Vorlesung durch „AI doom“-Szenarien verdeckt? (mehrere möglich)',
+      optionen: [
+        { t: 'Überwachung', r: true, warum: 'Ein realer, bereits existierender Einsatz.' },
+        { t: 'Profiling und Scoring', r: true, warum: 'Ebenfalls schon Realität.' },
+        { t: 'Aushöhlung von Sozialsystemen und Rechtsstaat', r: true, warum: 'Wird ausdrücklich genannt.' },
+        { t: 'Zu geringe Rechenleistung', warum: 'Kein genanntes Problem – eher das Gegenteil (Energie- und Ressourcenverbrauch).' },
+      ] },
+  ],
+});
+//# sourceURL=content/wirtschaftsgeographie/e14.js
+</script>
+<script>
 /* e15 Zusatz: Themen der Musterklausur WS 2023/24, die in den Folien SoSe 2026 fehlen oder nur angerissen werden.
    Ausnahme von der Regel „nur Folieninhalt“ (01-Entscheidungen.md, Abschnitt A): allgemein gesichertes Fachwissen, deutlich gekennzeichnet.
    Jede erklaerung beginnt mit dem Hinweis. Die Einheit lässt sich in der App wie jede andere abwählen (Klausur-Simulation: Einheiten). */
@@ -5402,6 +5595,38 @@ Lerni.grafik('wirtschaftsgeographie', 'exportbasis', {
     </g>
     <line x1="94" y1="132" x2="116" y2="132"/><polygon class="pf" points="122,132 114,128 114,136"/><line x1="214" y1="132" x2="236" y2="132"/><polygon class="pf" points="242,132 234,128 234,136"/>
     <text class="k" x="170" y="182" text-anchor="middle">Geld entsteht aus Schulden – Sparen treibt nicht die Kreditvergabe.</text>
+  </svg>`,
+  });
+})();
+
+/* ---------- e14 Digitalisierung, Plattformen, KI ---------- */
+(() => {
+  const K = 'wirtschaftsgeographie';
+  Lerni.grafik(K, 'plattform', {
+    titel: 'Plattform als „two-sided matchmaker“',
+    text: 'VL11, S. 15–18 (Boeckler; Shy; Beispiel Airbnb): Die Plattform stellt einen Markt bereit, bringt zwei Seiten zusammen und kapitalisiert die Netzwerkeffekte.',
+    svg: `<svg viewBox="0 0 340 180" role="img" aria-label="Gastgeber und Gäste, dazwischen die Plattform">
+    <rect class="f2" x="4" y="50" width="92" height="56" rx="10"/><text class="k b" x="50" y="74" text-anchor="middle">Anbieter</text><text class="k" x="50" y="89" text-anchor="middle">z. B. Gastgeber</text>
+    <rect class="f1" x="124" y="40" width="92" height="76" rx="12"/><text class="b" x="170" y="72" text-anchor="middle">Plattform</text><text class="k" x="170" y="88" text-anchor="middle">z. B. Airbnb</text><text class="k m" x="170" y="102" text-anchor="middle">Gebühren, Daten</text>
+    <rect class="f3" x="244" y="50" width="92" height="56" rx="10"/><text class="k b" x="290" y="74" text-anchor="middle">Nutzer:innen</text><text class="k" x="290" y="89" text-anchor="middle">z. B. Gäste</text>
+    <line x1="98" y1="78" x2="116" y2="78"/><polygon class="pf" points="122,78 114,74 114,82"/><polygon class="pf" points="96,78 104,74 104,82"/>
+    <line x1="218" y1="78" x2="236" y2="78"/><polygon class="pf" points="242,78 234,74 234,82"/><polygon class="pf" points="216,78 224,74 224,82"/>
+    <path class="s1 d" d="M50 110 C80 140 260 140 290 110"/><text class="k tp" x="170" y="152" text-anchor="middle">Netzwerkeffekte: mehr Anbieter ↔ mehr Nutzer:innen</text>
+    <text class="k m" x="170" y="20" text-anchor="middle">Die Plattform kuratiert Interaktionen – und schafft neue Abhängigkeiten</text>
+    <text class="k m" x="170" y="172" text-anchor="middle">Räumlich: weniger Mietwohnungen, steigende Mieten, Verdrängung</text>
+  </svg>`,
+  });
+
+  const stationen = [['1930er', 'Turing-Maschine'], ['1940er', 'Idee neuronaler Netze'], ['1956', 'Dartmouth Summer School'], ['1960er', 'ELIZA (Weizenbaum)'], ['~1975, ~1990', 'KI-Winter'], ['seit 2017', 'Boom – Blase?']];
+  Lerni.grafik(K, 'kigeschichte', {
+    titel: 'Kurze Geschichte der KI',
+    text: 'VL11, S. 32–33: Auf Phasen des Hypes folgten „KI-Winter“. Seit 2017 boomt KI – offen ist, ob Wirkung, Ernüchterung oder das Platzen einer Blase folgt.',
+    svg: `<svg viewBox="0 0 340 204" role="img" aria-label="Zeitstrahl der KI-Geschichte">
+    <line class="s1 w" x1="24" y1="12" x2="24" y2="192"/>
+    ${stationen.map(([j, t], i) => {
+      const y = 22 + i * 32, cls = i === 4 ? 'tb' : i === 5 ? 'to' : '';
+      return `<circle class="pfp" cx="24" cy="${y}" r="6"/><text class="k b ${cls}" x="40" y="${y + 4}">${j}</text><text class="k" x="130" y="${y + 4}">${t}</text>`;
+    }).join('')}
   </svg>`,
   });
 })();
