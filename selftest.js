@@ -211,7 +211,13 @@
     App.tab('lernen');
     ok(!!document.getElementById('startHeute') || !!App.view.querySelector('.fertig'), 'Start: Lernen-Knopf oder „erledigt“');
     ok(App.view.querySelectorAll('.kachel').length >= 10, 'Start: Kacheln');
-    App.tab('lernen'); klick(document.getElementById('k_mix')); ok(!!App.view.querySelector('.frage-k'), 'Kachel „Alles gemischt“ startet Runde');
+    App.tab('lernen'); klick(document.getElementById('k_mix')); klick(document.getElementById('mixLos')); ok(!!App.view.querySelector('.frage-k'), 'Kachel „Mix“ startet Runde');
+    App.tab('lernen'); klick(document.getElementById('k_top')); ok(!!App.view.querySelector('.frage-k'), 'Kachel „Top 60“ startet Runde');
+    App.tab('lernen'); klick(document.getElementById('k_zufall')); klick(document.getElementById('mixLos')); ok(!!App.view.querySelector('.frage-k'), 'Kachel „Zufallsfragen“ startet Runde');
+    { const kk = Lerni.kurse[0], t = Lernlogik.plan(kk.id, 'top'), m = Lernlogik.plan(kk.id, 'mix', { einheiten: [kk.einheitenListe[0].id], n: 10 }), z = Lernlogik.plan(kk.id, 'mix', { n: 25 });
+      ok(t.length === Math.min(60, kk.alleFragen.length) && new Set(t).size === t.length, 'Top 60: 60 verschiedene Fragen');
+      ok(m.length > 0 && m.length <= 10 && m.every((f) => f.einheit === kk.einheitenListe[0].id), 'Mix: nur gewählte Einheit, höchstens n');
+      ok(z.length === Math.min(25, kk.alleFragen.length), 'Zufall: 25 Fragen'); }
     // Klausur-Simulation (nur offene Fragen) einmal ganz durch
     App.tab('lernen'); App._kcfg.modus = 'offen'; App.oeffne(App.klausurStart); klick(document.getElementById('klausurLos'));
     const K = App.klausurOffen(); ok(K && K.qids.length > 0 && !K.modus, 'Klausur angelegt');

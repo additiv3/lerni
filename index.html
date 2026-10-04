@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- LERNI – gebaut 29.09.2026, 22:34. Nicht direkt öffnen: py tools/build.py setzt CSS, Code und Inhalte ein und schreibt dist/index.html -->
+<!-- LERNI – gebaut 04.10.2026, 21:26. Nicht direkt öffnen: py tools/build.py setzt CSS, Code und Inhalte ein und schreibt dist/index.html -->
 <html lang="de">
 <head>
   <meta charset="utf-8">
@@ -414,7 +414,7 @@ details.card[open] summary { margin-bottom: 10px; }
 </head>
 <body>
   <noscript>Lerni braucht JavaScript.</noscript>
-<script>const LERNI_BUILD = {"id": "ddb17ea-20260929223416", "stamp": "29.09.2026, 22:34", "commit": "ddb17ea"};</script>
+<script>const LERNI_BUILD = {"id": "0bc683d-20261004212616", "stamp": "04.10.2026, 21:26", "commit": "0bc683d"};</script>
 <script>
 /* LERNI – Hilfsfunktionen: DOM, Datum, Text, Zufall.
    Läuft auch in Node (tools/check.js): beim Laden nichts am DOM anfassen. */
@@ -5774,6 +5774,7 @@ const Store = {
    Bewertung einer Antwort: s = 0…1. Ab RICHTIG gilt sie als gewusst, unter TEILWEISE als falsch. */
 'use strict';
 
+const TOP_N = 60;
 const KASTEN_TAGE = [0, 1, 2, 4, 8, 16, 32];
 const RICHTIG = 0.8, TEILWEISE = 0.4;
 
@@ -5930,11 +5931,22 @@ const Lernlogik = {
         if (out.length < L) out = out.concat(gesehen.slice(Math.ceil(L / 2))).slice(0, L);
         break;
       }
-      case 'mix': out = U.shuffle(alle).slice(0, L); break;
+      case 'mix': {                                   // opt.einheiten: nur diese Einheiten; opt.n: Anzahl (0/fehlt = alle)
+        const pool = opt.einheiten ? alle.filter((f) => opt.einheiten.indexOf(f.einheit) >= 0) : alle;
+        out = U.shuffle(pool).slice(0, opt.n || pool.length);
+        break;
+      }
+      case 'top': out = this.topFragen(kursId, opt.n || TOP_N); break;
       case 'fragen': out = (opt.qids || []).map((q) => Lerni.fragen[q]).filter(Boolean); break;
       default: out = [];
     }
     return modus === 'thema' || modus === 'fragen' ? out : this.mischen(out);
+  },
+  /* Die wahrscheinlichsten Klausurfragen: Klausurrelevanz (`wichtig`: 3 = Altklausur/betont), Musterklausur-Quelle und
+     offene Fragen zuerst (die Klausur besteht überwiegend daraus); Gleichstand nach Lernpfad-Reihenfolge. */
+  topFragen(kursId, n = TOP_N) {
+    const pkt = (f) => f.wichtig * 100 + (/klausur/i.test(f.quelle || '') ? 30 : 0) + (f.typ === 'offen' ? 10 : 0);
+    return this.fragenVon(kursId).slice().sort((a, b) => pkt(b) - pkt(a) || a.ord - b.ord).slice(0, n);
   },
   /* Neue Fragen gleichmäßig zwischen die Wiederholungen streuen */
   verzahnen(alt, neu) {
@@ -6303,7 +6315,7 @@ const TYP_UI = {
 /* LERNI – Lernsitzung: Reihenfolge, Wiedervorlage falscher Fragen, Ergebnis. Ohne DOM (testbar). */
 'use strict';
 
-const MODUS_KURZ = { heute: 'l', liste: 'w', einheit: 'e', thema: 't', offen: 'o', mix: 'm', fragen: 'w', klausur: 'k' };
+const MODUS_KURZ = { heute: 'l', liste: 'w', einheit: 'e', thema: 't', offen: 'o', mix: 'm', top: 'x', zufall: 'm', fragen: 'w', klausur: 'k' };
 
 class Sitzung {
   /* fragen: Liste von Fragen; info: { modus, titel, kurs } */
@@ -6563,7 +6575,9 @@ const UIScreens = {
     inhalt.push(el('div', { class: 'kacheln' }, [
       ...['kritisch', 'falsch', 'wackelig', 'oftfalsch', 'glueck', 'neu', 'gemerkt', 'sitzt'].map((id) => kachel(id, LISTE_BY_ID[id].name, z[id], LISTE_BY_ID[id].desc, () => this.starte('liste', { liste: id }, LISTE_BY_ID[id].name))),
       kachel('offen', 'Nur offene Fragen', nOffen, 'Wie in der Klausur: erklären, dann Kernpunkte abhaken', () => this.starte('offen', {}, 'Offene Fragen')),
-      kachel('mix', 'Alles gemischt', fr.length, 'Zufällige Fragen aus allen Einheiten', () => this.starte('mix', {}, 'Gemischt')),
+      kachel('top', 'Top 60 Klausurfragen', Math.min(TOP_N, fr.length), 'Die wahrscheinlichsten Fragen, nur diese', () => this.starte('top', {}, 'Top 60 Klausurfragen')),
+      kachel('mix', 'Mix aus Einheiten', fr.length, 'Alle Fragen gemischt, Einheiten wählbar', () => this.oeffne(this.mixSeite, 'mix')),
+      kachel('zufall', 'Zufallsfragen', fr.length, '10 bis 30 zufällige Fragen aus allem', () => this.oeffne(this.mixSeite, 'zufall')),
       kachel('klausur', 'Klausur-Simulation', nOffen, fr.some((f) => f.typ === 'mc') ? 'Vollklausur: 30 Punkte in 45 min, ohne Hilfe' : 'Mit Zeit, ohne Hilfe – Auswertung am Ende', () => this.oeffne(this.klausurStart)),
     ]));
 
@@ -6594,6 +6608,33 @@ const UIScreens = {
         el('span', { class: 'pf', html: ICON.pfeil }),
       ]);
     }))] });
+  },
+
+  /* Mix (Einheiten wählbar, alle Fragen) und Zufall (aus allem, 10–30 Fragen) */
+  _mixcfg: { aus: null, n: 0, zn: 20 },
+  mixSeite(art) {
+    const k = this.kurs(), C = this._mixcfg, zufall = art === 'zufall', rer = () => this.ersetze(this.mixSeite, art);
+    const alleIds = k.einheitenListe.map((e) => e.id), aus = zufall || !C.aus ? alleIds : C.aus;
+    const pool = k.alleFragen.filter((f) => aus.indexOf(f.einheit) >= 0), n = zufall ? C.zn : C.n;
+    const inhalt = [el('p', { text: zufall ? 'Zufällige Fragen aus allen Einheiten – wähle, wie viele.' : 'Alle Fragen der gewählten Einheiten, gemischt. Tippe eine Einheit an, um sie auszuschließen.' })];
+    if (!zufall && k.einheitenListe.length > 1) {
+      inhalt.push(el('h2', { class: 'abschnitt', text: 'Einheiten' }));
+      inhalt.push(el('div', { class: 'chips' }, k.einheitenListe.map((e, i) => this.chip((i + 1) + ' · ' + e.titel, aus.indexOf(e.id) >= 0, () => {
+        const neu = aus.indexOf(e.id) >= 0 ? aus.filter((x) => x !== e.id) : aus.concat(e.id);
+        C.aus = neu.length === alleIds.length ? null : neu; rer();
+      }, k.alleFragen.filter((f) => f.einheit === e.id).length))));
+      inhalt.push(el('div', { class: 'row' }, [
+        el('button', { class: 'btn small', text: 'Alle', onclick: () => { C.aus = null; rer(); } }),
+        el('button', { class: 'btn small', text: 'Keine', onclick: () => { C.aus = []; rer(); } }),
+      ]));
+    }
+    inhalt.push(el('h2', { class: 'abschnitt', text: 'Anzahl' }));
+    inhalt.push(this.wahl((zufall ? [] : [[0, 'Alle']]).concat([10, 15, 20, 25, 30].map((x) => [x, String(x)])), n, (v) => { if (zufall) C.zn = v; else C.n = v; rer(); }));
+    const anz = Math.min(n || pool.length, pool.length);
+    inhalt.push(el('p', { class: 'muted small', text: U.plural(pool.length, 'Frage', 'Fragen') + ' in der Auswahl.' }));
+    inhalt.push(el('button', { class: 'btn primary wide gross', id: 'mixLos', disabled: !pool.length, text: 'Los · ' + U.plural(anz, 'Frage', 'Fragen'),
+      onclick: () => this.ersetze(this.lernSeite, new Sitzung(Lernlogik.plan(k.id, 'mix', { einheiten: aus, n }), { modus: zufall ? 'zufall' : 'mix', titel: zufall ? 'Zufallsfragen' : 'Mix', kurs: k.id })) }));
+    return this.seite({ titel: zufall ? 'Zufallsfragen' : 'Mix aus Einheiten', ueber: k.name, zurueck: true, inhalt });
   },
 
   starte(modus, opt = {}, titel) {
